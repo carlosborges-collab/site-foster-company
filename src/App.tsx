@@ -22,15 +22,19 @@ export default function App() {
     const handleHashChange = () => {
       const newHash = window.location.hash || '#home';
       
+      // Rotas principais que contêm hífens
+      const mainRoutesWithHyphen = ['#gestao-youtube', '#clone-digital'];
+      
       // Normalize prefixes
       let baseHash = newHash;
       if (newHash.startsWith('#create')) baseHash = '#create';
       if (newHash.startsWith('#build')) baseHash = '#build';
       if (newHash.startsWith('#grow')) baseHash = '#grow';
       
-      // Se for uma âncora interna (ex: #gestao-youtube-resultados), tratamos o scroll específico
-      if (newHash.includes('-')) {
-        const elementId = newHash.split('-')[1];
+      // Se for uma âncora interna E não for uma rota principal de página
+      if (newHash.includes('-') && !mainRoutesWithHyphen.includes(newHash)) {
+        const parts = newHash.split('-');
+        const elementId = parts[parts.length - 1]; // Pega a última parte como ID
         const el = document.getElementById(elementId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
         return;
@@ -42,11 +46,10 @@ export default function App() {
         setTimeout(() => {
           setCurrentPath(baseHash);
           setDisplayPath(baseHash);
-          window.scrollTo(0, 0); // Força o scroll para o topo
+          window.scrollTo(0, 0);
           setIsTransitioning(false);
         }, 200);
       } else {
-        // Se clicar no link da página onde já está, também volta para o topo
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
