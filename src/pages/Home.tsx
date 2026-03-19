@@ -21,22 +21,22 @@ export default function Home() {
     { 
       name: "Pai Nosso", 
       image: "/artists/pai-nosso.png", 
-      url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" 
+      url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" 
     },
     { 
       name: "Puppies Kids", 
       image: "/artists/puppies-kids.png", 
-      url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" 
+      url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" 
     },
     { 
       name: "Além do Som", 
       image: "/artists/alem-do-som.png", 
-      url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" 
+      url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" 
     },
     { 
       name: "Sem Rótulo", 
       image: "/artists/sem-rotulo.png", 
-      url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" 
+      url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" 
     }
   ];
 
@@ -768,7 +768,7 @@ export default function Home() {
       </section>
 
       {/* CARLOS BORGES */}
-      <section id="carlos-borges" className="py-28 bg-f-dark">
+      <section id="carlos-borges" className="pt-28 pb-12 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
@@ -802,12 +802,12 @@ export default function Home() {
                   </h2>
                   <div className="font-display font-medium text-xl text-f-neon/80 italic">Carlos Borges — CEO & Founder</div>
                 </div>
-                <div className="space-y-6 text-[17px] text-f-mint/65 font-light leading-[1.6] max-w-2xl mb-12">
+                <div className="space-y-6 text-[17px] text-f-mint/65 font-light leading-[1.6] max-w-2xl">
                   <p data-i18n="founder_p1">{t('founder_p1')}</p>
                   <p data-i18n="founder_p2">{t('founder_p2')}</p>
                   <p data-i18n="founder_p3">{t('founder_p3')}</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
                   {[
                     "founder_li1",
                     "founder_li2",
@@ -820,10 +820,6 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-f-neon/10 border border-f-neon/30 text-f-neon font-display font-semibold rounded-full px-8 py-4 hover:bg-f-neon hover:text-f-black transition-all duration-300 group" data-i18n="founder_cta">
-                  {t('founder_cta')}
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </a>
               </AnimatedSection>
             </div>
           </div>
@@ -831,7 +827,7 @@ export default function Home() {
       </section>
 
       {/* SELO MUSICAL */}
-      <section id="selo-musical" className="py-24 bg-[#104037] relative overflow-hidden">
+      <section id="selo-musical" className="pt-12 pb-24 bg-[#104037] relative overflow-hidden">
         <div className="absolute inset-0 flex items-end justify-center opacity-10 gap-2 pb-10 pointer-events-none">
           {[...Array(30)].map((_, i) => (
             <div 
