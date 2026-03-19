@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { useContact } from '../context/ContactContext';
 
 export default function Navbar({ currentPath }: { currentPath: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { openContact } = useContact();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +47,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
     }`}>
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-full flex items-center justify-between">
         
-        {/* Left: Logo */}
         <div className="flex items-center gap-4">
           <a href="#home" className="block">
             <img 
@@ -60,7 +61,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
           </span>
         </div>
 
-        {/* Center: Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           <div 
             className="relative h-[68px] flex items-center"
@@ -71,7 +71,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
               {t('nav_solutions')}
             </button>
             
-            {/* Mega Dropdown */}
             {dropdownOpen && (
               <div className="absolute top-[68px] left-1/2 -translate-x-1/2 w-[800px] bg-f-black border border-f-neon/15 rounded-xl p-8 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="grid grid-cols-4 gap-8">
@@ -107,15 +106,9 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                     <div className="h-px w-full bg-f-neon/10 my-4"></div>
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
                       <li><a href="#home" className="hover:text-f-neon transition-colors">Sobre a Foster</a></li>
-                      <li><a href="#home" className="hover:text-f-neon transition-colors">Carlos Borges</a></li>
-                      <li><a href="#home" className="hover:text-f-neon transition-colors">Contato</a></li>
+                      <li><button onClick={openContact} className="hover:text-f-neon transition-colors text-left cursor-pointer">Contato</button></li>
                     </ul>
                   </div>
-                </div>
-                <div className="mt-8 pt-4 border-t border-f-neon/10">
-                  <p className="font-mono text-[10px] text-f-mint/25 text-left">
-                    Foster Company — Creative AI Studio · Criados para Criar.
-                  </p>
                 </div>
               </div>
             )}
@@ -124,75 +117,57 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
           <a href="#clone-digital" className={`text-[14px] transition-colors duration-200 ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_clone_digital')}</a>
         </div>
 
-        {/* Right: CTAs & Social */}
         <div className="hidden md:flex items-center gap-5">
           <LangSwitcher />
-          <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300">
+          <button 
+            onClick={openContact}
+            className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300 cursor-pointer"
+          >
             {t('nav_cta')} →
-          </a>
+          </button>
         </div>
 
-        {/* Mobile Toggle */}
         <button className="md:hidden text-f-neon" onClick={() => setMobileMenuOpen(true)}>
           <Menu size={24} />
         </button>
       </div>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-sm">
           <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 p-6 flex flex-col overflow-y-auto">
             <div className="flex justify-between items-center mb-10">
-              <img 
-                src="/Company branco.png" 
-                alt="Foster Company" 
-                className="h-6 w-auto object-contain"
-              />
-              <button onClick={() => setMobileMenuOpen(false)} className="text-f-neon">
-                <X size={24} />
-              </button>
+              <img src="/Company branco.png" alt="Foster Company" className="h-6 w-auto object-contain" />
+              <button onClick={() => setMobileMenuOpen(false)} className="text-f-neon"><X size={24} /></button>
             </div>
-            
-            <LangSwitcher mobile={true} />
-            
-            <div className="h-px w-full bg-f-neon/10 my-6"></div>
             
             <div className="flex flex-col gap-4 text-lg font-display">
               <details className="group">
                 <summary className="text-f-mint hover:text-f-neon cursor-pointer list-none flex justify-between items-center">
-                  Soluções
-                  <span className="text-f-neon/50 group-open:rotate-180 transition-transform">▼</span>
+                  Soluções <span className="text-f-neon/50 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="flex flex-col gap-4 mt-4 pl-4 border-l border-f-neon/20 text-[15px]">
-                  <div className="flex flex-col gap-2">
-                    <span className="text-f-neon text-xs font-mono">◈ Foster Create</span>
-                    <a href="#create-producao" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Produção Audiovisual com IA</a>
-                    <a href="#create-avatar" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Avatar de IA</a>
-                    <a href="#create-conteudo" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Conteúdo com IA</a>
-                  </div>
-                  <div className="flex flex-col gap-2 mt-2">
-                    <span className="text-f-neon text-xs font-mono">⬡ Foster Build</span>
-                    <a href="#build-sites" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Sites com IA</a>
-                    <a href="#build-plataformas" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Plataformas Digitais</a>
-                  </div>
-                  <div className="flex flex-col gap-2 mt-2">
-                    <span className="text-f-neon text-xs font-mono">▲ Foster Grow</span>
-                    <a href="#gestao-youtube" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Gestão de YouTube</a>
-                    <a href="#grow-mentoria" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Mentoria 3Ps</a>
-                    <a href="#grow-posicionamento" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Posicionamento Digital</a>
-                  </div>
+                   <a href="#create" onClick={() => setMobileMenuOpen(false)}>Foster Create</a>
+                   <a href="#build" onClick={() => setMobileMenuOpen(false)}>Foster Build</a>
+                   <a href="#grow" onClick={() => setMobileMenuOpen(false)}>Foster Grow</a>
                 </div>
               </details>
-              <a href="#ifoster" onClick={() => setMobileMenuOpen(false)} className="text-f-neon">{t('nav_ifoster')}</a>
-              <a href="#clone-digital" onClick={() => setMobileMenuOpen(false)} className="text-f-neon">{t('nav_clone_digital')}</a>
+              <a href="#ifoster" onClick={() => setMobileMenuOpen(false)}>{t('nav_ifoster')}</a>
+              <a href="#clone-digital" onClick={() => setMobileMenuOpen(false)}>{t('nav_clone_digital')}</a>
+              <button 
+                onClick={() => { setMobileMenuOpen(false); openContact(); }}
+                className="text-left text-f-mint hover:text-f-neon cursor-pointer"
+              >
+                Contato
+              </button>
             </div>
 
-            <div className="h-px w-full bg-f-neon/10 my-6"></div>
-
             <div className="mt-auto pb-8">
-              <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all duration-300">
+              <button 
+                onClick={() => { setMobileMenuOpen(false); openContact(); }}
+                className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all cursor-pointer"
+              >
                 {t('nav_cta')} →
-              </a>
+              </button>
             </div>
           </div>
         </div>
