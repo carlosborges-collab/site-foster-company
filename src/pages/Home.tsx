@@ -4,8 +4,8 @@ import { ChevronDown, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Home() {
-  const [typewriterText, setTypewriterText] = useState('');
   const [typewriterIndex, setTypewriterIndex] = useState(0);
+  const [playFatos, setPlayFatos] = useState(false);
   const { t } = useLanguage();
   
   const lines = [
@@ -635,16 +635,35 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* ÁREA DE THUMBNAIL */}
-                <div className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-5 group">
-                  <div className="w-10 h-10 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                    <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-[#50F2A7] border-b-[5px] border-b-transparent ml-1"></div>
-                  </div>
-                  <span className="absolute bottom-3 font-mono text-[10px] text-[#E1F2DF]/25 z-10">[ Thumbnail do Canal — Fatos da Bíblia ]</span>
-                  <img src="https://img.youtube.com/vi/9ABhVatBQz4/maxresdefault.jpg" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Fatos da Bíblia" />
+                {/* ÁREA DE THUMBNAIL / VÍDEO */}
+                <div 
+                  className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-5 group cursor-pointer"
+                  onClick={() => !playFatos && setPlayFatos(true)}
+                >
+                  {playFatos ? (
+                    <iframe
+                      src="https://www.youtube.com/embed/9ABhVatBQz4?autoplay=1"
+                      title="Fatos da Bíblia"
+                      className="absolute inset-0 w-full h-full border-none"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <>
+                      <div className="w-12 h-12 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                        <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#50F2A7] border-b-[6px] border-b-transparent ml-1"></div>
+                      </div>
+                      <span className="absolute bottom-3 font-mono text-[10px] text-[#E1F2DF]/25 z-10">Clique para assistir direto aqui</span>
+                      <img 
+                        src="https://img.youtube.com/vi/9ABhVatBQz4/maxresdefault.jpg" 
+                        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" 
+                        alt="Fatos da Bíblia" 
+                      />
+                    </>
+                  )}
                 </div>
 
-                {/* INFORMAÇÕES ABAIXO DA THUMBNAIL */}
+                {/* INFORMAÇÕES ABAIXO DO VÍDEO */}
                 <h3 className="font-display font-bold text-[20px] text-[#E1F2DF] mb-2">
                   Fatos da Bíblia
                 </h3>
@@ -668,7 +687,7 @@ export default function Home() {
                 {/* RODAPÉ DO CARD */}
                 <div className="mt-auto border-t border-[#50F2A7]/10 pt-3 flex items-center justify-between">
                   <a href="https://www.youtube.com/@fatos.dabiblia" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-[#50F2A7] hover:underline underline-offset-4">
-                    Ver canal →
+                    Ver canal no YouTube →
                   </a>
                   <span className="font-mono text-[10px] text-[#E1F2DF]/30">
                     Foster Grow · Foster Create
