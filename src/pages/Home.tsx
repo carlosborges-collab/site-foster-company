@@ -325,7 +325,7 @@ export default function Home() {
           <AnimatedSection className="mb-20">
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="verticals_eyebrow">{t('verticals_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-f-mint mb-4" data-i18n="verticals_title">{t('verticals_title')}</h2>
-            <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuid de tudo.</p>
+            <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuidar de tudo.</p>
           </AnimatedSection>
 
           <div className="space-y-8">
@@ -717,7 +717,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/30 rounded-full px-4 py-1.5 mb-4">
                 <span className="font-mono text-[12px] text-f-neon">🤖 100% Criados por Inteligência Artificial</span>
               </div>
-              <h3 className="font-display font-bold text 2xl text-f-mint">Explorações Criativas com IA</h3>
+              <h3 className="font-display font-bold text-2xl text-f-mint">Explorações Criativas com IA</h3>
             </AnimatedSection>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -877,11 +877,11 @@ export default function Home() {
       </section>
 
       {/* CARLOS BORGES */}
-      <section id="carlos-borges" className="pt-28 pb-12 bg-f-dark">
+      <section id="carlos-borges" className="py-20 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-4 lg:col-start-2">
               <AnimatedSection>
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-f-neon/5 rounded-3xl blur-2xl group-hover:bg-f-neon/10 transition-all duration-500"></div>
@@ -894,7 +894,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-t from-f-black/60 via-transparent to-transparent"></div>
                     <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
                       <div className="bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full">
-                        <span className="font-mono text-[11px] text-f-neon uppercase tracking-widest">Criados para Criar</span>
+                        <span className="font-mono text-[10px] text-f-neon uppercase tracking-widest">Criados para Criar</span>
                       </div>
                     </div>
                   </div>
@@ -902,30 +902,30 @@ export default function Home() {
               </AnimatedSection>
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
               <AnimatedSection delay={200}>
-                <div className="font-mono text-f-neon/70 mb-6" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
-                <div className="mb-8">
-                  <h2 className="font-display font-bold text-[clamp(32px,5vw,52px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title">
+                <div className="font-mono text-f-neon/70 mb-5" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
+                <div className="mb-6">
+                  <h2 className="font-display font-bold text-[clamp(28px,4vw,44px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title">
                     {t('founder_title')}
                   </h2>
-                  <div className="font-display font-medium text-xl text-f-neon/80 italic">Carlos Borges — CEO & Founder</div>
+                  <div className="font-display font-medium text-lg text-f-neon/80 italic">Carlos Borges — CEO & Founder</div>
                 </div>
-                <div className="space-y-6 text-[17px] text-f-mint/65 font-light leading-[1.6] max-w-2xl">
+                <div className="space-y-5 text-[16px] text-f-mint/65 font-light leading-[1.6] max-w-xl">
                   <p data-i18n="founder_p1">{t('founder_p1')}</p>
                   <p data-i18n="founder_p2">{t('founder_p2')}</p>
                   <p data-i18n="founder_p3">{t('founder_p3')}</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-10">
                   {[
                     "founder_li1",
                     "founder_li2",
                     "founder_li3",
                     "founder_li4"
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 p-4 bg-f-black/30 border border-f-neon/10 rounded-xl hover:border-f-neon/30 transition-colors">
+                    <div key={i} className="flex items-center gap-3 p-3.5 bg-f-black/30 border border-f-neon/10 rounded-xl hover:border-f-neon/30 transition-colors">
                       <div className="w-1.5 h-1.5 rounded-full bg-f-neon shrink-0"></div>
-                      <span className="text-[14px] text-f-mint/80 font-medium" data-i18n={item}>{t(item)}</span>
+                      <span className="text-[13px] text-f-mint/80 font-medium" data-i18n={item}>{t(item)}</span>
                     </div>
                   ))}
                 </div>
