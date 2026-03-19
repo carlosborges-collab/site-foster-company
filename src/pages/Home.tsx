@@ -69,8 +69,8 @@ export default function Home() {
       desc: "Fatos históricos, arqueológicos e curiosidades da Bíblia que a maioria nunca ouviu contar. Com mais de 5 mil inscritos e produção 100% com IA, é o canal que prova que fé e ciência podem andar juntos na mesma tela.",
       tags: ["Bíblia", "História", "Arqueologia"],
       channelUrl: "https://www.youtube.com/@fatos.dabiblia",
-      videoEmbed: "https://www.youtube.com/embed/AN0OnaRaNmA",
-      thumbnail: "https://img.youtube.com/vi/AN0OnaRaNmA/maxresdefault.jpg"
+      videoEmbed: "https://www.youtube.com/embed/-aBvvjH4-RE",
+      thumbnail: "https://img.youtube.com/vi/-aBvvjH4-RE/maxresdefault.jpg"
     },
     {
       id: "verboeterno",
