@@ -28,28 +28,26 @@ export default function App() {
       if (newHash.startsWith('#build')) baseHash = '#build';
       if (newHash.startsWith('#grow')) baseHash = '#grow';
       
+      // Se for uma âncora interna (ex: #gestao-youtube-resultados), tratamos o scroll específico
+      if (newHash.includes('-')) {
+        const elementId = newHash.split('-')[1];
+        const el = document.getElementById(elementId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+
+      // Se for uma mudança de página principal
       if (baseHash !== currentPath) {
         setIsTransitioning(true);
         setTimeout(() => {
           setCurrentPath(baseHash);
           setDisplayPath(baseHash);
-          
-          if (newHash.includes('-')) {
-             const elementId = newHash.split('-')[1];
-             setTimeout(() => {
-               const el = document.getElementById(elementId);
-               if (el) el.scrollIntoView({ behavior: 'smooth' });
-             }, 100);
-          } else {
-             window.scrollTo(0, 0);
-          }
-          
+          window.scrollTo(0, 0); // Força o scroll para o topo
           setIsTransitioning(false);
         }, 200);
-      } else if (newHash.includes('-')) {
-        const elementId = newHash.split('-')[1];
-        const el = document.getElementById(elementId);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Se clicar no link da página onde já está, também volta para o topo
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
 
