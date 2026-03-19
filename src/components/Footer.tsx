@@ -25,12 +25,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ... (Outras colunas mantidas) */}
+          <div>
+            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase tracking-wider">{t('footer_solutions_title')}</h3>
+            <ul className="space-y-3 text-sm text-f-mint/65">
+              <li><a href="#create" className="hover:text-f-neon transition-colors">Foster Create</a></li>
+              <li><a href="#build" className="hover:text-f-neon transition-colors">Foster Build</a></li>
+              <li><a href="#grow" className="hover:text-f-neon transition-colors">Foster Grow</a></li>
+              <li><a href="#clone-digital" className="hover:text-f-neon transition-colors">Clone Digital</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase tracking-wider">{t('footer_links_title')}</h3>
+            <ul className="space-y-3 text-sm text-f-mint/65">
+              <li><a href="#ifoster" className="hover:text-f-neon transition-colors">iFoster</a></li>
+              <li><a href="#canais" className="hover:text-f-neon transition-colors">Canais Próprios</a></li>
+              <li><a href="#musica" className="hover:text-f-neon transition-colors">Selo Musical</a></li>
+              <li><a href="#home" className="hover:text-f-neon transition-colors">Sobre Nós</a></li>
+            </ul>
+          </div>
           
           <div>
             <h3 className="font-mono text-xs text-f-neon mb-6 uppercase tracking-wider">Contato</h3>
             <ul className="space-y-4 text-sm text-f-mint/65">
-              <li><button onClick={openContact} className="hover:text-f-neon transition-colors cursor-pointer">Falar com a Equipe</button></li>
+              <li><button onClick={openContact} className="hover:text-f-neon transition-colors text-left cursor-pointer">Falar com a Equipe</button></li>
               <li><a href="mailto:contato@foster.company" className="hover:text-f-neon transition-colors">E-mail</a></li>
             </ul>
           </div>
