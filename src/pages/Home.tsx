@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { ChevronDown, CheckCircle2 } from 'lucide-react';
+import { ChevronDown, CheckCircle2, Instagram, Youtube } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { openContactModal } from '../utils/contactEvents';
 
 export default function Home() {
   const [typewriterIndex, setTypewriterIndex] = useState(0);
   const [playFatos, setPlayFatos] = useState(false);
+  const [playRony, setPlayRony] = useState(false);
   const { t } = useLanguage();
   
   const lines = [
@@ -574,10 +575,9 @@ export default function Home() {
               <div className="font-mono text-f-neon/70 mb-6" data-i18n="work_eyebrow">{t('work_eyebrow')}</div>
               <h2 className="font-display font-bold text-[clamp(32px,4vw,40px)] text-f-mint" data-i18n="work_title">{t('work_title')}</h2>
             </div>
-            <a href="#work" className="text-f-neon font-display font-medium hover:underline underline-offset-4 whitespace-nowrap" data-i18n="work_cta">{t('work_cta')}</a>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {/* Case 01 - Destaque */}
             <AnimatedSection className="md:col-span-2">
               <div className="bg-gradient-to-br from-f-black to-f-dark border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-colors duration-300 group">
@@ -600,21 +600,112 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            {/* Case 02 */}
+            {/* Case 02 - RONY MEISLER ATUALIZADO */}
             <AnimatedSection delay={100}>
               <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/45 transition-colors duration-300 h-full flex flex-col">
-                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">Avatar de IA</div>
+                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">
+                  Creative AI Studio
+                </div>
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Rony Meisler — Clone Digital</h3>
                 <p className="text-f-mint/65 mb-8 flex-grow">Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda.</p>
-                <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 mb-6 group cursor-pointer" onClick={() => !playFatos && setPlayFatos(true)}>
-                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                  <span className="absolute bottom-3 right-3 font-mono text-[10px] text-f-mint/30 z-10">[ vídeo do avatar ]</span>
+                
+                <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 mb-6 group cursor-pointer" onClick={() => !playRony && setPlayRony(true)}>
+                  {playRony ? (
+                    <iframe
+                      src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1"
+                      title="Rony Meisler Case"
+                      className="absolute inset-0 w-full h-full border-none"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <>
+                      <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                        <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+                      </div>
+                      <img 
+                        src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" 
+                        className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" 
+                        alt="Rony Meisler Case" 
+                      />
+                    </>
+                  )}
                 </div>
-                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Create · iFoster Avatar</div>
+
+                <div className="flex gap-4 mb-4">
+                  <a href="https://youtu.be/n1nP4gf4DJc?si=1pN8KTkYaDsZGyjc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-4 py-2 rounded-full font-mono text-[11px] hover:bg-f-neon hover:text-f-black transition-all">
+                    <Youtube size={14} /> Ver no YouTube
+                  </a>
+                  <a href="https://www.instagram.com/reel/DVLX0vpAASA/?igsh=MXN1NGx5emRmeW1waQ==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-4 py-2 rounded-full font-mono text-[11px] hover:bg-f-neon hover:text-f-black transition-all">
+                    <Instagram size={14} /> Ver no Instagram
+                  </a>
+                </div>
               </div>
             </AnimatedSection>
+          </div>
+
+          {/* NOVAS CAIXAS VÍDEOS IA */}
+          <div className="mb-8">
+            <AnimatedSection className="mb-8">
+              <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/30 rounded-full px-4 py-1.5 mb-4">
+                <span className="font-mono text-[12px] text-f-neon">🤖 100% Criados por Inteligência Artificial</span>
+              </div>
+              <h3 className="font-display font-bold text-2xl text-f-mint">Explorações Criativas com IA</h3>
+            </AnimatedSection>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Vídeo IA 1 */}
+              <AnimatedSection delay={100}>
+                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
+                  <div className="aspect-[9/16] w-full bg-f-dark/30">
+                    <iframe 
+                      src="https://www.instagram.com/reel/DVOgU-TgD2o/embed" 
+                      className="w-full h-full border-none"
+                      scrolling="no"
+                      allowTransparency={true}
+                    ></iframe>
+                  </div>
+                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10">
+                    <p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Vídeo IA 2 */}
+              <AnimatedSection delay={200}>
+                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
+                  <div className="aspect-[9/16] w-full bg-f-dark/30">
+                    <iframe 
+                      src="https://www.instagram.com/reel/DVTRhVSAEnf/embed" 
+                      className="w-full h-full border-none"
+                      scrolling="no"
+                      allowTransparency={true}
+                    ></iframe>
+                  </div>
+                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10">
+                    <p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* Vídeo IA 3 - Placeholder para fechar as 3 caixas */}
+              <AnimatedSection delay={300}>
+                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 flex flex-col">
+                  <div className="aspect-[9/16] w-full bg-f-dark/30 flex items-center justify-center p-8 text-center">
+                    <div>
+                      <div className="w-16 h-16 rounded-full bg-f-neon/10 flex items-center justify-center mx-auto mb-4">
+                        <Instagram size={24} className="text-f-neon/40" />
+                      </div>
+                      <p className="font-display font-bold text-f-mint/50 mb-2">Novo Case em Breve</p>
+                      <p className="text-[12px] text-f-mint/30">Produção cinematográfica com inteligência artificial.</p>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10 mt-auto">
+                    <p className="font-mono text-[10px] text-f-neon uppercase">Creative AI Studio ✓</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>
