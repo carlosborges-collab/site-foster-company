@@ -87,12 +87,14 @@ export default function Home() {
     <div className="w-full">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center pt-[140px] pb-20 bg-grid-pattern bg-noise overflow-hidden">
+        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.15)_0%,transparent_100%)]"></div>
+        
         <div className="max-w-7xl mx-auto px-5 md:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
           
           {/* Left Column */}
           <div className="lg:col-span-7 flex flex-col items-start">
             <AnimatedSection>
-              <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/25 rounded-full px-4 py-1.5 mb-8">
+              <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/25 rounded-full px-4 py-1.5 mb-8 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                 <div className="w-1.5 h-1.5 rounded-full bg-f-neon animate-pulse-dot"></div>
                 <span className="font-mono text-[12px] text-f-neon">✦ {t('hero_badge')} — Balneário Camboriú, Brasil</span>
               </div>
@@ -108,7 +110,7 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <p className="text-f-mint/60 text-[18px] font-light max-w-[480px] mb-10">
+              <p className="text-f-mint/60 text-[18px] font-light max-w-[480px] mb-10 leading-[1.55]">
                 {t('hero_subtitle')}
               </p>
             </AnimatedSection>
@@ -622,9 +624,14 @@ export default function Home() {
                     </div>
                     <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Grow · YouTube</div>
                   </div>
-                  <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-8 flex items-center justify-center min-h-[300px]">
-                    <div className="aspect-square w-full max-w-[300px] border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30">
-                      <span className="font-mono text-xs text-f-mint/30">[ foto/imagem do case ]</span>
+                  <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-4 lg:p-8 flex items-center justify-center min-h-[300px]">
+                    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
+                      <img 
+                        src="/cases/viviane-analytics.png" 
+                        alt="Analytics Viviane Martinello — +49k inscritos em um mês" 
+                        className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-f-black/40 to-transparent pointer-events-none"></div>
                     </div>
                   </div>
                 </div>
