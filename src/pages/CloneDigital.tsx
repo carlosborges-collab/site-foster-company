@@ -1,6 +1,7 @@
 import AnimatedSection from '../components/AnimatedSection';
-import { CheckCircle2, Play, MessageCircle, Star } from 'lucide-react';
+import { CheckCircle2, Play, Star } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { openContactModal } from '../utils/contactEvents';
 
 export default function CloneDigital() {
   const { t } = useLanguage();
@@ -44,10 +45,16 @@ export default function CloneDigital() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 shadow-[0_0_30px_rgba(80,242,167,0.2)]">
+                <button 
+                  onClick={openContactModal}
+                  className="bg-f-neon text-f-black font-display font-bold rounded-full px-8 py-5 text-[16px] whitespace-nowrap hover:glow-neon hover:scale-[1.03] transition-all duration-300 shadow-[0_0_30px_rgba(80,242,167,0.2)] cursor-pointer"
+                >
                   {t('clone_hero_cta')}
-                </a>
-                <a href="#case" className="border border-f-neon/30 text-f-neon font-display font-medium rounded-full px-10 py-5 text-center hover:bg-f-neon/10 transition-all duration-300">
+                </button>
+                <a 
+                  href="#case" 
+                  className="border border-f-neon/30 text-f-neon font-display font-medium rounded-full px-8 py-5 text-[16px] whitespace-nowrap text-center hover:bg-f-neon/10 transition-all duration-300"
+                >
                   {t('clone_hero_secondary')}
                 </a>
               </div>
@@ -78,27 +85,31 @@ export default function CloneDigital() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="w-full aspect-video bg-f-black border border-f-neon/20 rounded-2xl relative overflow-hidden group shadow-2xl">
-                 <img src="https://img.youtube.com/vi/9ABhVatBQz4/maxresdefault.jpg" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Rony Meisler Case" />
-                 <div className="absolute inset-0 flex items-center justify-center">
+                 <img src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Rony Meisler Case" />
+                 <a 
+                   href="https://www.youtube.com/watch?v=n1nP4gf4DJc" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="absolute inset-0 flex items-center justify-center"
+                 >
                     <div className="w-20 h-20 rounded-full bg-f-neon flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
                       <Play className="text-f-black ml-1" fill="currentColor" size={32} />
                     </div>
-                 </div>
+                 </a>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <div className="font-mono text-f-neon/70 mb-6">{t('clone_case_eyebrow')}</div>
+              <div className="font-mono text-f-neon/70 mb-6">/ CASO REAL · VALIDADO · RONY MEISLER</div>
               <h2 className="font-display font-bold text-3xl text-f-mint mb-8 leading-tight">
-                {t('clone_case_title')}
+                Rony Meisler: O empresário que escalou sua presença com IA.
               </h2>
               <div className="relative">
-                <span className="absolute -top-10 -left-6 text-[120px] text-f-neon/10 font-serif leading-none">“</span>
-                <p className="text-2xl italic text-f-mint/80 font-light leading-relaxed relative z-10 mb-8">
-                  {t('clone_case_quote')}
+                <p className="text-xl text-f-mint/80 font-light leading-relaxed mb-8">
+                  Rony Meisler é fundador da Reserva e um dos empresários mais inovadores do país. O case de seu clone digital, desenvolvido pela Foster Company, é um marco na produção de conteúdo, unindo a essência do criador com a escala infinita da inteligência artificial.
                 </p>
-                <div className="font-display font-bold text-f-neon">
-                  {t('clone_case_author')}
+                <div className="font-mono text-sm text-f-neon uppercase tracking-widest">
+                  Parceria Estratégica · Foster Company
                 </div>
               </div>
             </AnimatedSection>
@@ -254,9 +265,12 @@ export default function CloneDigital() {
           <p className="text-xl text-f-mint/50 mb-12 max-w-2xl mx-auto">
             {t('clone_cta_sub')}
           </p>
-          <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-6 text-xl hover:glow-neon transition-all">
+          <button 
+            onClick={openContactModal}
+            className="bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-6 text-xl hover:glow-neon transition-all cursor-pointer"
+          >
             {t('clone_hero_cta')}
-          </a>
+          </button>
         </AnimatedSection>
       </section>
 
@@ -271,9 +285,12 @@ export default function CloneDigital() {
 
           <AnimatedSection delay={200}>
             <div className="bg-f-dark border border-f-neon/20 rounded-[32px] p-10 md:p-16 relative shadow-2xl">
-              <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-f-neon text-f-black font-display font-bold rounded-2xl py-6 text-xl hover:glow-neon transition-all mb-8">
+              <button 
+                onClick={openContactModal}
+                className="block w-full text-center bg-f-neon text-f-black font-display font-bold rounded-2xl py-6 text-xl hover:glow-neon transition-all mb-8 cursor-pointer"
+              >
                 {t('clone_invest_cta')}
-              </a>
+              </button>
               <p className="text-center font-mono text-[11px] text-f-mint/30">
                 {t('clone_invest_footer')}
               </p>
