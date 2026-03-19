@@ -325,7 +325,7 @@ export default function Home() {
           <AnimatedSection className="mb-20">
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="verticals_eyebrow">{t('verticals_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-f-mint mb-4" data-i18n="verticals_title">{t('verticals_title')}</h2>
-            <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuidar de tudo.</p>
+            <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuid de tudo.</p>
           </AnimatedSection>
 
           <div className="space-y-8">
@@ -624,14 +624,20 @@ export default function Home() {
                     </div>
                     <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Grow · YouTube</div>
                   </div>
-                  <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-4 lg:p-8 flex items-center justify-center min-h-[300px]">
-                    <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
+                  <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-4 lg:p-6 flex flex-col gap-4">
+                    <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
                       <img 
                         src="/cases/viviane-analytics.png" 
                         alt="Analytics Viviane Martinello — +49k inscritos em um mês" 
-                        className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                        className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-f-black/40 to-transparent pointer-events-none"></div>
+                    </div>
+                    <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
+                      <img 
+                        src="/cases/abba-analytics.png" 
+                        alt="Analytics Abba Pai Church — Resultados consolidados" 
+                        className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      />
                     </div>
                   </div>
                 </div>
@@ -711,7 +717,7 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/30 rounded-full px-4 py-1.5 mb-4">
                 <span className="font-mono text-[12px] text-f-neon">🤖 100% Criados por Inteligência Artificial</span>
               </div>
-              <h3 className="font-display font-bold text-2xl text-f-mint">Explorações Criativas com IA</h3>
+              <h3 className="font-display font-bold text 2xl text-f-mint">Explorações Criativas com IA</h3>
             </AnimatedSection>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
