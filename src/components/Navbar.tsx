@@ -93,7 +93,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                   <div>
                     <a href="#grow" className="block font-display font-semibold text-[13px] text-f-neon mb-4 hover:underline">▲ Foster Grow</a>
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
-                      <li><a href="#grow-gestao" className="hover:text-f-neon transition-colors">Gestão de YouTube</a></li>
+                      <li><a href="#gestao-youtube" className="hover:text-f-neon transition-colors">Gestão de YouTube</a></li>
                       <li><a href="#grow-mentoria" className="hover:text-f-neon transition-colors">Mentoria 3Ps</a></li>
                       <li><a href="#grow-posicionamento" className="hover:text-f-neon transition-colors">Posicionamento Digital</a></li>
                     </ul>
@@ -177,7 +177,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                   </div>
                   <div className="flex flex-col gap-2 mt-2">
                     <span className="text-f-neon text-xs font-mono">▲ Foster Grow</span>
-                    <a href="#grow-gestao" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Gestão de YouTube</a>
+                    <a href="#gestao-youtube" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Gestão de YouTube</a>
                     <a href="#grow-mentoria" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Mentoria 3Ps</a>
                     <a href="#grow-posicionamento" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Posicionamento Digital</a>
                   </div>

@@ -9,6 +9,7 @@ import Build from './pages/Build';
 import Channels from './pages/Channels';
 import Music from './pages/Music';
 import CloneDigital from './pages/CloneDigital';
+import YoutubeGrowth from './pages/YoutubeGrowth';
 import ConversionPopup from './components/ConversionPopup';
 
 export default function App() {
@@ -61,6 +62,7 @@ export default function App() {
     if (displayPath.startsWith('#grow')) return <Grow />;
     
     switch (displayPath) {
+      case '#gestao-youtube': return <YoutubeGrowth />;
       case '#clone-digital': return <CloneDigital />;
       case '#ifoster': return <Ifoster />;
       case '#canais': return <Channels />;
