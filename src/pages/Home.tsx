@@ -147,7 +147,7 @@ export default function Home() {
           <AnimatedSection>
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="about_eyebrow">{t('about_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,5vw,52px)] text-f-mint mb-8">
-              <span className="block" data-i18n="about_title_1">{t('about_title')}</span>
+              <span className="block" data-i18n="about_title" dangerouslySetInnerHTML={{ __html: t('about_title') }}></span>
             </h2>
             <p className="font-body font-light text-[20px] text-f-mint/55 max-w-2xl mx-auto mb-20" data-i18n="about_desc_1">
               {t('about_desc_1')}

@@ -22,20 +22,24 @@ export const translations = {
     hero_headline_2: "amplificada por",
     hero_headline_3: "inteligência",
     hero_headline_4: "artificial.",
-    hero_subtitle: "A Foster Company é um estúdio de inovação que une estratégia de conteúdo, produção audiovisual e as ferramentas de IA mais avançadas do mundo.",
+    hero_subtitle: "A Foster Company é um estúdio de inovação que une estratégia de conteúdo, production audiovisual e as ferramentas de IA mais avançadas do mundo.",
     hero_cta_1: "Conhecer a Foster",
     hero_cta_2: "Ver cases",
     hero_metric_3_val: "+1B",
     hero_metric_3_lbl: "views geradas",
+    
+    // Seção O que é a Foster (Nova Copy)
     about_eyebrow: "/ o que é a foster",
-    about_title: "Não somos apenas uma produtora. Somos arquitetos de atenção.",
-    about_desc_1: "No cenário digital atual, a atenção é a moeda mais valiosa. A Foster Company combina a expertise humana em storytelling com o poder de escala da inteligência artificial para criar conteúdos que não apenas capturam a atenção, mas constroem legados.",
+    about_title: "Não somos agência.<br />Não somos produtora.<br />Somos o motivo pelo qual<br />você para de rolar o feed.",
+    about_desc_1: "A Foster existe no cruzamento entre criatividade humana e inteligência artificial. Criamos avatares, canais, plataformas e conteúdo que não pedem atenção — eles a tomam.",
+    
     about_pillar_1_title: "Criar",
     about_pillar_1_desc: "Avatares, vídeos, conteúdo e experiências que param o scroll e constroem marcas.",
     about_pillar_2_title: "Construir",
     about_pillar_2_desc: "Plataformas, sites e tecnologia com IA integrada em cada etapa do processo.",
     about_pillar_3_title: "Crescer",
     about_pillar_3_desc: "Canais, posicionamento e estratégia que transformam presença em dominância digital.",
+    
     ifoster_eyebrow: "/ plataforma proprietária",
     ifoster_hero_title_1: "iFoster.",
     ifoster_hero_title_2: "Sua equipe criativa.",
@@ -291,7 +295,7 @@ export const translations = {
     yt_step3_t: "03 · ⚡ Execução com IA",
     yt_step3_d: "Thumbnails otimizadas, títulos testados, descrições com SEO, tags. Feito com IA, revisado por especialistas.",
     yt_step4_t: "04 · 📊 Análise Mensal",
-    yt_step4_d: "Relatório todo mês com o que funcionou, o que ajustamos e o que planejamos. Dados reais, decisões inteligentes.",
+    yt_step4_d: "Relatório todo mês com o que funcionou, o que ajustamos e o que planejamos. Dados reais, decisions inteligentes.",
     yt_deliver_title: "Tudo que seu canal precisa. Em um serviço só.",
     yt_deliver_li1: "Estratégia de conteúdo mensal com calendário editorial",
     yt_deliver_li2: "SEO completo de cada vídeo publicado",
@@ -317,6 +321,11 @@ export const translations = {
     yt_faq_a2: "Depende do plano. No Plano 1 você produz. No Plano 3 a Foster produz tudo.",
     yt_faq_q3: "Quanto tempo para ver resultados?",
     yt_faq_a3: "30–90 dias iniciais. Crescimento expressivo entre o 3º e 6º mês.",
+
+    // Base
+    meta_title: "Foster Company — Creative AI Studio",
+    meta_description: "Criatividade amplificada por IA. Produção audiovisual, canais de YouTube e plataformas digitais.",
+    og_title: "Foster Company — Creative AI Studio",
   },
   es: {
     nav_clone_digital: "Clone Digital",
