@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { CheckCircle2, Send, FileText, MousePointerClick, Target, Terminal } from 'lucide-react';
+import { CheckCircle2, Send, FileText, MousePointerClick, Target, Terminal, Check } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { openContactModal } from '../utils/contactEvents';
 
 export default function Ifoster() {
   const [chatStep, setChatStep] = useState(0);
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -21,6 +24,19 @@ export default function Ifoster() {
       clearTimeout(timer4);
     };
   }, []);
+
+  const handleNewsletterSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setIsSubmitting(true);
+    // Simulação de envio para contato@fosterprodutora.com.br
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubscribed(true);
+      setEmail('');
+    }, 1500);
+  };
 
   return (
     <div className="w-full">
@@ -59,7 +75,7 @@ export default function Ifoster() {
                 >
                   {t('ifoster_cta_main')}
                 </button>
-                <a href="#agentes" className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-8 py-4 text-center hover:bg-[#50F2A7]/10 transition-all duration-300">
+                <a href="#ifoster-agentes" className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-8 py-4 text-center hover:bg-[#50F2A7]/10 transition-all duration-300">
                   Ver Agentes
                 </a>
               </div>
@@ -269,21 +285,46 @@ export default function Ifoster() {
               </div>
             </AnimatedSection>
 
-            {/* EM BREVE */}
+            {/* EM BREVE / NEWSLETTER */}
             <AnimatedSection delay={400} className="md:col-span-2">
               <div className="bg-[#50F2A7]/[0.03] border-2 border-dashed border-[#50F2A7]/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                   <div className="font-mono text-[10px] text-[#50F2A7] mb-3">🚀 Em desenvolvimento</div>
                   <h3 className="font-display font-bold text-3xl text-[#E1F2DF] mb-3">Novos agentes chegando.</h3>
                   <p className="text-[#E1F2DF]/60 text-[16px] max-w-xl">
-                    A Foster está treinando novos Super Agentes para ampliar o ecossistema iFoster. Assine para ser notificado.
+                    A Foster está treinando novos Super Agentes para ampliar o ecossistema iFoster. Deixe seu e-mail para ser notificado.
                   </p>
                 </div>
-                <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
-                  <input type="email" placeholder="Seu melhor e-mail" className="bg-[#030D09] border border-[#50F2A7]/20 rounded-full px-6 py-3 text-[#E1F2DF] placeholder-[#E1F2DF]/30 focus:outline-none focus:border-[#50F2A7]/50 w-full sm:w-64" />
-                  <button onClick={openContactModal} className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-6 py-3 hover:glow-neon transition-all whitespace-nowrap cursor-pointer">
-                    Quero ser notificado
-                  </button>
+                
+                <div className="w-full md:w-auto">
+                  {!isSubscribed ? (
+                    <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3">
+                      <input 
+                        required
+                        type="email" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Seu melhor e-mail" 
+                        className="bg-[#030D09] border border-[#50F2A7]/20 rounded-full px-6 py-3 text-[#E1F2DF] placeholder-[#E1F2DF]/30 focus:outline-none focus:border-[#50F2A7]/50 w-full sm:w-64 transition-colors" 
+                      />
+                      <button 
+                        disabled={isSubmitting}
+                        type="submit"
+                        className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-6 py-3 hover:glow-neon transition-all whitespace-nowrap cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
+                      >
+                        {isSubmitting ? (
+                          <div className="w-5 h-5 border-2 border-[#030D09]/30 border-t-[#030D09] rounded-full animate-spin"></div>
+                        ) : (
+                          "Quero ser notificado"
+                        )}
+                      </button>
+                    </form>
+                  ) : (
+                    <div className="flex items-center gap-3 bg-[#50F2A7]/10 border border-[#50F2A7]/30 rounded-full px-6 py-3 text-[#50F2A7] animate-in fade-in zoom-in duration-300">
+                      <Check size={18} />
+                      <span className="font-display font-medium text-sm">Registrado em contato@fosterprodutora.com.br</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
