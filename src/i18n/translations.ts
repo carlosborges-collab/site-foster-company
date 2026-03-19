@@ -51,6 +51,9 @@ export const translations = {
     ifoster_feature_4: "Arquiteto de Prompts para resultados precisos",
     ifoster_feature_5: "Disponível 24 horas por dia.",
     ifoster_cta: "Conheça a Plataforma",
+    ifoster_cta_main: "Conhecer o iFoster",
+    ifoster_cta_bottom: "Quero conhecer o iFoster",
+
     verticals_eyebrow: "/ nossas verticais",
     verticals_title: "Um ecossistema completo de soluções.",
     verticals_subtitle: "Escolha onde você precisa crescer — ou deixe a Foster cuidar de tudo.",
@@ -280,7 +283,7 @@ export const translations = {
     yt_case4_stat2: "Zero reais em tráfego pago · 100% IA · nosso laboratório",
     yt_problem_eyebrow: "/ POR QUE SEU CANAL NÃO CRESCE?",
     yt_problem_title: "O esforço existe. A estratégia, não.",
-    yt_problem_li1: "Você posta com frequência mas os números ficam parados. Parece que o algoritmo ignora seu canal de propósito.",
+    yt_problem_li1: "Você posta com frequência mas os números ficam parados. Parece que o algoritmo ignore seu canal de propósito.",
     yt_problem_li2: "Você investiu em câmera, edição e roteiro. Mas ninguém te ensinou SEO, CTR, redundância, algoritmo.",
     yt_problem_li3: "Seu concorrente tem canal pior, menos produção, o dobro de inscritos. Você não entende por quê.",
     yt_problem_li4: "Você já contratou alguém para gerir. A pessoa prometeu, fez o básico e sumiu. Sem estratégia real.",

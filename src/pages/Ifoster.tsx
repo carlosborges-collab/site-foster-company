@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { CheckCircle2, Send, FileText, MousePointerClick, Target, Terminal } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { openContactModal } from '../utils/contactEvents';
 
 export default function Ifoster() {
   const [chatStep, setChatStep] = useState(0);
@@ -35,7 +36,7 @@ export default function Ifoster() {
           <div>
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-[#50F2A7]/5 border border-[#50F2A7]/30 rounded-full px-4 py-1.5 mb-8">
-                <span className="font-mono text-[12px] text-[#50F2A7]" data-i18n="ifoster_hero_badge">{t('ifoster_hero_badge')}</span>
+                <span className="font-mono text-[12px] text-[#50F2A7]" data-i18n="hero_badge">{t('hero_badge')}</span>
               </div>
               
               <h1 className="font-display font-bold text-[clamp(48px,7vw,80px)] leading-[1.0] tracking-tight mb-8">
@@ -45,19 +46,21 @@ export default function Ifoster() {
               </h1>
 
               <div className="border-l-[3px] border-[#50F2A7] pl-6 max-w-[500px] mb-10">
-                <p className="text-[#E1F2DF]/60 text-[18px] font-light leading-[1.55]" data-i18n="ifoster_hero_desc">
-                  {t('ifoster_hero_desc')}
+                <p className="text-[#E1F2DF]/60 text-[18px] font-light leading-[1.55]" data-i18n="ifoster_desc">
+                  {t('ifoster_desc')}
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                {/* URL do iFoster */}
-                <a href="[URL do iFoster]" target="_blank" rel="noopener noreferrer" className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-8 py-4 text-center hover:glow-neon transition-all duration-300" data-i18n="ifoster_hero_cta_1">
-                  {t('ifoster_hero_cta_1')}
-                </a>
-                {/* CARLOS: substitua pelo link real da plataforma iFoster */}
-                <a href="#agentes" className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-8 py-4 text-center hover:bg-[#50F2A7]/10 transition-all duration-300" data-i18n="ifoster_hero_cta_2">
-                  {t('ifoster_hero_cta_2')}
+                <button 
+                  onClick={openContactModal}
+                  className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-8 py-4 text-center hover:glow-neon transition-all duration-300 cursor-pointer"
+                  data-i18n="ifoster_cta_main"
+                >
+                  {t('ifoster_cta_main')}
+                </button>
+                <a href="#agentes" className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-8 py-4 text-center hover:bg-[#50F2A7]/10 transition-all duration-300">
+                  Ver Agentes
                 </a>
               </div>
             </AnimatedSection>
@@ -278,10 +281,9 @@ export default function Ifoster() {
                 </div>
                 <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
                   <input type="email" placeholder="Seu melhor e-mail" className="bg-[#030D09] border border-[#50F2A7]/20 rounded-full px-6 py-3 text-[#E1F2DF] placeholder-[#E1F2DF]/30 focus:outline-none focus:border-[#50F2A7]/50 w-full sm:w-64" />
-                  <button className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-6 py-3 hover:glow-neon transition-all whitespace-nowrap">
+                  <button onClick={openContactModal} className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-6 py-3 hover:glow-neon transition-all whitespace-nowrap cursor-pointer">
                     Quero ser notificado
                   </button>
-                  {/* CARLOS: conecte este form ao seu sistema de e-mail/CRM */}
                 </div>
               </div>
             </AnimatedSection>
@@ -408,10 +410,13 @@ export default function Ifoster() {
         <div className="max-w-3xl mx-auto px-5">
           <AnimatedSection>
             <h2 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-[#E1F2DF] mb-10 leading-[1.1]">Uma equipe criativa inteira. No seu chat.</h2>
-            <a href="[URL do iFoster]" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#50F2A7] text-[#030D09] font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6">
-              Acessar o iFoster →
-            </a>
-            {/* CARLOS: substitua pelo link real da plataforma iFoster */}
+            <button 
+              onClick={openContactModal}
+              className="inline-block bg-[#50F2A7] text-[#030D09] font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6 cursor-pointer"
+              data-i18n="ifoster_cta_bottom"
+            >
+              {t('ifoster_cta_bottom')}
+            </button>
             <p className="font-mono text-[12px] text-[#E1F2DF]/40">Desenvolvido pela Foster Company · Creative AI Studio</p>
           </AnimatedSection>
         </div>
