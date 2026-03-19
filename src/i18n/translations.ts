@@ -22,15 +22,15 @@ export const translations = {
     hero_headline_2: "amplificada por",
     hero_headline_3: "inteligência",
     hero_headline_4: "artificial.",
-    hero_subtitle: "A Foster Company é um estúdio de inovação que une estratégia de conteúdo, production audiovisual e as ferramentas de IA mais avançadas do mundo.",
+    hero_subtitle: "A Foster Company é um estúdio de inovação que une estratégia de conteúdo, produção audiovisual e as ferramentas de IA mais avançadas do mundo.",
     hero_cta_1: "Conhecer a Foster",
     hero_cta_2: "Ver cases",
     hero_metric_3_val: "+1B",
     hero_metric_3_lbl: "views geradas",
     
-    // Seção O que é a Foster (Nova Copy)
+    // Seção O que é a Foster (Nova Copy com Destaque Neon)
     about_eyebrow: "/ o que é a foster",
-    about_title: "Não somos agência.<br />Não somos produtora.<br />Somos o motivo pelo qual<br />você para de rolar o feed.",
+    about_title: "Não somos agência.<br />Não somos produtora.<br /><span class='text-f-neon text-glow'>Somos o motivo pelo qual<br />você para de rolar o feed.</span>",
     about_desc_1: "A Foster existe no cruzamento entre criatividade humana e inteligência artificial. Criamos avatares, canais, plataformas e conteúdo que não pedem atenção — eles a tomam.",
     
     about_pillar_1_title: "Criar",
@@ -281,7 +281,7 @@ export const translations = {
     yt_problem_eyebrow: "/ POR QUE SEU CANAL NÃO CRESCE?",
     yt_problem_title: "O esforço existe. A estratégia, não.",
     yt_problem_li1: "Você posta com frequência mas os números ficam parados. Parece que o algoritmo ignora seu canal de propósito.",
-    yt_problem_li2: "Você investiu em câmera, edição e roteiro. Mas ninguém te ensinou SEO, CTR, retenção, algoritmo.",
+    yt_problem_li2: "Você investiu em câmera, edição e roteiro. Mas ninguém te ensinou SEO, CTR, redundância, algoritmo.",
     yt_problem_li3: "Seu concorrente tem canal pior, menos produção, o dobro de inscritos. Você não entende por quê.",
     yt_problem_li4: "Você já contratou alguém para gerir. A pessoa prometeu, fez o básico e sumiu. Sem estratégia real.",
     yt_problem_li5: "Você sabe que o YouTube poderia ser seu maior canal de aquisição — mas nunca conseguiu fazer isso funcionar.",
