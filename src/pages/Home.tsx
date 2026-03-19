@@ -602,26 +602,20 @@ export default function Home() {
 
             {/* Case 02 - RONY MEISLER ATUALIZADO - LARGURA TOTAL */}
             <AnimatedSection delay={100} className="md:col-span-2">
-              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/45 transition-colors duration-300 h-full flex flex-col">
-                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">
+              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 lg:p-12 hover:border-f-neon/45 transition-colors duration-300">
+                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-8">
                   Creative AI Studio
                 </div>
-                <div className="flex flex-col lg:flex-row gap-12 items-center mb-8">
-                  <div className="flex-1">
+                
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                  {/* Lado Esquerdo: Texto + YouTube */}
+                  <div className="lg:col-span-8 flex flex-col">
                     <h3 className="font-display font-bold text-4xl text-f-mint mb-4">Rony Meisler — Clone Digital</h3>
-                    <p className="text-f-mint/65 mb-8 text-lg leading-relaxed">Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda, unindo a essência do criador com a escala infinita da inteligência artificial.</p>
-                    <div className="flex gap-4">
-                      <a href="https://youtu.be/n1nP4gf4DJc?si=1pN8KTkYaDsZGyjc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-5 py-2.5 rounded-full font-mono text-[12px] hover:bg-f-neon hover:text-f-black transition-all">
-                        <Youtube size={16} /> Ver no YouTube
-                      </a>
-                      <a href="https://www.instagram.com/reel/DVLX0vpAASA/?igsh=MXN1NGx5emRmeW1waQ==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-5 py-2.5 rounded-full font-mono text-[12px] hover:bg-f-neon hover:text-f-black transition-all">
-                        <Instagram size={16} /> Ver no Instagram
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                    {/* YouTube Embed - Horizontal */}
+                    <p className="text-f-mint/65 mb-8 text-lg leading-relaxed max-w-3xl">
+                      Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda, unindo a essência do criador com a escala infinita da inteligência artificial.
+                    </p>
+                    
+                    {/* YouTube Video - No lugar onde estavam os botões */}
                     <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => !playRony && setPlayRony(true)}>
                       {playRony ? (
                         <iframe
@@ -644,7 +638,10 @@ export default function Home() {
                         </>
                       )}
                     </div>
-                    {/* Instagram Embed - Vertical 9:16 */}
+                  </div>
+                  
+                  {/* Lado Direito: Instagram Vertical */}
+                  <div className="lg:col-span-4">
                     <div className="aspect-[9/16] w-full border border-f-neon/30 rounded-xl overflow-hidden bg-f-dark/30 shadow-2xl">
                       <iframe 
                         src="https://www.instagram.com/reel/DVLX0vpAASA/embed" 
@@ -655,7 +652,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest mt-auto border-t border-f-neon/10 pt-4">Foster Create · iFoster Avatar · Case Nacional</div>
+                
+                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest mt-12 border-t border-f-neon/10 pt-4">
+                  Foster Create · iFoster Avatar · Case Nacional
+                </div>
               </div>
             </AnimatedSection>
           </div>
