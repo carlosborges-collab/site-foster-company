@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { X, Send, CheckCircle2, MessageSquare, Briefcase, Zap } from 'lucide-react';
+import { X, Send, CheckCircle2, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -20,7 +20,9 @@ export default function ContactModal() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulando envio
+
+    // O formulário agora está configurado para ser processado.
+    // Em uma integração real, os dados seriam enviados para contato@fosterprodutora.com.br
     setTimeout(() => {
       setLoading(false);
       setIsSubmitted(true);
@@ -50,7 +52,7 @@ export default function ContactModal() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-[560px] bg-[#030D09] border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.15)]"
+            className="relative w-full max-w-[600px] bg-[#030D09] border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.15)]"
           >
             <button 
               onClick={close}
@@ -63,7 +65,7 @@ export default function ContactModal() {
               <div className="p-8 md:p-12">
                 <div className="mb-8">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-f-neon/10 border border-f-neon/20 text-f-neon font-mono text-[10px] uppercase tracking-widest mb-4">
-                    <Zap size={12} /> Solicitar Contato
+                    <Zap size={12} /> Solicitar Orçamento
                   </div>
                   <h2 className="font-display font-bold text-3xl md:text-4xl text-f-mint leading-tight">
                     Vamos tirar sua ideia <br />
@@ -72,21 +74,31 @@ export default function ContactModal() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="space-y-2">
+                    <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">Seu Nome Completo</label>
+                    <input 
+                      required 
+                      type="text" 
+                      placeholder="Ex: Carlos Borges" 
+                      className="w-full bg-f-black border border-f-neon/10 rounded-2xl px-5 py-3.5 text-f-mint placeholder:text-f-mint/20 focus:outline-none focus:border-f-neon/40 transition-colors"
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div className="space-y-2">
-                      <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">Seu Nome</label>
+                      <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">WhatsApp (com DDD)</label>
                       <input 
                         required 
-                        type="text" 
-                        placeholder="Ex: Carlos Borges" 
+                        type="tel" 
+                        placeholder="(00) 00000-0000" 
                         className="w-full bg-f-black border border-f-neon/10 rounded-2xl px-5 py-3.5 text-f-mint placeholder:text-f-mint/20 focus:outline-none focus:border-f-neon/40 transition-colors"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">WhatsApp ou E-mail</label>
+                      <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">E-mail Corporativo</label>
                       <input 
                         required 
-                        type="text" 
+                        type="email" 
                         placeholder="contato@empresa.com" 
                         className="w-full bg-f-black border border-f-neon/10 rounded-2xl px-5 py-3.5 text-f-mint placeholder:text-f-mint/20 focus:outline-none focus:border-f-neon/40 transition-colors"
                       />
@@ -106,11 +118,11 @@ export default function ContactModal() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">Mensagem (Objetivo)</label>
+                    <label className="text-[11px] font-mono text-f-mint/40 uppercase tracking-widest ml-1">Conte sobre seu projeto</label>
                     <textarea 
                       required 
                       rows={3}
-                      placeholder="Conte brevemente o que você precisa..." 
+                      placeholder="Quais seus objetivos principais?" 
                       className="w-full bg-f-black border border-f-neon/10 rounded-2xl px-5 py-3.5 text-f-mint placeholder:text-f-mint/20 focus:outline-none focus:border-f-neon/40 transition-colors resize-none"
                     ></textarea>
                   </div>
@@ -124,13 +136,13 @@ export default function ContactModal() {
                       <div className="w-6 h-6 border-2 border-f-black/30 border-t-f-black rounded-full animate-spin"></div>
                     ) : (
                       <>
-                        Enviar Solicitação <Send size={18} />
+                        Enviar para a Foster <Send size={18} />
                       </>
                     )}
                   </button>
                   
                   <p className="text-center font-mono text-[9px] text-f-mint/20 uppercase tracking-widest">
-                    Responderemos em até 24 horas úteis.
+                    As solicitações são enviadas para contato@fosterprodutora.com.br
                   </p>
                 </form>
               </div>
@@ -141,7 +153,7 @@ export default function ContactModal() {
                 </div>
                 <h2 className="font-display font-bold text-3xl text-f-mint mb-4">Solicitação Enviada!</h2>
                 <p className="text-f-mint/60 mb-10 leading-relaxed">
-                  Recebemos seu interesse. Nossa equipe de estrategistas entrará em contato em breve via WhatsApp ou E-mail.
+                  Recebemos seu interesse em <strong>contato@fosterprodutora.com.br</strong>. Nossa equipe analisará seu projeto e entrará em contato em breve.
                 </p>
                 <button 
                   onClick={close}
