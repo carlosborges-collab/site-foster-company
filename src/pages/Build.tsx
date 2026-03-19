@@ -1,3 +1,5 @@
+"use client";
+
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function Build() {
@@ -68,34 +70,34 @@ export default function Build() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Stratube */}
-            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group">
+            {/* Stratube 2.0 */}
+            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group flex flex-col h-full">
               <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center mb-6">
                 <span className="font-display font-bold text-xl text-f-neon">S</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Stratube</h3>
-              <p className="text-sm text-f-mint/50 mb-6">Plataforma de inteligência e analytics para criadores de YouTube.</p>
-              <div className="font-mono text-[10px] text-f-neon uppercase">Status: Ativo ●</div>
+              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Stratube 2.0</h3>
+              <p className="text-sm text-f-mint/50 mb-6 flex-grow">Plataforma estratégica para YouTube que pesquisa dados reais do mercado e transforma em decisões acionáveis.</p>
+              <div className="font-mono text-[10px] text-f-neon uppercase">Categoria: YouTube Analytics & SEO ●</div>
             </div>
 
-            {/* Nomes e Marcas */}
-            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group">
+            {/* Nomes & Marcas */}
+            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group flex flex-col h-full">
               <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center mb-6">
                 <span className="font-display font-bold text-xl text-f-neon">N</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Nomes e Marcas</h3>
-              <p className="text-sm text-f-mint/50 mb-6">Ecossistema de branding e naming para novas empresas.</p>
-              <div className="font-mono text-[10px] text-f-neon uppercase">Status: Ativo ●</div>
+              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Nomes & Marcas</h3>
+              <p className="text-sm text-f-mint/50 mb-6 flex-grow">A plataforma inteligente de registro de marcas do Brasil com análise baseada na base histórica do INPI.</p>
+              <div className="font-mono text-[10px] text-f-neon uppercase">Categoria: Propriedade Intelectual · SaaS B2B ●</div>
             </div>
 
-            {/* Echowise */}
-            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group">
+            {/* Echowise AI */}
+            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group flex flex-col h-full">
               <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center mb-6">
                 <span className="font-display font-bold text-xl text-f-neon">E</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Echowise</h3>
-              <p className="text-sm text-f-mint/50 mb-6">Tecnologia proprietária Foster para gestão de audiência.</p>
-              <div className="font-mono text-[10px] text-f-neon uppercase">Status: Ativo ●</div>
+              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Echowise AI</h3>
+              <p className="text-sm text-f-mint/50 mb-6 flex-grow">Crie seu clone digital com IA e atenda seu público 24 horas por dia, sem precisar estar disponível.</p>
+              <div className="font-mono text-[10px] text-f-neon uppercase">Categoria: Marketplace de Experts Digitais ●</div>
             </div>
           </div>
         </div>
