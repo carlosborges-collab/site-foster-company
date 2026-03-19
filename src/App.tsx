@@ -11,6 +11,7 @@ import Music from './pages/Music';
 import CloneDigital from './pages/CloneDigital';
 import YoutubeGrowth from './pages/YoutubeGrowth';
 import ConversionPopup from './components/ConversionPopup';
+import ContactModal from './components/ContactModal';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#home');
@@ -84,6 +85,7 @@ export default function App() {
       </main>
       <Footer />
       <ConversionPopup />
+      <ContactModal />
     </div>
   );
 }

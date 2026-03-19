@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { ChevronDown, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { openContactModal } from '../utils/contactEvents';
 
 export default function Home() {
   const [typewriterIndex, setTypewriterIndex] = useState(0);
@@ -82,9 +83,9 @@ export default function Home() {
 
             <AnimatedSection delay={300}>
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon hover:scale-[1.02] transition-all duration-300">
+                <button onClick={openContactModal} className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon hover:scale-[1.02] transition-all duration-300 cursor-pointer">
                   {t('hero_cta_1')} →
-                </a>
+                </button>
                 <a href="#work" className="border border-f-neon/35 text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300">
                   {t('hero_cta_2')}
                 </a>
@@ -231,12 +232,12 @@ export default function Home() {
                 </ul>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="/ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon transition-all duration-300" data-i18n="ifoster_cta">
+                  <a href="#ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon transition-all duration-300" data-i18n="ifoster_cta">
                     {t('ifoster_cta')}
                   </a>
-                  <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="border border-f-neon text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300" data-i18n="nav_cta">
+                  <button onClick={openContactModal} className="border border-f-neon text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300 cursor-pointer" data-i18n="nav_cta">
                     {t('nav_cta')} →
-                  </a>
+                  </button>
                 </div>
               </AnimatedSection>
             </div>
@@ -770,7 +771,7 @@ export default function Home() {
       </section>
 
       {/* CARLOS BORGES */}
-      <section id="carlos-borges" className="pt-28 pb-12 bg-f-dark">
+      <section id="carlos-borges" className="py-28 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
@@ -880,9 +881,9 @@ export default function Home() {
                 <div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">
                   Spotify · Apple Music · Deezer · YouTube Music
                 </div>
-                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-[16px] text-f-neon hover:underline underline-offset-8 mt-auto w-fit">
+                <button onClick={openContactModal} className="font-display font-bold text-[16px] text-f-neon hover:underline underline-offset-8 mt-auto w-fit cursor-pointer">
                   {t('music_card1_cta')}
-                </a>
+                </button>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={100}>
@@ -927,9 +928,12 @@ export default function Home() {
             <p className="font-body font-light text-[20px] text-f-mint/50 mb-12">
               {t('cta_desc')}
             </p>
-            <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6">
+            <button 
+              onClick={openContactModal} 
+              className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6 cursor-pointer"
+            >
               {t('cta_btn')}
-            </a>
+            </button>
             <p className="font-mono text-[11px] text-f-mint/25">
               {t('cta_footer')}
             </p>

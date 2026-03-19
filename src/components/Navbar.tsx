@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { openContactModal } from '../utils/contactEvents';
 
 export default function Navbar({ currentPath }: { currentPath: string }) {
   const [scrolled, setScrolled] = useState(false);
@@ -108,7 +109,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
                       <li><a href="#home" className="hover:text-f-neon transition-colors">Sobre a Foster</a></li>
                       <li><a href="#home" className="hover:text-f-neon transition-colors">Carlos Borges</a></li>
-                      <li><a href="#home" className="hover:text-f-neon transition-colors">Contato</a></li>
+                      <li><button onClick={openContactModal} className="hover:text-f-neon transition-colors cursor-pointer text-left">Contato</button></li>
                     </ul>
                   </div>
                 </div>
@@ -127,9 +128,12 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
         {/* Right: CTAs & Social */}
         <div className="hidden md:flex items-center gap-5">
           <LangSwitcher />
-          <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300">
+          <button 
+            onClick={openContactModal} 
+            className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300 cursor-pointer"
+          >
             {t('nav_cta')} →
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -185,14 +189,18 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
               </details>
               <a href="#ifoster" onClick={() => setMobileMenuOpen(false)} className="text-f-neon">{t('nav_ifoster')}</a>
               <a href="#clone-digital" onClick={() => setMobileMenuOpen(false)} className="text-f-neon">{t('nav_clone_digital')}</a>
+              <button onClick={() => { setMobileMenuOpen(false); openContactModal(); }} className="text-f-mint text-left">Contato</button>
             </div>
 
             <div className="h-px w-full bg-f-neon/10 my-6"></div>
 
             <div className="mt-auto pb-8">
-              <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all duration-300">
+              <button 
+                onClick={() => { setMobileMenuOpen(false); openContactModal(); }} 
+                className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all duration-300"
+              >
                 {t('nav_cta')} →
-              </a>
+              </button>
             </div>
           </div>
         </div>
