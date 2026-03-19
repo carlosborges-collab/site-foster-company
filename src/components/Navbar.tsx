@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Instagram, Youtube, ExternalLink } from 'lucide-react';
+import { Menu, X, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 export default function Navbar({ currentPath }: { currentPath: string }) {
@@ -78,9 +78,9 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                   <div>
                     <a href="#create" className="block font-display font-semibold text-[13px] text-f-neon mb-4 hover:underline">◈ Foster Create</a>
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
-                      <li><a href="#production" className="hover:text-f-neon transition-colors">Produção Audiovisual com IA</a></li>
-                      <li><a href="#create" className="hover:text-f-neon transition-colors">Avatar de IA</a></li>
-                      <li><a href="#create" className="hover:text-f-neon transition-colors">Conteúdo com IA</a></li>
+                      <li><a href="#create-producao" className="hover:text-f-neon transition-colors">Produção Audiovisual com IA</a></li>
+                      <li><a href="#create-avatar" className="hover:text-f-neon transition-colors">Avatar de IA</a></li>
+                      <li><a href="#create-conteudo" className="hover:text-f-neon transition-colors">Conteúdo com IA</a></li>
                     </ul>
                   </div>
                   <div>
@@ -166,9 +166,9 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                 <div className="flex flex-col gap-4 mt-4 pl-4 border-l border-f-neon/20 text-[15px]">
                   <div className="flex flex-col gap-2">
                     <span className="text-f-neon text-xs font-mono">◈ Foster Create</span>
-                    <a href="#production" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Produção Audiovisual com IA</a>
-                    <a href="#create" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Avatar de IA</a>
-                    <a href="#create" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Conteúdo com IA</a>
+                    <a href="#create-producao" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Produção Audiovisual com IA</a>
+                    <a href="#create-avatar" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Avatar de IA</a>
+                    <a href="#create-conteudo" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Conteúdo com IA</a>
                   </div>
                   <div className="flex flex-col gap-2 mt-2">
                     <span className="text-f-neon text-xs font-mono">⬡ Foster Build</span>
@@ -180,15 +180,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                     <a href="#grow" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Gestão de YouTube</a>
                     <a href="#grow" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Mentoria 3Ps</a>
                     <a href="#grow" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Posicionamento Digital</a>
-                  </div>
-                  <div className="flex flex-col gap-2 mt-2">
-                    <span className="text-f-mint/60 text-xs font-mono">✦ Foster</span>
-                    <a href="#plataformas" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon flex items-center gap-1">Plataformas <ExternalLink size={12} /></a>
-                    <a href="#canais" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon flex items-center gap-1">Canais Próprios <ExternalLink size={12} /></a>
-                    <a href="#musica" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon flex items-center gap-1">Selo Musical <ExternalLink size={12} /></a>
-                    <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Sobre a Foster</a>
-                    <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Carlos Borges</a>
-                    <a href="#home" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Contato</a>
                   </div>
                 </div>
               </details>

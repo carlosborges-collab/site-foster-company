@@ -6,7 +6,6 @@ import Ifoster from './pages/Ifoster';
 import Grow from './pages/Grow';
 import Create from './pages/Create';
 import Build from './pages/Build';
-import Production from './pages/Production';
 import Platforms from './pages/Platforms';
 import Channels from './pages/Channels';
 import Music from './pages/Music';
@@ -20,14 +19,33 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const newHash = window.location.hash || '#home';
-      if (newHash !== currentPath) {
+      // Normalize internal anchors (e.g. #create-production -> #create)
+      const baseHash = newHash.startsWith('#create') ? '#create' : newHash;
+      
+      if (baseHash !== currentPath) {
         setIsTransitioning(true);
         setTimeout(() => {
-          setCurrentPath(newHash);
-          setDisplayPath(newHash);
-          window.scrollTo(0, 0);
+          setCurrentPath(baseHash);
+          setDisplayPath(baseHash);
+          
+          // If it's a specific anchor, scroll after render
+          if (newHash.includes('-')) {
+             const elementId = newHash.split('-')[1];
+             setTimeout(() => {
+               const el = document.getElementById(elementId);
+               if (el) el.scrollIntoView({ behavior: 'smooth' });
+             }, 100);
+          } else {
+             window.scrollTo(0, 0);
+          }
+          
           setIsTransitioning(false);
         }, 200);
+      } else if (newHash.includes('-')) {
+        // Just scroll if we are already on the page
+        const elementId = newHash.split('-')[1];
+        const el = document.getElementById(elementId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
     };
 
@@ -36,12 +54,13 @@ export default function App() {
   }, [currentPath]);
 
   const renderPage = () => {
+    // Exact or prefix match for consolidated pages
+    if (displayPath.startsWith('#create')) return <Create />;
+    
     switch (displayPath) {
       case '#ifoster': return <Ifoster />;
       case '#grow': return <Grow />;
-      case '#create': return <Create />;
       case '#build': return <Build />;
-      case '#production': return <Production />;
       case '#plataformas': return <Platforms />;
       case '#canais': return <Channels />;
       case '#musica': return <Music />;
