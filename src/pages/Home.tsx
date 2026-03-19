@@ -607,15 +607,17 @@ export default function Home() {
                   Creative AI Studio
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                  {/* Lado Esquerdo: Texto + YouTube */}
+                {/* Cabeçalho do Case */}
+                <div className="mb-10">
+                  <h3 className="font-display font-bold text-4xl text-f-mint mb-4">Rony Meisler — Clone Digital</h3>
+                  <p className="text-f-mint/65 mb-8 text-lg leading-relaxed max-w-3xl">
+                    Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda, unindo a essência do criador com a escala infinita da inteligência artificial.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                  {/* Lado Esquerdo: YouTube */}
                   <div className="lg:col-span-8 flex flex-col">
-                    <h3 className="font-display font-bold text-4xl text-f-mint mb-4">Rony Meisler — Clone Digital</h3>
-                    <p className="text-f-mint/65 mb-8 text-lg leading-relaxed max-w-3xl">
-                      Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda, unindo a essência do criador com a escala infinita da inteligência artificial.
-                    </p>
-                    
-                    {/* YouTube Video - No lugar onde estavam os botões */}
                     <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => !playRony && setPlayRony(true)}>
                       {playRony ? (
                         <iframe
