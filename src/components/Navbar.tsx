@@ -121,6 +121,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             )}
           </div>
           <a href="#ifoster" className={`text-[14px] transition-colors duration-200 ${currentPath === '#ifoster' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_ifoster')}</a>
+          <a href="#clone-digital" className={`text-[14px] transition-colors duration-200 ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_clone_digital')}</a>
         </div>
 
         {/* Right: CTAs & Social */}
@@ -183,6 +184,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                 </div>
               </details>
               <a href="#ifoster" onClick={() => setMobileMenuOpen(false)} className="text-f-neon">{t('nav_ifoster')}</a>
+              <a href="#clone-digital" onClick={() => setMobileMenuOpen(false)} className="text-f-neon">{t('nav_clone_digital')}</a>
             </div>
 
             <div className="h-px w-full bg-f-neon/10 my-6"></div>
