@@ -10,8 +10,14 @@ export default function Footer() {
           
           {/* Col 1 */}
           <div>
-            <h2 className="font-display font-bold text-2xl text-f-neon tracking-[0.15em] mb-1">FOSTER</h2>
-            <p className="font-mono text-[11px] text-f-mint/35 uppercase mb-1">Creative AI Studio</p>
+            <div className="mb-4">
+              <img 
+                src="/Company branco.png" 
+                alt="Foster Company" 
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <p className="font-mono text-[11px] text-f-mint/35 uppercase mb-1 tracking-widest">Creative AI Studio</p>
             <p className="italic text-sm text-f-mint/35 mb-6">Criados para Criar</p>
             
             <div className="flex gap-3">
@@ -29,7 +35,7 @@ export default function Footer() {
 
           {/* Col 2 */}
           <div>
-            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase">{t('footer_solutions_title')}</h3>
+            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase tracking-wider">{t('footer_solutions_title')}</h3>
             <ul className="space-y-4 text-sm text-f-mint/65">
               <li><a href="#production" className="hover:text-f-neon transition-colors">Produção Audiovisual</a></li>
               <li><a href="#create" className="hover:text-f-neon transition-colors">Foster Create</a></li>
@@ -44,7 +50,7 @@ export default function Footer() {
 
           {/* Col 3 */}
           <div>
-            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase">{t('footer_links_title')}</h3>
+            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase tracking-wider">{t('footer_links_title')}</h3>
             <ul className="space-y-4 text-sm text-f-mint/65">
               <li><a href="#home" className="hover:text-f-neon transition-colors">{t('nav_work')}</a></li>
               <li><a href="#home" className="hover:text-f-neon transition-colors">{t('nav_carlos')}</a></li>
@@ -55,7 +61,7 @@ export default function Footer() {
 
           {/* Col 4 */}
           <div>
-            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase">Contato</h3>
+            <h3 className="font-mono text-xs text-f-neon mb-6 uppercase tracking-wider">Contato</h3>
             <ul className="space-y-4 text-sm text-f-mint/65">
               <li><a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="hover:text-f-neon transition-colors">WhatsApp</a></li>
               <li><a href="mailto:contato@foster.company" className="hover:text-f-neon transition-colors">E-mail</a></li>

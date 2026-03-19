@@ -46,12 +46,16 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
       <div className="max-w-7xl mx-auto px-5 md:px-8 h-full flex items-center justify-between">
         
         {/* Left: Logo */}
-        <div className="flex items-center gap-3">
-          <a href="#home" className="font-display font-bold text-f-neon tracking-[0.18em] text-xl">
-            FOSTER
+        <div className="flex items-center gap-4">
+          <a href="#home" className="block">
+            <img 
+              src="/Company branco.png" 
+              alt="Foster Company" 
+              className="h-7 md:h-8 w-auto object-contain"
+            />
           </a>
-          <span className="text-f-neon/40 hidden sm:inline">·</span>
-          <span className="font-mono text-[11px] text-f-mint/40 uppercase hidden sm:inline">
+          <span className="text-f-neon/20 hidden sm:inline">|</span>
+          <span className="font-mono text-[10px] text-f-mint/40 uppercase hidden sm:inline tracking-widest">
             Creative AI Studio
           </span>
         </div>
@@ -139,9 +143,13 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-sm">
-          <div className="w-4/5 max-w-sm bg-f-black h-full border-l border-f-neon/20 p-6 flex flex-col overflow-y-auto">
-            <div className="flex justify-between items-center mb-8">
-              <span className="font-display font-bold text-f-neon tracking-[0.18em] text-xl">FOSTER</span>
+          <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 p-6 flex flex-col overflow-y-auto">
+            <div className="flex justify-between items-center mb-10">
+              <img 
+                src="/Company branco.png" 
+                alt="Foster Company" 
+                className="h-6 w-auto object-contain"
+              />
               <button onClick={() => setMobileMenuOpen(false)} className="text-f-neon">
                 <X size={24} />
               </button>
