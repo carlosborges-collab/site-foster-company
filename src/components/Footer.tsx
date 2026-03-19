@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-f-neon/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-f-mint/30">
-          <p>© 2025 Foster Company. {t('footer_rights')}</p>
+          <p>© 2026 Foster Company. {t('footer_rights')}</p>
           <p>Balneário Camboriú, Santa Catarina, Brasil 🇧🇷</p>
         </div>
       </div>

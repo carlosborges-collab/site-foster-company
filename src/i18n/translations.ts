@@ -111,7 +111,7 @@ export const translations = {
     cta_title_2: "dominar o digital?",
     cta_desc: "A primeira conversa é gratuita. Sem compromisso. Só resultado.",
     cta_btn: "Falar com a Foster agora →",
-    cta_footer: "WhatsApp · Balneário Camboriú, Brasil 🇧🇷",
+    cta_footer: "Balneário Camboriú, Brasil 🇧🇷",
     footer_rights: "Todos os direitos reservados.",
     footer_solutions_title: "Soluções",
     footer_links_title: "Links Rápidos",
