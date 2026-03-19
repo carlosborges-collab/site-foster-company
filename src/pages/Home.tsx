@@ -600,58 +600,62 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            {/* Case 02 - RONY MEISLER ATUALIZADO */}
-            <AnimatedSection delay={100}>
+            {/* Case 02 - RONY MEISLER ATUALIZADO - LARGURA TOTAL */}
+            <AnimatedSection delay={100} className="md:col-span-2">
               <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/45 transition-colors duration-300 h-full flex flex-col">
                 <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">
                   Creative AI Studio
                 </div>
-                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Rony Meisler — Clone Digital</h3>
-                <p className="text-f-mint/65 mb-8 flex-grow">Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda.</p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                  {/* YouTube Embed */}
-                  <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer" onClick={() => !playRony && setPlayRony(true)}>
-                    {playRony ? (
-                      <iframe
-                        src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1"
-                        title="Rony Meisler Case"
-                        className="absolute inset-0 w-full h-full border-none"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
+                <div className="flex flex-col lg:flex-row gap-12 items-center mb-8">
+                  <div className="flex-1">
+                    <h3 className="font-display font-bold text-4xl text-f-mint mb-4">Rony Meisler — Clone Digital</h3>
+                    <p className="text-f-mint/65 mb-8 text-lg leading-relaxed">Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda, unindo a essência do criador com a escala infinita da inteligência artificial.</p>
+                    <div className="flex gap-4">
+                      <a href="https://youtu.be/n1nP4gf4DJc?si=1pN8KTkYaDsZGyjc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-5 py-2.5 rounded-full font-mono text-[12px] hover:bg-f-neon hover:text-f-black transition-all">
+                        <Youtube size={16} /> Ver no YouTube
+                      </a>
+                      <a href="https://www.instagram.com/reel/DVLX0vpAASA/?igsh=MXN1NGx5emRmeW1waQ==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-5 py-2.5 rounded-full font-mono text-[12px] hover:bg-f-neon hover:text-f-black transition-all">
+                        <Instagram size={16} /> Ver no Instagram
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* YouTube Embed */}
+                    <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => !playRony && setPlayRony(true)}>
+                      {playRony ? (
+                        <iframe
+                          src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1"
+                          title="Rony Meisler Case"
+                          className="absolute inset-0 w-full h-full border-none"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      ) : (
+                        <>
+                          <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                            <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+                          </div>
+                          <img 
+                            src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" 
+                            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" 
+                            alt="Rony Meisler Case" 
+                          />
+                        </>
+                      )}
+                    </div>
+                    {/* Instagram Embed */}
+                    <div className="aspect-video w-full border border-f-neon/30 rounded-xl overflow-hidden bg-f-dark/30 shadow-2xl">
+                      <iframe 
+                        src="https://www.instagram.com/reel/DVLX0vpAASA/embed" 
+                        className="w-full h-full border-none"
+                        scrolling="no"
+                        allowTransparency={true}
                       ></iframe>
-                    ) : (
-                      <>
-                        <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                          <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
-                        </div>
-                        <img 
-                          src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" 
-                          className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" 
-                          alt="Rony Meisler Case" 
-                        />
-                      </>
-                    )}
-                  </div>
-                  {/* Instagram Embed */}
-                  <div className="aspect-video w-full border border-f-neon/30 rounded-xl overflow-hidden bg-f-dark/30">
-                    <iframe 
-                      src="https://www.instagram.com/reel/DVLX0vpAASA/embed" 
-                      className="w-full h-full border-none"
-                      scrolling="no"
-                      allowTransparency={true}
-                    ></iframe>
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex gap-4 mb-4">
-                  <a href="https://youtu.be/n1nP4gf4DJc?si=1pN8KTkYaDsZGyjc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-4 py-2 rounded-full font-mono text-[11px] hover:bg-f-neon hover:text-f-black transition-all">
-                    <Youtube size={14} /> Ver no YouTube
-                  </a>
-                  <a href="https://www.instagram.com/reel/DVLX0vpAASA/?igsh=MXN1NGx5emRmeW1waQ==" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-f-neon/10 border border-f-neon/30 text-f-neon px-4 py-2 rounded-full font-mono text-[11px] hover:bg-f-neon hover:text-f-black transition-all">
-                    <Instagram size={14} /> Ver no Instagram
-                  </a>
-                </div>
+                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest mt-auto border-t border-f-neon/10 pt-4">Foster Create · iFoster Avatar · Case Nacional</div>
               </div>
             </AnimatedSection>
           </div>
