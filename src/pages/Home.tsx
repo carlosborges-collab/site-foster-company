@@ -326,10 +326,8 @@ export default function Home() {
             <AnimatedSection delay={200}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
-                    <span className="font-display font-bold text-xl text-f-neon">E</span>
-                  </div>
-                  <div>
+                  <img src="/echowise-logo.png" alt="Echowise AI" className="h-12 w-auto object-contain" />
+                  <div className="ml-auto">
                     <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       SaaS · Inteligência Artificial
