@@ -207,7 +207,6 @@ export default function Home() {
               <AnimatedSection>
                 <div className="font-mono text-f-neon/70 mb-6" data-i18n="ifoster_eyebrow">{t('ifoster_eyebrow')}</div>
                 <h2 className="font-display font-bold text-[clamp(40px,6vw,56px)] text-f-mint mb-8">
-                  <span className="block">iFoster.</span>
                   <span className="block" data-i18n="ifoster_hero_title_1">{t('ifoster_hero_title_1')}</span>
                   <span className="block" data-i18n="ifoster_hero_title_2">{t('ifoster_hero_title_2')}</span>
                   <span className="block text-f-neon text-glow-sm" data-i18n="ifoster_hero_title_3">{t('ifoster_hero_title_3')}</span>
@@ -771,7 +770,7 @@ export default function Home() {
       </section>
 
       {/* CARLOS BORGES */}
-      <section id="carlos-borges" className="py-28 bg-f-dark">
+      <section id="carlos-borges" className="pt-28 pb-12 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
