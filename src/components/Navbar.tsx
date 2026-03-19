@@ -21,19 +21,21 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
     <div className={`flex flex-row gap-1 bg-f-neon/5 rounded-full p-1 ${mobile ? 'mb-8 justify-center' : ''}`}>
       <button 
         onClick={() => setLanguage('pt')} 
-        className={`px-2.5 py-1 rounded-full font-mono text-[11px] transition-all duration-200 ${language === 'pt' ? 'bg-f-neon/15 text-f-neon border border-f-neon/30' : 'text-f-mint/40 hover:text-f-mint/80 border border-transparent'}`}
+        className={`px-2.5 py-1 rounded-full font-mono text-[11px] transition-all duration-200 ${language === 'pt' ? 'bg-f-neon/15 text-f-neon border border-f-neon/30' : 'text-f-mint/40 hover:text-f-mint/80 border border-transparent cursor-pointer'}`}
       >
         🇧🇷 PT
       </button>
       <button 
-        onClick={() => setLanguage('es')} 
-        className={`px-2.5 py-1 rounded-full font-mono text-[11px] transition-all duration-200 ${language === 'es' ? 'bg-f-neon/15 text-f-neon border border-f-neon/30' : 'text-f-mint/40 hover:text-f-mint/80 border border-transparent'}`}
+        disabled
+        title="Em breve"
+        className="px-2.5 py-1 rounded-full font-mono text-[11px] text-f-mint/20 border border-transparent cursor-not-allowed opacity-40"
       >
         🇪🇸 ES
       </button>
       <button 
-        onClick={() => setLanguage('en')} 
-        className={`px-2.5 py-1 rounded-full font-mono text-[11px] transition-all duration-200 ${language === 'en' ? 'bg-f-neon/15 text-f-neon border border-f-neon/30' : 'text-f-mint/40 hover:text-f-mint/80 border border-transparent'}`}
+        disabled
+        title="Coming soon"
+        className="px-2.5 py-1 rounded-full font-mono text-[11px] text-f-mint/20 border border-transparent cursor-not-allowed opacity-40"
       >
         🇺🇸 EN
       </button>
