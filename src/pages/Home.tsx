@@ -248,7 +248,7 @@ export default function Home() {
                     <span className="font-display font-bold text-xl text-f-neon">S</span>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       YouTube Analytics & SEO
                     </div>
@@ -275,9 +275,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="#" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                <span className="font-display font-medium text-[14px] text-f-neon/40 mt-auto">
                   Conhecer o Stratube 2.0 →
-                </a>
+                </span>
               </div>
             </AnimatedSection>
 
@@ -289,7 +289,7 @@ export default function Home() {
                     <span className="font-display font-bold text-xl text-f-neon">N</span>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       LegalTech · Propriedade Intelectual
                     </div>
@@ -316,9 +316,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="#" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                <span className="font-display font-medium text-[14px] text-f-neon/40 mt-auto">
                   Conhecer Nomes & Marcas →
-                </a>
+                </span>
               </div>
             </AnimatedSection>
 
@@ -330,7 +330,7 @@ export default function Home() {
                     <span className="font-display font-bold text-xl text-f-neon">E</span>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       SaaS · Inteligência Artificial
                     </div>
@@ -357,9 +357,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="#" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                <span className="font-display font-medium text-[14px] text-f-neon/40 mt-auto">
                   Conhecer o Echowise AI →
-                </a>
+                </span>
               </div>
             </AnimatedSection>
           </div>
