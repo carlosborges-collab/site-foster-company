@@ -19,23 +19,23 @@ export default function Home() {
 
   const musicArtists = [
     { 
-      name: "Bento do Vale", 
-      image: "https://i.scdn.co/image/ab6761610000e5eb54199f7d0c3298818818967a", 
+      name: "Pai Nosso", 
+      image: "/artists/pai-nosso.png", 
       url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" 
     },
     { 
-      name: "Bento Kids", 
-      image: "https://i.scdn.co/image/ab6761610000e5eb66b1a7d65377f3e8f17e0b5f", 
+      name: "Puppies Kids", 
+      image: "/artists/puppies-kids.png", 
       url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" 
     },
     { 
-      name: "Echowise", 
-      image: "https://i.scdn.co/image/ab6761610000e5eb4e6e96a4c9c1b4d08b3e8a4a", 
+      name: "Além do Som", 
+      image: "/artists/alem-do-som.png", 
       url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" 
     },
     { 
-      name: "Relatos da Arca", 
-      image: "https://i.scdn.co/image/ab6761610000e5eb674b0c6085a113e1762a4b8b", 
+      name: "Sem Rótulo", 
+      image: "/artists/sem-rotulo.png", 
       url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" 
     }
   ];
@@ -424,7 +424,6 @@ export default function Home() {
                     {t('ifoster_card_desc')}
                   </p>
                   
-                  {/* URL do iFoster */}
                   <a href="[URL do iFoster]" target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
                     {t('ifoster_card_cta')}
                   </a>
@@ -444,7 +443,6 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Stratube */}
             <AnimatedSection>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -479,7 +477,6 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            {/* Nomes e Marcas */}
             <AnimatedSection delay={100}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -514,7 +511,6 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            {/* Echowise */}
             <AnimatedSection delay={200}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
