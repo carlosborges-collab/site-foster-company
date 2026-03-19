@@ -443,6 +443,7 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Stratube */}
             <AnimatedSection>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -477,6 +478,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
+            {/* Nomes e Marcas */}
             <AnimatedSection delay={100}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -511,6 +513,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
+            {/* Echowise */}
             <AnimatedSection delay={200}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
