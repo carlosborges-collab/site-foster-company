@@ -3,6 +3,7 @@ export type Language = 'pt' | 'es' | 'en';
 export const translations = {
   pt: {
     // Navbar
+    nav_home: "Home",
     nav_solutions: "Soluções",
     nav_ifoster: "iFoster",
     nav_clone_digital: "Clone Digital",
@@ -99,7 +100,7 @@ export const translations = {
     music_desc: "Somos um selo musical. Produzimos, lançamos e distribuímos música em todas as plataformas de streaming — com IA e com artistas reais sob nossa curadoria.",
     music_card1_badge: "🎵 No streaming",
     music_card1_title: "Produção musical com IA.",
-    music_card1_desc: "Músicas de diversos estilos disponíveis em Spotify, Apple Music, Deezer e mais.",
+    music_card1_desc: "Músicas de diversos estilos disponíveis em Spotify, Apple Music, Deezer e more.",
     music_card1_cta: "Crie sua música com a Foster →",
     music_card2_badge: "🚀 Em breve",
     music_card2_title: "Lançando novos artistas.",
@@ -331,6 +332,7 @@ export const translations = {
     og_title: "Foster Company — Creative AI Studio",
   },
   es: {
+    nav_home: "Inicio",
     nav_clone_digital: "Clone Digital",
     nav_yt_growth: "Gestión de YouTube",
     meta_title: "Foster Company — Creative AI Studio",
@@ -338,6 +340,7 @@ export const translations = {
     nav_cta: "Hablar con Foster",
   },
   en: {
+    nav_home: "Home",
     nav_clone_digital: "Digital Clone",
     nav_yt_growth: "YouTube Growth",
     meta_title: "Foster Company — Creative AI Studio",
