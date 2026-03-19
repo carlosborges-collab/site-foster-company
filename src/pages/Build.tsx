@@ -1,5 +1,3 @@
-"use client";
-
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function Build() {
@@ -25,6 +23,38 @@ export default function Build() {
         </div>
       </section>
 
+      {/* SEÇÃO 1: SITES COM IA */}
+      <section id="sites" className="py-28 bg-f-dark border-y border-f-neon/10 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <div className="font-mono text-4xl text-f-neon/50 mb-6">{'</>'}</div>
+              <h2 className="font-display font-bold text-[clamp(36px,5vw,52px)] text-f-mint mb-8">
+                Sites de Alta Performance <br/><span className="text-f-neon">com IA Nativa.</span>
+              </h2>
+              <p className="text-lg text-f-mint/70 mb-8 leading-relaxed">
+                Não criamos apenas sites bonitos. Desenvolvemos ferramentas de conversão ultra-velozes, integradas com APIs de inteligência artificial para personalizar a experiência de cada visitante em tempo real.
+              </p>
+              <ul className="space-y-4 font-mono text-sm text-f-mint/60">
+                <li className="flex items-center gap-3"><span className="text-f-neon">●</span> SEO Técnico Avançado</li>
+                <li className="flex items-center gap-3"><span className="text-f-neon">●</span> Design Mobile-First Exclusivo</li>
+                <li className="flex items-center gap-3"><span className="text-f-neon">●</span> Integração iFoster Chat</li>
+              </ul>
+            </AnimatedSection>
+            <AnimatedSection delay={200}>
+              <div className="w-full aspect-[4/3] bg-f-black border border-f-neon/20 rounded-2xl p-6 font-mono text-xs text-f-neon/70 overflow-hidden shadow-2xl">
+                <div className="mb-2 text-f-mint/40">// Building high-performance site</div>
+                <div className="mb-1">class FosterSite extends App {'{'}</div>
+                <div className="mb-1 ml-4">constructor() {'{'} super(); {'}'}</div>
+                <div className="mb-1 ml-4">optimize() {'{'} return IA.perfect(); {'}'}</div>
+                <div className="mb-1">{'}'}</div>
+                <div className="mt-8 text-f-neon animate-pulse">_ DEPLOYING TO VERCEL EDGE...</div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* SEÇÃO 2: PLATAFORMAS DIGITAIS */}
       <section id="plataformas" className="py-28 bg-f-black scroll-mt-20">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -38,34 +68,34 @@ export default function Build() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Stratube 2.0 */}
-            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group flex flex-col h-full">
+            {/* Stratube */}
+            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group">
               <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center mb-6">
                 <span className="font-display font-bold text-xl text-f-neon">S</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Stratube 2.0</h3>
-              <p className="text-sm text-f-mint/50 mb-6 flex-grow">Plataforma estratégica para YouTube. Pesquisa dados em tempo real para decisões acionáveis.</p>
-              <div className="font-mono text-[10px] text-f-neon uppercase">Categoria: YouTube Analytics & SEO ●</div>
+              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Stratube</h3>
+              <p className="text-sm text-f-mint/50 mb-6">Plataforma de inteligência e analytics para criadores de YouTube.</p>
+              <div className="font-mono text-[10px] text-f-neon uppercase">Status: Ativo ●</div>
             </div>
 
-            {/* Nomes & Marcas */}
-            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group flex flex-col h-full">
+            {/* Nomes e Marcas */}
+            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group">
               <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center mb-6">
                 <span className="font-display font-bold text-xl text-f-neon">N</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Nomes & Marcas</h3>
-              <p className="text-sm text-f-mint/50 mb-6 flex-grow">LegalTech inteligente para registro de marcas. Análise baseada em toda a base histórica do INPI.</p>
-              <div className="font-mono text-[10px] text-f-neon uppercase">Categoria: Propriedade Intelectual ●</div>
+              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Nomes e Marcas</h3>
+              <p className="text-sm text-f-mint/50 mb-6">Ecossistema de branding e naming para novas empresas.</p>
+              <div className="font-mono text-[10px] text-f-neon uppercase">Status: Ativo ●</div>
             </div>
 
-            {/* Echowise AI */}
-            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group flex flex-col h-full">
+            {/* Echowise */}
+            <div className="bg-f-dark/50 border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 transition-all group">
               <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center mb-6">
                 <span className="font-display font-bold text-xl text-f-neon">E</span>
               </div>
-              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Echowise AI</h3>
-              <p className="text-sm text-f-mint/50 mb-6 flex-grow">Crie seu clone digital com IA e atenda seu público 24 horas por dia, sem estar disponível.</p>
-              <div className="font-mono text-[10px] text-f-neon uppercase">Categoria: Marketplace de Experts ●</div>
+              <h3 className="font-display font-bold text-xl text-f-mint mb-3">Echowise</h3>
+              <p className="text-sm text-f-mint/50 mb-6">Tecnologia proprietária Foster para gestão de audiência.</p>
+              <div className="font-mono text-[10px] text-f-neon uppercase">Status: Ativo ●</div>
             </div>
           </div>
         </div>
@@ -76,7 +106,7 @@ export default function Build() {
         <div className="max-w-3xl mx-auto px-5">
           <AnimatedSection>
             <h2 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-f-mint mb-10">Pronto para escalar sua infraestrutura?</h2>
-            <a href="https://wa.me/5547992520857" target="_blank" rel="noopener noreferrer" className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300">
+            <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300">
               Falar com a Foster agora →
             </a>
           </AnimatedSection>
