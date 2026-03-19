@@ -423,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* PLATAFORMAS */}
-      <section id="plataformas" className="pt-24 pb-8 bg-f-dark">
+      <section id="plataformas" className="py-24 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="mb-16">
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="platforms_eyebrow">{t('platforms_eyebrow')}</div>
@@ -906,10 +906,9 @@ export default function Home() {
               <AnimatedSection delay={200}>
                 <div className="font-mono text-f-neon/70 mb-5" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
                 <div className="mb-6">
-                  <h2 className="font-display font-bold text-[clamp(28px,4vw,44px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title">
-                    {t('founder_title')}
+                  <h2 className="font-display font-bold text-[clamp(28px,4vw,44px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title" dangerouslySetInnerHTML={{ __html: t('founder_title') }}>
                   </h2>
-                  <div className="font-display font-medium text-lg text-f-neon/80 italic">Carlos Borges — CEO & Founder</div>
+                  <div className="font-display font-medium text-lg text-f-neon/80 italic">Carlos Borges — Founder</div>
                 </div>
                 <div className="space-y-5 text-[16px] text-f-mint/65 font-light leading-[1.6] max-w-xl">
                   <p data-i18n="founder_p1">{t('founder_p1')}</p>
