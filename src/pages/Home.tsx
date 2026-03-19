@@ -17,6 +17,13 @@ export default function Home() {
     { text: "[ status  ] Sistema pronto. 🟢", color: "text-f-mint" }
   ];
 
+  const musicArtists = [
+    { name: "Bento do Vale", initial: "BV", url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" },
+    { name: "Bento Kids", initial: "BK", url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" },
+    { name: "Echowise", initial: "EW", url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" },
+    { name: "Relatos da Arca", initial: "RA", url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" }
+  ];
+
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     if (typewriterIndex < lines.length) {
@@ -857,6 +864,23 @@ export default function Home() {
                 <p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">
                   {t('music_card1_desc')}
                 </p>
+                
+                {/* Artistas Interativos */}
+                <div className="flex items-center gap-4 mb-8">
+                  {musicArtists.map((artist, i) => (
+                    <a 
+                      key={i} 
+                      href={artist.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden relative shadow-lg hover:scale-110 hover:border-f-neon transition-all duration-300 group/artist"
+                      title={artist.name}
+                    >
+                      <span className="font-display font-bold text-f-neon/50 text-sm group-hover/artist:text-f-neon transition-colors">{artist.initial}</span>
+                    </a>
+                  ))}
+                </div>
+
                 <div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">
                   Spotify · Apple Music · Deezer · YouTube Music
                 </div>
