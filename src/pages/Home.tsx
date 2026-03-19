@@ -837,60 +837,70 @@ export default function Home() {
       {/* CARLOS BORGES */}
       <section id="carlos-borges" className="py-28 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
-            <div className="lg:col-span-4 flex justify-center lg:justify-start">
+            <div className="lg:col-span-5">
               <AnimatedSection>
-                <div className="w-full max-w-xs aspect-[3/4] bg-gradient-to-b from-f-black to-f-dark border border-f-neon/20 rounded-2xl relative overflow-hidden flex flex-col items-center justify-center">
-                  <img 
-                    src="/carlos-borges.png" 
-                    alt="Carlos Borges - Fundador Foster Company" 
-                    className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-f-black/80 via-transparent to-transparent z-10"></div>
+                <div className="relative group">
+                  {/* Decoração de fundo para dar profundidade */}
+                  <div className="absolute -inset-4 bg-f-neon/5 rounded-3xl blur-2xl group-hover:bg-f-neon/10 transition-all duration-500"></div>
                   
-                  <div className="relative z-20 mt-auto p-6 w-full">
-                    <div className="font-display font-semibold text-lg text-f-mint">Carlos Borges</div>
-                    <div className="font-body text-[13px] text-f-mint/40">Fundador — Foster Company</div>
-                  </div>
-                  
-                  <div className="absolute bottom-4 left-4 font-mono text-[10px] bg-f-neon/10 border border-f-neon rounded-full px-3 py-1 text-f-neon z-20">
-                    Criados para Criar
+                  {/* Container Principal da Foto */}
+                  <div className="relative aspect-[4/5] bg-f-black border border-f-neon/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(80,242,167,0.05)] transition-all duration-500 hover:border-f-neon/40 hover:shadow-[0_0_60px_rgba(80,242,167,0.12)]">
+                    <img 
+                      src="/carlos-borges.png" 
+                      alt="Carlos Borges - Fundador Foster Company" 
+                      className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
+                    />
+                    
+                    {/* Overlay de gradiente para legibilidade do badge */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-f-black/60 via-transparent to-transparent"></div>
+                    
+                    {/* Badge de Cargo (Posicionado no canto) */}
+                    <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
+                      <div className="bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full">
+                        <span className="font-mono text-[11px] text-f-neon uppercase tracking-widest">Criados para Criar</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
             </div>
 
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-7">
               <AnimatedSection delay={200}>
                 <div className="font-mono text-f-neon/70 mb-6" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
-                <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-8 max-w-2xl" data-i18n="founder_title">
-                  {t('founder_title')}
-                </h2>
                 
-                <div className="space-y-6 text-[16px] text-f-mint/65 font-light max-w-2xl mb-10">
+                <div className="mb-8">
+                  <h2 className="font-display font-bold text-[clamp(32px,5vw,52px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title">
+                    {t('founder_title')}
+                  </h2>
+                  <div className="font-display font-medium text-xl text-f-neon/80 italic">Carlos Borges — CEO & Founder</div>
+                </div>
+                
+                <div className="space-y-6 text-[17px] text-f-mint/65 font-light leading-[1.6] max-w-2xl mb-12">
                   <p data-i18n="founder_p1">{t('founder_p1')}</p>
                   <p data-i18n="founder_p2">{t('founder_p2')}</p>
                   <p data-i18n="founder_p3">{t('founder_p3')}</p>
                 </div>
 
-                <ul className="space-y-3 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                   {[
                     "founder_li1",
                     "founder_li2",
                     "founder_li3",
-                    "founder_li4",
-                    "founder_li5"
+                    "founder_li4"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-[15px] text-f-mint/80">
-                      <span className="text-f-neon mt-0.5">▸</span>
-                      <span data-i18n={item}>{t(item)}</span>
-                    </li>
+                    <div key={i} className="flex items-center gap-3 p-4 bg-f-black/30 border border-f-neon/10 rounded-xl hover:border-f-neon/30 transition-colors">
+                      <div className="w-1.5 h-1.5 rounded-full bg-f-neon shrink-0"></div>
+                      <span className="text-[14px] text-f-mint/80 font-medium" data-i18n={item}>{t(item)}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="founder_cta">
+                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-f-neon/10 border border-f-neon/30 text-f-neon font-display font-semibold rounded-full px-8 py-4 hover:bg-f-neon hover:text-f-black transition-all duration-300 group" data-i18n="founder_cta">
                   {t('founder_cta')}
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </AnimatedSection>
             </div>
