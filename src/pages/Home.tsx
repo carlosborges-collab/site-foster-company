@@ -841,15 +841,22 @@ export default function Home() {
             
             <div className="lg:col-span-4 flex justify-center lg:justify-start">
               <AnimatedSection>
-                <div className="w-full max-w-xs aspect-[3/4] bg-gradient-to-b from-f-black to-f-dark border border-f-neon/20 rounded-2xl relative overflow-hidden flex flex-col items-center justify-center p-6">
-                  <div className="font-display font-bold text-6xl text-f-neon mb-4">CB</div>
-                  <div className="font-display font-semibold text-lg text-f-mint">Carlos Borges</div>
-                  <div className="font-body text-[13px] text-f-mint/40">Fundador — Foster Company</div>
+                <div className="w-full max-w-xs aspect-[3/4] bg-gradient-to-b from-f-black to-f-dark border border-f-neon/20 rounded-2xl relative overflow-hidden flex flex-col items-center justify-center">
+                  <img 
+                    src="/carlos-borges.png" 
+                    alt="Carlos Borges - Fundador Foster Company" 
+                    className="absolute inset-0 w-full h-full object-cover rounded-2xl z-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-f-black/80 via-transparent to-transparent z-10"></div>
                   
-                  <div className="absolute bottom-4 left-4 font-mono text-[10px] bg-f-neon/10 border border-f-neon rounded-full px-3 py-1 text-f-neon">
+                  <div className="relative z-20 mt-auto p-6 w-full">
+                    <div className="font-display font-semibold text-lg text-f-mint">Carlos Borges</div>
+                    <div className="font-body text-[13px] text-f-mint/40">Fundador — Foster Company</div>
+                  </div>
+                  
+                  <div className="absolute bottom-4 left-4 font-mono text-[10px] bg-f-neon/10 border border-f-neon rounded-full px-3 py-1 text-f-neon z-20">
                     Criados para Criar
                   </div>
-                  {/* <img src="carlos-borges.jpg" className="absolute inset-0 w-full h-full object-cover rounded-2xl" /> */}
                 </div>
               </AnimatedSection>
             </div>
