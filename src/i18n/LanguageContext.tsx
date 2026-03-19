@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { translations, Language } from './translations';
 
@@ -28,27 +30,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguageState(lang);
     localStorage.setItem('foster_lang', lang);
     document.documentElement.lang = lang;
-    
-    // Apply translations directly to DOM elements with data-i18n
-    setTimeout(() => {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (key && (translations[lang] as any)[key]) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            (el as HTMLInputElement).placeholder = (translations[lang] as any)[key];
-          } else {
-            el.innerHTML = (translations[lang] as any)[key];
-          }
-        }
-      });
-      
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (key && (translations[lang] as any)[key]) {
-          (el as HTMLInputElement).placeholder = (translations[lang] as any)[key];
-        }
-      });
-    }, 0);
   };
 
   useEffect(() => {
@@ -57,9 +38,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', translations[language].meta_description);
-    
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', translations[language].og_title);
   }, [language]);
 
   const t = (key: string): string => {
