@@ -263,7 +263,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="mb-20">
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="verticals_eyebrow">{t('verticals_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(32px,5vw,48px)] text-f-mint mb-4" data-i18n="verticals_title">{t('verticals_title')}</h2>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-f-mint mb-4" data-i18n="verticals_title">{t('verticals_title')}</h2>
             <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuidar de tudo.</p>
           </AnimatedSection>
 
@@ -584,7 +584,7 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
                   </div>
-                  <span className="absolute bottom-3 right-3 font-mono text-[10px] text-f-mint/30">[ vídeo do avatar ]</span>
+                  <span className="absolute bottom-3 right-3 font-mono text-[10px] text-f-mint/30 z-10">[ vídeo do avatar ]</span>
                   {/* Embed YouTube */}
                 </div>
                 <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Create · iFoster Avatar</div>
@@ -815,20 +815,22 @@ export default function Home() {
       </section>
 
       {/* NÚMEROS */}
-      <section className="py-20 bg-f-black border-t border-f-neon/10">
+      <section className="py-24 bg-f-black border-t border-f-neon/10">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-f-neon/15">
-            <AnimatedSection className="text-center py-6 md:py-0">
-              <div className="font-display font-bold text-6xl text-f-neon mb-2">15+</div>
-              <div className="font-body text-sm text-f-mint/50 uppercase tracking-[0.1em]">anos de produção</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-0 md:divide-x divide-f-neon/15 items-start">
+            <AnimatedSection className="text-center px-4">
+              <div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon mb-2">15+</div>
+              <div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[160px] mx-auto">anos de produção</div>
             </AnimatedSection>
-            <AnimatedSection delay={100} className="text-center py-6 md:py-0">
-              <div className="font-display font-bold text-6xl text-f-neon mb-2">+500</div>
-              <div className="font-body text-sm text-f-mint/50 uppercase tracking-[0.1em]">projetos na área de comunicação</div>
+            
+            <AnimatedSection delay={100} className="text-center px-4">
+              <div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon mb-2">+500</div>
+              <div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[200px] mx-auto">projetos de comunicação</div>
             </AnimatedSection>
-            <AnimatedSection delay={200} className="text-center py-6 md:py-0">
-              <div className="font-display font-bold text-[clamp(48px,5vw,64px)] text-f-neon text-glow-sm mb-2">+1 Bilhão</div>
-              <div className="font-body text-sm text-f-mint/50 uppercase tracking-[0.1em]">de visualizações geradas para parceiros</div>
+            
+            <AnimatedSection delay={200} className="text-center px-4">
+              <div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon text-glow-sm mb-2">+1 Bi</div>
+              <div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[220px] mx-auto">visualizações geradas</div>
             </AnimatedSection>
           </div>
         </div>
