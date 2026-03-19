@@ -4,7 +4,7 @@ export const translations = {
   pt: {
     // Meta
     meta_title: "Foster Company — Creative AI Studio",
-    meta_description: "Criatividade aumentada por IA. Produção audiovisual, canais de YouTube e plataformas digitais.",
+    meta_description: "Criatividade amplificada por IA. Produção audiovisual, canais de YouTube e plataformas digitais.",
     og_title: "Foster Company — Creative AI Studio",
     
     // Navbar
@@ -22,7 +22,7 @@ export const translations = {
     // Home - Hero
     hero_badge: "Creative AI Studio",
     hero_headline_1: "Criatividade",
-    hero_headline_2: "aumentada por",
+    hero_headline_2: "amplificada por",
     hero_headline_3: "inteligência",
     hero_headline_4: "artificial.",
     hero_subtitle: "A Foster Company é um estúdio de inovação que une estratégia de conteúdo, produção audiovisual e as ferramentas de IA mais avançadas do mundo.",
@@ -99,7 +99,7 @@ export const translations = {
     grow_cta: "Ver Foster Grow →",
 
     // Home - Plataformas
-    platforms_eyebrow: "/ ecossistema foster",
+    platforms_eyebrow: "/ foster ecosystem",
     platforms_title: "Além dos serviços: nossas plataformas.",
     platforms_desc: "Desenvolvemos produtos digitais próprios que já estão no mercado. Cada plataforma é uma extensão da nossa visão criativa e tecnológica.",
     platforms_cta: "Ver todas as plataformas →",
@@ -160,7 +160,7 @@ export const translations = {
     cta_footer: "WhatsApp · Resposta em até 24h · Balneário Camboriú, Brasil 🇧🇷",
 
     // Footer
-    footer_desc: "Creative AI Studio. Criatividade aumentada por inteligência artificial.",
+    footer_desc: "Creative AI Studio. Criatividade amplificada por inteligência artificial.",
     footer_links_title: "Links Rápidos",
     footer_solutions_title: "Soluções",
     footer_social_title: "Social",
@@ -182,7 +182,7 @@ export const translations = {
   es: {
     // Meta
     meta_title: "Foster Company — Creative AI Studio",
-    meta_description: "Creatividad potenciada por IA. Producción audiovisual, canales de YouTube y plataformas digitales.",
+    meta_description: "Creatividad amplificada por IA. Producción audiovisual, canales de YouTube y plataformas digitales.",
     og_title: "Foster Company — Creative AI Studio",
     
     // Navbar
@@ -200,7 +200,7 @@ export const translations = {
     // Home - Hero
     hero_badge: "Creative AI Studio",
     hero_headline_1: "Creatividad",
-    hero_headline_2: "potenciada por",
+    hero_headline_2: "amplificada por",
     hero_headline_3: "inteligencia",
     hero_headline_4: "artificial.",
     hero_subtitle: "Foster Company es un estudio de innovación que une estrategia de contenido, producción audiovisual y las herramientas de IA más avanzadas del mundo.",
@@ -277,7 +277,7 @@ export const translations = {
     grow_cta: "Ver Foster Grow →",
 
     // Home - Plataformas
-    platforms_eyebrow: "/ ecosistema foster",
+    platforms_eyebrow: "/ foster ecosystem",
     platforms_title: "Más allá de los servicios: nuestras plataformas.",
     platforms_desc: "Desarrollamos productos digitales propios que ya están en el mercado. Cada plataforma es una extensión de nuestra visión creativa y tecnológica.",
     platforms_cta: "Ver todas las plataformas →",
@@ -296,7 +296,7 @@ export const translations = {
     // Home - Selo Musical
     music_eyebrow: "/ sello musical",
     music_title: "Foster también es música.",
-    music_desc: "Somos un sello musical. Producimos, lanzamos y distribuimos música en todas las plataformas de streaming — con IA y con artistas reales bajo nuestra curaduría.",
+    music_desc: "Somos un sello musical. Producimos, lanzamos y distribuímos música en todas las plataformas de streaming — con IA y con artistas reales bajo nuestra curaduría.",
     music_card1_badge: "🎵 En streaming",
     music_card1_title: "Producción musical con IA.",
     music_card1_desc: "Música de diversos estilos disponible en Spotify, Apple Music, Deezer y más. Producción, masterización y distribución — todo por el sello Foster.",
@@ -313,18 +313,18 @@ export const translations = {
 
     // Home - Canais
     channels_eyebrow: "/ nuestros canales",
-    channels_title: "Además de gestionar canales de clientes — creamos los nuestros.",
+    channels_title: "Además de gestionar canales de clientes — criamos los nuestros.",
     channels_desc: "Canales propios, personajes y contenido original. Foster como creadora, no solo como gestora.",
 
     // Home - Carlos Borges
     founder_eyebrow: "/ fundador",
     founder_title: "Creados para crear. Vivimos para el contenido.",
-    founder_p1: "Foster Company nació de la convicción de que cada creador, empresa o institución tiene una historia poderosa que contar. ¿El problema? La mayoría no sabe cómo contarla de manera que genere resultados reales.",
+    founder_p1: "Foster Company nació de la convicción de que cada creador, empresa o institución tiene una historia poderosa que contar. ¿El problema? La mayoría no sabe como contarla de manera que genere resultados reales.",
     founder_p2: "Carlos Borges ha construido a lo largo de más de 15 años un método que une estrategia de posicionamiento, producción audiovisual y las herramientas de IA más avanzadas disponibles en la actualidad.",
     founder_p3: "El resultado es un estudio que no produce contenido — construye legados digitales.",
     founder_li1: "Especialistas en crecimiento orgánico en YouTube",
     founder_li2: "Pioneros en avatares de IA para marcas en Brasil",
-    founder_li3: "Método 3Ps exclusivo de posicionamiento digital",
+    founder_li3: "Método 3Ps exclusivo de posicionamento digital",
     founder_li4: "+1 Billón de visualizaciones generadas para socios",
     founder_li5: "Asociación comprobada con grandes líderes nacionales",
     founder_cta: "Hablar con Carlos →",
@@ -338,7 +338,7 @@ export const translations = {
     cta_footer: "WhatsApp · Respuesta en hasta 24h · Balneário Camboriú, Brasil 🇧🇷",
 
     // Footer
-    footer_desc: "Creative AI Studio. Creatividad potenciada por inteligencia artificial.",
+    footer_desc: "Creative AI Studio. Creatividad amplificada por inteligencia artificial.",
     footer_links_title: "Enlaces Rápidos",
     footer_solutions_title: "Soluciones",
     footer_social_title: "Social",
@@ -360,7 +360,7 @@ export const translations = {
   en: {
     // Meta
     meta_title: "Foster Company — Creative AI Studio",
-    meta_description: "Creativity powered by AI. Audiovisual production, YouTube channels, and digital platforms.",
+    meta_description: "Creativity amplified by AI. Audiovisual production, YouTube channels, and digital platforms.",
     og_title: "Foster Company — Creative AI Studio",
     
     // Navbar
@@ -378,7 +378,7 @@ export const translations = {
     // Home - Hero
     hero_badge: "Creative AI Studio",
     hero_headline_1: "Creativity",
-    hero_headline_2: "powered by",
+    hero_headline_2: "amplified by",
     hero_headline_3: "artificial",
     hero_headline_4: "intelligence.",
     hero_subtitle: "Foster Company is an innovation studio that merges content strategy, audiovisual production, and the world's most advanced AI tools.",
@@ -505,7 +505,7 @@ export const translations = {
     founder_li3: "Exclusive 3Ps digital positioning method",
     founder_li4: "+1 Billion views generated for partners",
     founder_li5: "Proven partnership with major national leaders",
-    founder_cta: "Talk to Carlos →",
+    founder_cta: "Talk to Foster →",
 
     // Home - CTA Final
     cta_eyebrow: "/ next step",
@@ -516,7 +516,7 @@ export const translations = {
     cta_footer: "WhatsApp · Response within 24h · Balneário Camboriú, Brazil 🇧🇷",
 
     // Footer
-    footer_desc: "Creative AI Studio. Creativity powered by artificial intelligence.",
+    footer_desc: "Creative AI Studio. Creativity amplified by artificial intelligence.",
     footer_links_title: "Quick Links",
     footer_solutions_title: "Solutions",
     footer_social_title: "Social",
