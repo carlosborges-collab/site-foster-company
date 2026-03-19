@@ -297,7 +297,7 @@ export default function Home() {
           <div className="space-y-8">
             {/* Create */}
             <AnimatedSection>
-              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 hover:-translate-y-1 transition-all duration-300 group">
+              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="p-10 lg:p-16 flex flex-col justify-center order-2 lg:order-1 border-t lg:border-t-0 lg:border-r border-f-neon/10">
                     <div className="w-full h-full min-h-[240px] bg-f-black rounded-xl border border-f-neon/20 p-6 flex flex-col items-center justify-center relative overflow-hidden">
@@ -312,14 +312,13 @@ export default function Home() {
                     <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">01 / Foster Create</div>
                     <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="create_title">{t('create_title')}</h3>
                     <p className="text-f-mint/65 mb-8" data-i18n="create_desc">{t('create_desc')}</p>
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-mono text-sm text-f-neon/80">
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-f-neon/80">
                       <span>Produção de Vídeos</span>
                       <span className="text-f-mint/30">·</span>
                       <span>Avatar IA</span>
                       <span className="text-f-mint/30">·</span>
                       <span>Conteúdo com IA</span>
                     </div>
-                    <a href="#create" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="create_cta">{t('create_cta')}</a>
                   </div>
                 </div>
               </div>
@@ -327,18 +326,17 @@ export default function Home() {
 
             {/* Build */}
             <AnimatedSection>
-              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 hover:-translate-y-1 transition-all duration-300 group">
+              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="p-10 lg:p-16">
+                  <div className="p-10 lg:p-16 order-1 lg:order-2">
                     <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">02 / Foster Build</div>
                     <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="build_title">{t('build_title')}</h3>
                     <p className="text-f-mint/65 mb-8" data-i18n="build_desc">{t('build_desc')}</p>
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-mono text-sm text-f-neon/80">
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-f-neon/80">
                       <span>Sites com IA</span>
                       <span className="text-f-mint/30">·</span>
                       <span>Plataformas Digitais</span>
                     </div>
-                    <a href="#build" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="build_cta">{t('build_cta')}</a>
                   </div>
                   <div className="p-10 lg:p-16 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-f-neon/10">
                     <div className="w-full h-full min-h-[240px] bg-f-black rounded-xl border border-f-neon/20 p-6 font-mono text-xs text-f-neon/70 overflow-hidden">
@@ -357,7 +355,7 @@ export default function Home() {
 
             {/* Grow */}
             <AnimatedSection>
-              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 hover:-translate-y-1 transition-all duration-300 group">
+              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="p-10 lg:p-16 flex flex-col justify-center order-2 lg:order-1 border-t lg:border-t-0 lg:border-r border-f-neon/10">
                     <div className="w-full h-full min-h-[240px] bg-f-black rounded-xl border border-f-neon/20 p-6 flex items-end relative overflow-hidden">
@@ -373,7 +371,7 @@ export default function Home() {
                     <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">03 / Foster Grow</div>
                     <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="grow_title">{t('grow_title')}</h3>
                     <p className="text-f-mint/65 mb-8" data-i18n="grow_desc">{t('grow_desc')}</p>
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-mono text-sm text-f-neon/80">
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-f-neon/80">
                       <span>Gestão YouTube</span>
                       <span className="text-f-mint/30">·</span>
                       <span>Mentoria 3Ps</span>
@@ -382,7 +380,6 @@ export default function Home() {
                       <span className="text-f-mint/30">·</span>
                       <span>Posicionamento</span>
                     </div>
-                    <a href="#grow" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="grow_cta">{t('grow_cta')}</a>
                   </div>
                 </div>
               </div>
