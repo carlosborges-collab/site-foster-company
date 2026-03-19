@@ -86,22 +86,21 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                   <div>
                     <a href="#build" className="block font-display font-semibold text-[13px] text-f-neon mb-4 hover:underline">⬡ Foster Build</a>
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
-                      <li><a href="#build" className="hover:text-f-neon transition-colors">Sites com IA</a></li>
-                      <li><a href="#plataformas" className="hover:text-f-neon transition-colors">Plataformas Digitais</a></li>
+                      <li><a href="#build-sites" className="hover:text-f-neon transition-colors">Sites com IA</a></li>
+                      <li><a href="#build-plataformas" className="hover:text-f-neon transition-colors">Plataformas Digitais</a></li>
                     </ul>
                   </div>
                   <div>
                     <a href="#grow" className="block font-display font-semibold text-[13px] text-f-neon mb-4 hover:underline">▲ Foster Grow</a>
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
-                      <li><a href="#grow" className="hover:text-f-neon transition-colors">Gestão de YouTube</a></li>
-                      <li><a href="#grow" className="hover:text-f-neon transition-colors">Mentoria 3Ps</a></li>
-                      <li><a href="#grow" className="hover:text-f-neon transition-colors">Posicionamento Digital</a></li>
+                      <li><a href="#grow-gestao" className="hover:text-f-neon transition-colors">Gestão de YouTube</a></li>
+                      <li><a href="#grow-mentoria" className="hover:text-f-neon transition-colors">Mentoria 3Ps</a></li>
+                      <li><a href="#grow-posicionamento" className="hover:text-f-neon transition-colors">Posicionamento Digital</a></li>
                     </ul>
                   </div>
                   <div>
                     <div className="block font-display font-semibold text-[13px] text-f-mint/60 mb-4">✦ Foster</div>
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
-                      <li><a href="#plataformas" className="hover:text-f-neon transition-colors flex items-center gap-1">Plataformas <ExternalLink size={12} /></a></li>
                       <li><a href="#canais" className="hover:text-f-neon transition-colors flex items-center gap-1">Canais Próprios <ExternalLink size={12} /></a></li>
                       <li><a href="#musica" className="hover:text-f-neon transition-colors flex items-center gap-1">Selo Musical <ExternalLink size={12} /></a></li>
                     </ul>
@@ -172,14 +171,14 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                   </div>
                   <div className="flex flex-col gap-2 mt-2">
                     <span className="text-f-neon text-xs font-mono">⬡ Foster Build</span>
-                    <a href="#build" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Sites com IA</a>
-                    <a href="#plataformas" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Plataformas Digitais</a>
+                    <a href="#build-sites" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Sites com IA</a>
+                    <a href="#build-plataformas" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Plataformas Digitais</a>
                   </div>
                   <div className="flex flex-col gap-2 mt-2">
                     <span className="text-f-neon text-xs font-mono">▲ Foster Grow</span>
-                    <a href="#grow" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Gestão de YouTube</a>
-                    <a href="#grow" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Mentoria 3Ps</a>
-                    <a href="#grow" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Posicionamento Digital</a>
+                    <a href="#grow-gestao" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Gestão de YouTube</a>
+                    <a href="#grow-mentoria" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Mentoria 3Ps</a>
+                    <a href="#grow-posicionamento" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Posicionamento Digital</a>
                   </div>
                 </div>
               </details>

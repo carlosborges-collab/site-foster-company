@@ -6,7 +6,6 @@ import Ifoster from './pages/Ifoster';
 import Grow from './pages/Grow';
 import Create from './pages/Create';
 import Build from './pages/Build';
-import Platforms from './pages/Platforms';
 import Channels from './pages/Channels';
 import Music from './pages/Music';
 import ConversionPopup from './components/ConversionPopup';
@@ -19,8 +18,12 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const newHash = window.location.hash || '#home';
-      // Normalize internal anchors (e.g. #create-production -> #create)
-      const baseHash = newHash.startsWith('#create') ? '#create' : newHash;
+      
+      // Normalize prefixes
+      let baseHash = newHash;
+      if (newHash.startsWith('#create')) baseHash = '#create';
+      if (newHash.startsWith('#build')) baseHash = '#build';
+      if (newHash.startsWith('#grow')) baseHash = '#grow';
       
       if (baseHash !== currentPath) {
         setIsTransitioning(true);
@@ -28,7 +31,6 @@ export default function App() {
           setCurrentPath(baseHash);
           setDisplayPath(baseHash);
           
-          // If it's a specific anchor, scroll after render
           if (newHash.includes('-')) {
              const elementId = newHash.split('-')[1];
              setTimeout(() => {
@@ -42,7 +44,6 @@ export default function App() {
           setIsTransitioning(false);
         }, 200);
       } else if (newHash.includes('-')) {
-        // Just scroll if we are already on the page
         const elementId = newHash.split('-')[1];
         const el = document.getElementById(elementId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -54,14 +55,12 @@ export default function App() {
   }, [currentPath]);
 
   const renderPage = () => {
-    // Exact or prefix match for consolidated pages
     if (displayPath.startsWith('#create')) return <Create />;
+    if (displayPath.startsWith('#build')) return <Build />;
+    if (displayPath.startsWith('#grow')) return <Grow />;
     
     switch (displayPath) {
       case '#ifoster': return <Ifoster />;
-      case '#grow': return <Grow />;
-      case '#build': return <Build />;
-      case '#plataformas': return <Platforms />;
       case '#canais': return <Channels />;
       case '#musica': return <Music />;
       case '#home':
