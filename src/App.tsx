@@ -22,25 +22,50 @@ export default function App() {
     const handleHashChange = () => {
       const newHash = window.location.hash || '#home';
       
-      // Rotas principais que contêm hífens
-      const mainRoutesWithHyphen = ['#gestao-youtube', '#clone-digital'];
-      
-      // Normalize prefixes
-      let baseHash = newHash;
-      if (newHash.startsWith('#create')) baseHash = '#create';
-      if (newHash.startsWith('#build')) baseHash = '#build';
-      if (newHash.startsWith('#grow')) baseHash = '#grow';
-      
-      // Se for uma âncora interna E não for uma rota principal de página
-      if (newHash.includes('-') && !mainRoutesWithHyphen.includes(newHash)) {
+      // Lista de rotas que são PÁGINAS completas
+      const mainPages = [
+        '#home', 
+        '#ifoster', 
+        '#canais', 
+        '#musica', 
+        '#gestao-youtube', 
+        '#clone-digital',
+        '#create',
+        '#build',
+        '#grow'
+      ];
+
+      // Caso especial: links de scroll interno (ex: #gestao-youtube-planos)
+      // Se o link contiver um hífen e a parte antes do hífen for a página atual
+      const isInternalScroll = newHash.includes('-') && 
+                               !mainPages.includes(newHash) &&
+                               newHash.startsWith(currentPath);
+
+      if (isInternalScroll) {
         const parts = newHash.split('-');
-        const elementId = parts[parts.length - 1]; // Pega a última parte como ID
+        const elementId = parts[parts.length - 1];
         const el = document.getElementById(elementId);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
+      
+      // Se for apenas um ID simples (ex: #work) e ele existir na página atual
+      const simpleId = newHash.startsWith('#') ? newHash.slice(1) : newHash;
+      const simpleEl = document.getElementById(simpleId);
+      if (simpleEl && !mainPages.includes(newHash)) {
+        simpleEl.scrollIntoView({ behavior: 'smooth' });
         return;
       }
 
       // Se for uma mudança de página principal
+      let baseHash = newHash;
+      // Normalização para sub-âncoras
+      if (newHash.startsWith('#create')) baseHash = '#create';
+      if (newHash.startsWith('#build')) baseHash = '#build';
+      if (newHash.startsWith('#grow')) baseHash = '#grow';
+
       if (baseHash !== currentPath) {
         setIsTransitioning(true);
         setTimeout(() => {
