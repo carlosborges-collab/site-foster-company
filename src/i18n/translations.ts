@@ -4,6 +4,7 @@ export const translations = {
   pt: {
     // Navbar
     nav_home: "Home",
+    nav_sites: "Sites",
     nav_solutions: "Soluções",
     nav_ifoster: "iFoster",
     nav_clone_digital: "Clone Digital",
@@ -333,6 +334,7 @@ export const translations = {
   },
   es: {
     nav_home: "Inicio",
+    nav_sites: "Sitios",
     nav_clone_digital: "Clone Digital",
     nav_yt_growth: "Gestión de YouTube",
     meta_title: "Foster Company — Creative AI Studio",
@@ -341,6 +343,7 @@ export const translations = {
   },
   en: {
     nav_home: "Home",
+    nav_sites: "Sites",
     nav_clone_digital: "Digital Clone",
     nav_yt_growth: "YouTube Growth",
     meta_title: "Foster Company — Creative AI Studio",
