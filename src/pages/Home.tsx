@@ -424,7 +424,7 @@ export default function Home() {
                     {t('ifoster_card_desc')}
                   </p>
                   
-                  <a href="[URL do iFoster]" target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
+                  <a href="https://ifoster.com.br" target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
                     {t('ifoster_card_cta')}
                   </a>
                 </div>
@@ -443,43 +443,8 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Stratube */}
+            {/* Nomes & Marcas */}
             <AnimatedSection>
-              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
-                    <span className="font-display font-bold text-xl text-f-neon">S</span>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
-                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      YouTube · Analytics
-                    </div>
-                  </div>
-                </div>
-                
-                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Stratube</h3>
-                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  [Descrição da plataforma — adicionar copy aqui]
-                </p>
-
-                <div className="flex flex-col gap-2 mb-8">
-                  {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
-                      <span className="text-f-neon">▸</span>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
-                  Conhecer o Stratube →
-                </a>
-              </div>
-            </AnimatedSection>
-
-            {/* Nomes e Marcas */}
-            <AnimatedSection delay={100}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
@@ -488,32 +453,79 @@ export default function Home() {
                   <div>
                     <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      Branding · Naming
+                      LegalTech · Propriedade Intelectual · SaaS B2B
                     </div>
                   </div>
                 </div>
                 
-                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Nomes e Marcas</h3>
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Nomes & Marcas</h3>
                 <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  [Descrição da plataforma — adicionar copy aqui]
+                  A plataforma inteligente de registro de marcas do Brasil. Pesquise o nome da sua marca, receba uma análise baseada em toda a base histórica do INPI e descubra suas chances reais de aprovação — em segundos.
                 </p>
 
-                <div className="flex flex-col gap-2 mb-8">
-                  {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
-                      <span className="text-f-neon">▸</span>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
+                <div className="flex flex-col gap-3 mb-8">
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>Score de Viabilidade 0–100</strong> — Saiba suas chances reais de aprovação antes de investir no registro.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>Base INPI Atualizada Semanalmente</strong> — Pesquise contra dados reais, direto da Revista da Propriedade Industrial.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>Gestão Completa do Processo</strong> — Acompanhe seu registro do pedido à concessão em um dashboard próprio.</span>
+                  </div>
                 </div>
 
-                <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
-                  Conhecer Nomes e Marcas →
+                <a href="https://nomesemarcas.com.br" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer Nomes & Marcas →
                 </a>
               </div>
             </AnimatedSection>
 
-            {/* Echowise */}
+            {/* Stratube 2.0 */}
+            <AnimatedSection delay={100}>
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
+                    <span className="font-display font-bold text-xl text-f-neon">S</span>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
+                      Ferramentas de IA para Criadores / YouTube Analytics & SEO
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Stratube 2.0</h3>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
+                  Stratube 2.0 é uma plataforma de inteligência estratégica para YouTube que pesquisa dados reais do mercado em tempo real e transforma em decisões acionáveis para criadores e agências crescerem mais rápido.
+                </p>
+
+                <div className="flex flex-col gap-3 mb-8">
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>🔍 Inteligência de Nicho</strong> — Descobre vídeos em alta, keywords com volume real e lacunas de conteúdo inexploradas no seu nicho.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>⚡ Otimizador de Vídeo</strong> — Gera títulos de alto CTR, descrição com SEO e tags estratégicas a partir da URL de qualquer vídeo.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>📡 Mineração de Canais</strong> — Identifica canais em crescimento acelerado prontos para serem remodelados com vantagem competitiva.</span>
+                  </div>
+                </div>
+
+                <a href="https://stratube.com.br" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer o Stratube 2.0 →
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Echowise AI */}
             <AnimatedSection delay={200}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -523,27 +535,33 @@ export default function Home() {
                   <div>
                     <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      [categoria a definir]
+                      SaaS · IA · Marketplace de Experts Digitais
                     </div>
                   </div>
                 </div>
                 
-                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Echowise</h3>
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Echowise AI</h3>
                 <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  [Descrição da plataforma — adicionar copy aqui]
+                  Echowise AI é a plataforma onde experts criam seu clone digital com IA e passam a atender, educar e engajar seu público 24 horas por dia — sem precisar estar disponível.
                 </p>
 
-                <div className="flex flex-col gap-2 mb-8">
-                  {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
-                      <span className="text-f-neon">▸</span>
-                      <span>{feature}</span>
-                    </div>
-                  ))}
+                <div className="flex flex-col gap-3 mb-8">
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>🤖 Clone Digital com IA</strong> — Sua personalidade, tom de voz e conhecimento em um clone que conversa por você.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>🔗 Bio Link Inteligente</strong> — Seu perfil público com link único para compartilhar em qualquer rede social.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>📊 Painel de Gestão Completo</strong> — Acompanhe conversas, gerencie sua base de conhecimento e monitore seus resultados.</span>
+                  </div>
                 </div>
 
-                <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
-                  Conhecer o Echowise →
+                <a href="https://echowise.ai" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer o Echowise AI →
                 </a>
               </div>
             </AnimatedSection>
