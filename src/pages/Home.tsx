@@ -132,6 +132,10 @@ export default function Home() {
               <span className="text-f-neon">·</span>
               <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Unesc TV</span>
               <span className="text-f-neon">·</span>
+              <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Murilo Rosa</span>
+              <span className="text-f-neon">·</span>
+              <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Igor Drudi</span>
+              <span className="text-f-neon">·</span>
             </div>
           ))}
         </div>
