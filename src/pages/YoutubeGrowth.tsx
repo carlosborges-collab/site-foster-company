@@ -27,7 +27,7 @@ export default function YoutubeGrowth() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {[1, 2, 3, 4].map(num => (
+              {[1, 2, 3].map(num => (
                 <div key={num} className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-2 font-mono text-[12px] text-f-mint/80">
                   {t(`yt_hero_metric_${num}`)}
                 </div>
@@ -52,7 +52,7 @@ export default function YoutubeGrowth() {
           <AnimatedSection className="mb-20">
             <div className="font-mono text-f-neon/70 mb-6">{t('yt_results_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,5vw,48px)] text-f-mint mb-4">{t('yt_results_title')}</h2>
-            <p className="text-[18px] text-f-mint/50">{t('yt_results_subtitle')}</p>
+            <p className="text-[18px] text-f-mint/55">{t('yt_results_subtitle')}</p>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -231,12 +231,11 @@ export default function YoutubeGrowth() {
                 <h2 className="font-display font-bold text-4xl text-f-mint mb-2">Carlos Borges</h2>
                 <div className="font-display font-medium text-f-neon/80 italic mb-8">Fundador · Foster Company</div>
                 <p className="text-f-mint/65 text-[18px] leading-relaxed mb-10">
-                  15 anos gerenciando canais que acumulam mais de 1 bilhão de visualizações. Trabalhei com igrejas, ministérios, criadores autorais e empresas — levando canais do zero a centenas de milhares de inscritos com estratégia, dados e inteligência artificial.
+                  Acumulando mais de 1 bilhão de visualizações gerenciando canais de grandes nomes. Trabalhei com igrejas, ministérios, criadores autorais e empresas — levando canais do zero a centenas de milhares de inscritos com estratégia, dados e inteligência artificial.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <span className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-neon">[1bi+ views]</span>
                   <span className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-neon">[700k+ inscritos gerenciados]</span>
-                  <span className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-neon">[15+ anos]</span>
                 </div>
               </AnimatedSection>
             </div>
@@ -270,7 +269,7 @@ export default function YoutubeGrowth() {
       {/* FINAL CTA */}
       <section className="py-32 bg-f-black text-center">
         <AnimatedSection>
-           <h2 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-f-mint mb-10">✦ VAGAS LIMITADAS POR MÊS</h2>
+           <h2 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-f-mint mb-10">VAGAS LIMITADAS POR MÊS</h2>
            <p className="text-xl text-f-mint/50 mb-12">Gestão profissional de YouTube. A partir de R$3.000/mês.</p>
            <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-6 text-xl hover:glow-neon transition-all">
              Garantir minha vaga →
