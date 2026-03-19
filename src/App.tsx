@@ -22,6 +22,7 @@ export default function App() {
     const handleHashChange = () => {
       const newHash = window.location.hash || '#home';
       
+      // Lista de rotas que são PÁGINAS completas
       const mainPages = [
         '#home', 
         '#ifoster', 
@@ -34,26 +35,33 @@ export default function App() {
         '#grow'
       ];
 
-      // Caso seja um ID interno
+      // Caso especial: links de scroll interno (ex: #gestao-youtube-planos)
+      // Se o link contiver um hífen e a parte antes do hífen for a página atual
+      const isInternalScroll = newHash.includes('-') && 
+                               !mainPages.includes(newHash) &&
+                               newHash.startsWith(currentPath);
+
+      if (isInternalScroll) {
+        const parts = newHash.split('-');
+        const elementId = parts[parts.length - 1];
+        const el = document.getElementById(elementId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
+      
+      // Se for apenas um ID simples (ex: #work) e ele existir na página atual
       const simpleId = newHash.startsWith('#') ? newHash.slice(1) : newHash;
       const simpleEl = document.getElementById(simpleId);
-      
       if (simpleEl && !mainPages.includes(newHash)) {
-        const offset = 80; // Altura da navbar + margem
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = simpleEl.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        simpleEl.scrollIntoView({ behavior: 'smooth' });
         return;
       }
 
-      // Mudança de página principal
+      // Se for uma mudança de página principal
       let baseHash = newHash;
+      // Normalização para sub-âncoras
       if (newHash.startsWith('#create')) baseHash = '#create';
       if (newHash.startsWith('#build')) baseHash = '#build';
       if (newHash.startsWith('#grow')) baseHash = '#grow';
@@ -65,7 +73,7 @@ export default function App() {
           setDisplayPath(baseHash);
           window.scrollTo(0, 0);
           setIsTransitioning(false);
-        }, 300);
+        }, 200);
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -92,11 +100,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative bg-f-black text-f-mint font-body overflow-x-hidden">
+    <div className="min-h-screen flex flex-col relative bg-f-black text-f-mint font-body">
       <Navbar currentPath={currentPath} />
       <main 
-        className={`flex-grow transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isTransitioning ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'
+        className={`flex-grow transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isTransitioning ? 'opacity-0 -translate-y-5' : 'opacity-100 translate-y-0'
         }`}
       >
         {renderPage()}
