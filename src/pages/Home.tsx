@@ -603,15 +603,21 @@ export default function Home() {
             {/* Case 02 - RONY MEISLER ATUALIZADO - LARGURA TOTAL */}
             <AnimatedSection delay={100} className="md:col-span-2">
               <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 lg:p-12 hover:border-f-neon/45 transition-colors duration-300">
-                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-8">
+                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-10">
                   Creative AI Studio
                 </div>
                 
-                {/* Cabeçalho do Case */}
-                <div className="mb-10">
-                  <h3 className="font-display font-bold text-4xl text-f-mint mb-4">Rony Meisler — Clone Digital</h3>
-                  <p className="text-f-mint/65 mb-8 text-lg leading-relaxed max-w-3xl">
-                    Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda, unindo a essência do criador com a escala infinita da inteligência artificial.
+                {/* Cabeçalho do Case Refinado */}
+                <div className="mb-14">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-f-neon shadow-[0_0_8px_rgba(80,242,167,0.8)]"></div>
+                    <span className="font-mono text-[10px] text-f-neon/80 uppercase tracking-[0.2em]">Case Nacional · Clone Digital</span>
+                  </div>
+                  <h3 className="font-display font-bold text-[clamp(28px,5vw,44px)] text-f-mint mb-6 leading-[1.1]">
+                    Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.
+                  </h3>
+                  <p className="text-f-mint/60 text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                    Desenvolvemos o avatar ultra-realista para um dos maiores empresários do Brasil. Presença digital 24/7 sem depender de agenda, unindo essência humana com a velocidade da inteligência artificial.
                   </p>
                 </div>
 
