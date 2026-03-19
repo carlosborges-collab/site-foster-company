@@ -18,10 +18,26 @@ export default function Home() {
   ];
 
   const musicArtists = [
-    { name: "Bento do Vale", initial: "BV", url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" },
-    { name: "Bento Kids", initial: "BK", url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" },
-    { name: "Echowise", initial: "EW", url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" },
-    { name: "Relatos da Arca", initial: "RA", url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" }
+    { 
+      name: "Bento do Vale", 
+      image: "https://i.scdn.co/image/ab6761610000e5eb54199f7d0c3298818818967a", 
+      url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" 
+    },
+    { 
+      name: "Bento Kids", 
+      image: "https://i.scdn.co/image/ab6761610000e5eb66b1a7d65377f3e8f17e0b5f", 
+      url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" 
+    },
+    { 
+      name: "Echowise", 
+      image: "https://i.scdn.co/image/ab6761610000e5eb4e6e96a4c9c1b4d08b3e8a4a", 
+      url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" 
+    },
+    { 
+      name: "Relatos da Arca", 
+      image: "https://i.scdn.co/image/ab6761610000e5eb674b0c6085a113e1762a4b8b", 
+      url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" 
+    }
   ];
 
   useEffect(() => {
@@ -412,7 +428,6 @@ export default function Home() {
                   <a href="[URL do iFoster]" target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
                     {t('ifoster_card_cta')}
                   </a>
-                  {/* CARLOS: substitua pelo link real da plataforma iFoster */}
                 </div>
                 
                 <div className="w-full lg:w-auto shrink-0">
@@ -446,12 +461,10 @@ export default function Home() {
                 
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Stratube</h3>
                 <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  {/* CARLOS: adicione aqui a descrição do Stratube */}
                   [Descrição da plataforma — adicionar copy aqui]
                 </p>
 
                 <div className="flex flex-col gap-2 mb-8">
-                  {/* CARLOS: adicione as features principais do Stratube */}
                   {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
                     <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
                       <span className="text-f-neon">▸</span>
@@ -460,7 +473,6 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* URL: substitua pelo link real do Stratube */}
                 <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
                   Conhecer o Stratube →
                 </a>
@@ -484,12 +496,10 @@ export default function Home() {
                 
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Nomes e Marcas</h3>
                 <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  {/* CARLOS: adicione aqui a descrição do Nomes e Marcas */}
                   [Descrição da plataforma — adicionar copy aqui]
                 </p>
 
                 <div className="flex flex-col gap-2 mb-8">
-                  {/* CARLOS: adicione as features principais do Nomes e Marcas */}
                   {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
                     <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
                       <span className="text-f-neon">▸</span>
@@ -498,7 +508,6 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* URL: substitua pelo link real do Nomes e Marcas */}
                 <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
                   Conhecer Nomes e Marcas →
                 </a>
@@ -522,12 +531,10 @@ export default function Home() {
                 
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Echowise</h3>
                 <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  {/* CARLOS: adicione aqui a descrição do Echowise */}
                   [Descrição da plataforma — adicionar copy aqui]
                 </p>
 
                 <div className="flex flex-col gap-2 mb-8">
-                  {/* CARLOS: adicione as features principais do Echowise */}
                   {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
                     <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
                       <span className="text-f-neon">▸</span>
@@ -536,7 +543,6 @@ export default function Home() {
                   ))}
                 </div>
 
-                {/* URL: substitua pelo link real do Echowise */}
                 <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
                   Conhecer o Echowise →
                 </a>
@@ -574,7 +580,6 @@ export default function Home() {
                   <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-8 flex items-center justify-center min-h-[300px]">
                     <div className="aspect-square w-full max-w-[300px] border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30">
                       <span className="font-mono text-xs text-f-mint/30">[ foto/imagem do case ]</span>
-                      {/* <img src="case-viviane.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
                     </div>
                   </div>
                 </div>
@@ -617,14 +622,12 @@ export default function Home() {
             {/* Canal Destaque - Fatos da Bíblia */}
             <AnimatedSection className="md:col-span-2 lg:col-span-2">
               <div className="bg-[#104037]/50 border border-[#50F2A7]/15 rounded-2xl p-5 hover:border-[#50F2A7]/45 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                {/* TOPO DO CARD */}
                 <div className="mb-4">
                   <span className="inline-block bg-[#50F2A7]/10 border border-[#50F2A7]/30 rounded-full px-3 py-1 font-mono text-[11px] text-[#50F2A7]">
                     🚀 Canal Próprio · 30 dias · Monetizado
                   </span>
                 </div>
 
-                {/* ÁREA DE THUMBNAIL / VÍDEO */}
                 <div 
                   className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-5 group cursor-pointer"
                   onClick={() => !playFatos && setPlayFatos(true)}
@@ -652,7 +655,6 @@ export default function Home() {
                   )}
                 </div>
 
-                {/* INFORMAÇÕES ABAIXO DO VÍDEO */}
                 <h3 className="font-display font-bold text-[20px] text-[#E1F2DF] mb-2">
                   Fatos da Bíblia
                 </h3>
@@ -660,7 +662,6 @@ export default function Home() {
                   Investigamos a Bíblia com profundidade histórica, arqueologia e fontes acadêmicas verificáveis. Sem pregação. Sem sensacionalismo. Investigação séria.
                 </p>
 
-                {/* MÉTRICAS */}
                 <div className="flex flex-wrap gap-2 mt-2 mb-5">
                   <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
                     ⚡ ~5k inscritos
@@ -673,7 +674,6 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* RODAPÉ DO CARD */}
                 <div className="mt-auto border-t border-[#50F2A7]/10 pt-3 flex items-center justify-between">
                   <a href="https://www.youtube.com/@fatos.dabiblia" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-[#50F2A7] hover:underline underline-offset-4">
                     Ver canal no YouTube →
@@ -865,7 +865,6 @@ export default function Home() {
                   {t('music_card1_desc')}
                 </p>
                 
-                {/* Artistas Interativos */}
                 <div className="flex items-center gap-4 mb-8">
                   {musicArtists.map((artist, i) => (
                     <a 
@@ -873,10 +872,10 @@ export default function Home() {
                       href={artist.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden relative shadow-lg hover:scale-110 hover:border-f-neon transition-all duration-300 group/artist"
+                      className="w-14 h-14 rounded-full border-2 border-f-neon/30 overflow-hidden shadow-lg hover:scale-110 hover:border-f-neon transition-all duration-300"
                       title={artist.name}
                     >
-                      <span className="font-display font-bold text-f-neon/50 text-sm group-hover/artist:text-f-neon transition-colors">{artist.initial}</span>
+                      <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" />
                     </a>
                   ))}
                 </div>
@@ -884,7 +883,7 @@ export default function Home() {
                 <div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">
                   Spotify · Apple Music · Deezer · YouTube Music
                 </div>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
+                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="font-display font-bold text-[16px] text-f-neon hover:underline underline-offset-8 mt-auto w-fit">
                   {t('music_card1_cta')}
                 </a>
               </div>

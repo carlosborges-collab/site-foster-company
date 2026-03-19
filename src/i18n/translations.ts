@@ -28,7 +28,7 @@ export const translations = {
     hero_metric_3_val: "+1B",
     hero_metric_3_lbl: "views geradas",
     
-    // Seção O que é a Foster (Nova Copy com Destaque Neon)
+    // Seção O que é a Foster
     about_eyebrow: "/ o que é a foster",
     about_title: "Não somos agência.<br />Não somos produtora.<br /><span class='text-f-neon text-glow'>Somos o motivo pelo qual<br />você para de rolar o feed.</span>",
     about_desc_1: "A Foster existe no cruzamento entre criatividade humana e inteligência artificial. Criamos avatares, canais, plataformas e conteúdo que não pedem atenção — eles a tomam.",
@@ -97,7 +97,7 @@ export const translations = {
     music_card1_badge: "🎵 No streaming",
     music_card1_title: "Produção musical com IA.",
     music_card1_desc: "Músicas de diversos estilos disponíveis em Spotify, Apple Music, Deezer e mais.",
-    music_card1_cta: "Ouvir no Spotify →",
+    music_card1_cta: "Crie sua música com a Foster →",
     music_card2_badge: "🚀 Em breve",
     music_card2_title: "Lançando novos artistas.",
     music_card2_desc: "O selo Foster está preparando o lançamento de novos artistas — com estratégia de posicionamento.",
