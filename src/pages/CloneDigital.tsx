@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { CheckCircle2, Play, Star } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -5,6 +6,7 @@ import { openContactModal } from '../utils/contactEvents';
 
 export default function CloneDigital() {
   const { t } = useLanguage();
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="w-full bg-f-black scroll-smooth">
@@ -85,17 +87,34 @@ export default function CloneDigital() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <div className="w-full aspect-video bg-f-black border border-f-neon/20 rounded-2xl relative overflow-hidden group shadow-2xl">
-                 <img src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Rony Meisler Case" />
-                 <a 
-                   href="https://www.youtube.com/watch?v=n1nP4gf4DJc" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   className="absolute inset-0 flex items-center justify-center"
-                 >
-                    <div className="w-20 h-20 rounded-full bg-f-neon flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                      <Play className="text-f-black ml-1" fill="currentColor" size={32} />
-                    </div>
-                 </a>
+                 {!isPlaying ? (
+                   <div 
+                     onClick={() => setIsPlaying(true)}
+                     className="absolute inset-0 cursor-pointer"
+                   >
+                     <img 
+                       src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" 
+                       className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" 
+                       alt="Rony Meisler Case" 
+                     />
+                     <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-20 h-20 rounded-full bg-f-neon flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                          <Play className="text-f-black ml-1" fill="currentColor" size={32} />
+                        </div>
+                     </div>
+                     <div className="absolute top-6 left-6 bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full z-10">
+                        <span className="font-mono text-[10px] text-f-neon uppercase tracking-widest font-bold">🤖 Vídeo 100% IA + Edição</span>
+                     </div>
+                   </div>
+                 ) : (
+                   <iframe
+                     src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1"
+                     title="Rony Meisler Case"
+                     className="absolute inset-0 w-full h-full border-none"
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                     allowFullScreen
+                   ></iframe>
+                 )}
               </div>
             </AnimatedSection>
 
