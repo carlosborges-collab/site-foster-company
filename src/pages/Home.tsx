@@ -621,7 +621,7 @@ export default function Home() {
                   </div>
                   
                   <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {/* YouTube Embed */}
+                    {/* YouTube Embed - Horizontal */}
                     <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => !playRony && setPlayRony(true)}>
                       {playRony ? (
                         <iframe
@@ -644,7 +644,7 @@ export default function Home() {
                         </>
                       )}
                     </div>
-                    {/* Instagram Embed */}
+                    {/* Instagram Embed - Vertical */}
                     <div className="aspect-video w-full border border-f-neon/30 rounded-xl overflow-hidden bg-f-dark/30 shadow-2xl">
                       <iframe 
                         src="https://www.instagram.com/reel/DVLX0vpAASA/embed" 
