@@ -6,8 +6,7 @@ import { openContactModal } from '../utils/contactEvents';
 
 export default function Home() {
   const [typewriterIndex, setTypewriterIndex] = useState(0);
-  const [playFatos, setPlayFatos] = useState(false);
-  const [playRony, setPlayRony] = useState(false);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const { t } = useLanguage();
   
   const lines = [
@@ -51,6 +50,36 @@ export default function Home() {
     }
     return () => clearTimeout(timeout);
   }, [typewriterIndex]);
+
+  const channels = [
+    {
+      id: "mirabolante",
+      title: "Seu Mirabolante",
+      desc: "Ciência, natureza e mistérios do universo explicados de um jeito que prende qualquer criança — e qualquer adulto curioso. Do corpo humano aos segredos do cosmos, cada vídeo é uma viagem que ninguém quer pausar.",
+      tags: ["Ciência", "Curiosidades", "Educação"],
+      channelUrl: "https://www.youtube.com/@SeuMirabolante",
+      videoEmbed: "https://www.youtube.com/embed/AN0OnaRaNmA",
+      thumbnail: "https://img.youtube.com/vi/AN0OnaRaNmA/maxresdefault.jpg"
+    },
+    {
+      id: "dabiblia",
+      title: "Da Bíblia",
+      desc: "Fatos históricos, arqueológicos e curiosidades da Bíblia que a maioria nunca ouviu contar. Com mais de 5 mil inscritos e produção 100% com IA, é o canal que prova que fé e ciência podem andar juntos na mesma tela.",
+      tags: ["Bíblia", "História", "Arqueologia"],
+      channelUrl: "https://www.youtube.com/@fatos.dabiblia",
+      videoEmbed: "https://www.youtube.com/embed/AN0OnaRaNmA",
+      thumbnail: "https://img.youtube.com/vi/AN0OnaRaNmA/maxresdefault.jpg"
+    },
+    {
+      id: "verboeterno",
+      title: "Grupo Verbo Eterno",
+      desc: "Salmos, orações e hinos da Harpa Cristã narrados com trilha instrumental envolvente. Um canal de devoção diária para quem busca presença, paz e renovação espiritual — um vídeo de cada vez.",
+      tags: ["Louvor", "Oração", "Fé"],
+      channelUrl: "https://www.youtube.com/@GrupoVerboEterno",
+      videoEmbed: "https://www.youtube.com/embed/Mk_-F9owpqg",
+      thumbnail: "https://img.youtube.com/vi/Mk_-F9owpqg/maxresdefault.jpg"
+    }
+  ];
 
   return (
     <div className="w-full">
@@ -602,27 +631,28 @@ export default function Home() {
 
             {/* Case 02 - RONY MEISLER ATUALIZADO - LARGURA TOTAL */}
             <AnimatedSection delay={100} className="md:col-span-2">
-              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 lg:p-10 hover:border-f-neon/45 transition-colors duration-300">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-                  {/* Lado Esquerdo: Texto + YouTube */}
-                  <div className="lg:col-span-8 flex flex-col">
-                    <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">
-                      Creative AI Studio
-                    </div>
-                    
-                    <div className="mb-10">
-                      <div className="flex items-center gap-3 mb-5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-f-neon shadow-[0_0_8px_rgba(80,242,167,0.8)]"></div>
-                        <span className="font-mono text-[10px] text-f-neon/80 uppercase tracking-[0.2em]">Case Nacional · Clone Digital</span>
-                      </div>
-                      <h3 className="font-display font-bold text-[clamp(28px,4.5vw,40px)] text-f-mint mb-5 leading-[1.1]">
-                        Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.
-                      </h3>
-                      <p className="text-f-mint/60 text-[17px] font-light leading-relaxed max-w-2xl">
-                        Desenvolvemos o avatar ultra-realista para um dos maiores empresários do Brasil. Presença digital 24/7 sem depender de agenda, unindo essência humana com a velocidade da inteligência artificial.
-                      </p>
-                    </div>
+              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 lg:p-12 hover:border-f-neon/45 transition-colors duration-300">
+                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-10">
+                  Creative AI Studio
+                </div>
+                
+                {/* Cabeçalho do Case Refinado */}
+                <div className="mb-14">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-f-neon shadow-[0_0_8px_rgba(80,242,167,0.8)]"></div>
+                    <span className="font-mono text-[10px] text-f-neon/80 uppercase tracking-[0.2em]">Case Nacional · Clone Digital</span>
+                  </div>
+                  <h3 className="font-display font-bold text-[clamp(28px,5vw,44px)] text-f-mint mb-6 leading-[1.1]">
+                    Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.
+                  </h3>
+                  <p className="text-f-mint/60 text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                    Desenvolvemos o avatar ultra-realista para um dos maiores empresários do Brasil. Presença digital 24/7 sem depender de agenda, unindo essência humana com a velocidade da inteligência artificial.
+                  </p>
+                </div>
 
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+                  {/* Lado Esquerdo: YouTube */}
+                  <div className="lg:col-span-8 flex flex-col">
                     <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => !playRony && setPlayRony(true)}>
                       {playRony ? (
                         <iframe
@@ -748,130 +778,64 @@ export default function Home() {
             <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="channels_desc">{t('channels_desc')}</p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {/* Canal Destaque - Fatos da Bíblia */}
-            <AnimatedSection className="md:col-span-2 lg:col-span-2">
-              <div className="bg-[#104037]/50 border border-[#50F2A7]/15 rounded-2xl p-5 hover:border-[#50F2A7]/45 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-                <div className="mb-4">
-                  <span className="inline-block bg-[#50F2A7]/10 border border-[#50F2A7]/30 rounded-full px-3 py-1 font-mono text-[11px] text-[#50F2A7]">
-                    🚀 Canal Próprio · 30 dias · Monetizado
-                  </span>
-                </div>
-
-                <div 
-                  className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-5 group cursor-pointer"
-                  onClick={() => !playFatos && setPlayFatos(true)}
-                >
-                  {playFatos ? (
-                    <iframe
-                      src="https://www.youtube.com/embed/9ABhVatBQz4?autoplay=1"
-                      title="Fatos da Bíblia"
-                      className="absolute inset-0 w-full h-full border-none"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <>
-                      <div className="w-12 h-12 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                        <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#50F2A7] border-b-[6px] border-b-transparent ml-1"></div>
-                      </div>
-                      <span className="absolute bottom-3 font-mono text-[10px] text-[#E1F2DF]/25 z-10">Clique para assistir direto aqui</span>
-                      <img 
-                        src="https://img.youtube.com/vi/9ABhVatBQz4/maxresdefault.jpg" 
-                        className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" 
-                        alt="Fatos da Bíblia" 
-                      />
-                    </>
-                  )}
-                </div>
-
-                <h3 className="font-display font-bold text-[20px] text-[#E1F2DF] mb-2">
-                  Fatos da Bíblia
-                </h3>
-                <p className="font-body font-normal text-[13px] text-[#E1F2DF]/60 leading-[1.5] line-clamp-2 mb-4">
-                  Investigamos a Bíblia com profundidade histórica, arqueologia e fontes acadêmicas verificáveis. Sem pregação. Sem sensacionalismo. Investigação séria.
-                </p>
-
-                <div className="flex flex-wrap gap-2 mt-2 mb-5">
-                  <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
-                    ⚡ ~5k inscritos
-                  </span>
-                  <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
-                    ● Monetizado em 1 semana
-                  </span>
-                  <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
-                    🤖 100% IA
-                  </span>
-                </div>
-
-                <div className="mt-auto border-t border-[#50F2A7]/10 pt-3 flex items-center justify-between">
-                  <a href="https://www.youtube.com/@fatos.dabiblia" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-[#50F2A7] hover:underline underline-offset-4">
-                    Ver canal no YouTube →
-                  </a>
-                  <span className="font-mono text-[10px] text-[#E1F2DF]/30">
-                    Foster Grow · Foster Create
-                  </span>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Canal 1 */}
-            <AnimatedSection>
-              <div className="group">
-                <div className="w-full aspect-video bg-f-dark border border-f-neon/15 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4 group-hover:border-f-neon/50 transition-colors">
-                  <div className="absolute top-3 left-3 bg-f-black/80 backdrop-blur text-f-mint font-mono text-[10px] px-2 py-1 rounded z-10 border border-f-neon/20">
-                    Canal de Conteúdo
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {channels.map((channel, i) => (
+              <AnimatedSection key={channel.id} delay={i * 100}>
+                <div className="bg-[#104037]/40 border border-[#50F2A7]/15 rounded-2xl p-6 hover:border-[#50F2A7]/40 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                  {/* Vídeo / Thumbnail Container */}
+                  <div 
+                    className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex items-center justify-center overflow-hidden mb-6 group cursor-pointer"
+                    onClick={() => setActiveVideo(channel.id)}
+                  >
+                    {activeVideo === channel.id ? (
+                      <iframe
+                        src={`${channel.videoEmbed}?autoplay=1`}
+                        title={channel.title}
+                        className="absolute inset-0 w-full h-full border-none"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <>
+                        <div className="w-12 h-12 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                          <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#50F2A7] border-b-[6px] border-b-transparent ml-1"></div>
+                        </div>
+                        <img 
+                          src={channel.thumbnail} 
+                          className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" 
+                          alt={channel.title} 
+                        />
+                      </>
+                    )}
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                  <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
-                </div>
-                <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
-                  [ Nome do Canal 1 ]
-                </h3>
-                <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
-                  [ Descrição curta do canal, nicho e foco principal. ]
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
-                    ▶ [X inscritos]
-                  </div>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
-                    Ver canal →
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
 
-            {/* Canal 2 */}
-            <AnimatedSection delay={100}>
-              <div className="group">
-                <div className="w-full aspect-video bg-f-dark border border-f-neon/15 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4 group-hover:border-f-neon/50 transition-colors">
-                  <div className="absolute top-3 left-3 bg-f-black/80 backdrop-blur text-f-mint font-mono text-[10px] px-2 py-1 rounded z-10 border border-f-neon/20">
-                    Personagem
+                  {/* Header / Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {channel.tags.map(tag => (
+                      <span key={tag} className="font-mono text-[10px] bg-[#50F2A7]/5 border border-[#50F2A7]/20 text-[#50F2A7]/70 rounded-full px-2 py-0.5">
+                        / {tag}
+                      </span>
+                    ))}
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+
+                  {/* Content */}
+                  <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-3">
+                    {channel.title}
+                  </h3>
+                  <p className="font-body font-light text-[14px] text-[#E1F2DF]/60 leading-[1.6] mb-8 flex-grow">
+                    {channel.desc}
+                  </p>
+
+                  {/* Footer Action */}
+                  <div className="mt-auto border-t border-[#50F2A7]/10 pt-4 flex items-center justify-between">
+                    <a href={channel.channelUrl} target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[13px] text-[#50F2A7] hover:underline underline-offset-4">
+                      Acessar Canal →
+                    </a>
+                    <Youtube size={16} className="text-[#E1F2DF]/20" />
                   </div>
-                  <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
                 </div>
-                <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
-                  [ Nome do Canal 2 ]
-                </h3>
-                <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
-                  [ Descrição curta do canal, nicho e foco principal. ]
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
-                    ▶ [X inscritos]
-                  </div>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
-                    Ver canal →
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
