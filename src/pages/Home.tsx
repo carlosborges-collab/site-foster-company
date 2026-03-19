@@ -1,0 +1,1003 @@
+import { useEffect, useState } from 'react';
+import AnimatedSection from '../components/AnimatedSection';
+import { ChevronDown, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
+
+export default function Home() {
+  const [typewriterText, setTypewriterText] = useState('');
+  const [typewriterIndex, setTypewriterIndex] = useState(0);
+  const { t } = useLanguage();
+  
+  const lines = [
+    { text: "[ iFoster ] iniciando...", color: "text-f-mint/50" },
+    { text: "[ avatar  ] voz clonada ✓", color: "text-f-neon" },
+    { text: "[ canal   ] +12k inscritos ✓", color: "text-f-neon" },
+    { text: "[ conteúdo] 847 posts gerados ✓", color: "text-f-neon" },
+    { text: "[ site    ] deployado ✓", color: "text-f-neon" },
+    { text: "[ status  ] Sistema pronto. 🟢", color: "text-f-mint" }
+  ];
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    if (typewriterIndex < lines.length) {
+      timeout = setTimeout(() => {
+        setTypewriterIndex(prev => prev + 1);
+      }, 800);
+    }
+    return () => clearTimeout(timeout);
+  }, [typewriterIndex]);
+
+  return (
+    <div className="w-full">
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen flex items-center pt-[140px] pb-20 bg-grid-pattern bg-noise overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+          
+          {/* Left Column */}
+          <div className="lg:col-span-7 flex flex-col items-start">
+            <AnimatedSection>
+              <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/25 rounded-full px-4 py-1.5 mb-8">
+                <div className="w-1.5 h-1.5 rounded-full bg-f-neon animate-pulse-dot"></div>
+                <span className="font-mono text-[12px] text-f-neon">✦ {t('hero_badge')} — Balneário Camboriú, Brasil</span>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={100}>
+              <h1 className="font-display font-bold text-[clamp(36px,8vw,88px)] leading-[0.95] tracking-tight mb-8">
+                <span className="block text-f-mint">{t('hero_headline_1')}</span>
+                <span className="block text-f-mint/75 font-normal">{t('hero_headline_2')}</span>
+                <span className="block text-f-neon italic">{t('hero_headline_3')}</span>
+                <span className="block text-f-neon text-glow">{t('hero_headline_4')}</span>
+              </h1>
+            </AnimatedSection>
+
+            <AnimatedSection delay={200}>
+              <p className="text-f-mint/60 text-[18px] font-light max-w-[480px] mb-10">
+                {t('hero_subtitle')}
+              </p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={300}>
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon hover:scale-[1.02] transition-all duration-300">
+                  {t('hero_cta_1')} →
+                </a>
+                <a href="#work" className="border border-f-neon/35 text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300">
+                  {t('hero_cta_2')}
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Right Column - Visual Tech 3D */}
+          <div className="lg:col-span-5 relative h-[500px] hidden md:block">
+            <AnimatedSection delay={400} className="h-full w-full relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Main Floating Card */}
+                <div className="w-full max-w-[420px] bg-f-dark/60 backdrop-blur-xl border border-f-neon/20 rounded-2xl p-7 animate-float relative z-20 shadow-2xl">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    <div className="ml-auto font-mono text-[11px] text-f-neon/60">iFoster — AI Engine v2.5</div>
+                  </div>
+                  <div className="h-px w-full bg-f-neon/10 mb-5"></div>
+                  <div className="font-mono text-[13px] space-y-2 min-h-[160px]">
+                    {lines.slice(0, typewriterIndex).map((line, i) => (
+                      <div key={i} className={`${line.color} animate-in fade-in duration-300`}>{line.text}</div>
+                    ))}
+                    <div className="inline-block w-2 h-4 bg-f-neon animate-blink ml-1 align-middle"></div>
+                  </div>
+                </div>
+
+                {/* Mini Cards */}
+                <div className="absolute top-10 -right-4 bg-f-dark border border-f-neon/20 rounded-xl p-4 shadow-xl z-30 animate-float" style={{ animationDelay: '1s' }}>
+                  <div className="font-display font-bold text-3xl text-f-neon">{t('hero_metric_3_val')}</div>
+                  <div className="font-mono text-[10px] text-f-mint/50 uppercase">{t('hero_metric_3_lbl')}</div>
+                </div>
+                
+                <div className="absolute bottom-20 -left-8 bg-f-dark border border-f-neon/20 rounded-xl p-4 shadow-xl z-30 animate-float" style={{ animationDelay: '2s' }}>
+                  <div className="font-display font-bold text-2xl text-f-mint">700k</div>
+                  <div className="font-mono text-[10px] text-f-mint/50 uppercase">inscritos Abba Pai Church</div>
+                </div>
+
+                <div className="absolute -bottom-4 right-10 bg-f-dark border border-f-neon/20 rounded-xl p-4 shadow-xl z-30 animate-float" style={{ animationDelay: '1.5s' }}>
+                  <div className="font-display font-bold text-xl text-f-mint">1 semana</div>
+                  <div className="font-mono text-[10px] text-f-mint/50 uppercase">para monetização ativa</div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+          <span className="font-mono text-[10px] text-f-mint/30 uppercase tracking-widest">scroll</span>
+          <ChevronDown size={16} className="text-f-mint/30 animate-bounce" />
+        </div>
+      </section>
+
+      {/* TICKER SECTION */}
+      <section className="bg-f-dark py-4 border-y border-f-neon/15 overflow-hidden flex items-center">
+        <div className="animate-marquee whitespace-nowrap flex items-center">
+          {[...Array(3)].map((_, i) => (
+            <div key={i} className="flex items-center">
+              <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Viviane Martinello</span>
+              <span className="text-f-neon">·</span>
+              <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Abba Pai Church</span>
+              <span className="text-f-neon">·</span>
+              <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Rony Meisler</span>
+              <span className="text-f-neon">·</span>
+              <span className="font-display font-medium text-[15px] text-f-mint/60 tracking-wide mx-6">Unesc TV</span>
+              <span className="text-f-neon">·</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* O QUE É A FOSTER */}
+      <section className="py-28 bg-f-black">
+        <div className="max-w-5xl mx-auto px-5 md:px-8 text-center">
+          <AnimatedSection>
+            <div className="font-mono text-f-neon/70 mb-6" data-i18n="about_eyebrow">{t('about_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,5vw,52px)] text-f-mint mb-8">
+              <span className="block" data-i18n="about_title_1">{t('about_title')}</span>
+            </h2>
+            <p className="font-body font-light text-[20px] text-f-mint/55 max-w-2xl mx-auto mb-20" data-i18n="about_desc_1">
+              {t('about_desc_1')}
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+            <AnimatedSection delay={100}>
+              <div className="text-f-neon text-2xl mb-4">◈</div>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_1_title">Criar</h3>
+              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_1_desc">Avatares, vídeos, conteúdo e experiências que param o scroll e constroem marcas.</p>
+            </AnimatedSection>
+            <AnimatedSection delay={200}>
+              <div className="text-f-neon text-2xl mb-4">⬡</div>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_2_title">Construir</h3>
+              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_2_desc">Plataformas, sites e tecnologia com IA integrada em cada etapa do processo.</p>
+            </AnimatedSection>
+            <AnimatedSection delay={300}>
+              <div className="text-f-neon text-2xl mb-4">▲</div>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_3_title">Crescer</h3>
+              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_3_desc">Canais, posicionamento e estratégia que transformam presença em dominância digital.</p>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* iFOSTER EM DESTAQUE */}
+      <section id="ifoster" className="py-28 bg-gradient-to-br from-f-black to-f-dark overflow-hidden">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div className="order-2 lg:order-1">
+              <AnimatedSection>
+                <div className="font-mono text-f-neon/70 mb-6" data-i18n="ifoster_eyebrow">{t('ifoster_eyebrow')}</div>
+                <h2 className="font-display font-bold text-[clamp(40px,6vw,56px)] text-f-mint mb-8">
+                  <span className="block">iFoster.</span>
+                  <span className="block" data-i18n="ifoster_hero_title_1">{t('ifoster_hero_title_1')}</span>
+                  <span className="block" data-i18n="ifoster_hero_title_2">{t('ifoster_hero_title_2')}</span>
+                  <span className="block text-f-neon text-glow-sm" data-i18n="ifoster_hero_title_3">{t('ifoster_hero_title_3')}</span>
+                </h2>
+                <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg" data-i18n="ifoster_desc">
+                  {t('ifoster_desc')}
+                </p>
+                
+                <ul className="space-y-3 mb-10">
+                  {[
+                    "ifoster_feature_1",
+                    "ifoster_feature_2",
+                    "ifoster_feature_3",
+                    "ifoster_feature_4",
+                    "ifoster_feature_5"
+                  ].map((key, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[15px] text-f-mint/80">
+                      <CheckCircle2 size={18} className="text-f-neon shrink-0 mt-0.5" />
+                      <span data-i18n={key}>{t(key)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="/ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon transition-all duration-300" data-i18n="ifoster_cta">
+                    {t('ifoster_cta')}
+                  </a>
+                  <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="border border-f-neon text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300" data-i18n="nav_cta">
+                    {t('nav_cta')} →
+                  </a>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            <div className="order-1 lg:order-2 perspective-[1000px]">
+              <AnimatedSection delay={200}>
+                <div className="w-full bg-f-black border border-f-neon/20 rounded-2xl p-6 shadow-2xl transform transition-transform duration-700 hover:rotate-x-2 hover:-rotate-y-2">
+                  <div className="flex items-center gap-2 mb-6 border-b border-f-neon/10 pb-4">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    <div className="ml-auto font-mono text-[11px] text-f-mint/40 uppercase tracking-widest">iFoster Chat Interface</div>
+                  </div>
+                  
+                  <div className="space-y-4 mb-6 font-body text-[13px]">
+                    <div className="flex justify-end">
+                      <div className="bg-f-neon/10 text-f-mint rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%]">
+                        Preciso de um roteiro para um vídeo de 1 minuto sobre IA no marketing.
+                      </div>
+                    </div>
+                    <div className="flex justify-start">
+                      <div className="flex gap-3 max-w-[90%]">
+                        <div className="w-6 h-6 rounded-full bg-f-neon/20 flex items-center justify-center shrink-0 mt-1">
+                          <span className="text-f-neon text-[10px]">✦</span>
+                        </div>
+                        <div className="bg-f-dark/80 text-f-mint rounded-2xl rounded-tl-sm px-4 py-3 border border-f-neon/10">
+                          <p className="mb-2">Aqui está o roteiro otimizado para retenção:</p>
+                          <div className="font-mono text-[11px] text-f-neon/80 bg-f-black p-2 rounded border border-f-neon/20">
+                            [0:00-0:03] HOOK: "Sua agência está mentindo para você..."
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center font-mono text-[10px] text-f-mint/30 pt-4 border-t border-f-neon/10">
+                    Super Agentes de IA · Foster Company
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* VERTICAIS (SOLUÇÕES) */}
+      <section id="solucoes" className="py-28 bg-f-black bg-grid-pattern">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <AnimatedSection className="mb-20">
+            <div className="font-mono text-f-neon/70 mb-6" data-i18n="verticals_eyebrow">{t('verticals_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,5vw,48px)] text-f-mint mb-4" data-i18n="verticals_title">{t('verticals_title')}</h2>
+            <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuidar de tudo.</p>
+          </AnimatedSection>
+
+          <div className="space-y-8">
+            {/* Create */}
+            <AnimatedSection>
+              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 hover:-translate-y-1 transition-all duration-300 group">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-10 lg:p-16 flex flex-col justify-center order-2 lg:order-1 border-t lg:border-t-0 lg:border-r border-f-neon/10">
+                    <div className="w-full h-full min-h-[240px] bg-f-black rounded-xl border border-f-neon/20 p-6 flex flex-col items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.1)_0%,transparent_70%)]"></div>
+                      <div className="w-24 h-24 rounded-full border-2 border-dashed border-f-neon/40 animate-[spin_10s_linear_infinite] mb-6 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-f-neon/20 blur-md"></div>
+                      </div>
+                      <div className="font-mono text-xs text-f-neon tracking-widest">AVATAR ATIVO ●</div>
+                    </div>
+                  </div>
+                  <div className="p-10 lg:p-16 order-1 lg:order-2">
+                    <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">01 / Foster Create</div>
+                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="create_title">{t('create_title')}</h3>
+                    <p className="text-f-mint/65 mb-8" data-i18n="create_desc">{t('create_desc')}</p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-mono text-sm text-f-neon/80">
+                      <span>Produção de Vídeos</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Avatar IA</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Conteúdo com IA</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Cabine para Eventos</span>
+                    </div>
+                    <a href="#create" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="create_cta">{t('create_cta')}</a>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Build */}
+            <AnimatedSection>
+              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 hover:-translate-y-1 transition-all duration-300 group">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-10 lg:p-16">
+                    <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">02 / Foster Build</div>
+                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="build_title">{t('build_title')}</h3>
+                    <p className="text-f-mint/65 mb-8" data-i18n="build_desc">{t('build_desc')}</p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-mono text-sm text-f-neon/80">
+                      <span>Sites com IA</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Plataformas Digitais</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Consultoria de Estúdio</span>
+                    </div>
+                    <a href="#build" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="build_cta">{t('build_cta')}</a>
+                  </div>
+                  <div className="p-10 lg:p-16 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-f-neon/10">
+                    <div className="w-full h-full min-h-[240px] bg-f-black rounded-xl border border-f-neon/20 p-6 font-mono text-xs text-f-neon/70 overflow-hidden">
+                      <div className="mb-2 text-f-mint/40">// Deploying infrastructure</div>
+                      <div className="mb-1">{'>'} npm run build</div>
+                      <div className="mb-1">{'>'} building client + server...</div>
+                      <div className="mb-1 text-f-neon">{'>'} ✓ 142 modules compiled</div>
+                      <div className="mb-1">{'>'} connecting to iFoster API...</div>
+                      <div className="mb-1 text-f-neon">{'>'} ✓ connection established</div>
+                      <div className="mt-4 animate-pulse">_</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Grow */}
+            <AnimatedSection>
+              <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 hover:-translate-y-1 transition-all duration-300 group">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-10 lg:p-16 flex flex-col justify-center order-2 lg:order-1 border-t lg:border-t-0 lg:border-r border-f-neon/10">
+                    <div className="w-full h-full min-h-[240px] bg-f-black rounded-xl border border-f-neon/20 p-6 flex items-end relative overflow-hidden">
+                      <svg viewBox="0 0 100 100" className="w-full h-full absolute inset-0 preserve-3d" preserveAspectRatio="none">
+                        <path d="M0 100 L 0 80 L 20 75 L 40 60 L 60 65 L 80 30 L 100 10 L 100 100 Z" className="fill-f-neon/10" />
+                        <path d="M0 80 L 20 75 L 40 60 L 60 65 L 80 30 L 100 10" className="stroke-f-neon stroke-2 fill-none" strokeDasharray="300" strokeDashoffset="0">
+                          <animate attributeName="stroke-dashoffset" from="300" to="0" dur="3s" fill="freeze" />
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="p-10 lg:p-16 order-1 lg:order-2">
+                    <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">03 / Foster Grow</div>
+                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="grow_title">{t('grow_title')}</h3>
+                    <p className="text-f-mint/65 mb-8" data-i18n="grow_desc">{t('grow_desc')}</p>
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 mb-10 font-mono text-sm text-f-neon/80">
+                      <span>Gestão YouTube</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Mentoria 3Ps</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Plataforma YouTube</span>
+                      <span className="text-f-mint/30">·</span>
+                      <span>Posicionamento</span>
+                    </div>
+                    <a href="#grow" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="grow_cta">{t('grow_cta')}</a>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* PLATAFORMAS */}
+      <section id="plataformas" className="py-24 bg-f-dark">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <AnimatedSection className="mb-16">
+            <div className="font-mono text-f-neon/70 mb-6" data-i18n="platforms_eyebrow">{t('platforms_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4" data-i18n="platforms_title">{t('platforms_title')}</h2>
+            <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="platforms_desc">{t('platforms_desc')}</p>
+          </AnimatedSection>
+
+          {/* iFoster Card - Destaque */}
+          <AnimatedSection className="mb-6">
+            <div className="bg-[#50F2A7]/[0.06] border border-[#50F2A7]/[0.35] rounded-2xl p-8 lg:p-10 hover:border-[#50F2A7]/50 hover:glow-neon transition-all duration-300">
+              <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-[#50F2A7]/10 flex items-center justify-center shrink-0">
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#50F2A7]">
+                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 6.5 12 6.5 15.5 8.07 15.5 10 13.93 13.5 12 13.5zM12 8l-.5 1.5L10 10l1.5.5L12 12l.5-1.5L14 10l-1.5-.5L12 8z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-mono text-[10px] text-[#50F2A7] mb-1" data-i18n="ifoster_card_badge">{t('ifoster_card_badge')}</div>
+                      <div className="inline-block bg-f-dark/50 border border-[#50F2A7]/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70" data-i18n="ifoster_card_tags">
+                        {t('ifoster_card_tags')}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h3 className="font-display font-bold text-[26px] text-[#E1F2DF] mb-3" data-i18n="ifoster_card_title">{t('ifoster_card_title')}</h3>
+                  <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6 max-w-2xl" data-i18n="ifoster_card_desc">
+                    {t('ifoster_card_desc')}
+                  </p>
+                  
+                  {/* URL do iFoster */}
+                  <a href="[URL do iFoster]" target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
+                    {t('ifoster_card_cta')}
+                  </a>
+                  {/* CARLOS: substitua pelo link real da plataforma iFoster */}
+                </div>
+                
+                <div className="w-full lg:w-auto shrink-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {["ifoster_card_agent_1", "ifoster_card_agent_2", "ifoster_card_agent_3", "ifoster_card_agent_4"].map((agent, i) => (
+                      <div key={i} className="bg-[#50F2A7]/[0.08] border border-[#50F2A7]/20 rounded-full px-4 py-2 font-mono text-[11px] text-[#E1F2DF]/70 whitespace-nowrap" data-i18n={agent}>
+                        {t(agent)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Stratube */}
+            <AnimatedSection>
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
+                    <span className="font-display font-bold text-xl text-f-neon">S</span>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
+                      YouTube · Analytics
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Stratube</h3>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
+                  {/* CARLOS: adicione aqui a descrição do Stratube */}
+                  [Descrição da plataforma — adicionar copy aqui]
+                </p>
+
+                <div className="flex flex-col gap-2 mb-8">
+                  {/* CARLOS: adicione as features principais do Stratube */}
+                  {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
+                      <span className="text-f-neon">▸</span>
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* URL: substitua pelo link real do Stratube */}
+                <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer o Stratube →
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Nomes e Marcas */}
+            <AnimatedSection delay={100}>
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
+                    <span className="font-display font-bold text-xl text-f-neon">N</span>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
+                      Branding · Naming
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Nomes e Marcas</h3>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
+                  {/* CARLOS: adicione aqui a descrição do Nomes e Marcas */}
+                  [Descrição da plataforma — adicionar copy aqui]
+                </p>
+
+                <div className="flex flex-col gap-2 mb-8">
+                  {/* CARLOS: adicione as features principais do Nomes e Marcas */}
+                  {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
+                      <span className="text-f-neon">▸</span>
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* URL: substitua pelo link real do Nomes e Marcas */}
+                <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer Nomes e Marcas →
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Echowise */}
+            <AnimatedSection delay={200}>
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
+                    <span className="font-display font-bold text-xl text-f-neon">E</span>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
+                      [categoria a definir]
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Echowise</h3>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
+                  {/* CARLOS: adicione aqui a descrição do Echowise */}
+                  [Descrição da plataforma — adicionar copy aqui]
+                </p>
+
+                <div className="flex flex-col gap-2 mb-8">
+                  {/* CARLOS: adicione as features principais do Echowise */}
+                  {["[Feature 1]", "[Feature 2]", "[Feature 3]"].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-2 text-[13px] text-f-mint/80">
+                      <span className="text-f-neon">▸</span>
+                      <span>{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* URL: substitua pelo link real do Echowise */}
+                <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer o Echowise →
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* CASES / WORK */}
+      <section id="work" className="py-28 bg-f-dark">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+            <div>
+              <div className="font-mono text-f-neon/70 mb-6" data-i18n="work_eyebrow">{t('work_eyebrow')}</div>
+              <h2 className="font-display font-bold text-[clamp(32px,4vw,40px)] text-f-mint" data-i18n="work_title">{t('work_title')}</h2>
+            </div>
+            <a href="#work" className="text-f-neon font-display font-medium hover:underline underline-offset-4 whitespace-nowrap" data-i18n="work_cta">{t('work_cta')}</a>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Case 01 - Destaque */}
+            <AnimatedSection className="md:col-span-2">
+              <div className="bg-gradient-to-br from-f-black to-f-dark border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-colors duration-300 group">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">🏆 Case Nacional — Crescimento Orgânico</div>
+                    <h3 className="font-display font-bold text-4xl text-f-mint mb-4">De 100k para 700k inscritos.</h3>
+                    <p className="text-f-mint/65 mb-6">Viviane Martinello & Abba Pai Church — 2 anos. +600% de crescimento. Um dos maiores canais de igrejas do Brasil.</p>
+                    <div className="font-mono text-xs text-f-mint/50 mb-8 leading-relaxed">
+                      700k+ inscritos · +600% crescimento · 2 anos · Top Igrejas BR
+                    </div>
+                    <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Grow · YouTube</div>
+                  </div>
+                  <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-8 flex items-center justify-center min-h-[300px]">
+                    <div className="aspect-square w-full max-w-[300px] border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30">
+                      <span className="font-mono text-xs text-f-mint/30">[ foto/imagem do case ]</span>
+                      {/* <img src="case-viviane.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Case 02 */}
+            <AnimatedSection delay={100}>
+              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/45 transition-colors duration-300 h-full flex flex-col">
+                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">Avatar de IA</div>
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Rony Meisler — Clone Digital</h3>
+                <p className="text-f-mint/65 mb-8 flex-grow">Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda.</p>
+                <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 mb-6 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                  <span className="absolute bottom-3 right-3 font-mono text-[10px] text-f-mint/30">[ vídeo do avatar ]</span>
+                  {/* Embed YouTube */}
+                </div>
+                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Create · iFoster Avatar</div>
+              </div>
+            </AnimatedSection>
+
+            {/* Case 03 */}
+            <AnimatedSection delay={200}>
+              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/45 transition-colors duration-300 h-full flex flex-col">
+                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">Estúdio Profissional</div>
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Estúdio Rony Meisler — Rio de Janeiro</h3>
+                <p className="text-f-mint/65 mb-8 flex-grow">Projeto e montagem completos no escritório e residência. Setup profissional de câmera, iluminação e acústica.</p>
+                <div className="grid grid-cols-2 gap-2 mb-6">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="aspect-square w-full border border-f-neon/20 rounded-lg flex items-center justify-center bg-f-dark/30">
+                       <span className="font-mono text-[9px] text-f-mint/20 text-center px-2">[ foto ]</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Build · Consultoria Estúdio</div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* CANAIS PRÓPRIOS */}
+      <section id="canais-proprios" className="py-24 bg-f-black bg-grid-pattern relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.15)_0%,transparent_100%)]"></div>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+          <AnimatedSection className="mb-16">
+            <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/25 rounded-full px-4 py-1.5 mb-8">
+              <span className="font-mono text-[12px] text-f-neon">🎬 Portfólio de criação original · Foster Company</span>
+            </div>
+            <div className="font-mono text-f-neon/70 mb-6" data-i18n="channels_eyebrow">{t('channels_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4" data-i18n="channels_title">{t('channels_title')}</h2>
+            <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="channels_desc">{t('channels_desc')}</p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {/* Canal Destaque - Fatos da Bíblia */}
+            <AnimatedSection className="md:col-span-2 lg:col-span-2">
+              <div className="bg-[#104037]/50 border border-[#50F2A7]/15 rounded-2xl p-5 hover:border-[#50F2A7]/45 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                {/* TOPO DO CARD */}
+                <div className="mb-4">
+                  <span className="inline-block bg-[#50F2A7]/10 border border-[#50F2A7]/30 rounded-full px-3 py-1 font-mono text-[11px] text-[#50F2A7]">
+                    🚀 Canal Próprio · 30 dias · Monetizado
+                  </span>
+                </div>
+
+                {/* ÁREA DE THUMBNAIL */}
+                <div className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-5 group">
+                  <div className="w-10 h-10 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                    <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[8px] border-l-[#50F2A7] border-b-[5px] border-b-transparent ml-1"></div>
+                  </div>
+                  <span className="absolute bottom-3 font-mono text-[10px] text-[#E1F2DF]/25 z-10">[ Thumbnail do Canal — Fatos da Bíblia ]</span>
+                  <img src="https://img.youtube.com/vi/9ABhVatBQz4/maxresdefault.jpg" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" alt="Fatos da Bíblia" />
+                </div>
+
+                {/* INFORMAÇÕES ABAIXO DA THUMBNAIL */}
+                <h3 className="font-display font-bold text-[20px] text-[#E1F2DF] mb-2">
+                  Fatos da Bíblia
+                </h3>
+                <p className="font-body font-normal text-[13px] text-[#E1F2DF]/60 leading-[1.5] line-clamp-2 mb-4">
+                  Investigamos a Bíblia com profundidade histórica, arqueologia e fontes acadêmicas verificáveis. Sem pregação. Sem sensacionalismo. Investigação séria.
+                </p>
+
+                {/* MÉTRICAS */}
+                <div className="flex flex-wrap gap-2 mt-2 mb-5">
+                  <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
+                    ⚡ ~5k inscritos
+                  </span>
+                  <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
+                    ● Monetizado em 1 semana
+                  </span>
+                  <span className="font-mono text-[10px] bg-[#50F2A7]/10 border border-[#50F2A7]/30 text-[#50F2A7] rounded-full px-2 py-1">
+                    🤖 100% IA
+                  </span>
+                </div>
+
+                {/* RODAPÉ DO CARD */}
+                <div className="mt-auto border-t border-[#50F2A7]/10 pt-3 flex items-center justify-between">
+                  <a href="https://www.youtube.com/@fatos.dabiblia" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-[#50F2A7] hover:underline underline-offset-4">
+                    Ver canal →
+                  </a>
+                  <span className="font-mono text-[10px] text-[#E1F2DF]/30">
+                    Foster Grow · Foster Create
+                  </span>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Canal 1 */}
+            <AnimatedSection>
+              <div className="group">
+                <div className="w-full aspect-video bg-f-dark border border-f-neon/15 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4 group-hover:border-f-neon/50 transition-colors">
+                  <div className="absolute top-3 left-3 bg-f-black/80 backdrop-blur text-f-mint font-mono text-[10px] px-2 py-1 rounded z-10 border border-f-neon/20">
+                    Canal de Conteúdo
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                  <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
+                  {/* CARLOS: nome, URL e thumbnail do canal 1 */}
+                  {/* <img src="thumbnail-canal-1.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                </div>
+                <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
+                  {/* CARLOS: Nome do Canal 1 */}
+                  [ Nome do Canal 1 ]
+                </h3>
+                <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
+                  {/* CARLOS: Descrição curta do Canal 1 */}
+                  [ Descrição curta do canal, nicho e foco principal. ]
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
+                    ▶ [X inscritos]
+                  </div>
+                  {/* URL: link do canal 1 */}
+                  <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
+                    Ver canal →
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Canal 2 */}
+            <AnimatedSection delay={100}>
+              <div className="group">
+                <div className="w-full aspect-video bg-f-dark border border-f-neon/15 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4 group-hover:border-f-neon/50 transition-colors">
+                  <div className="absolute top-3 left-3 bg-f-black/80 backdrop-blur text-f-mint font-mono text-[10px] px-2 py-1 rounded z-10 border border-f-neon/20">
+                    Personagem
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                  <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
+                  {/* CARLOS: nome, URL e thumbnail do canal 2 */}
+                  {/* <img src="thumbnail-canal-2.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                </div>
+                <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
+                  {/* CARLOS: Nome do Canal 2 */}
+                  [ Nome do Canal 2 ]
+                </h3>
+                <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
+                  {/* CARLOS: Descrição curta do Canal 2 */}
+                  [ Descrição curta do canal, nicho e foco principal. ]
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
+                    ▶ [X inscritos]
+                  </div>
+                  {/* URL: link do canal 2 */}
+                  <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
+                    Ver canal →
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Canal 3 */}
+            <AnimatedSection delay={200}>
+              <div className="group">
+                <div className="w-full aspect-video bg-f-dark border border-f-neon/15 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4 group-hover:border-f-neon/50 transition-colors">
+                  <div className="absolute top-3 left-3 bg-f-black/80 backdrop-blur text-f-mint font-mono text-[10px] px-2 py-1 rounded z-10 border border-f-neon/20">
+                    Educacional
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
+                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                  <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
+                  {/* CARLOS: nome, URL e thumbnail do canal 3 */}
+                  {/* <img src="thumbnail-canal-3.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                </div>
+                <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
+                  {/* CARLOS: Nome do Canal 3 */}
+                  [ Nome do Canal 3 ]
+                </h3>
+                <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
+                  {/* CARLOS: Descrição curta do Canal 3 */}
+                  [ Descrição curta do canal, nicho e foco principal. ]
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
+                    ▶ [X inscritos]
+                  </div>
+                  {/* URL: link do canal 3 */}
+                  <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
+                    Ver canal →
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Canal 4 - Em Breve */}
+            <AnimatedSection delay={300}>
+              <div className="h-full flex flex-col">
+                <div className="w-full aspect-video bg-f-black/40 backdrop-blur-sm border-2 border-dashed border-f-neon/30 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4">
+                  <div className="absolute top-3 right-3 bg-f-neon text-f-black font-mono text-[10px] font-bold px-2 py-1 rounded z-10">
+                    Em breve · 🚀 Novo canal Foster
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/5 flex items-center justify-center">
+                    <span className="text-xl opacity-50">🤫</span>
+                  </div>
+                </div>
+                <h3 className="font-display font-bold text-[18px] text-f-mint/50 mb-2">
+                  Projeto em desenvolvimento
+                </h3>
+                <p className="text-[13px] text-f-mint/40 line-clamp-2 mb-3 leading-[1.55]">
+                  A Foster está sempre criando. Novos canais e personagens originais serão anunciados em breve.
+                </p>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <AnimatedSection delay={400} className="flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-f-neon/10 pt-8">
+            <p className="text-[15px] text-f-mint/60">
+              Novos canais e personagens em desenvolvimento. A Foster está sempre criando.
+            </p>
+            <div className="flex items-center gap-4">
+              <span className="text-[14px] text-f-mint/80 font-medium">Quer um canal como esse?</span>
+              <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-6 py-2.5 text-[14px] hover:glow-neon transition-all duration-300">
+                Falar com a equipe →
+              </a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* NÚMEROS */}
+      <section className="py-20 bg-f-black border-t border-f-neon/10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-f-neon/15">
+            <AnimatedSection className="text-center py-6 md:py-0">
+              <div className="font-display font-bold text-6xl text-f-neon mb-2">15+</div>
+              <div className="font-body text-sm text-f-mint/50 uppercase tracking-[0.1em]">anos de produção</div>
+            </AnimatedSection>
+            <AnimatedSection delay={100} className="text-center py-6 md:py-0">
+              <div className="font-display font-bold text-6xl text-f-neon mb-2">+500</div>
+              <div className="font-body text-sm text-f-mint/50 uppercase tracking-[0.1em]">projetos na área de comunicação</div>
+            </AnimatedSection>
+            <AnimatedSection delay={200} className="text-center py-6 md:py-0">
+              <div className="font-display font-bold text-[clamp(48px,5vw,64px)] text-f-neon text-glow-sm mb-2">+1 Bilhão</div>
+              <div className="font-body text-sm text-f-mint/50 uppercase tracking-[0.1em]">de visualizações geradas para parceiros</div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* CARLOS BORGES */}
+      <section id="carlos-borges" className="py-28 bg-f-dark">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            <div className="lg:col-span-4 flex justify-center lg:justify-start">
+              <AnimatedSection>
+                <div className="w-full max-w-xs aspect-[3/4] bg-gradient-to-b from-f-black to-f-dark border border-f-neon/20 rounded-2xl relative overflow-hidden flex flex-col items-center justify-center p-6">
+                  <div className="font-display font-bold text-6xl text-f-neon mb-4">CB</div>
+                  <div className="font-display font-semibold text-lg text-f-mint">Carlos Borges</div>
+                  <div className="font-body text-[13px] text-f-mint/40">Fundador — Foster Company</div>
+                  
+                  <div className="absolute bottom-4 left-4 font-mono text-[10px] bg-f-neon/10 border border-f-neon rounded-full px-3 py-1 text-f-neon">
+                    Criados para Criar
+                  </div>
+                  {/* <img src="carlos-borges.jpg" className="absolute inset-0 w-full h-full object-cover rounded-2xl" /> */}
+                </div>
+              </AnimatedSection>
+            </div>
+
+            <div className="lg:col-span-8">
+              <AnimatedSection delay={200}>
+                <div className="font-mono text-f-neon/70 mb-6" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
+                <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-8 max-w-2xl" data-i18n="founder_title">
+                  {t('founder_title')}
+                </h2>
+                
+                <div className="space-y-6 text-[16px] text-f-mint/65 font-light max-w-2xl mb-10">
+                  <p data-i18n="founder_p1">{t('founder_p1')}</p>
+                  <p data-i18n="founder_p2">{t('founder_p2')}</p>
+                  <p data-i18n="founder_p3">{t('founder_p3')}</p>
+                </div>
+
+                <ul className="space-y-3 mb-10">
+                  {[
+                    "founder_li1",
+                    "founder_li2",
+                    "founder_li3",
+                    "founder_li4",
+                    "founder_li5"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[15px] text-f-mint/80">
+                      <span className="text-f-neon mt-0.5">▸</span>
+                      <span data-i18n={item}>{t(item)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="founder_cta">
+                  {t('founder_cta')}
+                </a>
+              </AnimatedSection>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* SELO MUSICAL */}
+      <section id="selo-musical" className="py-24 bg-[#104037] relative overflow-hidden">
+        {/* Waveform Background Animation */}
+        <div className="absolute inset-0 flex items-end justify-center opacity-10 gap-2 pb-10 pointer-events-none">
+          {[...Array(30)].map((_, i) => (
+            <div 
+              key={i}
+              className="w-3 bg-f-neon rounded-t-full origin-bottom animate-waveform"
+              style={{
+                height: `${Math.random() * 50 + 10}%`,
+                animationDelay: `${Math.random() * 1.5}s`,
+                animationDuration: `${Math.random() * 1 + 0.8}s`
+              }}
+            ></div>
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+          <AnimatedSection className="mb-16 text-center">
+            <div className="font-mono text-[12px] text-f-neon/70 mb-6">{t('music_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">{t('music_title')}</h2>
+            <p className="text-[17px] text-f-mint/55 max-w-2xl mx-auto">
+              {t('music_desc')}
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Card 1 */}
+            <AnimatedSection>
+              <div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group">
+                <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">
+                  {t('music_card1_badge')}
+                </div>
+                <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('music_card1_title')}</h3>
+                <p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">
+                  {t('music_card1_desc')}
+                </p>
+                <div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">
+                  Spotify · Apple Music · Deezer · YouTube Music
+                </div>
+                {/* CARLOS: adicione o link do perfil no Spotify */}
+                <a href="[URL_SPOTIFY]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
+                  {t('music_card1_cta')}
+                </a>
+              </div>
+            </AnimatedSection>
+
+            {/* Card 2 */}
+            <AnimatedSection delay={100}>
+              <div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group">
+                <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">
+                  {t('music_card2_badge')}
+                </div>
+                <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('music_card2_title')}</h3>
+                <p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">
+                  {t('music_card2_desc')}
+                </p>
+                
+                <div className="flex items-center gap-[-10px] mb-8">
+                  {/* CARLOS: adicione fotos/nomes dos artistas quando estiver pronto */}
+                  <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-30 relative shadow-lg">
+                    <span className="font-display font-bold text-f-neon/50 text-sm">A1</span>
+                    {/* <img src="artista-1.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                  </div>
+                  <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-20 relative -ml-4 shadow-lg">
+                    <span className="font-display font-bold text-f-neon/50 text-sm">A2</span>
+                    {/* <img src="artista-2.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                  </div>
+                  <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-10 relative -ml-4 shadow-lg">
+                    <span className="font-display font-bold text-f-neon/50 text-sm">A3</span>
+                    {/* <img src="artista-3.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
+                  </div>
+                </div>
+
+                <a href="#musica" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
+                  {t('music_card2_cta')}
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="py-36 bg-f-black relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(80,242,167,0.07) 0%, transparent 70%)' }}></div>
+        <div className="max-w-3xl mx-auto px-5 md:px-8 text-center relative z-10">
+          <AnimatedSection>
+            <div className="font-mono text-f-neon/70 mb-6">{t('cta_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(48px,8vw,72px)] text-f-mint mb-6">
+              <span className="block">{t('cta_title_1')}</span>
+              <span className="block">{t('cta_title_2')}</span>
+            </h2>
+            <p className="font-body font-light text-[20px] text-f-mint/50 mb-12">
+              {t('cta_desc')}
+            </p>
+            <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6">
+              {t('cta_btn')}
+            </a>
+            <p className="font-mono text-[11px] text-f-mint/25">
+              {t('cta_footer')}
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+    </div>
+  );
+}

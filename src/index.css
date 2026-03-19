@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-f-black: #030D09;
+  --color-f-dark: #104037;
+  --color-f-neon: #50F2A7;
+  --color-f-green: #63BF8B;
+  --color-f-mint: #E1F2DF;
+  --color-f-gray: #EAEAEA;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-f-black);
+    color: var(--color-f-mint);
+  }
+  p { line-height: 1.55; }
+  h1, h2, .font-display { font-family: var(--font-display); }
+  h1, h2 { line-height: 1.05; }
+  h3 { line-height: 1.25; }
+  li { line-height: 1.5; }
+  .font-mono { font-family: var(--font-mono); }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(rgba(80,242,167,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(80,242,167,0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+  .bg-noise {
+    position: relative;
+  }
+  .bg-noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glow-neon {
+    box-shadow: 0 0 24px rgba(80,242,167,0.25);
+  }
+  .glow-neon-hover:hover {
+    box-shadow: 0 0 40px rgba(80,242,167,0.4);
+  }
+  .text-glow {
+    text-shadow: 0 0 60px rgba(80,242,167,0.4);
+  }
+  .text-glow-sm {
+    text-shadow: 0 0 30px rgba(80,242,167,0.5);
+  }
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.2); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+.animate-waveform {
+  animation: waveform 1s ease-in-out infinite;
+}
