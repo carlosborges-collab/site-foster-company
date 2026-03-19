@@ -235,7 +235,7 @@ export default function YoutubeGrowth() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <span className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-neon">[1bi+ views]</span>
-                  <span className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-neon">[700k+ inscritos gerenciados]</span>
+                  <span className="bg-f-neon/5 border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-neon">[mais de 5 milhões de inscritos gerenciados]</span>
                 </div>
               </AnimatedSection>
             </div>
