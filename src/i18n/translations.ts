@@ -327,17 +327,18 @@ export const translations = {
     yt_faq_q3: "Quanto tempo para ver resultados?",
     yt_faq_a3: "30–90 dias iniciais. Crescimento expressivo entre o 3º e 6º mês.",
 
-    // Base
-    meta_title: "Foster Company — Creative AI Studio",
-    meta_description: "Criatividade amplificada por IA. Produção audiovisual, canais de YouTube e plataformas digitais.",
-    og_title: "Foster Company — Creative AI Studio",
+    // Base Otimizada para SEO
+    meta_title: "Foster Company | Gestão de YouTube, Clone Digital IA e Estúdio Criativo",
+    meta_description: "A Foster Company é um Creative AI Studio em Balneário Camboriú especializado em Gestão de YouTube, Clones Digitais com IA, Produção Audiovisual e Estratégia Digital para marcas e líderes.",
+    og_title: "Foster Company — Creative AI Studio | IA e Estratégia Digital",
   },
   es: {
     nav_home: "Inicio",
     nav_clone_digital: "Clone Digital",
     nav_yt_growth: "Gestión de YouTube",
     nav_sites: "Sitios",
-    meta_title: "Foster Company — Creative AI Studio",
+    meta_title: "Foster Company | Gestión de YouTube y Clone Digital IA",
+    meta_description: "Estudio creativo de IA especializado en gestión de YouTube y avatares digitales.",
     nav_solutions: "Soluciones",
     nav_cta: "Hablar con Foster",
   },
@@ -346,7 +347,8 @@ export const translations = {
     nav_clone_digital: "Digital Clone",
     nav_yt_growth: "YouTube Growth",
     nav_sites: "Sites",
-    meta_title: "Foster Company — Creative AI Studio",
+    meta_title: "Foster Company | YouTube Management & Digital AI Clone",
+    meta_description: "Creative AI studio specializing in YouTube growth and digital AI avatars.",
     nav_solutions: "Solutions",
     nav_cta: "Talk to Foster",
   }
