@@ -41,15 +41,12 @@ export default function Create() {
               <div className="w-full aspect-square max-w-md mx-auto bg-f-black border border-f-neon/20 rounded-full p-8 relative flex items-center justify-center shadow-[0_0_60px_rgba(80,242,167,0.1)]">
                 <div className="absolute inset-0 rounded-full border border-dashed border-f-neon/30 animate-[spin_20s_linear_infinite]"></div>
                 <div className="w-full h-full rounded-full bg-gradient-to-tr from-f-neon/20 to-transparent flex items-center justify-center relative overflow-hidden">
-                  {/* Waveform */}
                   <div className="flex items-end gap-1.5 h-16 opacity-70">
                     {[40, 70, 40, 90, 60, 30, 80, 50, 60, 40, 70].map((h, i) => (
                       <div key={i} className="w-2 bg-f-neon rounded-full" style={{ height: `${h}%`, animation: `pulse-dot ${1 + i*0.1}s infinite` }}></div>
                     ))}
                   </div>
                 </div>
-                
-                {/* Badges */}
                 <div className="absolute top-10 -right-4 bg-f-dark border border-f-neon/30 rounded-full px-4 py-2 font-mono text-[10px] text-f-neon shadow-xl">Voz clonada ✓</div>
                 <div className="absolute bottom-20 -left-8 bg-f-dark border border-f-neon/30 rounded-full px-4 py-2 font-mono text-[10px] text-f-neon shadow-xl">Expressão facial ✓</div>
                 <div className="absolute -bottom-4 right-10 bg-f-dark border border-f-neon/30 rounded-full px-4 py-2 font-mono text-[10px] text-f-neon shadow-xl">Pronto para gravar ✓</div>
@@ -61,15 +58,12 @@ export default function Create() {
               <div className="bg-f-black/50 border border-f-neon/20 rounded-2xl p-8 md:p-10">
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-2">Rony Meisler</h3>
                 <div className="font-mono text-xs text-f-neon mb-8">YouTube + Instagram ✓</div>
-                
                 <div className="flex gap-4">
                   <div className="w-1/3 aspect-[9/16] bg-f-dark border border-f-neon/30 rounded-xl relative flex items-center justify-center">
                     <span className="font-mono text-[10px] text-f-mint/30">[ 9:16 ]</span>
-                    {/* <iframe src="..." /> */}
                   </div>
                   <div className="w-2/3 aspect-video bg-f-dark border border-f-neon/30 rounded-xl relative flex items-center justify-center">
                     <span className="font-mono text-[10px] text-f-mint/30">[ 16:9 ]</span>
-                    {/* <iframe src="..." /> */}
                   </div>
                 </div>
               </div>
@@ -81,7 +75,6 @@ export default function Create() {
       {/* OUTROS SERVIÇOS */}
       <section className="py-28 bg-f-black bg-grid-pattern">
         <div className="max-w-5xl mx-auto px-5 md:px-8 space-y-8">
-          
           {/* Vídeos */}
           <AnimatedSection>
             <div className="bg-f-dark border border-f-neon/15 rounded-2xl p-8 md:p-12 hover:border-f-neon/40 transition-colors flex flex-col md:flex-row items-center gap-8">
@@ -115,25 +108,6 @@ export default function Create() {
               </div>
             </div>
           </AnimatedSection>
-
-          {/* Cabine */}
-          <AnimatedSection delay={200}>
-            <div className="bg-f-dark border border-f-neon/15 rounded-2xl p-8 md:p-12 hover:border-f-neon/40 transition-colors">
-              <h3 className="font-display font-bold text-3xl text-f-mint mb-8 text-center">Leve um estúdio profissional ao seu evento.</h3>
-              
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                {[1,2,3].map(i => (
-                  <div key={i} className="aspect-square bg-f-black border border-f-neon/20 rounded-xl flex items-center justify-center relative">
-                    <span className="font-mono text-[9px] text-f-mint/30">[ foto ]</span>
-                  </div>
-                ))}
-              </div>
-              <div className="w-full aspect-[21/9] bg-f-black border border-f-neon/20 rounded-xl flex items-center justify-center relative">
-                <span className="font-mono text-[10px] text-f-mint/30">[ vídeo cabine 16:9 ]</span>
-              </div>
-            </div>
-          </AnimatedSection>
-
         </div>
       </section>
 

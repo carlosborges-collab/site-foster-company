@@ -81,7 +81,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                       <li><a href="#production" className="hover:text-f-neon transition-colors">Produção Audiovisual com IA</a></li>
                       <li><a href="#create" className="hover:text-f-neon transition-colors">Avatar de IA</a></li>
                       <li><a href="#create" className="hover:text-f-neon transition-colors">Conteúdo com IA</a></li>
-                      <li><a href="#create" className="hover:text-f-neon transition-colors">Cabine para Eventos</a></li>
                     </ul>
                   </div>
                   <div>
@@ -89,7 +88,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                     <ul className="space-y-3 text-[14px] text-f-mint/70 font-body">
                       <li><a href="#build" className="hover:text-f-neon transition-colors">Sites com IA</a></li>
                       <li><a href="#plataformas" className="hover:text-f-neon transition-colors">Plataformas Digitais</a></li>
-                      <li><a href="#build" className="hover:text-f-neon transition-colors">Consultoria de Estúdio</a></li>
                     </ul>
                   </div>
                   <div>
@@ -171,13 +169,11 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                     <a href="#production" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Produção Audiovisual com IA</a>
                     <a href="#create" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Avatar de IA</a>
                     <a href="#create" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Conteúdo com IA</a>
-                    <a href="#create" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Cabine para Eventos</a>
                   </div>
                   <div className="flex flex-col gap-2 mt-2">
                     <span className="text-f-neon text-xs font-mono">⬡ Foster Build</span>
                     <a href="#build" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Sites com IA</a>
                     <a href="#plataformas" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Plataformas Digitais</a>
-                    <a href="#build" onClick={() => setMobileMenuOpen(false)} className="text-f-mint/70 hover:text-f-neon">Consultoria de Estúdio</a>
                   </div>
                   <div className="flex flex-col gap-2 mt-2">
                     <span className="text-f-neon text-xs font-mono">▲ Foster Grow</span>

@@ -291,8 +291,6 @@ export default function Home() {
                       <span>Avatar IA</span>
                       <span className="text-f-mint/30">·</span>
                       <span>Conteúdo com IA</span>
-                      <span className="text-f-mint/30">·</span>
-                      <span>Cabine para Eventos</span>
                     </div>
                     <a href="#create" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="create_cta">{t('create_cta')}</a>
                   </div>
@@ -312,8 +310,6 @@ export default function Home() {
                       <span>Sites com IA</span>
                       <span className="text-f-mint/30">·</span>
                       <span>Plataformas Digitais</span>
-                      <span className="text-f-mint/30">·</span>
-                      <span>Consultoria de Estúdio</span>
                     </div>
                     <a href="#build" className="inline-flex items-center text-f-neon font-display font-medium hover:underline underline-offset-4" data-i18n="build_cta">{t('build_cta')}</a>
                   </div>
@@ -580,31 +576,13 @@ export default function Home() {
                 <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">Avatar de IA</div>
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Rony Meisler — Clone Digital</h3>
                 <p className="text-f-mint/65 mb-8 flex-grow">Avatar ultra-realista para YouTube e Instagram. Presença digital sem depender da agenda.</p>
-                <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 mb-6 group cursor-pointer">
+                <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 mb-6 group cursor-pointer" onClick={() => !playFatos && setPlayFatos(true)}>
                   <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                     <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
                   </div>
                   <span className="absolute bottom-3 right-3 font-mono text-[10px] text-f-mint/30 z-10">[ vídeo do avatar ]</span>
-                  {/* Embed YouTube */}
                 </div>
                 <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Create · iFoster Avatar</div>
-              </div>
-            </AnimatedSection>
-
-            {/* Case 03 */}
-            <AnimatedSection delay={200}>
-              <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/45 transition-colors duration-300 h-full flex flex-col">
-                <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">Estúdio Profissional</div>
-                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Estúdio Rony Meisler — Rio de Janeiro</h3>
-                <p className="text-f-mint/65 mb-8 flex-grow">Projeto e montagem completos no escritório e residência. Setup profissional de câmera, iluminação e acústica.</p>
-                <div className="grid grid-cols-2 gap-2 mb-6">
-                  {[1,2,3,4].map(i => (
-                    <div key={i} className="aspect-square w-full border border-f-neon/20 rounded-lg flex items-center justify-center bg-f-dark/30">
-                       <span className="font-mono text-[9px] text-f-mint/20 text-center px-2">[ foto ]</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Build · Consultoria Estúdio</div>
               </div>
             </AnimatedSection>
           </div>
@@ -707,23 +685,18 @@ export default function Home() {
                     <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
                   </div>
                   <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
-                  {/* CARLOS: nome, URL e thumbnail do canal 1 */}
-                  {/* <img src="thumbnail-canal-1.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
                 </div>
                 <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
-                  {/* CARLOS: Nome do Canal 1 */}
                   [ Nome do Canal 1 ]
                 </h3>
                 <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
-                  {/* CARLOS: Descrição curta do Canal 1 */}
                   [ Descrição curta do canal, nicho e foco principal. ]
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
                     ▶ [X inscritos]
                   </div>
-                  {/* URL: link do canal 1 */}
-                  <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
                     Ver canal →
                   </a>
                 </div>
@@ -741,95 +714,24 @@ export default function Home() {
                     <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
                   </div>
                   <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
-                  {/* CARLOS: nome, URL e thumbnail do canal 2 */}
-                  {/* <img src="thumbnail-canal-2.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
                 </div>
                 <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
-                  {/* CARLOS: Nome do Canal 2 */}
                   [ Nome do Canal 2 ]
                 </h3>
                 <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
-                  {/* CARLOS: Descrição curta do Canal 2 */}
                   [ Descrição curta do canal, nicho e foco principal. ]
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
                     ▶ [X inscritos]
                   </div>
-                  {/* URL: link do canal 2 */}
-                  <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
                     Ver canal →
                   </a>
                 </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Canal 3 */}
-            <AnimatedSection delay={200}>
-              <div className="group">
-                <div className="w-full aspect-video bg-f-dark border border-f-neon/15 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4 group-hover:border-f-neon/50 transition-colors">
-                  <div className="absolute top-3 left-3 bg-f-black/80 backdrop-blur text-f-mint font-mono text-[10px] px-2 py-1 rounded z-10 border border-f-neon/20">
-                    Educacional
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                  <span className="absolute bottom-3 font-mono text-[10px] text-f-mint/30 z-10">[ thumbnail do canal ]</span>
-                  {/* CARLOS: nome, URL e thumbnail do canal 3 */}
-                  {/* <img src="thumbnail-canal-3.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
-                </div>
-                <h3 className="font-display font-bold text-[18px] text-f-mint mb-2">
-                  {/* CARLOS: Nome do Canal 3 */}
-                  [ Nome do Canal 3 ]
-                </h3>
-                <p className="text-[13px] text-f-mint/55 line-clamp-2 mb-3 leading-[1.55]">
-                  {/* CARLOS: Descrição curta do Canal 3 */}
-                  [ Descrição curta do canal, nicho e foco principal. ]
-                </p>
-                <div className="flex items-center justify-between">
-                  <div className="inline-block bg-f-neon/10 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-neon">
-                    ▶ [X inscritos]
-                  </div>
-                  {/* URL: link do canal 3 */}
-                  <a href="[URL]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[13px] text-f-neon hover:underline underline-offset-4">
-                    Ver canal →
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Canal 4 - Em Breve */}
-            <AnimatedSection delay={300}>
-              <div className="h-full flex flex-col">
-                <div className="w-full aspect-video bg-f-black/40 backdrop-blur-sm border-2 border-dashed border-f-neon/30 rounded-xl relative flex flex-col items-center justify-center overflow-hidden mb-4">
-                  <div className="absolute top-3 right-3 bg-f-neon text-f-black font-mono text-[10px] font-bold px-2 py-1 rounded z-10">
-                    Em breve · 🚀 Novo canal Foster
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-f-neon/5 flex items-center justify-center">
-                    <span className="text-xl opacity-50">🤫</span>
-                  </div>
-                </div>
-                <h3 className="font-display font-bold text-[18px] text-f-mint/50 mb-2">
-                  Projeto em desenvolvimento
-                </h3>
-                <p className="text-[13px] text-f-mint/40 line-clamp-2 mb-3 leading-[1.55]">
-                  A Foster está sempre criando. Novos canais e personagens originais serão anunciados em breve.
-                </p>
               </div>
             </AnimatedSection>
           </div>
-
-          <AnimatedSection delay={400} className="flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-f-neon/10 pt-8">
-            <p className="text-[15px] text-f-mint/60">
-              Novos canais e personagens em desenvolvimento. A Foster está sempre criando.
-            </p>
-            <div className="flex items-center gap-4">
-              <span className="text-[14px] text-f-mint/80 font-medium">Quer um canal como esse?</span>
-              <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-6 py-2.5 text-[14px] hover:glow-neon transition-all duration-300">
-                Falar com a equipe →
-              </a>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -863,21 +765,14 @@ export default function Home() {
             <div className="lg:col-span-5">
               <AnimatedSection>
                 <div className="relative group">
-                  {/* Decoração de fundo para dar profundidade */}
                   <div className="absolute -inset-4 bg-f-neon/5 rounded-3xl blur-2xl group-hover:bg-f-neon/10 transition-all duration-500"></div>
-                  
-                  {/* Container Principal da Foto */}
                   <div className="relative aspect-[4/5] bg-f-black border border-f-neon/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(80,242,167,0.05)] transition-all duration-500 hover:border-f-neon/40 hover:shadow-[0_0_60px_rgba(80,242,167,0.12)]">
                     <img 
                       src="/carlos-borges.png" 
                       alt="Carlos Borges - Fundador Foster Company" 
                       className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
                     />
-                    
-                    {/* Overlay de gradiente para legibilidade do badge */}
                     <div className="absolute inset-0 bg-gradient-to-t from-f-black/60 via-transparent to-transparent"></div>
-                    
-                    {/* Badge de Cargo (Posicionado no canto) */}
                     <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
                       <div className="bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full">
                         <span className="font-mono text-[11px] text-f-neon uppercase tracking-widest">Criados para Criar</span>
@@ -891,20 +786,17 @@ export default function Home() {
             <div className="lg:col-span-7">
               <AnimatedSection delay={200}>
                 <div className="font-mono text-f-neon/70 mb-6" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
-                
                 <div className="mb-8">
                   <h2 className="font-display font-bold text-[clamp(32px,5vw,52px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title">
                     {t('founder_title')}
                   </h2>
                   <div className="font-display font-medium text-xl text-f-neon/80 italic">Carlos Borges — CEO & Founder</div>
                 </div>
-                
                 <div className="space-y-6 text-[17px] text-f-mint/65 font-light leading-[1.6] max-w-2xl mb-12">
                   <p data-i18n="founder_p1">{t('founder_p1')}</p>
                   <p data-i18n="founder_p2">{t('founder_p2')}</p>
                   <p data-i18n="founder_p3">{t('founder_p3')}</p>
                 </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
                   {[
                     "founder_li1",
@@ -918,21 +810,18 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-
                 <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-f-neon/10 border border-f-neon/30 text-f-neon font-display font-semibold rounded-full px-8 py-4 hover:bg-f-neon hover:text-f-black transition-all duration-300 group" data-i18n="founder_cta">
                   {t('founder_cta')}
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </AnimatedSection>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* SELO MUSICAL */}
       <section id="selo-musical" className="py-24 bg-[#104037] relative overflow-hidden">
-        {/* Waveform Background Animation */}
         <div className="absolute inset-0 flex items-end justify-center opacity-10 gap-2 pb-10 pointer-events-none">
           {[...Array(30)].map((_, i) => (
             <div 
@@ -946,7 +835,6 @@ export default function Home() {
             ></div>
           ))}
         </div>
-
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <AnimatedSection className="mb-16 text-center">
             <div className="font-mono text-[12px] text-f-neon/70 mb-6">{t('music_eyebrow')}</div>
@@ -955,9 +843,7 @@ export default function Home() {
               {t('music_desc')}
             </p>
           </AnimatedSection>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Card 1 */}
             <AnimatedSection>
               <div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group">
                 <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">
@@ -970,14 +856,11 @@ export default function Home() {
                 <div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">
                   Spotify · Apple Music · Deezer · YouTube Music
                 </div>
-                {/* CARLOS: adicione o link do perfil no Spotify */}
-                <a href="[URL_SPOTIFY]" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
+                <a href="#" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
                   {t('music_card1_cta')}
                 </a>
               </div>
             </AnimatedSection>
-
-            {/* Card 2 */}
             <AnimatedSection delay={100}>
               <div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group">
                 <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">
@@ -987,23 +870,17 @@ export default function Home() {
                 <p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">
                   {t('music_card2_desc')}
                 </p>
-                
                 <div className="flex items-center gap-[-10px] mb-8">
-                  {/* CARLOS: adicione fotos/nomes dos artistas quando estiver pronto */}
                   <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-30 relative shadow-lg">
                     <span className="font-display font-bold text-f-neon/50 text-sm">A1</span>
-                    {/* <img src="artista-1.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
                   </div>
                   <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-20 relative -ml-4 shadow-lg">
                     <span className="font-display font-bold text-f-neon/50 text-sm">A2</span>
-                    {/* <img src="artista-2.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
                   </div>
                   <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-10 relative -ml-4 shadow-lg">
                     <span className="font-display font-bold text-f-neon/50 text-sm">A3</span>
-                    {/* <img src="artista-3.jpg" className="absolute inset-0 w-full h-full object-cover" /> */}
                   </div>
                 </div>
-
                 <a href="#musica" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
                   {t('music_card2_cta')}
                 </a>
