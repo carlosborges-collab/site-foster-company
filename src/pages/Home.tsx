@@ -423,7 +423,7 @@ export default function Home() {
       </section>
 
       {/* PLATAFORMAS */}
-      <section id="plataformas" className="py-24 bg-f-dark">
+      <section id="plataformas" className="pt-24 pb-8 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="mb-16">
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="platforms_eyebrow">{t('platforms_eyebrow')}</div>
@@ -476,13 +476,13 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Nomes & Marcas */}
             <AnimatedSection>
-              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
                     <span className="font-display font-bold text-xl text-f-neon">N</span>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       LegalTech · Propriedade Intelectual · SaaS B2B
                     </div>
@@ -509,21 +509,21 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="https://nomesemarcas.com.br" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
                   Conhecer Nomes & Marcas →
-                </a>
+                </div>
               </div>
             </AnimatedSection>
 
             {/* Stratube 2.0 */}
             <AnimatedSection delay={100}>
-              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
                     <span className="font-display font-bold text-xl text-f-neon">S</span>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       Ferramentas de IA para Criadores / YouTube Analytics & SEO
                     </div>
@@ -550,21 +550,21 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="https://stratube.com.br" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
                   Conhecer o Stratube 2.0 →
-                </a>
+                </div>
               </div>
             </AnimatedSection>
 
             {/* Echowise AI */}
             <AnimatedSection delay={200}>
-              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 hover:glow-neon transition-all duration-300 h-full flex flex-col">
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
                     <span className="font-display font-bold text-xl text-f-neon">E</span>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Ativo</div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
                     <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
                       SaaS · IA · Marketplace de Experts Digitais
                     </div>
@@ -591,9 +591,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <a href="https://echowise.ai" target="_blank" rel="noopener noreferrer" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
                   Conhecer o Echowise AI →
-                </a>
+                </div>
               </div>
             </AnimatedSection>
           </div>
