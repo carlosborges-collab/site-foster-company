@@ -21,22 +21,22 @@ export default function Home() {
     { 
       name: "Pai Nosso", 
       image: "/artists/pai-nosso.png", 
-      url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" 
+      url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" 
     },
     { 
       name: "Puppies Kids", 
       image: "/artists/puppies-kids.png", 
-      url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" 
+      url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" 
     },
     { 
       name: "Além do Som", 
       image: "/artists/alem-do-som.png", 
-      url: "https://open.spotify.com/intl-pt/artist/1QNm8o6trF3PzkCIXw8br1?si=i3m1icGUQNeNZ4wpnL7Rgw" 
+      url: "https://open.spotify.com/intl-pt/artist/1dMX3YdpGiJX3p3ERa9FrB?si=1RlFNpa4Q8mGiciHrN5FGA" 
     },
     { 
       name: "Sem Rótulo", 
       image: "/artists/sem-rotulo.png", 
-      url: "https://open.spotify.com/intl-pt/artist/75mdNYwMhERXZ6t2bO6j1I?si=va9zdyA3SUS97zufwC62sw" 
+      url: "https://open.spotify.com/intl-pt/artist/3Ef1FfHngEIw8Oi70m4Tfu?si=_5ydRNc7QFWJ7P7a9BIofw" 
     }
   ];
 
@@ -613,7 +613,9 @@ export default function Home() {
               <span className="font-mono text-[12px] text-f-neon">🎬 Portfólio de criação original · Foster Company</span>
             </div>
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="channels_eyebrow">{t('channels_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4" data-i18n="channels_title">{t('channels_title')}</h2>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">
+               <span dangerouslySetInnerHTML={{ __html: t('channels_title') }}></span>
+            </h2>
             <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="channels_desc">{t('channels_desc')}</p>
           </AnimatedSection>
 
