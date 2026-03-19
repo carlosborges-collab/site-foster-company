@@ -54,7 +54,7 @@ export default function CloneDigital() {
                   {t('clone_hero_cta')}
                 </button>
                 <a 
-                  href="#case" 
+                  href="#clone-digital-case" 
                   className="border border-f-neon/30 text-f-neon font-display font-medium rounded-full px-8 py-5 text-[16px] whitespace-nowrap text-center hover:bg-f-neon/10 transition-all duration-300"
                 >
                   {t('clone_hero_secondary')}
@@ -86,6 +86,9 @@ export default function CloneDigital() {
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
+              <div className="inline-flex bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full mb-4">
+                <span className="font-mono text-[10px] text-f-neon uppercase tracking-widest font-bold">🤖 Vídeo 100% IA + Edição</span>
+              </div>
               <div className="w-full aspect-video bg-f-black border border-f-neon/20 rounded-2xl relative overflow-hidden group shadow-2xl">
                  {!isPlaying ? (
                    <div 
@@ -101,9 +104,6 @@ export default function CloneDigital() {
                         <div className="w-20 h-20 rounded-full bg-f-neon flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
                           <Play className="text-f-black ml-1" fill="currentColor" size={32} />
                         </div>
-                     </div>
-                     <div className="absolute top-6 left-6 bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full z-10">
-                        <span className="font-mono text-[10px] text-f-neon uppercase tracking-widest font-bold">🤖 Vídeo 100% IA + Edição</span>
                      </div>
                    </div>
                  ) : (
@@ -334,7 +334,7 @@ export default function CloneDigital() {
                   <span className="group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="px-6 pb-6 text-f-mint/60 border-t border-f-neon/5 pt-4">
-                  {t(`clone_faq_a${num}`)}
+                  {t(`yt_faq_a${num}`)}
                 </div>
               </details>
             ))}
