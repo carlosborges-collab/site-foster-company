@@ -26,6 +26,9 @@ jobs:
         env:
           VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
+      - name: Verify build
+        run: ls -R dist
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
