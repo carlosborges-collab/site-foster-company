@@ -42,54 +42,57 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
   );
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 h-[68px] transition-all duration-300 ${
-      scrolled ? 'bg-f-black/90 backdrop-blur-xl border-b border-f-neon/15' : 'bg-f-black/85 backdrop-blur-xl border-b border-f-neon/5'
-    }`}>
-      <div className="max-w-7xl mx-auto px-5 md:px-8 h-full flex items-center justify-between">
-        
-        {/* Left: Logo */}
-        <div className="flex items-center gap-4">
-          <a href="#home" className="block">
-            <img 
-              src="/Company branco.png" 
-              alt="Foster Company" 
-              className="h-7 md:h-8 w-auto object-contain"
-            />
-          </a>
-          <span className="text-f-neon/20 hidden sm:inline">|</span>
-          <span className="font-mono text-[10px] text-f-mint/40 uppercase hidden sm:inline tracking-widest">
-            Creative AI Studio
-          </span>
-        </div>
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      {/* Barra de Navegação Superior */}
+      <div className={`h-[68px] transition-all duration-300 ${
+        scrolled ? 'bg-f-black/90 backdrop-blur-xl border-b border-f-neon/15' : 'bg-f-black/85 backdrop-blur-xl border-b border-f-neon/5'
+      }`}>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 h-full flex items-center justify-between">
+          
+          {/* Left: Logo */}
+          <div className="flex items-center gap-4">
+            <a href="#home" className="block">
+              <img 
+                src="/Company branco.png" 
+                alt="Foster Company" 
+                className="h-7 md:h-8 w-auto object-contain"
+              />
+            </a>
+            <span className="text-f-neon/20 hidden sm:inline">|</span>
+            <span className="font-mono text-[10px] text-f-mint/40 uppercase hidden sm:inline tracking-widest">
+              Creative AI Studio
+            </span>
+          </div>
 
-        {/* Center: Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#home" className={`text-[14px] transition-colors duration-200 ${currentPath === '#home' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_home')}</a>
-          <a href="#gestao-youtube" className={`text-[14px] transition-colors duration-200 ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_yt_growth')}</a>
-          <a href="#build" className={`text-[14px] transition-colors duration-200 ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_sites')}</a>
-          <a href="#clone-digital" className={`text-[14px] transition-colors duration-200 ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_clone_digital')}</a>
-        </div>
+          {/* Center: Desktop Links */}
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#home" className={`text-[14px] transition-colors duration-200 ${currentPath === '#home' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_home')}</a>
+            <a href="#gestao-youtube" className={`text-[14px] transition-colors duration-200 ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_yt_growth')}</a>
+            <a href="#build" className={`text-[14px] transition-colors duration-200 ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_sites')}</a>
+            <a href="#clone-digital" className={`text-[14px] transition-colors duration-200 ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_clone_digital')}</a>
+          </div>
 
-        {/* Right: CTAs & Social */}
-        <div className="hidden md:flex items-center gap-5">
-          <LangSwitcher />
-          <button 
-            onClick={openContactModal} 
-            className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300 cursor-pointer"
-          >
-            {t('nav_cta')} →
+          {/* Right: CTAs & Social */}
+          <div className="hidden md:flex items-center gap-5">
+            <LangSwitcher />
+            <button 
+              onClick={openContactModal} 
+              className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300 cursor-pointer"
+            >
+              {t('nav_cta')} →
+            </button>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button className="md:hidden text-f-neon cursor-pointer p-2" onClick={() => setMobileMenuOpen(true)}>
+            <Menu size={24} />
           </button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-f-neon cursor-pointer" onClick={() => setMobileMenuOpen(true)}>
-          <Menu size={24} />
-        </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Independente da altura da barra superior) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] flex justify-end bg-black/60 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[1000] flex justify-end bg-black/60 backdrop-blur-sm h-screen">
           <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 p-8 flex flex-col overflow-y-auto">
             {/* Header Mobile Menu */}
             <div className="flex justify-between items-center mb-12 pt-4">
