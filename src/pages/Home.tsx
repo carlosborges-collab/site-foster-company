@@ -656,7 +656,7 @@ export default function Home() {
                     
                     <div className="mb-10">
                       <div className="flex items-center gap-3 mb-5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-f-neon shadow-[0_0_8px_rgba(80,242,167,0.8)]"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-f-neon shadow-[0_0_80px_rgba(80,242,167,0.8)]"></div>
                         <span className="font-mono text-[10px] text-f-neon/80 uppercase tracking-[0.2em]">Case Nacional · Clone Digital</span>
                       </div>
                       <h3 className="font-display font-bold text-[clamp(28px,4.5vw,40px)] text-f-mint mb-5 leading-[1.1]">
@@ -755,20 +755,19 @@ export default function Home() {
                 </div>
               </AnimatedSection>
 
-              {/* Vídeo IA 3 - Placeholder para fechar as 3 caixas */}
+              {/* Vídeo IA 3 */}
               <AnimatedSection delay={300}>
-                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 flex flex-col">
-                  <div className="aspect-[9/16] w-full bg-f-dark/30 flex items-center justify-center p-8 text-center">
-                    <div>
-                      <div className="w-16 h-16 rounded-full bg-f-neon/10 flex items-center justify-center mx-auto mb-4">
-                        <Instagram size={24} className="text-f-neon/40" />
-                      </div>
-                      <p className="font-display font-bold text-f-mint/50 mb-2">Novo Case em Breve</p>
-                      <p className="text-[12px] text-f-mint/30">Produção cinematográfica com inteligência artificial.</p>
-                    </div>
+                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
+                  <div className="aspect-[9/16] w-full bg-f-dark/30">
+                    <iframe 
+                      src="https://www.instagram.com/reel/DWG4OIgAKOQ/embed" 
+                      className="w-full h-full border-none"
+                      scrolling="no"
+                      allowTransparency={true}
+                    ></iframe>
                   </div>
-                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10 mt-auto">
-                    <p className="font-mono text-[10px] text-f-neon uppercase">Creative AI Studio ✓</p>
+                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10">
+                    <p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p>
                   </div>
                 </div>
               </AnimatedSection>
