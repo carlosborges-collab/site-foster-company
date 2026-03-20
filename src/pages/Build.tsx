@@ -71,39 +71,65 @@ export default function Build() {
             </p>
           </AnimatedSection>
 
-          <AnimatedSection delay={200}>
-            <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
-              {/* Browser Header Overlay */}
-              <div className="bg-f-black/80 border-b border-f-neon/10 px-6 py-4 flex items-center justify-between">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Case 01: Deep Pink */}
+            <AnimatedSection delay={200}>
+              <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
+                <div className="bg-f-black/80 border-b border-f-neon/10 px-6 py-4 flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                  </div>
+                  <a 
+                    href="https://deeppink-quail-152012.hostingersite.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-f-neon font-display font-bold text-xs hover:glow-neon-hover transition-all"
+                  >
+                    <span>Abrir site</span> <ExternalLink size={14} />
+                  </a>
                 </div>
-                <div className="hidden md:block bg-f-black/50 border border-f-neon/10 rounded-full px-4 py-1 text-[10px] font-mono text-f-mint/30 w-1/2 text-center overflow-hidden whitespace-nowrap text-ellipsis">
-                  https://deeppink-quail-152012.hostingersite.com/
+                <div className="aspect-video w-full bg-f-black relative">
+                  <iframe 
+                    src="https://deeppink-quail-152012.hostingersite.com/" 
+                    className="absolute inset-0 w-full h-full border-none"
+                    title="Portfolio Deep Pink"
+                    loading="lazy"
+                  ></iframe>
                 </div>
-                <a 
-                  href="https://deeppink-quail-152012.hostingersite.com/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-f-neon font-display font-bold text-xs hover:glow-neon-hover transition-all"
-                >
-                  <span className="hidden sm:inline">Abrir site inteiro</span> <ExternalLink size={14} />
-                </a>
               </div>
-              
-              {/* Live Preview Container */}
-              <div className="aspect-video w-full bg-f-black relative">
-                <iframe 
-                  src="https://deeppink-quail-152012.hostingersite.com/" 
-                  className="absolute inset-0 w-full h-full border-none"
-                  title="Portfolio Live Preview"
-                  loading="lazy"
-                ></iframe>
+            </AnimatedSection>
+
+            {/* Case 02: Murilo Rosa */}
+            <AnimatedSection delay={300}>
+              <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
+                <div className="bg-f-black/80 border-b border-f-neon/10 px-6 py-4 flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                  </div>
+                  <a 
+                    href="https://murilo-rosa-o-guerreiro-tranquilo-380512669368.us-west1.run.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-f-neon font-display font-bold text-xs hover:glow-neon-hover transition-all"
+                  >
+                    <span>Abrir site</span> <ExternalLink size={14} />
+                  </a>
+                </div>
+                <div className="aspect-video w-full bg-f-black relative">
+                  <iframe 
+                    src="https://murilo-rosa-o-guerreiro-tranquilo-380512669368.us-west1.run.app/" 
+                    className="absolute inset-0 w-full h-full border-none"
+                    title="Portfolio Murilo Rosa"
+                    loading="lazy"
+                  ></iframe>
+                </div>
               </div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
