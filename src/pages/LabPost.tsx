@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { Heart, Link as LinkIcon, ArrowRight } from 'lucide-react';
-import { labPosts, LabPost } from '../data/labPosts';
+import { labPosts, LabPost as LabPostType } from '../data/labPosts';
 
 export default function LabPost({ slug }: { slug: string }) {
   const post = labPosts.find(p => p.slug === slug);
@@ -9,6 +9,21 @@ export default function LabPost({ slug }: { slug: string }) {
   const [isLiked, setIsLiked] = useState(() => {
     return localStorage.getItem(`foster_lab_like_${slug}`) === 'true';
   });
+
+  const nextPosts = useMemo(() => {
+    const currentIndex = labPosts.findIndex(p => p.slug === slug);
+    if (currentIndex === -1) return [];
+    
+    // Pega o próximo e o anterior (ou o próximo do próximo se for o primeiro, etc)
+    const items = [];
+    const next = labPosts[(currentIndex + 1) % labPosts.length];
+    const prev = labPosts[(currentIndex - 1 + labPosts.length) % labPosts.length];
+    
+    if (next && next.slug !== slug) items.push(next);
+    if (prev && prev.slug !== slug && prev.slug !== next.slug) items.push(prev);
+    
+    return items;
+  }, [slug]);
 
   useEffect(() => {
     const updateProgress = () => {
@@ -44,7 +59,6 @@ export default function LabPost({ slug }: { slug: string }) {
 
   return (
     <div className="w-full min-h-screen bg-f-black pt-[140px] pb-32">
-      {/* Barra de Progresso */}
       <div className="fixed top-0 left-0 right-0 h-1 z-[100]">
         <div 
           className="h-full bg-f-neon shadow-[0_0_10px_rgba(80,242,167,0.8)] transition-all duration-100"
@@ -53,7 +67,6 @@ export default function LabPost({ slug }: { slug: string }) {
       </div>
 
       <div className="max-w-5xl mx-auto px-5 md:px-8">
-        {/* Breadcrumb */}
         <div className="flex items-center gap-2 font-mono text-[11px] text-f-mint/30 uppercase tracking-widest mb-12">
           <a href="#home" className="hover:text-f-neon transition-colors">foster.company</a>
           <span>/</span>
@@ -62,7 +75,6 @@ export default function LabPost({ slug }: { slug: string }) {
           <span className="text-f-mint/50 truncate max-w-[200px]">{post.titulo}</span>
         </div>
 
-        {/* Hero */}
         <AnimatedSection className="mb-12">
           <div className="font-mono text-f-neon mb-6 uppercase tracking-widest text-sm">{post.categoria}</div>
           <h1 className="font-display font-bold text-[clamp(32px,5vw,56px)] text-f-mint leading-[1.1] mb-8">
@@ -77,7 +89,6 @@ export default function LabPost({ slug }: { slug: string }) {
           </div>
         </AnimatedSection>
 
-        {/* Capa */}
         <AnimatedSection delay={100} className="mb-20">
           <div className="w-full aspect-video rounded-2xl overflow-hidden border border-f-neon/10">
             <img src={post.imagemCapa} alt={post.titulo} className="w-full h-full object-cover" />
@@ -85,7 +96,6 @@ export default function LabPost({ slug }: { slug: string }) {
         </AnimatedSection>
 
         <div className="flex flex-col lg:flex-row gap-16 relative">
-          {/* Interações Desktop */}
           <aside className="hidden lg:block w-12 sticky top-40 h-fit">
             <div className="flex flex-col gap-6">
               <button 
@@ -105,14 +115,12 @@ export default function LabPost({ slug }: { slug: string }) {
             </div>
           </aside>
 
-          {/* Corpo do Post */}
-          <article className="flex-1 max-w-[720px] mx-auto prose prose-invert prose-foster">
+          <article className="flex-1 max-w-[720px] mx-auto">
             <div 
               className="text-f-mint/80 text-[18px] leading-[1.8] font-body space-y-8 post-content"
               dangerouslySetInnerHTML={{ __html: post.conteudo }}
             ></div>
 
-            {/* Tags e Footer CTA */}
             <div className="mt-24 pt-12 border-t border-f-neon/10">
               <div className="flex flex-wrap gap-2 mb-12">
                 {post.tags.map(tag => (
@@ -122,7 +130,7 @@ export default function LabPost({ slug }: { slug: string }) {
                 ))}
               </div>
 
-              <div className="bg-f-dark/50 border border-f-neon/20 rounded-3xl p-10 text-center">
+              <div className="bg-f-dark/50 border border-f-neon/20 rounded-3xl p-10 text-center mb-24">
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-6">Gostou deste experimento?</h3>
                 <a 
                   href="https://wa.me/5547999999999" 
@@ -132,6 +140,27 @@ export default function LabPost({ slug }: { slug: string }) {
                 >
                   Falar com a Foster agora <ArrowRight size={20} />
                 </a>
+              </div>
+
+              {/* Próximo do Lab */}
+              <div className="space-y-8">
+                <h4 className="font-mono text-xs text-f-neon uppercase tracking-widest">Próximo do Lab</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {nextPosts.map(p => (
+                    <div 
+                      key={p.id}
+                      onClick={() => window.location.hash = `#lab-${p.slug}`}
+                      className="group cursor-pointer bg-f-dark/30 border border-f-neon/10 rounded-2xl overflow-hidden hover:border-f-neon/30 transition-all"
+                    >
+                      <div className="aspect-video w-full overflow-hidden">
+                        <img src={p.imagemCapa} alt={p.titulo} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      </div>
+                      <div className="p-5">
+                        <h5 className="font-display font-bold text-lg text-f-mint group-hover:text-f-neon transition-colors line-clamp-2">{p.titulo}</h5>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </article>

@@ -53,5 +53,45 @@ export const labPosts: LabPost[] = [
       <h2>Resultados Documentados</h2>
       <p>Em menos de 24 meses, ultrapassamos a marca de 700 mil inscritos de forma totalmente orgânica. O faturamento via AdSense e a conversão em membros da comunidade cresceram proporcionalmente, transformando o canal no maior ativo de mídia da instituição.</p>
     `
+  },
+  {
+    id: "2",
+    slug: "experimento-clone-voz-ia-rony-meisler",
+    categoria: "/ experimento",
+    titulo: "O clone de voz perfeito. Como treinamos a IA para falar como o Rony Meisler.",
+    descricao: "Um mergulho técnico nos bastidores da criação do avatar do fundador da Reserva. Os desafios de entonação, sotaque e as ferramentas utilizadas.",
+    tempoLeitura: "4 min",
+    data: "18 Mar 2026",
+    autor: "Carlos Borges",
+    tags: ["IA", "Clone de Voz", "Rony Meisler", "HeyGen", "ElevenLabs"],
+    imagemCapa: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=2340&auto=format&fit=crop",
+    likes: 89,
+    conteudo: `
+      <p>Treinar uma Inteligência Artificial para replicar uma voz humana não é mais sobre tecnologia, é sobre nuances. Quando começamos o projeto com o Rony Meisler, o objetivo era claro: o avatar não poderia soar robótico.</p>
+      
+      <h2>A Ciência do Sotaque</h2>
+      <p>O desafio não estava nas palavras, mas no ritmo. O sotaque carioca do Rony possui cadências específicas que os modelos padrão de IA costumam ignorar ou 'achatar' em busca de uma clareza artificial.</p>
+      
+      <div className="my-8">
+        <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2340&auto=format&fit=crop" alt="Estúdio de gravação profissional" />
+        <p className="text-center font-mono text-[11px] text-f-mint/40 mt-2">Captação de áudio base para o treinamento do modelo neurônico.</p>
+      </div>
+
+      <h2>O Fluxo de Trabalho</h2>
+      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Terceiro, o treinamento de resposta emocional.</p>
+      
+      <blockquote>
+        "A tecnologia deve servir à essência, nunca o contrário."
+      </blockquote>
+
+      <ul>
+        <li>Captura de 20 minutos de áudio em ambiente controlado.</li>
+        <li>Mapeamento de expressões faciais síncronas com o áudio.</li>
+        <li>Ajuste fino de 'pacing' para garantir pausas naturais entre parágrafos.</li>
+      </ul>
+
+      <h2>Conclusão</h2>
+      <p>O resultado é o que você vê hoje nos canais do Rony. Uma ferramenta de escala que mantém a verdade do criador intacta.</p>
+    `
   }
 ];
