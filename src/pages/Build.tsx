@@ -129,6 +129,64 @@ export default function Build() {
                 </div>
               </div>
             </AnimatedSection>
+
+            {/* Case 03: KN Life Care */}
+            <AnimatedSection delay={400}>
+              <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
+                <div className="bg-f-black/80 border-b border-f-neon/10 px-6 py-4 flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                  </div>
+                  <a 
+                    href="https://knlifecare.com.br/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-f-neon font-display font-bold text-xs hover:glow-neon-hover transition-all"
+                  >
+                    <span>Abrir site</span> <ExternalLink size={14} />
+                  </a>
+                </div>
+                <div className="aspect-video w-full bg-f-black relative">
+                  <iframe 
+                    src="https://knlifecare.com.br/" 
+                    className="absolute inset-0 w-full h-full border-none"
+                    title="Portfolio KN Life Care"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* Case 04: Julia Zanatta */}
+            <AnimatedSection delay={500}>
+              <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
+                <div className="bg-f-black/80 border-b border-f-neon/10 px-6 py-4 flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                  </div>
+                  <a 
+                    href="https://juliazanatta.com.br/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-f-neon font-display font-bold text-xs hover:glow-neon-hover transition-all"
+                  >
+                    <span>Abrir site</span> <ExternalLink size={14} />
+                  </a>
+                </div>
+                <div className="aspect-video w-full bg-f-black relative">
+                  <iframe 
+                    src="https://juliazanatta.com.br/" 
+                    className="absolute inset-0 w-full h-full border-none"
+                    title="Portfolio Julia Zanatta"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
