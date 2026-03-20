@@ -71,7 +71,7 @@ export default function Build() {
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="flex flex-col gap-12">
             {/* Case 01: Deep Pink */}
             <AnimatedSection delay={200}>
               <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
