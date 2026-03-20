@@ -90,12 +90,12 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
         </div>
       </div>
 
-      {/* Mobile Drawer (Independente da altura da barra superior) */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[1000] flex justify-end bg-black/60 backdrop-blur-sm h-screen">
           <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 p-8 flex flex-col overflow-y-auto">
             {/* Header Mobile Menu */}
-            <div className="flex justify-between items-center mb-12 pt-4">
+            <div className="flex justify-between items-center mb-10 pt-4">
               <img 
                 src="/Company branco.png" 
                 alt="Foster Company" 
@@ -107,7 +107,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             </div>
             
             {/* Links Container */}
-            <div className="flex flex-col gap-10 text-3xl font-display mt-8">
+            <div className="flex flex-col gap-8 text-2xl font-display mt-4">
               <a 
                 href="#home" 
                 onClick={() => setMobileMenuOpen(false)} 
