@@ -82,14 +82,14 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-f-neon" onClick={() => setMobileMenuOpen(true)}>
+        <button className="md:hidden text-f-neon cursor-pointer" onClick={() => setMobileMenuOpen(true)}>
           <Menu size={24} />
         </button>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[100] flex justify-end bg-black/60 backdrop-blur-sm">
           <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 p-6 flex flex-col overflow-y-auto">
             <div className="flex justify-between items-center mb-10">
               <img 
@@ -97,7 +97,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
                 alt="Foster Company" 
                 className="h-6 w-auto object-contain"
               />
-              <button onClick={() => setMobileMenuOpen(false)} className="text-f-neon">
+              <button onClick={() => setMobileMenuOpen(false)} className="text-f-neon cursor-pointer p-2">
                 <X size={24} />
               </button>
             </div>
@@ -106,19 +106,43 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             
             <div className="h-px w-full bg-f-neon/10 my-6"></div>
             
-            <div className="flex flex-col gap-4 text-lg font-display">
-              <a href="#home" onClick={() => setMobileMenuOpen(false)} className={`transition-colors ${currentPath === '#home' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_home')}</a>
-              <a href="#gestao-youtube" onClick={() => setMobileMenuOpen(false)} className={`transition-colors ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_yt_growth')}</a>
-              <a href="#build" onClick={() => setMobileMenuOpen(false)} className={`transition-colors ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_sites')}</a>
-              <a href="#clone-digital" onClick={() => setMobileMenuOpen(false)} className={`transition-colors ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_clone_digital')}</a>
+            <div className="flex flex-col gap-6 text-xl font-display">
+              <a 
+                href="#home" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className={`block w-full transition-colors ${currentPath === '#home' ? 'text-f-neon' : 'text-f-mint'}`}
+              >
+                {t('nav_home')}
+              </a>
+              <a 
+                href="#gestao-youtube" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className={`block w-full transition-colors ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint'}`}
+              >
+                {t('nav_yt_growth')}
+              </a>
+              <a 
+                href="#build" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className={`block w-full transition-colors ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint'}`}
+              >
+                {t('nav_sites')}
+              </a>
+              <a 
+                href="#clone-digital" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className={`block w-full transition-colors ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint'}`}
+              >
+                {t('nav_clone_digital')}
+              </a>
             </div>
 
-            <div className="h-px w-full bg-f-neon/10 my-6"></div>
+            <div className="h-px w-full bg-f-neon/10 my-8"></div>
 
             <div className="mt-auto pb-8">
               <button 
                 onClick={() => { setMobileMenuOpen(false); openContactModal(); }} 
-                className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all duration-300"
+                className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all duration-300 cursor-pointer"
               >
                 {t('nav_cta')} →
               </button>
