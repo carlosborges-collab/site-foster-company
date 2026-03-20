@@ -6,7 +6,7 @@ import { openContactModal } from '../utils/contactEvents';
 export default function Navbar({ currentPath }: { currentPath: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,31 +15,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const LangSwitcher = ({ mobile = false }: { mobile?: boolean }) => (
-    <div className={`flex flex-row gap-1 bg-f-neon/5 rounded-full p-1 ${mobile ? 'mb-8 justify-center' : ''}`}>
-      <button 
-        onClick={() => setLanguage('pt')} 
-        className={`px-2.5 py-1 rounded-full font-mono text-[11px] transition-all duration-200 ${language === 'pt' ? 'bg-f-neon/15 text-f-neon border border-f-neon/30' : 'text-f-mint/40 hover:text-f-mint/80 border border-transparent cursor-pointer'}`}
-      >
-        🇧🇷 PT
-      </button>
-      <button 
-        disabled
-        title="Em breve"
-        className="px-2.5 py-1 rounded-full font-mono text-[11px] text-f-mint/20 border border-transparent cursor-not-allowed opacity-40"
-      >
-        🇪🇸 ES
-      </button>
-      <button 
-        disabled
-        title="Coming soon"
-        className="px-2.5 py-1 rounded-full font-mono text-[11px] text-f-mint/20 border border-transparent cursor-not-allowed opacity-40"
-      >
-        🇺🇸 EN
-      </button>
-    </div>
-  );
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
@@ -73,9 +48,8 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             <a href="#lab" className={`text-[13px] transition-colors duration-200 ${currentPath === '#lab' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}><span className="text-f-neon/40">/</span> lab</a>
           </div>
 
-          {/* Right: CTAs & Social */}
+          {/* Right: CTAs */}
           <div className="hidden lg:flex items-center gap-5">
-            <LangSwitcher />
             <button 
               onClick={openContactModal} 
               className="bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-2.5 text-sm hover:glow-neon transition-all duration-300 cursor-pointer"
@@ -116,8 +90,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
 
             <div className="h-px w-full bg-f-neon/10 my-8"></div>
             
-            <LangSwitcher mobile={true} />
-
             <div className="mt-auto pb-6">
               <button 
                 onClick={() => { setMobileMenuOpen(false); openContactModal(); }} 

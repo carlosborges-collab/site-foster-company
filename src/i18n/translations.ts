@@ -1,4 +1,4 @@
-export type Language = 'pt' | 'es' | 'en';
+export type Language = 'pt';
 
 export const translations = {
   pt: {
@@ -74,7 +74,7 @@ export const translations = {
     ifoster_card_badge: "⭐ Plataforma Própria",
     ifoster_card_tags: "Super Agentes de IA · Chat Platform",
     ifoster_card_title: "iFoster",
-    ifoster_card_desc: "Uma equipe criativa inteira no seu chat — disponível 24 horas por dia. O iFoster reúne Super Agentes de IA criados pela Foster: roteiristas, copywriters, estrategistas e arquitetos de prompts.",
+    ifoster_card_desc: "Uma equipe criativa inteira no seu chat — disponível 24 horas por dia. O iFoster reuni Super Agentes de IA criados pela Foster: roteiristas, copywriters, estrategistas e arquitetos de prompts.",
     ifoster_card_cta: "Acessar o iFoster →",
     ifoster_card_agent_1: "◉ Roteirista IA",
     ifoster_card_agent_2: "◉ Copywriter IA",
@@ -331,25 +331,5 @@ export const translations = {
     meta_title: "Foster Company | Gestão de YouTube, Clone Digital IA e Estúdio Criativo",
     meta_description: "A Foster Company é um Creative AI Studio em Balneário Camboriú especializado em Gestão de YouTube, Clones Digitais com IA, Produção Audiovisual e Estratégia Digital para marcas e líderes.",
     og_title: "Foster Company — Creative AI Studio | IA e Estratégia Digital",
-  },
-  es: {
-    nav_home: "Inicio",
-    nav_clone_digital: "Clone Digital",
-    nav_yt_growth: "Gestión de YouTube",
-    nav_sites: "Sitios",
-    meta_title: "Foster Company | Gestión de YouTube y Clone Digital IA",
-    meta_description: "Estudio creativo de IA especializado en gestión de YouTube y avatares digitales.",
-    nav_solutions: "Soluciones",
-    nav_cta: "Hablar con Foster",
-  },
-  en: {
-    nav_home: "Home",
-    nav_clone_digital: "Digital Clone",
-    nav_yt_growth: "YouTube Growth",
-    nav_sites: "Sites",
-    meta_title: "Foster Company | YouTube Management & Digital AI Clone",
-    meta_description: "Creative AI studio specializing in YouTube growth and digital AI avatars.",
-    nav_solutions: "Solutions",
-    nav_cta: "Talk to Foster",
   }
 };
