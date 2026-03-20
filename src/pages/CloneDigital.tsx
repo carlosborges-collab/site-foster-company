@@ -334,7 +334,7 @@ export default function CloneDigital() {
                   <span className="group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="px-6 pb-6 text-f-mint/60 border-t border-f-neon/5 pt-4">
-                  {t(`yt_faq_a${num}`)}
+                  {t(`clone_faq_a${num}`)}
                 </div>
               </details>
             ))}
