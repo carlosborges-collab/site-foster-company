@@ -70,7 +70,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             <a href="#gestao-youtube" className={`text-[13px] transition-colors duration-200 ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_yt_growth')}</a>
             <a href="#build" className={`text-[13px] transition-colors duration-200 ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_sites')}</a>
             <a href="#clone-digital" className={`text-[13px] transition-colors duration-200 ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_clone_digital')}</a>
-            <a href="#ifoster" className={`text-[13px] transition-colors duration-200 ${currentPath === '#ifoster' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}><span className="text-f-neon/40">/</span> {t('nav_ifoster')}</a>
             <a href="#lab" className={`text-[13px] transition-colors duration-200 ${currentPath === '#lab' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}><span className="text-f-neon/40">/</span> lab</a>
           </div>
 
@@ -112,7 +111,6 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
               <a href="#gestao-youtube" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_yt_growth')}</a>
               <a href="#build" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_sites')}</a>
               <a href="#clone-digital" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#clone-digital' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_clone_digital')}</a>
-              <a href="#ifoster" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#ifoster' ? 'text-f-neon' : 'text-f-mint'}`}><span className="text-f-neon/40">/</span> {t('nav_ifoster')}</a>
               <a href="#lab" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#lab' ? 'text-f-neon' : 'text-f-mint'}`}><span className="text-f-neon/40">/</span> lab</a>
             </div>
 

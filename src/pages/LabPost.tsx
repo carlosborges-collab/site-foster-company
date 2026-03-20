@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { Heart, Link as LinkIcon, ArrowRight } from 'lucide-react';
 import { labPosts, LabPost as LabPostType } from '../data/labPosts';
+import { openContactModal } from '../utils/contactEvents';
 
 export default function LabPost({ slug }: { slug: string }) {
   const post = labPosts.find(p => p.slug === slug);
@@ -14,7 +15,6 @@ export default function LabPost({ slug }: { slug: string }) {
     const currentIndex = labPosts.findIndex(p => p.slug === slug);
     if (currentIndex === -1) return [];
     
-    // Pega o próximo e o anterior (ou o próximo do próximo se for o primeiro, etc)
     const items = [];
     const next = labPosts[(currentIndex + 1) % labPosts.length];
     const prev = labPosts[(currentIndex - 1 + labPosts.length) % labPosts.length];
@@ -52,9 +52,21 @@ export default function LabPost({ slug }: { slug: string }) {
     localStorage.setItem(`foster_lab_like_${slug}`, String(newState));
   };
 
-  const copyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    // Idealmente aqui teria um toast
+  const shareContent = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: post.titulo,
+          text: post.descricao,
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.error('Erro ao compartilhar:', err);
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copiado para a área de transferência!');
+    }
   };
 
   return (
@@ -107,8 +119,8 @@ export default function LabPost({ slug }: { slug: string }) {
                 <Heart size={20} fill={isLiked ? "currentColor" : "none"} className={isLiked ? 'animate-[bounce_0.5s_ease-in-out]' : ''} />
               </button>
               <button 
-                onClick={copyLink}
-                className="w-12 h-12 rounded-full border border-f-neon/20 flex items-center justify-center text-f-mint/30 hover:text-f-neon hover:border-f-neon/40 transition-all"
+                onClick={shareContent}
+                className="w-12 h-12 rounded-full border border-f-neon/20 flex items-center justify-center text-f-mint/30 hover:text-f-neon hover:border-f-neon/40 transition-all cursor-pointer"
               >
                 <LinkIcon size={20} />
               </button>
@@ -132,14 +144,12 @@ export default function LabPost({ slug }: { slug: string }) {
 
               <div className="bg-f-dark/50 border border-f-neon/20 rounded-3xl p-10 text-center mb-24">
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-6">Gostou deste experimento?</h3>
-                <a 
-                  href="https://wa.me/5547999999999" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center gap-3 bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon transition-all"
+                <button 
+                  onClick={openContactModal} 
+                  className="inline-flex items-center gap-3 bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon transition-all cursor-pointer"
                 >
                   Falar com a Foster agora <ArrowRight size={20} />
-                </a>
+                </button>
               </div>
 
               {/* Próximo do Lab */}
