@@ -149,17 +149,13 @@ export default function Build() {
                     <span>Abrir site</span> <ExternalLink size={14} />
                   </a>
                 </div>
-                {/* Monitor Container: Ensures desktop view by using a wider iframe scaled down */}
-                <div className="aspect-video w-full bg-f-black relative overflow-hidden">
-                   <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-                    <iframe 
-                      src="https://knlifecare.com.br/" 
-                      className="w-[1440px] h-[810px] border-none scale-[0.4] sm:scale-[0.6] md:scale-[0.8] lg:scale-100 origin-center"
-                      style={{ maxWidth: 'none', maxHeight: 'none' }}
-                      title="Portfolio KN Life Care"
-                      loading="lazy"
-                    ></iframe>
-                  </div>
+                <div className="aspect-video w-full bg-f-black relative overflow-hidden flex items-start justify-center">
+                  <iframe 
+                    src="https://knlifecare.com.br/" 
+                    className="w-[1280px] h-[720px] border-none scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[1.0] origin-top transition-transform duration-500"
+                    title="Portfolio KN Life Care"
+                    loading="lazy"
+                  ></iframe>
                 </div>
               </div>
             </AnimatedSection>
@@ -183,17 +179,13 @@ export default function Build() {
                     <span>Abrir site</span> <ExternalLink size={14} />
                   </a>
                 </div>
-                {/* Monitor Container: Ensures desktop view by using a wider iframe scaled down */}
-                <div className="aspect-video w-full bg-f-black relative overflow-hidden">
-                  <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-                    <iframe 
-                      src="https://juliazanatta.com.br/" 
-                      className="w-[1440px] h-[810px] border-none scale-[0.4] sm:scale-[0.6] md:scale-[0.8] lg:scale-100 origin-center"
-                      style={{ maxWidth: 'none', maxHeight: 'none' }}
-                      title="Portfolio Julia Zanatta"
-                      loading="lazy"
-                    ></iframe>
-                  </div>
+                <div className="aspect-video w-full bg-f-black relative overflow-hidden flex items-start justify-center">
+                  <iframe 
+                    src="https://juliazanatta.com.br/" 
+                    className="w-[1280px] h-[720px] border-none scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[1.0] origin-top transition-transform duration-500"
+                    title="Portfolio Julia Zanatta"
+                    loading="lazy"
+                  ></iframe>
                 </div>
               </div>
             </AnimatedSection>
