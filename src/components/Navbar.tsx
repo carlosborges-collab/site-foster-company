@@ -90,8 +90,8 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[100] flex justify-end bg-black/60 backdrop-blur-sm">
-          <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 p-6 flex flex-col overflow-y-auto">
-            <div className="flex justify-between items-center mb-10">
+          <div className="w-4/5 max-sm:w-full max-w-sm bg-f-black h-full border-l border-f-neon/20 px-6 pt-12 pb-6 flex flex-col overflow-y-auto">
+            <div className="flex justify-between items-center mb-12">
               <img 
                 src="/Company branco.png" 
                 alt="Foster Company" 
@@ -106,7 +106,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             
             <div className="h-px w-full bg-f-neon/10 my-6"></div>
             
-            <div className="flex flex-col gap-6 text-xl font-display">
+            <div className="flex flex-col gap-8 text-2xl font-display">
               <a 
                 href="#home" 
                 onClick={() => setMobileMenuOpen(false)} 
@@ -137,12 +137,12 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
               </a>
             </div>
 
-            <div className="h-px w-full bg-f-neon/10 my-8"></div>
+            <div className="h-px w-full bg-f-neon/10 my-10"></div>
 
-            <div className="mt-auto pb-8">
+            <div className="mt-auto pb-10">
               <button 
                 onClick={() => { setMobileMenuOpen(false); openContactModal(); }} 
-                className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-4 hover:glow-neon transition-all duration-300 cursor-pointer"
+                className="block w-full text-center bg-f-neon text-f-black font-display font-semibold rounded-full px-5 py-5 hover:glow-neon transition-all duration-300 cursor-pointer"
               >
                 {t('nav_cta')} →
               </button>
