@@ -1,10 +1,12 @@
 import AnimatedSection from '../components/AnimatedSection';
+import { ExternalLink } from 'lucide-react';
 
 export default function Build() {
   return (
     <div className="w-full scroll-smooth">
       {/* HERO */}
       <section className="relative min-h-[80vh] flex items-center pt-[140px] pb-20 bg-f-black overflow-hidden bg-grid-pattern">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.15)_0%,transparent_100%)]"></div>
         <div className="max-w-5xl mx-auto px-5 md:px-8 w-full relative z-10 text-center">
           <AnimatedSection>
             <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/40 rounded-full px-4 py-1.5 mb-10">
@@ -52,6 +54,55 @@ export default function Build() {
               </div>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      {/* PORTFÓLIO DE SITES - LIVE PREVIEW */}
+      <section id="portfolio" className="py-28 bg-f-black border-b border-f-neon/10 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <AnimatedSection className="mb-16">
+            <div className="font-mono text-f-neon/70 mb-6">/ cases de sucesso</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-f-mint mb-6">
+              Portfólio de <span className="text-f-neon">Performance.</span>
+            </h2>
+            <p className="text-[18px] text-f-mint/60 max-w-3xl">
+              Navegue diretamente em alguns dos projetos desenvolvidos pela Foster. Design exclusivo e infraestrutura robusta.
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={200}>
+            <div className="bg-f-dark/30 border border-f-neon/20 rounded-[32px] overflow-hidden shadow-[0_0_80px_rgba(80,242,167,0.05)] group">
+              {/* Browser Header Overlay */}
+              <div className="bg-f-black/80 border-b border-f-neon/10 px-6 py-4 flex items-center justify-between">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/20"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/20"></div>
+                </div>
+                <div className="hidden md:block bg-f-black/50 border border-f-neon/10 rounded-full px-4 py-1 text-[10px] font-mono text-f-mint/30 w-1/2 text-center overflow-hidden whitespace-nowrap text-ellipsis">
+                  https://deeppink-quail-152012.hostingersite.com/
+                </div>
+                <a 
+                  href="https://deeppink-quail-152012.hostingersite.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-f-neon font-display font-bold text-xs hover:glow-neon-hover transition-all"
+                >
+                  <span className="hidden sm:inline">Abrir site inteiro</span> <ExternalLink size={14} />
+                </a>
+              </div>
+              
+              {/* Live Preview Container */}
+              <div className="aspect-video w-full bg-f-black relative">
+                <iframe 
+                  src="https://deeppink-quail-152012.hostingersite.com/" 
+                  className="absolute inset-0 w-full h-full border-none"
+                  title="Portfolio Live Preview"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
