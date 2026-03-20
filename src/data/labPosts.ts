@@ -24,7 +24,7 @@ export const labPosts: LabPost[] = [
     data: "20 Mar 2026",
     autor: "Carlos Borges",
     tags: ["gestão YouTube", "caso real", "crescimento orgânico", "igrejas", "canal gospel", "SEO YouTube"],
-    imagemCapa: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    imagemCapa: "/lab/abba-pai/capa.png",
     likes: 124,
     conteudo: `
       <p>Quando assumi a gestão do canal da Abba Pai Church, eles já tinham 100 mil inscritos. No papel, parecia um canal saudável. Na prática, era um canal sangrando.</p>
@@ -32,7 +32,7 @@ export const labPosts: LabPost[] = [
       <p>A monetização estava ativada — mas o dinheiro não vinha na proporção certa. A cada dois minutos um anúncio pausava o vídeo. A experiência do usuário era péssima. O algoritmo percebe isso. O público também. E quando os dois percebem ao mesmo tempo, o crescimento trava. O canal não estava morto. Estava sufocando.</p>
       
       <div class="my-12">
-        <img src="https://images.unsplash.com/photo-1551288049-bbda38a5f452?q=80&w=2340&auto=format&fit=crop" alt="Dashboard YouTube Analytics" class="rounded-2xl border border-f-neon/10" />
+        <img src="/lab/abba-pai/imagem-1.png" alt="Dashboard YouTube Analytics" class="rounded-2xl border border-f-neon/10" />
         <p class="text-center font-mono text-[11px] text-f-mint/30 mt-4 uppercase tracking-widest">Dashboard YouTube Analytics — Crescimento Plano</p>
       </div>
 
@@ -42,12 +42,12 @@ export const labPosts: LabPost[] = [
       <p>O que encontrei foi um padrão claro. Os vídeos eram bons. A embalagem era invisível. Títulos que não geravam curiosidade. Thumbnails que se perdiam no feed. Configurações técnicas que o YouTube penalizava silenciosamente. Um canal com conteúdo de qualidade que o algoritmo simplesmente não conseguia reconhecer — porque ninguém tinha ensinado o canal a se comunicar com a plataforma.</p>
       
       <div class="my-12">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="YouTube Studio Interface" class="rounded-2xl border border-f-neon/10" />
+        <img src="/lab/abba-pai/imagem-2.png" alt="YouTube Studio Interface" class="rounded-2xl border border-f-neon/10" />
         <p class="text-center font-mono text-[11px] text-f-mint/30 mt-4 uppercase tracking-widest">Análise de Grid de Thumbnails — Foster Method</p>
       </div>
 
       <h2>O que mudei — e por que funcionou</h2>
-      <p>Implementei tudo ao mesmo tempo. SEO, títulos, thumbnails e configurações técnicas. Não existe bala de prata no YouTube — existe sistema.</p>
+      <p>Implementei tudo ao mesmo tempo. SEO, títulos, thumbnails e configurações técnicas. No existe bala de prata no YouTube — existe sistema.</p>
       
       <p><strong>Títulos:</strong> passaram a trabalhar curiosidade e busca simultaneamente. Uma coisa é rankear. Outra é fazer a pessoa clicar. Os melhores títulos fazem as duas.</p>
       
@@ -58,7 +58,7 @@ export const labPosts: LabPost[] = [
       <p><strong>Anúncios:</strong> reduzimos drasticamente a frequência. Preferimos ganhar menos por vídeo e ganhar mais no longo prazo — com um canal que as pessoas voltam a assistir.</p>
       
       <div class="my-12">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2340&auto=format&fit=crop" alt="Thumbnail Comparison" class="rounded-2xl border border-f-neon/10" />
+        <img src="/lab/abba-pai/imagem-3.png" alt="Thumbnail Comparison" class="rounded-2xl border border-f-neon/10" />
         <p class="text-center font-mono text-[11px] text-f-mint/30 mt-4 uppercase tracking-widest">A/B Testing — Comparação de Impacto Visual</p>
       </div>
 
@@ -68,7 +68,7 @@ export const labPosts: LabPost[] = [
       <p>Julho de 2022 foi um dos meses de pico: +21.500 novos inscritos, 2,7 milhões de visualizações e R$18.448 de receita — números que confirmavam que o sistema estava funcionando de forma consistente. Não foi sorte. Foi o resultado de cada variável sendo otimizada ao mesmo tempo.</p>
       
       <div class="my-12">
-        <img src="https://images.unsplash.com/photo-1551288049-bbda38a5f452?q=80&w=2340&auto=format&fit=crop" alt="Analytics July 2022" class="rounded-2xl border border-f-neon/10" />
+        <img src="/lab/abba-pai/imagem-4.png" alt="Analytics July 2022" class="rounded-2xl border border-f-neon/10" />
         <p class="text-center font-mono text-[11px] text-f-mint/30 mt-4 uppercase tracking-widest">Dados de Julho 2022 — Pico de Performance</p>
       </div>
 
@@ -78,7 +78,7 @@ export const labPosts: LabPost[] = [
       <p>No mesmo período em que geríamos, a média era de 25 mil por mês. Isso não é crítica a ninguém. É uma prova objetiva de que o crescimento não veio porque a Abba Pai Church estava em expansão natural. Veio porque havia uma estratégia específica, executada com consistência, orientada por dados — e quando essa estratégia parou, o crescimento desacelerou proporcionalmente. O YouTube não perdoa ausência de método.</p>
       
       <div class="my-12">
-        <img src="https://images.unsplash.com/photo-1551288049-bbda38a5f452?q=80&w=2340&auto=format&fit=crop" alt="Growth Comparison Chart" class="rounded-2xl border border-f-neon/10" />
+        <img src="/lab/abba-pai/imagem-5.png" alt="Growth Comparison Chart" class="rounded-2xl border border-f-neon/10" />
         <p class="text-center font-mono text-[11px] text-f-mint/30 mt-4 uppercase tracking-widest">Visualização de Dados — Aceleração vs Desaceleração</p>
       </div>
 
@@ -92,7 +92,7 @@ export const labPosts: LabPost[] = [
       </ul>
       
       <div class="my-12">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2342&auto=format&fit=crop" alt="Editorial Tech Setup" class="rounded-2xl border border-f-neon/10" />
+        <img src="/lab/abba-pai/imagem-6.png" alt="Editorial Tech Setup" class="rounded-2xl border border-f-neon/10" />
         <p class="text-center font-mono text-[11px] text-f-mint/30 mt-4 uppercase tracking-widest">Estratégia, Dados e Execução — Foster Company</p>
       </div>
     `
