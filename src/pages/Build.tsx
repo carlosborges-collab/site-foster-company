@@ -1,5 +1,6 @@
 import AnimatedSection from '../components/AnimatedSection';
 import { ExternalLink } from 'lucide-react';
+import { openContactModal } from '../utils/contactEvents';
 
 export default function Build() {
   return (
@@ -157,9 +158,12 @@ export default function Build() {
         <div className="max-w-3xl mx-auto px-5">
           <AnimatedSection>
             <h2 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-f-mint mb-10">Pronto para escalar sua infraestrutura?</h2>
-            <a href="https://wa.me/5547999999999" target="_blank" rel="noopener noreferrer" className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300">
+            <button 
+              onClick={openContactModal}
+              className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 cursor-pointer"
+            >
               Falar com a Foster agora →
-            </a>
+            </button>
           </AnimatedSection>
         </div>
       </section>
