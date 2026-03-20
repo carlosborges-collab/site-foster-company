@@ -3,10 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Ifoster from './pages/Ifoster';
-import Grow from './pages/Grow';
-import Create from './pages/Create';
 import Build from './pages/Build';
-import Channels from './pages/Channels';
 import Music from './pages/Music';
 import CloneDigital from './pages/CloneDigital';
 import YoutubeGrowth from './pages/YoutubeGrowth';
@@ -27,13 +24,10 @@ export default function App() {
       const mainPages = [
         '#home', 
         '#ifoster', 
-        '#canais', 
         '#musica', 
         '#gestao-youtube', 
         '#clone-digital',
-        '#create',
         '#build',
-        '#grow',
         '#lab'
       ];
 
@@ -76,9 +70,7 @@ export default function App() {
   }, [currentPath]);
 
   const renderPage = () => {
-    if (displayPath.startsWith('#create')) return <Create />;
     if (displayPath.startsWith('#build')) return <Build />;
-    if (displayPath.startsWith('#grow')) return <Grow />;
     if (displayPath.startsWith('#lab-')) {
       const slug = displayPath.replace('#lab-', '');
       return <LabPost slug={slug} />;
@@ -88,7 +80,6 @@ export default function App() {
       case '#gestao-youtube': return <YoutubeGrowth />;
       case '#clone-digital': return <CloneDigital />;
       case '#ifoster': return <Ifoster />;
-      case '#canais': return <Channels />;
       case '#musica': return <Music />;
       case '#lab': return <Lab />;
       case '#home':
