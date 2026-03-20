@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { openContactModal } from '../utils/contactEvents';
 
 const POPUP_KEY = 'foster_popup_shown';
 
@@ -88,15 +89,15 @@ export default function ConversionPopup() {
         <span className="font-display font-semibold text-[14px] text-f-mint pr-4">
           {t('popup_mobile_text')}
         </span>
-        <a 
-          href="https://wa.me/5547999999999?text=Olá Foster! Vi o site de vocês e quero um site assim para minha empresa."
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={closePopup}
-          className="bg-f-neon text-f-black font-display font-semibold rounded-full px-4 py-2 text-[13px] whitespace-nowrap hover:glow-neon transition-all"
+        <button 
+          onClick={() => {
+            closePopup();
+            openContactModal();
+          }}
+          className="bg-f-neon text-f-black font-display font-semibold rounded-full px-4 py-2 text-[13px] whitespace-nowrap hover:glow-neon transition-all cursor-pointer"
         >
           {t('popup_mobile_cta')}
-        </a>
+        </button>
       </div>
     );
   }
@@ -147,21 +148,20 @@ export default function ConversionPopup() {
         </div>
 
         <div className="flex flex-col items-center gap-4">
-          <a 
-            href="https://wa.me/5547999999999?text=Olá Foster! Vi o site de vocês e quero um site assim para minha empresa."
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closePopup}
-            className="w-full bg-f-neon text-f-black font-display font-bold text-[16px] py-4 rounded-full text-center hover:shadow-[0_0_32px_rgba(80,242,167,0.35)] hover:scale-[1.02] transition-all duration-300"
+          <button 
+            onClick={() => {
+              closePopup();
+              openContactModal();
+            }}
+            className="w-full bg-f-neon text-f-black font-display font-bold text-[16px] py-4 rounded-full text-center hover:shadow-[0_0_32px_rgba(80,242,167,0.35)] hover:scale-[1.02] transition-all duration-300 cursor-pointer"
           >
             {t('popup_cta_primary')}
-          </a>
+          </button>
           
           <a 
             href="#build"
             onClick={(e) => {
               closePopup();
-              // Smooth scroll handled by CSS, just need to close popup
             }}
             className="font-body text-[13px] text-f-mint/40 hover:text-f-mint/70 underline underline-offset-4 transition-colors"
           >
