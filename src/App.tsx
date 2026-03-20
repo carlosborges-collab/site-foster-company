@@ -10,6 +10,8 @@ import Channels from './pages/Channels';
 import Music from './pages/Music';
 import CloneDigital from './pages/CloneDigital';
 import YoutubeGrowth from './pages/YoutubeGrowth';
+import Lab from './pages/Lab';
+import LabPost from './pages/LabPost';
 import ConversionPopup from './components/ConversionPopup';
 import ContactModal from './components/ContactModal';
 
@@ -22,7 +24,6 @@ export default function App() {
     const handleHashChange = () => {
       const newHash = window.location.hash || '#home';
       
-      // Lista de rotas que são PÁGINAS completas
       const mainPages = [
         '#home', 
         '#ifoster', 
@@ -32,13 +33,12 @@ export default function App() {
         '#clone-digital',
         '#create',
         '#build',
-        '#grow'
+        '#grow',
+        '#lab'
       ];
 
-      // Caso especial: links de scroll interno (ex: #gestao-youtube-planos)
-      // Se o link contiver um hífen e a parte antes do hífen for a página atual
       const isInternalScroll = newHash.includes('-') && 
-                               !mainPages.includes(newHash) &&
+                               !mainPages.some(page => newHash.startsWith(page)) &&
                                newHash.startsWith(currentPath);
 
       if (isInternalScroll) {
@@ -51,26 +51,18 @@ export default function App() {
         }
       }
       
-      // Se for apenas um ID simples (ex: #work) e ele existir na página atual
       const simpleId = newHash.startsWith('#') ? newHash.slice(1) : newHash;
       const simpleEl = document.getElementById(simpleId);
-      if (simpleEl && !mainPages.includes(newHash)) {
+      if (simpleEl && !mainPages.some(page => newHash === page)) {
         simpleEl.scrollIntoView({ behavior: 'smooth' });
         return;
       }
 
-      // Se for uma mudança de página principal
-      let baseHash = newHash;
-      // Normalização para sub-âncoras
-      if (newHash.startsWith('#create')) baseHash = '#create';
-      if (newHash.startsWith('#build')) baseHash = '#build';
-      if (newHash.startsWith('#grow')) baseHash = '#grow';
-
-      if (baseHash !== currentPath) {
+      if (newHash !== currentPath) {
         setIsTransitioning(true);
         setTimeout(() => {
-          setCurrentPath(baseHash);
-          setDisplayPath(baseHash);
+          setCurrentPath(newHash);
+          setDisplayPath(newHash);
           window.scrollTo(0, 0);
           setIsTransitioning(false);
         }, 200);
@@ -87,6 +79,10 @@ export default function App() {
     if (displayPath.startsWith('#create')) return <Create />;
     if (displayPath.startsWith('#build')) return <Build />;
     if (displayPath.startsWith('#grow')) return <Grow />;
+    if (displayPath.startsWith('#lab-')) {
+      const slug = displayPath.replace('#lab-', '');
+      return <LabPost slug={slug} />;
+    }
     
     switch (displayPath) {
       case '#gestao-youtube': return <YoutubeGrowth />;
@@ -94,6 +90,7 @@ export default function App() {
       case '#ifoster': return <Ifoster />;
       case '#canais': return <Channels />;
       case '#musica': return <Music />;
+      case '#lab': return <Lab />;
       case '#home':
       default: return <Home />;
     }
