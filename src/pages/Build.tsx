@@ -152,7 +152,7 @@ export default function Build() {
                 <div className="aspect-video w-full bg-f-black relative overflow-hidden flex items-start justify-center">
                   <iframe 
                     src="https://knlifecare.com.br/" 
-                    className="w-[1280px] h-[720px] border-none scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[1.0] origin-top transition-transform duration-500"
+                    className="w-[1280px] h-[720px] border-none scale-[0.27] sm:scale-[0.45] md:scale-[0.55] lg:scale-[0.85] origin-top transition-transform duration-500"
                     title="Portfolio KN Life Care"
                     loading="lazy"
                   ></iframe>
@@ -182,7 +182,7 @@ export default function Build() {
                 <div className="aspect-video w-full bg-f-black relative overflow-hidden flex items-start justify-center">
                   <iframe 
                     src="https://juliazanatta.com.br/" 
-                    className="w-[1280px] h-[720px] border-none scale-[0.45] sm:scale-[0.6] md:scale-[0.75] lg:scale-[1.0] origin-top transition-transform duration-500"
+                    className="w-[1280px] h-[720px] border-none scale-[0.27] sm:scale-[0.45] md:scale-[0.55] lg:scale-[0.85] origin-top transition-transform duration-500"
                     title="Portfolio Julia Zanatta"
                     loading="lazy"
                   ></iframe>
