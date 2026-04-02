@@ -75,12 +75,12 @@ export default function Lab() {
         <AnimatedSection className="mb-20">
           <div className="font-mono text-f-neon/70 mb-6">/ o lab</div>
           <h1 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-f-mint leading-[1.1] mb-6">
-            Bastidores reais. <br />
-            Experimentos honestos. <br />
-            <span className="text-f-neon">Resultados documentados.</span>
+            Inteligência aplicada. <br />
+            Experimentos reais. <br />
+            <span className="text-f-neon">Notícias do front.</span>
           </h1>
           <p className="text-xl text-f-mint/60 max-w-2xl">
-            O que a Foster está construindo, testando e aprendendo — publicado aqui.
+            O radar da Foster sobre o que estamos construindo e o que está movendo o mercado global de IA.
           </p>
         </AnimatedSection>
 
