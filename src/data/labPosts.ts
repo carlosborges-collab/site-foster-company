@@ -94,7 +94,7 @@ export const labPosts: LabPost[] = [
       <h2>A Ciência do Sotaque</h2>
       <p>O desafio não estava nas palavras, mas no ritmo. O sotaque carioca do Rony possui cadências específicas que os modelos padrão de IA costumam ignorar ou 'achatar' em busca de uma clareza artificial.</p>
       
-      <p><em>Estúdio de gravação profissional — Captação de áudio base para the treinamento do modelo neurônico.</em></p>
+      <p><em>Estúdio de gravação profissional — Captação de áudio base para o treinamento do modelo neurônico.</em></p>
       
       <h2>O Fluxo de Trabalho</h2>
       <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Treceiro, o treinamento de resposta emocional.</p>
@@ -205,7 +205,7 @@ export const labPosts: LabPost[] = [
       <p>Em 2025, a ANPD (Agência Nacional de Proteção de Dados) recebeu 395 comunicações de incidentes de segurança — um indicador claro de que a insegurança digital é uma realidade concreta no mercado brasileiro.</p>
 
       <h2>O que uma empresa precisa ter para usar IA com segurança</h2>
-      <p>A adequação não é complexa quando feita com método. Cinco elementos formam a base de uma operação de IA segura e em conformidade com a LGPD:</p>
+      <p>A adequação não é complexa quando feita com método. Cinco elements formam a base de uma operação de IA segura e em conformidade com a LGPD:</p>
       <ol>
         <li><strong>Auditoria de uso atual:</strong> Identificar ferramentas e mapear dados processados.</li>
         <li><strong>Política interna de uso de IA:</strong> Guia prático com diretrizes claras para o time.</li>
@@ -746,6 +746,63 @@ export const labPosts: LabPost[] = [
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com o time — não em paralelo. Cada projeto inclui treinamento prático, transferência de conhecimento e monitoramento contínuo. O resultado: IA que funciona porque o time sabe usá-la. Se sua empresa quer sair do achismo e entrar na implantação com método, o diagnóstico gratuito de 60 minutos é o primeiro passo.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "15",
+    slug: "corte-juniors-contratacao-especialistas-ia-mercado-trabalho",
+    categoria: "/ notícias",
+    titulo: "Corte de Juniors, Contratação de Especialistas em IA: A Reconfiguração Silenciosa do Mercado de Trabalho",
+    descricao: "MIT alerta: cortar juniors por causa da IA é erro grave. Enquanto isso, IBM e Microsoft criam pipelines de talentos em IA. Entenda a reconfiguração e como preparar seu time.",
+    tempoLeitura: "5 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["mercado de trabalho IA", "contratação especialistas IA", "capacitação de time", "MIT", "Atlassian"],
+    imagemCapa: "https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?q=80&w=2340&auto=format&fit=crop",
+    likes: 42,
+    conteudo: `
+      <p>Nas últimas semanas, três movimentos convergiram para revelar uma transformação silenciosa — mas profunda — no mercado de trabalho global.</p>
+
+      <p>A Atlassian — dona do Jira, Confluence e Trello — demitiu aproximadamente 1.600 funcionários (10% do time global) para redirecionar recursos para IA. A empresa foi além: substituiu seu CTO por dois novos CTOs focados exclusivamente em inteligência artificial. Nos EUA, dados de março mostram que 15.341 demissões foram relacionadas a IA — quase 25% de todos os cortes do mês. E ao mesmo tempo, contratações em áreas de IA cresceram 157% em relação a fevereiro.</p>
+
+      <p>O padrão é claro: empresas estão cortando funções repetitivas e investindo em capacitação e contratação de especialistas em IA.</p>
+
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: Crescendo.ai/News, 04/2026; CNBC, 02/04/2026; TechStartups, 02/04/2026)</p>
+
+      <h2>O alerta do MIT: cortar juniors é um erro estratégico</h2>
+      <p>No HBR Strategy Summit 2026, Andy McAfee, do MIT, trouxe um contraponto importante a essa onda de cortes. Segundo o pesquisador, empresas que estão reduzindo contratações de nível inicial por causa da IA estão sacrificando o futuro — e por dois motivos.</p>
+
+      <p>Primeiro: ao cortar a base da pirâmide, a empresa elimina o pipeline de talentos que formaria seus líderes nos próximos anos. Segundo: são justamente os profissionais mais jovens que tendem a ser os "power users" mais entusiastas de IA dentro da organização. Cortá-los é desligar o motor de adoção interna.</p>
+
+      <p>McAfee observou que empresas como IBM e Microsoft já perceberam isso e estão criando pipelines específicos para atrair jovens talentos com habilidades em IA — não para substituir o time, mas para acelerar a transformação de dentro para fora.</p>
+
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: HBR IdeaCast — Strategy Summit 2026, 04/2026)</p>
+
+      <h2>O cenário brasileiro</h2>
+      <p>No Brasil, o gap é ainda mais agudo. Segundo levantamentos recentes, o país enfrenta um déficit significativo de profissionais capacitados em IA. Enquanto a tecnologia avança rapidamente, a maioria das empresas não tem programas internos de capacitação em IA — e depende de consultorias externas para cada decisão.</p>
+
+      <p>O TechTudo publicou análise indicando que empresas que adotarem práticas responsáveis de governança de IA — com auditorias, explicabilidade e políticas de uso ético — ganharão vantagem competitiva. Já as que ignorarem esses aspectos podem enfrentar sanções legais e danos à reputação.</p>
+
+      <p>A equação é simples: o time precisa ser treinado não apenas para usar ferramentas de IA, mas para entender quando confiar, quando questionar e como operar com autonomia. Empresas que entregam essa capacitação — não como palestra, mas como treinamento prático — constroem uma vantagem que se acumula com o tempo.</p>
+
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: TechTudo, 01/2026; InfoMoney/AWS, 2025)</p>
+
+      <h2>O que as empresas mais inteligentes estão fazendo</h2>
+      <p>As empresas que estão saindo na frente em 2026 não estão simplesmente "adotando IA". Estão reorganizando suas equipes em torno de três eixos:</p>
+      <ul>
+        <li><strong>Automação das tarefas repetitivas</strong> (com IA).</li>
+        <li><strong>Reposicionamento do time existente</strong> para funções de maior valor (análise, estratégia, relacionamento).</li>
+        <li><strong>Capacitação prática</strong> para que todos saibam operar com IA no dia a dia.</li>
+      </ul>
+
+      <p>O resultado? O time não encolhe — ele se torna mais produtivo. As entregas aumentam sem que a folha de pagamento exploda. E a empresa constrói uma cultura de IA que não depende de consultores externos para continuar evoluindo.</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA entrega capacitação prática como parte de toda implantação. Cada projeto inclui treinamento do time, política de uso de IA e roadmap de expansão — para que a empresa opere com autonomia e não crie dependência. Se seu time precisa se preparar para a era dos agentes de IA, o diagnóstico gratuito mostra por onde começar.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
