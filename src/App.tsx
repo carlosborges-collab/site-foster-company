@@ -12,11 +12,63 @@ import Lab from './pages/Lab';
 import LabPost from './pages/LabPost';
 import ConversionPopup from './components/ConversionPopup';
 import ContactModal from './components/ContactModal';
+import { useLanguage } from './i18n/LanguageContext';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#home');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [displayPath, setDisplayPath] = useState(currentPath);
+  const { t } = useLanguage();
+
+  // Dynamic SEO Update Logic
+  useEffect(() => {
+    const updateSEO = () => {
+      let title = t('meta_title');
+      let description = t('meta_description');
+      const url = `https://fosterprodutora.com.br/${currentPath}`;
+
+      if (currentPath === '#ifoster') {
+        title = t('seo_ifoster_title');
+        description = t('seo_ifoster_desc');
+      } else if (currentPath === '#gestao-youtube') {
+        title = t('seo_youtube_title');
+        description = t('seo_youtube_desc');
+      } else if (currentPath === '#clone-digital') {
+        title = t('seo_clone_title');
+        description = t('seo_clone_desc');
+      } else if (currentPath === '#foster-ia') {
+        title = t('seo_fosteria_title');
+        description = t('seo_fosteria_desc');
+      } else if (currentPath === '#build') {
+        title = t('seo_build_title');
+        description = t('seo_build_desc');
+      } else if (currentPath === '#lab') {
+        title = t('seo_lab_title');
+        description = t('seo_lab_desc');
+      } else if (currentPath === '#musica') {
+        title = t('seo_music_title');
+        description = t('seo_music_desc');
+      } else if (currentPath.startsWith('#lab-')) {
+        // LabPost dynamic SEO is handled partially by the component, but we ensure basic here
+        title = `${title} | Lab`;
+      }
+
+      document.title = title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', description);
+      
+      const canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.setAttribute('href', url);
+
+      // Social Meta
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', title);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', description);
+    };
+
+    updateSEO();
+  }, [currentPath, t]);
 
   useEffect(() => {
     const handleHashChange = () => {
