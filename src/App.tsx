@@ -7,6 +7,7 @@ import Build from './pages/Build';
 import Music from './pages/Music';
 import CloneDigital from './pages/CloneDigital';
 import YoutubeGrowth from './pages/YoutubeGrowth';
+import FosterIA from './pages/FosterIA';
 import Lab from './pages/Lab';
 import LabPost from './pages/LabPost';
 import ConversionPopup from './components/ConversionPopup';
@@ -27,6 +28,7 @@ export default function App() {
         '#musica', 
         '#gestao-youtube', 
         '#clone-digital',
+        '#foster-ia',
         '#build',
         '#lab'
       ];
@@ -79,6 +81,7 @@ export default function App() {
     switch (displayPath) {
       case '#gestao-youtube': return <YoutubeGrowth />;
       case '#clone-digital': return <CloneDigital />;
+      case '#foster-ia': return <FosterIA />;
       case '#ifoster': return <Ifoster />;
       case '#musica': return <Music />;
       case '#lab': return <Lab />;
