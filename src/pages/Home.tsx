@@ -786,7 +786,7 @@ export default function Home() {
             </div>
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="channels_eyebrow">{t('channels_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">
-               <span dangerouslySetInnerHTML={{ __ __html: t('channels_title') }}></span>
+               <span dangerouslySetInnerHTML={{ __html: t('channels_title') }}></span>
             </h2>
             <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="channels_desc">{t('channels_desc')}</p>
           </AnimatedSection>
