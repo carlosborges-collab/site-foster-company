@@ -97,7 +97,7 @@ export const labPosts: LabPost[] = [
       <p><em>Estúdio de gravação profissional — Captação de áudio base para o treinamento do modelo neurônico.</em></p>
       
       <h2>O Fluxo de Trabalho</h2>
-      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Terceiro, o treinamento de resposta emocional.</p>
+      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Treceiro, o treinamento de resposta emocional.</p>
       
       <blockquote>"A tecnologia deve servir à essência, nunca o contrário."</blockquote>
       
@@ -187,7 +187,7 @@ export const labPosts: LabPost[] = [
       <p>Resumo rápido: a LGPD se aplica diretamente ao uso de ferramentas de IA que processam dados pessoais. Se sua empresa usa qualquer ferramenta de IA sem política interna, auditoria de dados e adequação legal, está exposta a riscos reais — financeiros, jurídicos e reputacionais. Neste artigo, mostramos onde estão os riscos e como corrigi-los.</p>
 
       <h2>O problema silencioso: Shadow AI dentro da sua empresa</h2>
-      <p>"Shadow AI" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
+      <p>"Shadow IA" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
       <p>Quando um colaborador insere dados de clientes em uma ferramenta de IA externa, esses dados saem do perímetro de controle da empresa. Dependendo da ferramenta, podem ser armazenados em servidores internacionais, usados para treinar modelos futuros ou acessados por terceiros. Se esses dados incluem informações pessoais — nome, CPF, e-mail, histórico de compras, dados de saúde —, a empresa está processando dados pessoais fora das bases legais previstas na LGPD.</p>
       <p>O primeiro passo para resolver esse problema não é proibir o uso de IA. Proibições não funcionam. O caminho é criar diretrizes claras, oferecer alternativas aprovadas e auditar regularmente quais ferramentas o time está utilizando.</p>
 
@@ -232,6 +232,67 @@ export const labPosts: LabPost[] = [
       <div class="mt-12 text-center">
         <p class="text-f-neon font-bold text-lg mb-4">Sua empresa usa IA mas não sabe se está em conformidade com a LGPD?</p>
         <p>Agende um diagnóstico gratuito de 60 minutos focado em compliance e governança de IA com a Foster IA.</p>
+      </div>
+    `
+  },
+  {
+    id: "5",
+    slug: "projetos-ia-travam-como-escalar-implantacao",
+    categoria: "/ inteligência",
+    titulo: "De Piloto a Operação Real: Por Que 69% dos Projetos de IA Travam e Como Destravar o Seu",
+    descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça o método de implantação que transforma IA em resultado operacional real.",
+    tempoLeitura: "9 min",
+    data: "10 Abr 2026",
+    autor: "Time Foster IA",
+    tags: ["implantação de IA na empresa", "escalar projeto de IA", "automação de processos com IA", "IA operacional"],
+    imagemCapa: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
+    likes: 27,
+    conteudo: `
+      <p>Sua empresa fez o piloto de IA. O time testou ferramentas, gerou alguns resultados promissores e todo mundo ficou empolgado. Mas três meses depois, o projeto parou. O piloto virou uma história que se conta em reuniões — não um processo que roda na operação. Se essa situação parece familiar, você não está sozinho.</p>
+      <p>Das empresas que iniciaram projetos de IA nos últimos dois anos, apenas 31% conseguiram ir além do piloto e integrar a tecnologia na operação real. Os outros 69% ficaram presos no que especialistas chamam de "vale da morte da IA" — a zona entre a experimentação e a operação, onde a maioria dos projetos morre.</p>
+      <p>Resumo rápido: projetos de IA não travam por falta de tecnologia. Travam por falta de método de implantação, desalinhamento entre áreas e ausência de acompanhamento pós-implementação. Neste artigo, detalhamos as 4 razões mais comuns — e o framework que resolve cada uma delas.</p>
+
+      <h2>Razão 1: O piloto resolve um problema que ninguém priorizou</h2>
+      <p>A armadilha mais comum em projetos de IA é começar pela tecnologia, não pelo problema. Alguém na empresa descobre uma ferramenta impressionante, monta um piloto para demonstrar o que ela faz — e o resultado é tecnicamente brilhante mas operacionalmente irrelevante.</p>
+      <p>O piloto funciona. Mas não resolve nenhum dos 5 maiores gargalos da operação. Não economiza dinheiro de verdade. Não libera tempo do time em processos que realmente importam. E quando a diretoria pergunta "qual é o ROI disso?", ninguém tem uma resposta convincente.</p>
+      <p>A implantação que funciona começa pelo mapeamento de dores, não pela escolha de ferramentas. Entrevistas com cada área, análise de fluxo de trabalho, quantificação do tempo gasto em tarefas repetitivas e identificação das oportunidades onde a automação gera o maior impacto com o menor esforço. A ferramenta vem depois — como consequência do diagnóstico, não como ponto de partida.</p>
+
+      <h2>Razão 2: Cada área implementa sozinha, sem orquestração</h2>
+      <p>Marketing testa uma ferramenta. Vendas experimenta outra. O financeiro adota uma terceira. Cada departamento roda seu próprio piloto, com suas próprias ferramentas, seus próprios critérios e zero coordenação com as outras áreas.</p>
+      <p>O resultado é fragmentação. Sistemas que não conversam entre si. Dados duplicados em plataformas diferentes. Licenças que se sobrepõem. E nenhuma visão unificada de como a IA está (ou não está) gerando valor para a empresa como um todo.</p>
+      <p>A IA só escala quando existe um plano centralizado — um roadmap que prioriza iniciativas por impacto, define a sequência de implantação e garante que cada automação se integra com os sistemas que a empresa já usa. Isso exige alguém com visão transversal da operação, que consiga olhar para todas as áreas simultaneamente e identificar onde a IA conecta processos em vez de criar silos.</p>
+
+      <h2>Razão 3: O time não foi preparado para operar com IA</h2>
+      <p>A tecnologia foi implementada, mas o time continua trabalhando do jeito antigo. A automação está configurada, mas ninguém confia nela o suficiente para abandonar o processo manual. O agente de IA responde bem, mas os colaboradores preferem "fazer na mão, para ter certeza".</p>
+      <p>Esse é o gap de capacitação — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
+      <p>As empresas que conseguem escalar IA com sucesso investem tanto em capacitação quanto em tecnologia. Garantem que o time entenda não apenas como usar a ferramenta, mas por que ela está ali e como medir se está funcionando. Quando o colaborador vê o resultado concreto — uma tarefa que levava 2 horas sendo resolvida em 5 minutos —, a resistência desaparece sozinha.</p>
+
+      <h2>Razão 4: Não há monitoramento após a implantação</h2>
+      <p>O projeto foi implementada. Todo mundo comemorou. E depois... silêncio. Ninguém mede se a automação continua funcionando. Ninguém acompanha se os resultados iniciais se mantêm. Ninguém ajusta o que precisa ser ajustado conforme a operação evolui.</p>
+      <p>IA não é um projeto com começo, meio e fim. É uma camada da operação que precisa de monitoramento contínuo, ajustes de rota e expansão progressiva. A automação que funcionava perfeitamente em janeiro pode precisar de calibragem em março porque um processo interno mudou, um sistema foi atualizado ou o volume de dados cresceu.</p>
+      <p>Projetos que escalam com sucesso incluem uma fase de acompanhamento pós-implantação — medição de resultados contra KPIs definidos, identificação de ajustes necessários e planejamento das próximas iniciativas com base no que gerou mais retorno.</p>
+
+      <h2>O framework que transforma piloto em operação</h2>
+      <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
+      <ul>
+        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos e oportunidades de IA ranqueadas por impacto.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações e agentes junto com o time da empresa.</li>
+        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados e identificação das próximas iniciativas.</li>
+      </ul>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
+        <ul class="space-y-6">
+          <li><strong>Quanto custa implantar IA na minha empresa?</strong><br/>O custo varia conforme o tamanho da operação, mas o investimento se paga nas primeiras semanas de automação.</li>
+          <li><strong>Preciso trocar meus sistemas atuais para usar IA?</strong><br/>Na maioria dos casos, não. Integramos a IA com os sistemas que a empresa já usa (CRM, ERP, etc).</li>
+          <li><strong>Meu time vai perder o emprego com a automação?</strong><br/>Não. A automação elimina tarefas repetitivas, redirecionando o time para atividades de maior valor estratégico.</li>
+        </ul>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-f-neon font-bold text-lg mb-4">Se sua empresa já tentou implantar IA e o projeto travou, o problema não é tecnologia — é método.</p>
+        <p>A Foster IA conduz a implantação do diagnóstico à operação, com acompanhamento contínuo e foco em resultado.</p>
       </div>
     `
   }
