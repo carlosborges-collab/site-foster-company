@@ -23,7 +23,7 @@ export const translations = {
     fia_hero_badge: "Consultoria & Implantação de IA",
     fia_hero_title_1: "Sua empresa não precisa entender de IA.",
     fia_hero_title_2: "Ela precisa funcionar com ela.",
-    fia_hero_subtitle: "Levantamos os gargalos da sua operação, implantamos inteligência artificial onde ela gera resultado real e garantimos que tudo funciona dentro das normas — LGPD, compliance e segurança de ponta a ponta.",
+    fia_hero_subtitle: "Levantamos os gargalos da sua operation, implantamos inteligência artificial onde ela gera resultado real e garantimos que tudo funciona dentro das normas — LGPD, compliance e segurança de ponta a ponta.",
     fia_hero_cta_1: "Quero um diagnóstico gratuito →",
     fia_hero_cta_2: "Ver como funciona",
     fia_stat_1_val: "3x",
@@ -152,15 +152,15 @@ export const translations = {
     
     // Seção O que é a Foster
     about_eyebrow: "/ o que é a foster",
-    about_title: "Não somos agência.<br />Não somos produtora.<br /><span class='text-f-neon text-glow'>Somos o motivo pelo qual<br />você para de rolar o feed.</span>",
-    about_desc_1: "A Foster existe no cruzamento entre criatividade humana e inteligência artificial. Criamos avatares, canais, plataformas e conteúdo que não pedem atenção — eles a tomam.",
+    about_title: "Não somos agência. Não somos produtora.<br /><span class='text-f-neon text-glow'>Somos a empresa que coloca IA para trabalhar dentro do seu negócio.</span>",
+    about_desc_1: "A Foster existe no cruzamento entre inteligência artificial e estratégia de negócio. Implantamos IA, construímos plataformas e criamos sistemas que não só produzem conteúdo — automatizam processos, aceleram operações e geram resultado mensurável.",
     
     about_pillar_1_title: "Criar",
-    about_pillar_1_desc: "Avatares, vídeos, conteúdo e experiências que param o scroll e constroem marcas.",
+    about_pillar_1_desc: "Avatares digitais, vídeos, conteúdo e experiências visuais — com IA acelerando cada etapa da produção criativa, do conceito à entrega.",
     about_pillar_2_title: "Construir",
-    about_pillar_2_desc: "Plataformas, sites e tecnologia com IA integrada em cada etapa do processo.",
+    about_pillar_2_desc: "Plataformas, ferramentas e ambientes proprietários com IA integrada — feitos para o seu contexto, rodando no seu ambiente.",
     about_pillar_3_title: "Crescer",
-    about_pillar_3_desc: "Canais, posicionamento e estratégia que transformam presença em dominância digital.",
+    about_pillar_3_desc: "Automação de processos, agentes inteligentes e estratégia de IA que transformam o que a empresa já sabe em vantagem competitiva permanente.",
     
     ifoster_eyebrow: "/ plataforma proprietária",
     ifoster_hero_title_1: "iFoster.",
@@ -267,7 +267,7 @@ export const translations = {
     music_card2_cta: "Saber mais →",
     cta_eyebrow: "/ próximo passo",
     cta_title_1: "Pronto para",
-    cta_title_2: "dominar le digital?",
+    cta_title_2: "dominar o digital?",
     cta_desc: "A primeira conversa é gratuita. Sem compromisso. Só resultado.",
     cta_btn: "Falar com a Foster agora →",
     cta_footer: "Balneário Camboriú, Brasil 🇧🇷",

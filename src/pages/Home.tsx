@@ -215,18 +215,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
             <AnimatedSection delay={100}>
               <div className="text-f-neon text-2xl mb-4">◈</div>
-              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_1_title">Criar</h3>
-              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_1_desc">Avatares, vídeos, conteúdo e experiências que param o scroll e constroem marcas.</p>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_1_title">{t('about_pillar_1_title')}</h3>
+              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_1_desc">{t('about_pillar_1_desc')}</p>
             </AnimatedSection>
             <AnimatedSection delay={200}>
               <div className="text-f-neon text-2xl mb-4">⬡</div>
-              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_2_title">Construir</h3>
-              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_2_desc">Plataformas, sites e tecnologia com IA integrada em cada etapa do processo.</p>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_2_title">{t('about_pillar_2_title')}</h3>
+              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_2_desc">{t('about_pillar_2_desc')}</p>
             </AnimatedSection>
             <AnimatedSection delay={300}>
               <div className="text-f-neon text-2xl mb-4">▲</div>
-              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_3_title">Crescer</h3>
-              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_3_desc">Canais, posicionamento e estratégia que transformam presença em dominância digital.</p>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_3_title">{t('about_pillar_3_title')}</h3>
+              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_3_desc">{t('about_pillar_3_desc')}</p>
             </AnimatedSection>
           </div>
         </div>
