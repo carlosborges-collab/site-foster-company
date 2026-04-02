@@ -19,7 +19,7 @@ export const translations = {
     nav_carlos: "Carlos Borges",
     nav_cta: "Falar com a Foster",
 
-    // SEO Titles and Descriptions - FOSTER COMPANY BRAND PROTECTION STRATEGY
+    // SEO Titles and Descriptions - REFINED FOR BRAND DOMINANCE
     seo_ifoster_title: "Foster Company | iFoster - Inteligência Artificial Proprietária",
     seo_ifoster_desc: "iFoster pela Foster Company: a inteligência da sua empresa sob seu controle. Agentes de IA treinados com seu conteúdo no seu próprio servidor.",
     seo_youtube_title: "Foster Company | Gestão de YouTube Growth e Estratégia de Canais",
@@ -207,7 +207,7 @@ export const translations = {
     grow_cta: "Ver Foster Grow →",
     platforms_eyebrow: "/ foster ecosystem",
     platforms_title: "Além dos serviços: nossas plataformas.",
-    platforms_desc: "Desenvolvemos produtos digitais próprios que já estão no mercado. Cada plataforma é uma extensão da nossa visão criativa e tecnológica.",
+    platforms_desc: "Desenvolvemos produtos digitais próprios que já estão no mercado. Cada plataforma é uma extensão da nossa vision criativa e tecnológica.",
     ifoster_card_badge: "⭐ Plataforma Própria",
     ifoster_card_tags: "Super Agentes de IA · Servidor Próprio",
     ifoster_card_title: "iFoster",
@@ -501,13 +501,13 @@ export const translations = {
     yt_faq_q3: "Quanto tempo para ver resultados?",
     yt_faq_a3: "30–90 dias iniciais. Crescimento expressivo entre o 3º e 6º mês.",
 
-    // Base Otimizada para SEO
-    meta_title: "Foster Company | Gestão de YouTube, Clone Digital IA e Estúdio Criativo",
-    meta_description: "A Foster Company é um Creative AI Studio em Balneário Camboriú especializado em Gestão de YouTube, Clones Digitais com IA, Produção Audiovisual e Estratégia Digital para marcas e líderes.",
+    // Base Otimizada para SEO - PUNCHY AND RESULTS ORIENTED
+    meta_title: "Foster Company | Creative AI Studio: Gestão de YouTube e IA",
+    meta_description: "Líder em IA e YouTube Growth. Foster Company: Clones Digitais, Super Agentes de IA e Estratégia para marcas que buscam escala infinita e dominância digital.",
     og_title: "Foster Company — Creative AI Studio | IA e Estratégia Digital",
     
     // Novas chaves para metatags da página Foster IA
-    meta_foster_ia_title: "Foster IA — Consultoria e Implantação de Inteligência Artificial",
-    meta_foster_ia_description: "Mapeamos sua operação, implantamos IA onde gera resultado real e garantimos conformidade com LGPD e compliance. Do diagnóstico à automação rodando."
+    meta_foster_ia_title: "Foster Company | Consultoria e Implantação de IA Corporativa",
+    meta_foster_ia_description: "Mapeamos sua operação e implantamos IA onde gera resultado real. Conformidade LGPD e automação para escalar seu negócio com a Foster Company."
   }
 };
