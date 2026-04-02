@@ -97,7 +97,7 @@ export const labPosts: LabPost[] = [
       <p><em>Estúdio de gravação profissional — Captação de áudio base para o treinamento do modelo neurônico.</em></p>
       
       <h2>O Fluxo de Trabalho</h2>
-      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Terceiro, o treinamento de resposta emocional.</p>
+      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Treceiro, o treinamento de resposta emocional.</p>
       
       <blockquote>"A tecnologia deve servir à essência, nunca o contrário."</blockquote>
       
@@ -128,12 +128,12 @@ export const labPosts: LabPost[] = [
       
       <h2>O paradoxo da IA corporativa: todo mundo usa, poucos veem resultado</h2>
       <p>Existe uma diferença brutal entre "usar IA" e "usar IA de forma que gere resultado". A maioria das empresas brasileiras caiu na primeira categoria. Contrataram ChatGPT corporativo, liberaram acesso ao Copilot, talvez até fizeram um workshop sobre "IA no dia a dia". Mas quando você pergunta ao CFO qual foi o impacto financeiro dessas iniciativas, a resposta geralmente é um silêncio desconfortável.</p>
-      <p>Ida adoção de IA no Brasil seguiu um padrão perigoso: entusiasmo primeiro, estratégia depois. Ou, em muitos casos, entusiasmo sem estratégia alguma.</p>
+      <p>Isso acontece porque a adoção de IA no Brasil seguiu um padrão perigoso: entusiasmo primeiro, estratégia depois. Ou, em muitos casos, entusiasmo sem estratégia alguma.</p>
 
       <h2>Sinal 1: Ferramentas sem estratégia — o "efeito cardápio"</h2>
       <p>Sua empresa assina ChatGPT Teams, Copilot, Midjourney, talvez mais duas ou três ferramentas. Cada área usa o que quer, como quer. Marketing gera textos no ChatGPT. O jurídico consulta o Copilot. O financeiro fez uma planilha com fórmulas de IA. Tudo isolado. Nenhuma integração. Nenhum processo redesenhado.</p>
       <p>É o "efeito cardápio": sua empresa tem acesso a 15 ferramentas de IA, mas nenhuma está conectada ao fluxo real de trabalho. O resultado? O time gasta tempo aprendendo ferramentas novas, mas o processo em si continua o mesmo. A IA virou um acessório — não uma engrenagem.</p>
-      <blockquote>O que deveria acontecer: antes de contratar qualquer ferramenta, alguém precisa mapear os processos internos, identificar onde a IA gera impacto real e selecionar a ferramenta certa para cada ponto. Não o contrário.</blockquote>
+      <blockquote>O que deveria acontecer: antes de contratar qualquer ferramenta, alguém precisa mapear os processos internos, identificar onde a IA gera impacto real e selecionar a ferramenta certa para cada ponto. Not o contrário.</blockquote>
 
       <h2>Sinal 2: Dados sensíveis expostos sem que ninguém perceba</h2>
       <p>Este é o sinal mais perigoso — e o mais silencioso. Seus colaboradores estão usando IA todos os dias. Colam contratos no ChatGPT para pedir resumos. Jogam dados de clientes em ferramentas de análise. Compartilham planilhas financeiras com modelos de terceiros. E ninguém sabe para onde esses dados vão.</p>
@@ -177,7 +177,7 @@ export const labPosts: LabPost[] = [
     descricao: "8 em cada 10 empresas no Brasil não têm política de governança de IA. Saiba como proteger dados, evitar multas da LGPD e usar IA com segurança.",
     tempoLeitura: "10 min",
     data: "05 Abr 2026",
-    author: "Time Foster IA",
+    autor: "Time Foster IA",
     tags: ["LGPD inteligência artificial", "compliance IA", "governança de IA", "proteção de dados"],
     imagemCapa: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2340&auto=format&fit=crop",
     likes: 31,
@@ -275,10 +275,10 @@ export const labPosts: LabPost[] = [
       <h2>O framework que transforma piloto em operação</h2>
       <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
       <ul>
-        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos.</li>
-        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos e oportunidades de IA ranqueadas por impacto.</li>
-        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações e agentes junto com o time da empresa.</li>
-        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados e identificação das próximas iniciativas.</li>
+        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos. Sem jargão técnico, sem venda antecipada de solução. O objetivo é escutar e mapear.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com o time da empresa.</li>
+        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados, ajustes de rota e identificação das próximas iniciativas.</li>
       </ul>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
@@ -431,6 +431,40 @@ export const labPosts: LabPost[] = [
       <div class="mt-12 text-center">
         <p class="text-f-neon font-bold text-lg mb-4">Se sua agência produz sob pressão e precisa escalar sem inflar o time, IA é o caminho mais inteligente.</p>
         <p>A Foster IA implanta automações sob medida para o fluxo criativo da sua operação — do diagnóstico à autonomia do time. [Agendar diagnóstico gratuito →]</p>
+      </div>
+    `
+  },
+  {
+    id: "8",
+    slug: "intuit-ia-humano-retencao-modelo-implantacao",
+    categoria: "/ inteligência",
+    titulo: "Intuit Prova Que IA + Humano Ganha de IA Sozinha: 3 Milhões de Usuários e 85% de Retenção",
+    descricao: "A Intuit implantou agentes de IA para 3 milhões de clientes com 85% de uso repetido. O segredo? Manter humanos nas etapas críticas. Entenda o modelo que funciona.",
+    tempoLeitura: "4 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["IA + Humano", "Intuit", "implantação IA", "retenção de usuários", "casos de sucesso"],
+    imagemCapa: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2340&auto=format&fit=crop",
+    likes: 56,
+    conteudo: `
+      <p>A Intuit — empresa por trás do TurboTax e QuickBooks — revelou nesta semana um dado que deveria mudar a forma como empresas pensam sobre implantação de IA. A companhia distribuiu agentes de inteligência artificial para 3 milhões de clientes e atingiu 85% de taxa de uso repetido. É um número extraordinário de retenção para qualquer produto digital — e demolidor para um agente de IA.</p>
+      <p>Mas o detalhe mais importante não é a tecnologia do agente. É o que a Intuit fez de diferente: manteve especialistas humanos participando ativamente nas etapas críticas do processo. O modelo não substitui o humano pela IA. Ele usa IA para acelerar o trabalho operacional e preserva o humano nos momentos que exigem julgamento, contexto e confiança.</p>
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: VB Beyond the Pilot Podcast; André Lug/Iglu Online, 02/04/2026)</p>
+
+      <h2>Por que isso importa para a sua empresa</h2>
+      <p>O caso da Intuit é a prova mais recente de um padrão que se repete em toda implantação de IA bem-sucedida: a tecnologia sozinha não gera resultado. O que gera resultado é a combinação entre ferramentas de IA configuradas para o contexto certo e pessoas treinadas para operar junto com elas.</p>
+      <p>Dados do MIT, apresentados no HBR Strategy Summit 2026 desta semana, reforçam essa tese. O pesquisador Andy McAfee alertou que empresas que cortam contratações de nível inicial por causa da IA estão cometendo um erro estratégico grave — e que 2026 será "o ano dos humanos", onde o mercado vai perceber que a IA não funcionou de forma tão autônoma quanto se esperava.</p>
+      <p>A grande lição: empresas que tratam IA como substituto do time fracassam. Empresas que tratam IA como acelerador do time prosperam. A diferença está no método de implantação — e no treinamento que acompanha.</p>
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: HBR Strategy Summit 2026; TechCrunch, 02/01/2026)</p>
+
+      <h2>O modelo que funciona</h2>
+      <p>O padrão de sucesso se repete: diagnóstico operacional para saber onde a IA entra, implantação junto com o time (não jogada de fora), treinamento prático para que os colaboradores operem com autonomia, e monitoramento contínuo para ajustar e expandir. Quando IA e humanos trabalham juntos com clareza de papéis, o resultado é superior ao que qualquer um dos dois entrega sozinho.</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com o seu time — não em paralelo. Cada projeto inclui treinamento prático e transferência de conhecimento para que a empresa opere sem dependência externa. O resultado? IA que funciona porque o time sabe usá-la.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
+        </div>
       </div>
     `
   }
