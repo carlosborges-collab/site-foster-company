@@ -42,6 +42,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
           {/* Center: Desktop Links */}
           <div className="hidden lg:flex items-center gap-6">
             <a href="#home" className={`text-[13px] transition-colors duration-200 ${currentPath === '#home' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_home')}</a>
+            <a href="#ifoster" className={`text-[13px] transition-colors duration-200 ${currentPath === '#ifoster' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_ifoster')}</a>
             <a href="#gestao-youtube" className={`text-[13px] transition-colors duration-200 ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_yt_growth')}</a>
             <a href="#foster-ia" className={`text-[13px] transition-colors duration-200 ${currentPath === '#foster-ia' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_foster_ia')}</a>
             <a href="#build" className={`text-[13px] transition-colors duration-200 ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint/65 hover:text-f-neon'}`}>{t('nav_sites')}</a>
@@ -83,6 +84,7 @@ export default function Navbar({ currentPath }: { currentPath: string }) {
             
             <div className="flex flex-col gap-6 text-lg font-display mt-4">
               <a href="#home" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#home' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_home')}</a>
+              <a href="#ifoster" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#ifoster' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_ifoster')}</a>
               <a href="#gestao-youtube" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#gestao-youtube' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_yt_growth')}</a>
               <a href="#foster-ia" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#foster-ia' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_foster_ia')}</a>
               <a href="#build" onClick={() => setMobileMenuOpen(false)} className={`block w-full transition-colors ${currentPath === '#build' ? 'text-f-neon' : 'text-f-mint'}`}>{t('nav_sites')}</a>

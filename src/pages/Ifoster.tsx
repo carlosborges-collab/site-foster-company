@@ -1,6 +1,6 @@
 import { useState, useEffect, FormEvent } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { CheckCircle2, Send, FileText, MousePointerClick, Target, Terminal, Check } from 'lucide-react';
+import { CheckCircle2, Send, FileText, MousePointerClick, Target, Terminal, Check, Layout, LogIn } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { openContactModal } from '../utils/contactEvents';
 
@@ -284,6 +284,72 @@ export default function Ifoster() {
               </div>
             </AnimatedSection>
 
+          </div>
+        </div>
+      </section>
+
+      {/* PLATFORM SHOWCASE */}
+      <section className="py-28 bg-[#104037]/20 border-y border-[#50F2A7]/10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <AnimatedSection className="text-center mb-20">
+            <div className="font-mono text-[#50F2A7]/70 mb-6 uppercase tracking-widest text-sm">Interface do Usuário</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-[#E1F2DF]">Conheça o Ambiente iFoster</h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Login Screen */}
+            <div className="lg:col-span-5">
+              <AnimatedSection delay={100}>
+                <div className="group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#50F2A7]/20 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="relative bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="bg-[#030D09] border-b border-[#50F2A7]/10 px-5 py-3 flex items-center justify-between">
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+                      </div>
+                      <div className="flex items-center gap-2 font-mono text-[10px] text-[#E1F2DF]/40">
+                        <LogIn size={12} /> Autenticação Segura
+                      </div>
+                    </div>
+                    <img 
+                      src="/ifoster-login.png" 
+                      alt="Interface de Login iFoster" 
+                      className="w-full h-auto grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+                    />
+                  </div>
+                  <p className="mt-6 font-mono text-[11px] text-[#50F2A7]/60 uppercase tracking-widest text-center">Acesso restrito e criptografado</p>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Dashboard Screen */}
+            <div className="lg:col-span-7">
+              <AnimatedSection delay={300}>
+                <div className="group relative">
+                  <div className="absolute -inset-1 bg-gradient-to-l from-[#50F2A7]/20 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="relative bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
+                    <div className="bg-[#030D09] border-b border-[#50F2A7]/10 px-5 py-3 flex items-center justify-between">
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+                      </div>
+                      <div className="flex items-center gap-2 font-mono text-[10px] text-[#E1F2DF]/40">
+                        <Layout size={12} /> Painel de Gestão de Agentes
+                      </div>
+                    </div>
+                    <img 
+                      src="/ifoster-dashboard.png" 
+                      alt="Dashboard iFoster" 
+                      className="w-full h-auto grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
+                    />
+                  </div>
+                  <p className="mt-6 font-mono text-[11px] text-[#50F2A7]/60 uppercase tracking-widest text-center">Gestão completa de ativos de IA</p>
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </div>
       </section>
