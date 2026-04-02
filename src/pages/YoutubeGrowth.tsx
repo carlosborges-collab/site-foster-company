@@ -221,7 +221,7 @@ export default function YoutubeGrowth() {
             <div className="lg:col-span-5">
               <AnimatedSection>
                 <div className="aspect-[4/5] bg-f-dark rounded-3xl overflow-hidden border border-f-neon/20 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-                   <img src="/carlos-borges.png" alt="Carlos Borges" className="w-full h-full object-cover" />
+                   <img src="/carlos-borges.jpg" alt="Carlos Borges" className="w-full h-full object-cover" />
                 </div>
               </AnimatedSection>
             </div>

@@ -786,7 +786,7 @@ export default function Home() {
             </div>
             <div className="font-mono text-f-neon/70 mb-6" data-i18n="channels_eyebrow">{t('channels_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">
-               <span dangerouslySetInnerHTML={{ __html: t('channels_title') }}></span>
+               <span dangerouslySetInnerHTML={{ __ __html: t('channels_title') }}></span>
             </h2>
             <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="channels_desc">{t('channels_desc')}</p>
           </AnimatedSection>
@@ -886,7 +886,7 @@ export default function Home() {
                   <div className="absolute -inset-4 bg-f-neon/5 rounded-3xl blur-2xl group-hover:bg-f-neon/10 transition-all duration-500"></div>
                   <div className="relative aspect-[4/5] bg-f-black border border-f-neon/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(80,242,167,0.05)] transition-all duration-500 hover:border-f-neon/40 hover:shadow-[0_0_60px_rgba(80,242,167,0.12)]">
                     <img 
-                      src="/carlos-borges.png" 
+                      src="/carlos-borges.jpg" 
                       alt="Carlos Borges - Fundador Foster Company" 
                       className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
                     />
