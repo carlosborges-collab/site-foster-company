@@ -142,7 +142,7 @@ export const labPosts: LabPost[] = [
 
       <h2>Sinal 3: Processos que poderiam ser automatizados (mas ninguém mapeou)</h2>
       <p>Enquanto sua equipe gasta horas fazendo relatórios manuais, classificando e-mails, organizando documentos e tabulando dados, a IA poderia fazer isso em minutos. Mas ninguém parou para olhar o processo de ponta a ponta e perguntar: "Onde a IA pode entrar aqui?"</p>
-      <p>A maioria das empresas perde 30% a 40% do tempo operacional em tarefas que poderiam ser automatizadas. Não estamos falando de substituir pessoas — estamos falando de liberar o time para fazer o que realmente importa: pensar, criar, decidir.</p>
+      <p>A maioria das empresas perder 30% a 40% do tempo operacional em tarefas que poderiam ser automatizadas. Não estamos falando de substituir pessoas — estamos falando de liberar o time para fazer o que realmente importa: pensar, criar, decidir.</p>
       <blockquote>O que deveria acontecer: um diagnóstico operacional que mapeie cada processo, identifique gargalos e entregue um laudo com ROI estimado por oportunidade de automação. Isso não é "futurismo" — é engenharia de processos com IA aplicada.</blockquote>
 
       <h2>Sinal 4: Investimento sem retorno visível</h2>
@@ -243,7 +243,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça o método de implantação que transforma IA em resultado operacional real.",
     tempoLeitura: "9 min",
     data: "10 Abr 2026",
-    author: "Time Foster IA",
+    autor: "Time Foster IA",
     tags: ["implantação de IA na empresa", "escalar projeto de IA", "automação de processos com IA", "IA operacional"],
     imagemCapa: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
     likes: 27,
@@ -264,7 +264,7 @@ export const labPosts: LabPost[] = [
 
       <h2>Razão 3: O time não foi preparado para operar com IA</h2>
       <p>A tecnologia foi implementada, mas o time continua trabalhando do jeito antigo. A automação está configurada, mas ninguém confia nela o suficiente para abandonar o processo manual. O agente de IA responde bem, mas os colaboradores preferem "fazer na mão, para ter certeza".</p>
-      <p>Esse é o gap de capacitacão — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
+      <p>Esse é o gap de capacitação — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
       <p>As empresas que conseguem escalar IA com sucesso investem tanto em capacitação quanto em tecnologia. Garantem que o time entenda não apenas como usar a ferramenta, mas por que ela está ali e como medir se está funcionando. Quando o colaborador vê o resultado concreto — uma tarefa que levava 2 horas sendo resolvida em 5 minutos —, a resistência desaparece sozinha.</p>
 
       <h2>Razão 4: Não há monitoramento após a implantação</h2>
@@ -275,10 +275,10 @@ export const labPosts: LabPost[] = [
       <h2>O framework que transforma piloto em operação</h2>
       <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
       <ul>
-        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos.</li>
-        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos e oportunidades de IA ranqueadas por impacto.</li>
-        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações e agentes junto com o time da empresa.</li>
-        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados e identificação das próximas iniciativas.</li>
+        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos. Sem jargão técnico, sem venda antecipada de solução. O objetivo é escutar e mapear.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com o time da empresa.</li>
+        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados, ajustes de rota e identificação das próximas iniciativas.</li>
       </ul>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
@@ -304,7 +304,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza o time e evita riscos jurídicos. Guia prático.",
     tempoLeitura: "10 min",
     data: "15 Abr 2026",
-    author: "Time Foster IA",
+    autor: "Time Foster IA",
     tags: ["política de uso de IA", "governança IA empresas", "regras uso ChatGPT empresa", "diretrizes IA corporativa"],
     imagemCapa: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2340&auto=format&fit=crop",
     likes: 18,
@@ -423,7 +423,7 @@ export const labPosts: LabPost[] = [
         <ul class="space-y-6">
           <li><strong>Quais ferramentas de IA são melhores para agências?</strong><br/>Depende do fluxo. O diagnóstico identifica as necessidades e seleciona as ferramentas certas sem refém de um fornecedor.</li>
           <li><strong>A IA vai substituir minha equipe criativa?</strong><br/>Não. A IA elimina tarefas mecânicas — não pensamento criativo, direção de arte ou storytelling.</li>
-          <li><strong>Quanto tempo leva para ver resultado?</strong><br/>Quick wins in 2 weeks. Automações de produção entre 4 e 6 semanas.</li>
+          <li><strong>Quanto tempo leva para ver resultado?</strong><br/>Quick wins em 2 semanas. Automações de produção entre 4 e 6 semanas.</li>
           <li><strong>Meus clientes vão perceber que estou usando IA?</strong><br/>O que o cliente percebe é a velocidade e a diversidade de variações, enquanto a qualidade criativa se mantém.</li>
         </ul>
       </div>
@@ -503,6 +503,47 @@ export const labPosts: LabPost[] = [
         <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação — não como projeto separado. Cada empresa recebe laudo técnico, política de uso interna e treinamento de equipe para operar IA com transparência e rastreabilidade. Se sua empresa usa IA generativa sem monitorar o que ela entrega, o risco já está operando.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico de governança gratuito</a>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "10",
+    slug: "atlassian-demite-pivotar-ia-empresas-servico-agencias",
+    categoria: "/ inteligência",
+    titulo: "Atlassian Demite 1.600 Para Pivotar Para IA — O Recado Para Agências e Empresas de Serviço",
+    descricao: "Atlassian cortou 10% do time global para redirecionar recursos para IA. O recado é claro: empresas que não integrarem IA na operação perderão competitividade. Veja o que fazer.",
+    tempoLeitura: "4 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["Atlassian", "IA nas empresas", "pivô para IA", "agências de serviço", "automação"],
+    imagemCapa: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2340&auto=format&fit=crop",
+    likes: 45,
+    conteudo: `
+      <p>A Atlassian — dona do Jira, Confluence e Trello — anunciou a demissão de aproximadamente 1.600 funcionários, o equivalente a 10% do seu time global. O motivo declarado: redirecionar recursos para desenvolvimento de inteligência artificial e vendas enterprise.</p>
+      
+      <p>A empresa foi além: substituiu seu CTO por dois novos CTOs focados exclusivamente em IA. O CEO Mike Cannon-Brookes foi direto em sua comunicação interna: a abordagem "não é IA substitui pessoas", mas reconheceu que a IA mudou fundamentalmente o perfil de habilidades que a empresa precisa — tornando o pivô inevitável.</p>
+      
+      <p>A Atlassian não está sozinha. Segundo dados divulgados nesta semana, dos cortes de emprego registrados nos EUA em março de 2026, cerca de 15.341 foram relacionados a IA — quase um quarto de todas as reduções do mês. Ao mesmo tempo, contratações em áreas de IA subiram 157% em relação a fevereiro.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: Crescendo.ai/News, abril 2026; CNBC, 02/04/2026; TechStartups, 02/04/2026)</p>
+
+      <h2>O que isso significa para agências e empresas de serviço</h2>
+      <p>O movimento da Atlassian é um microcosmo do que está acontecendo globalmente. Empresas de todos os tamanhos estão reorganizando times, cortando funções repetitivas e investindo em capacitação de IA. A pergunta para donos de agência, produtoras e empresas de serviço é simples: se uma empresa de software de US$ 60 bilhões de valor de mercado está fazendo um pivô radical para IA, quanto tempo sua operação pode continuar rodando no modelo manual?</p>
+      
+      <p>Agências de comunicação e produtoras — que a Foster atende diretamente — vivem esse dilema todos os dias: demanda crescente por conteúdo, prazos mais curtos, clientes esperando mais por menos e times criativos sufocados em tarefas operacionais que poderiam ser automatizadas.</p>
+      
+      <p>O caso da Atlassian mostra que a saída não é simplesmente "adotar IA" — é reestruturar processos, treinar o time existente e implantar automações nos fluxos que consomem mais tempo. Empresas que fazem isso mantêm o time criativo focado no que importa e escalam entregas sem inflar a folha de pagamento.</p>
+
+      <h2>O dado que fecha o raciocínio</h2>
+      <p>O TechCrunch resumiu 2026 em uma frase que virou referência: "Se 2025 foi o ano em que a IA passou por um reality check, 2026 é o ano em que ela se torna prática." A separação já está acontecendo: empresas que tratam IA como extensão de uma operação organizada avançam. Empresas que tratam IA como atalho acumulam retrabalho, frustração e perda de competitividade.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: TechCrunch, "In 2026, AI Will Move From Hype to Pragmatism", 02/01/2026)</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA ajuda agências, produtoras e empresas de serviço a implantar IA onde ela gera mais resultado — automação de fluxos repetitivos, organização de processos e treinamento do time para operar com autonomia. Se sua operação ainda roda no manual enquanto o mercado pivota para IA, o diagnóstico gratuito de 60 minutos mostra exatamente por onde começar.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
       </div>
     `
