@@ -133,7 +133,7 @@ export const labPosts: LabPost[] = [
       <h2>Sinal 1: Ferramentas sem estratégia — o "efeito cardápio"</h2>
       <p>Sua empresa assina ChatGPT Teams, Copilot, Midjourney, talvez mais duas ou três ferramentas. Cada área usa o que quer, como quer. Marketing gera textos no ChatGPT. O jurídico consulta o Copilot. O financeiro fez uma planilha com fórmulas de IA. Tudo isolado. Nenhuma integração. Nenhum processo redesenhado.</p>
       <p>É o "efeito cardápio": sua empresa tem acesso a 15 ferramentas de IA, mas nenhuma está conectada ao fluxo real de trabalho. O resultado? O time gasta tempo aprendendo ferramentas novas, mas o processo em si continua o mesmo. A IA virou um acessório — não uma engrenagem.</p>
-      <blockquote>O que deveria acontecer: antes de contratar qualquer ferramenta, alguém precisa mapear os processos internos, identificar onde a IA gera impacto real e selecionar a ferramenta certa para cada ponto. Not o contrário.</blockquote>
+      <blockquote>O que deveria acontecer: antes de contratar qualquer ferramenta, alguém precisa mapear os processos internos, identificar onde a IA gera impacto real e selecionar a ferramenta certa para cada ponto. Não o contrário.</blockquote>
 
       <h2>Sinal 2: Dados sensíveis expostos sem que ninguém perceba</h2>
       <p>Este é o sinal mais perigoso — e o mais silencioso. Seus colaboradores estão usando IA todos os dias. Colam contratos no ChatGPT para pedir resumos. Jogam dados de clientes em ferramentas de análise. Compartilham planilhas financeiras com modelos de terceiros. E ninguém sabe para onde esses dados vão.</p>
@@ -177,7 +177,7 @@ export const labPosts: LabPost[] = [
     descricao: "8 em cada 10 empresas no Brasil não têm política de governança de IA. Saiba como proteger dados, evitar multas da LGPD e usar IA com segurança.",
     tempoLeitura: "10 min",
     data: "05 Abr 2026",
-    autor: "Time Foster IA",
+    author: "Time Foster IA",
     tags: ["LGPD inteligência artificial", "compliance IA", "governança de IA", "proteção de dados"],
     imagemCapa: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2340&auto=format&fit=crop",
     likes: 31,
@@ -243,7 +243,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça o método de implantação que transforma IA em resultado operacional real.",
     tempoLeitura: "9 min",
     data: "10 Abr 2026",
-    autor: "Time Foster IA",
+    author: "Time Foster IA",
     tags: ["implantação de IA na empresa", "escalar projeto de IA", "automação de processos com IA", "IA operacional"],
     imagemCapa: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
     likes: 27,
@@ -264,7 +264,7 @@ export const labPosts: LabPost[] = [
 
       <h2>Razão 3: O time não foi preparado para operar com IA</h2>
       <p>A tecnologia foi implementada, mas o time continua trabalhando do jeito antigo. A automação está configurada, mas ninguém confia nela o suficiente para abandonar o processo manual. O agente de IA responde bem, mas os colaboradores preferem "fazer na mão, para ter certeza".</p>
-      <p>Esse é o gap de capacitação — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
+      <p>Esse é o gap de capacitacão — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
       <p>As empresas que conseguem escalar IA com sucesso investem tanto em capacitação quanto em tecnologia. Garantem que o time entenda não apenas como usar a ferramenta, mas por que ela está ali e como medir se está funcionando. Quando o colaborador vê o resultado concreto — uma tarefa que levava 2 horas sendo resolvida em 5 minutos —, a resistência desaparece sozinha.</p>
 
       <h2>Razão 4: Não há monitoramento após a implantação</h2>
@@ -275,10 +275,10 @@ export const labPosts: LabPost[] = [
       <h2>O framework que transforma piloto em operação</h2>
       <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
       <ul>
-        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos. Sem jargão técnico, sem venda antecipada de solução. O objetivo é escutar e mapear.</li>
-        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
-        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com o time da empresa.</li>
-        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados, ajustes de rota e identificação das próximas iniciativas.</li>
+        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos e oportunidades de IA ranqueadas por impacto.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações e agentes junto com o time da empresa.</li>
+        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados e identificação das próximas iniciativas.</li>
       </ul>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
@@ -304,7 +304,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza o time e evita riscos jurídicos. Guia prático.",
     tempoLeitura: "10 min",
     data: "15 Abr 2026",
-    autor: "Time Foster IA",
+    author: "Time Foster IA",
     tags: ["política de uso de IA", "governança IA empresas", "regras uso ChatGPT empresa", "diretrizes IA corporativa"],
     imagemCapa: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2340&auto=format&fit=crop",
     likes: 18,
@@ -423,7 +423,7 @@ export const labPosts: LabPost[] = [
         <ul class="space-y-6">
           <li><strong>Quais ferramentas de IA são melhores para agências?</strong><br/>Depende do fluxo. O diagnóstico identifica as necessidades e seleciona as ferramentas certas sem refém de um fornecedor.</li>
           <li><strong>A IA vai substituir minha equipe criativa?</strong><br/>Não. A IA elimina tarefas mecânicas — não pensamento criativo, direção de arte ou storytelling.</li>
-          <li><strong>Quanto tempo leva para ver resultado?</strong><br/>Quick wins em 2 semanas. Automações de produção entre 4 e 6 semanas.</li>
+          <li><strong>Quanto tempo leva para ver resultado?</strong><br/>Quick wins in 2 weeks. Automações de produção entre 4 e 6 semanas.</li>
           <li><strong>Meus clientes vão perceber que estou usando IA?</strong><br/>O que o cliente percebe é a velocidade e a diversidade de variações, enquanto a qualidade criativa se mantém.</li>
         </ul>
       </div>
@@ -464,6 +464,45 @@ export const labPosts: LabPost[] = [
         <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com o seu time — não em paralelo. Cada projeto inclui treinamento prático e transferência de conhecimento para que a empresa opere sem dependência externa. O resultado? IA que funciona porque o time sabe usá-la.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "9",
+    slug: "gartner-ia-explicavel-transparencia-projetos-empresas",
+    categoria: "/ inteligência",
+    titulo: "Gartner: IA Explicável Vai Dominar 50% dos Projetos de IA Até 2028 — Transparência Virou Requisito",
+    descricao: "Gartner prevê que IA Explicável dominará metade dos projetos de IA generativa até 2028. Transparência e compliance viraram obrigatórios.",
+    tempoLeitura: "4 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["Gartner", "IA Explicável", "XAI", "compliance", "governança"],
+    imagemCapa: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    likes: 38,
+    conteudo: `
+      <p>O Gartner acaba de publicar uma projeção que muda o jogo para qualquer empresa que usa IA generativa: até 2028, a adoção de Inteligência Artificial Explicável (XAI) vai impulsionar os investimentos em observabilidade de modelos de linguagem (LLMs) para 50% de todas as implementações de IA generativa. Hoje, esse número está em apenas 15%.</p>
+
+      <p>A consultoria estima ainda que o mercado global de modelos de IA generativa deve ultrapassar US$ 25 bilhões em 2026 e alcançar US$ 75 bilhões até 2029 — impulsionado pela expansão do uso corporativo. Mas o crescimento traz um desafio proporcional: à medida que mais empresas dependem de IA para decisões operacionais, a necessidade de mecanismos que reduzam erros, alucinações e vieses se torna crítica.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: Gartner, via TI Inside Online, 01/04/2026)</p>
+
+      <h2>O que é IA Explicável e por que sua empresa precisa se importar</h2>
+      <p>IA Explicável (XAI) reúne técnicas que permitem entender como um modelo de IA chegou a uma determinada resposta ou decisão. Em vez de aceitar o output como uma "caixa preta", a empresa consegue auditar, rastrear e explicar o raciocínio por trás de cada recomendação.</p>
+
+      <p>Isso é especialmente relevante para setores regulados — saúde, jurídico, financeiro, educação — onde decisões baseadas em IA precisam ser justificáveis perante reguladores, clientes e conselhos de administração. Mas não se limita a eles: qualquer empresa que use IA para interagir com clientes, analisar dados ou automatizar processos precisa saber o que está acontecendo dentro do modelo.</p>
+
+      <p>A projeção do Gartner também aponta que as plataformas de observabilidade de IA estão evoluindo além das métricas tradicionais de TI (latência, uso de recursos) para incorporar indicadores como alucinações, viés algorítmico, uso de tokens e precisão factual. A validação com intervenção humana e práticas de governança voltadas à confiabilidade dos outputs estão se tornando padrão.</p>
+
+      <h2>O gap brasileiro</h2>
+      <p>A maioria das empresas brasileiras ainda está na fase de "usar IA para produzir mais" — sem monitorar o que os modelos estão gerando, sem auditar os dados que alimentam as ferramentas e sem nenhuma política de revisão humana nos outputs críticos. Isso cria um risco duplo: operacional (decisões baseadas em respostas erradas) e legal (responsabilidade por outputs sem rastreabilidade).</p>
+
+      <p>Empresas que já possuem governança de IA — com laudo de compliance, política de uso e auditoria periódica — estarão em vantagem competitiva quando a regulação brasileira avançar. As que deixaram para depois vão correr para se adequar sob pressão.</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação — não como projeto separado. Cada empresa recebe laudo técnico, política de uso interna e treinamento de equipe para operar IA com transparência e rastreabilidade. Se sua empresa usa IA generativa sem monitorar o que ela entrega, o risco já está operando.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico de governança gratuito</a>
         </div>
       </div>
     `
