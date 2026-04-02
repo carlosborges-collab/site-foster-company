@@ -1,14 +1,13 @@
 import { useState, useEffect, FormEvent } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { CheckCircle2, Send, FileText, MousePointerClick, Target, Terminal, Check, Layout, LogIn } from 'lucide-react';
+import { Send, FileText, MousePointerClick, Target, Terminal, LogIn, Layout, Maximize2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { openContactModal } from '../utils/contactEvents';
 
 export default function Ifoster() {
   const [chatStep, setChatStep] = useState(0);
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -25,30 +24,14 @@ export default function Ifoster() {
     };
   }, []);
 
-  const handleNewsletterSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setIsSubmitting(true);
-    // Simulação de envio para contato@fosterprodutora.com.br
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubscribed(true);
-      setEmail('');
-    }, 1500);
-  };
-
   return (
     <div className="w-full">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center pt-[140px] pb-20 bg-[#030D09] overflow-hidden">
-        {/* Grid lines and particles */}
         <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.1)_0%,transparent_100%)]"></div>
         
         <div className="max-w-7xl mx-auto px-5 md:px-8 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          
-          {/* Left Column */}
           <div>
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-[#50F2A7]/5 border border-[#50F2A7]/30 rounded-full px-4 py-1.5 mb-8">
@@ -81,13 +64,10 @@ export default function Ifoster() {
             </AnimatedSection>
           </div>
 
-          {/* Right Column - Chat Interface */}
           <div className="relative h-[500px] hidden md:block">
             <AnimatedSection delay={200} className="h-full w-full relative">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-full max-w-[480px] bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden animate-float relative z-20 shadow-2xl">
-                  
-                  {/* Chat Header */}
                   <div className="bg-[#030D09] border-b border-[#50F2A7]/20 p-4 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-[#50F2A7]/10 flex items-center justify-center">
                       <span className="text-[#50F2A7] text-sm">✦</span>
@@ -97,17 +77,13 @@ export default function Ifoster() {
                     </div>
                   </div>
 
-                  {/* Chat Body */}
                   <div className="p-6 space-y-6 h-[380px] overflow-y-auto font-body text-[14px]">
-                    
-                    {/* User Msg 1 */}
                     <div className={`flex justify-end transition-all duration-500 ${chatStep >= 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                       <div className="bg-[#50F2A7]/10 text-[#E1F2DF] rounded-2xl rounded-tr-sm px-5 py-3 max-w-[85%]">
                         Gerar relatório de tendências baseado no nosso histórico de vendas do último trimestre.
                       </div>
                     </div>
 
-                    {/* Agent Typing 1 */}
                     {chatStep === 1 && (
                       <div className="flex justify-start">
                         <div className="bg-[#104037]/60 rounded-2xl rounded-tl-sm px-5 py-4 flex items-center gap-2">
@@ -118,7 +94,6 @@ export default function Ifoster() {
                       </div>
                     )}
 
-                    {/* Agent Msg 1 */}
                     <div className={`flex justify-start transition-all duration-500 ${chatStep >= 2 ? 'opacity-100 translate-y-0 hidden' : 'opacity-0 translate-y-4 hidden'} ${chatStep >= 2 ? '!flex' : ''}`}>
                       <div className="flex gap-3 max-w-[90%]">
                         <div className="w-7 h-7 rounded-full bg-[#50F2A7]/20 flex items-center justify-center shrink-0 mt-1">
@@ -134,22 +109,18 @@ export default function Ifoster() {
                         </div>
                       </div>
                     </div>
-
                   </div>
                   
-                  {/* Chat Input Area */}
                   <div className="p-4 border-t border-[#50F2A7]/10 bg-[#030D09]">
                     <div className="bg-[#50F2A7]/5 border border-[#50F2A7]/20 rounded-full px-4 py-3 flex items-center justify-between">
                       <span className="text-[#E1F2DF]/30 text-sm">Acessando servidor proprietário...</span>
                       <Send size={16} className="text-[#50F2A7]/50" />
                     </div>
                   </div>
-
                 </div>
               </div>
             </AnimatedSection>
           </div>
-
         </div>
       </section>
 
@@ -166,8 +137,6 @@ export default function Ifoster() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* ROTEIRISTA IA */}
             <AnimatedSection>
               <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl p-8 hover:border-[#50F2A7]/50 transition-colors h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -193,7 +162,6 @@ export default function Ifoster() {
               </div>
             </AnimatedSection>
 
-            {/* COPYWRITER IA */}
             <AnimatedSection delay={100}>
               <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl p-8 hover:border-[#50F2A7]/50 transition-colors h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -218,7 +186,6 @@ export default function Ifoster() {
               </div>
             </AnimatedSection>
 
-            {/* ESTRATEGISTA DE CONTEÚDO */}
             <AnimatedSection delay={200}>
               <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl p-8 hover:border-[#50F2A7]/50 transition-colors h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -240,7 +207,6 @@ export default function Ifoster() {
               </div>
             </AnimatedSection>
 
-            {/* ARQUITETO DE PROMPTS */}
             <AnimatedSection delay={300}>
               <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl p-8 hover:border-[#50F2A7]/50 transition-colors h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
@@ -262,7 +228,6 @@ export default function Ifoster() {
               </div>
             </AnimatedSection>
 
-            {/* EXPANSÍVEL SOB DEMANDA */}
             <AnimatedSection delay={400} className="md:col-span-2">
               <div className="bg-[#50F2A7]/[0.03] border-2 border-dashed border-[#50F2A7]/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
@@ -272,7 +237,6 @@ export default function Ifoster() {
                     {t('ifp_dev_desc')}
                   </p>
                 </div>
-                
                 <div className="w-full md:w-auto">
                   <button 
                     onClick={openContactModal}
@@ -283,13 +247,12 @@ export default function Ifoster() {
                 </div>
               </div>
             </AnimatedSection>
-
           </div>
         </div>
       </section>
 
-      {/* PLATFORM SHOWCASE */}
-      <section className="py-28 bg-[#104037]/20 border-y border-[#50F2A7]/10">
+      {/* PLATFORM SHOWCASE - INTERACTIVE */}
+      <section className="py-28 bg-[#104037]/20 border-y border-[#50F2A7]/10 relative">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="text-center mb-20">
             <div className="font-mono text-[#50F2A7]/70 mb-6 uppercase tracking-widest text-sm">Interface do Usuário</div>
@@ -300,58 +263,111 @@ export default function Ifoster() {
             {/* Login Screen */}
             <div className="lg:col-span-5">
               <AnimatedSection delay={100}>
-                <div className="group relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#50F2A7]/20 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                  <div className="relative bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="group relative cursor-pointer"
+                  onClick={() => setSelectedImg('/ifoster-login.png')}
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#50F2A7]/30 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-500"></div>
+                  <div className="relative bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl group-hover:border-[#50F2A7]/50 transition-colors">
                     <div className="bg-[#030D09] border-b border-[#50F2A7]/10 px-5 py-3 flex items-center justify-between">
                       <div className="flex gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-red-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-yellow-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-green-500/40"></div>
                       </div>
-                      <div className="flex items-center gap-2 font-mono text-[10px] text-[#E1F2DF]/40">
-                        <LogIn size={12} /> Autenticação Segura
+                      <div className="flex items-center gap-2 font-mono text-[9px] text-[#E1F2DF]/40 uppercase tracking-widest">
+                        <LogIn size={10} /> Autenticação
                       </div>
                     </div>
-                    <img 
-                      src="/ifoster-login.png" 
-                      alt="Interface de Login iFoster" 
-                      className="w-full h-auto grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
-                    />
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <img 
+                        src="/ifoster-login.png" 
+                        alt="Login iFoster" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                         <div className="bg-f-black/80 p-3 rounded-full border border-f-neon/30 text-f-neon">
+                            <Maximize2 size={20} />
+                         </div>
+                      </div>
+                    </div>
                   </div>
-                  <p className="mt-6 font-mono text-[11px] text-[#50F2A7]/60 uppercase tracking-widest text-center">Acesso restrito e criptografado</p>
-                </div>
+                  <p className="mt-6 font-mono text-[10px] text-[#50F2A7]/60 uppercase tracking-widest text-center">Acesso restrito e criptografado</p>
+                </motion.div>
               </AnimatedSection>
             </div>
 
             {/* Dashboard Screen */}
             <div className="lg:col-span-7">
               <AnimatedSection delay={300}>
-                <div className="group relative">
-                  <div className="absolute -inset-1 bg-gradient-to-l from-[#50F2A7]/20 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                  <div className="relative bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
+                <motion.div 
+                  whileHover={{ scale: 1.02, y: -10 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="group relative cursor-pointer"
+                  onClick={() => setSelectedImg('/ifoster-dashboard.png')}
+                >
+                  <div className="absolute -inset-1 bg-gradient-to-l from-[#50F2A7]/30 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-60 transition duration-500"></div>
+                  <div className="relative bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl group-hover:border-[#50F2A7]/50 transition-colors">
                     <div className="bg-[#030D09] border-b border-[#50F2A7]/10 px-5 py-3 flex items-center justify-between">
                       <div className="flex gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-red-500/40"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></div>
-                        <div className="w-2.5 h-2.5 rounded-full bg-green-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-red-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-yellow-500/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-green-500/40"></div>
                       </div>
-                      <div className="flex items-center gap-2 font-mono text-[10px] text-[#E1F2DF]/40">
-                        <Layout size={12} /> Painel de Gestão de Agentes
+                      <div className="flex items-center gap-2 font-mono text-[9px] text-[#E1F2DF]/40 uppercase tracking-widest">
+                        <Layout size={10} /> Painel de Gestão
                       </div>
                     </div>
-                    <img 
-                      src="/ifoster-dashboard.png" 
-                      alt="Dashboard iFoster" 
-                      className="w-full h-auto grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
-                    />
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <img 
+                        src="/ifoster-dashboard.png" 
+                        alt="Dashboard iFoster" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                         <div className="bg-f-black/80 p-3 rounded-full border border-f-neon/30 text-f-neon">
+                            <Maximize2 size={24} />
+                         </div>
+                      </div>
+                    </div>
                   </div>
-                  <p className="mt-6 font-mono text-[11px] text-[#50F2A7]/60 uppercase tracking-widest text-center">Gestão completa de ativos de IA</p>
-                </div>
+                  <p className="mt-6 font-mono text-[10px] text-[#50F2A7]/60 uppercase tracking-widest text-center">Gestão completa de ativos de IA</p>
+                </motion.div>
               </AnimatedSection>
             </div>
           </div>
         </div>
+
+        {/* Modal para Zoom */}
+        <AnimatePresence>
+          {selectedImg && (
+            <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedImg(null)}
+                className="absolute inset-0 bg-f-black/95 backdrop-blur-xl"
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="relative max-w-7xl w-full h-fit bg-f-black border border-f-neon/20 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(80,242,167,0.15)]"
+              >
+                <button 
+                  onClick={() => setSelectedImg(null)}
+                  className="absolute top-6 right-6 z-20 bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all"
+                >
+                  <Terminal size={20} />
+                </button>
+                <img src={selectedImg} className="w-full h-auto" alt="Zoom iFoster" />
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* COMO FUNCIONA */}
@@ -360,45 +376,35 @@ export default function Ifoster() {
           <AnimatedSection className="text-center mb-20">
             <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-[#E1F2DF]">{t('ifp_how_title')}</h2>
           </AnimatedSection>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
             <div className="hidden md:block absolute top-8 left-[15%] right-[15%] h-px bg-[#50F2A7]/20">
               <div className="h-full bg-[#50F2A7] w-1/3 animate-[slide-right_3s_ease-in-out_infinite]"></div>
             </div>
-
             <AnimatedSection delay={100}>
               <div className="relative text-center">
                 <div className="w-16 h-16 rounded-full bg-[#030D09] border border-[#50F2A7]/40 flex items-center justify-center mx-auto mb-6 relative z-10 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                   <span className="font-mono text-xl text-[#50F2A7]">01</span>
                 </div>
                 <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">{t('ifp_how_step1_t')}</h3>
-                <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">
-                  {t('ifp_how_step1_d')}
-                </p>
+                <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">{t('ifp_how_step1_d')}</p>
               </div>
             </AnimatedSection>
-
             <AnimatedSection delay={200}>
               <div className="relative text-center">
                 <div className="w-16 h-16 rounded-full bg-[#030D09] border border-[#50F2A7]/40 flex items-center justify-center mx-auto mb-6 relative z-10 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                   <span className="font-mono text-xl text-[#50F2A7]">02</span>
                 </div>
                 <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">{t('ifp_how_step2_t')}</h3>
-                <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">
-                  {t('ifp_how_step2_d')}
-                </p>
+                <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">{t('ifp_how_step2_d')}</p>
               </div>
             </AnimatedSection>
-
             <AnimatedSection delay={300}>
               <div className="relative text-center">
                 <div className="w-16 h-16 rounded-full bg-[#030D09] border border-[#50F2A7]/40 flex items-center justify-center mx-auto mb-6 relative z-10 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                   <span className="font-mono text-xl text-[#50F2A7]">03</span>
                 </div>
                 <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">{t('ifp_how_step3_t')}</h3>
-                <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">
-                  {t('ifp_how_step3_d')}
-                </p>
+                <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">{t('ifp_how_step3_d')}</p>
               </div>
             </AnimatedSection>
           </div>
@@ -411,7 +417,6 @@ export default function Ifoster() {
           <AnimatedSection className="text-center mb-16">
             <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-[#E1F2DF]">{t('ifp_who_title')}</h2>
           </AnimatedSection>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { title: t('ifp_who_1_t'), desc: t('ifp_who_1_d'), icon: "🏢" },
@@ -437,16 +442,13 @@ export default function Ifoster() {
           <AnimatedSection className="text-center mb-16">
             <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-[#E1F2DF]">{t('ifp_comp_title')}</h2>
           </AnimatedSection>
-
           <AnimatedSection delay={100}>
             <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
-              {/* Header corrigido para grid-cols-3 */}
               <div className="grid grid-cols-3 bg-[#50F2A7]/5 border-b border-[#50F2A7]/20">
                 <div className="p-6 border-r border-[#50F2A7]/10"></div>
                 <div className="p-6 font-mono text-[13px] text-[#E1F2DF]/50 uppercase text-center border-r border-[#50F2A7]/10">FERRAMENTAS COMUNS</div>
                 <div className="p-6 font-mono text-[13px] text-[#50F2A7] uppercase text-center font-bold">iFOSTER PROPRIETÁRIO</div>
               </div>
-              
               {[
                 ["Onde os dados ficam", "Servidores de terceiros", "Servidor da sua empresa"],
                 ["Treinamento", "Genérico, internet", "Exclusivo com seu conteúdo"],
@@ -456,15 +458,9 @@ export default function Ifoster() {
                 ["Personalização", "Prompts manuais", "Agentes treinados para o seu contexto"]
               ].map((row, i) => (
                 <div key={i} className="grid grid-cols-3 border-b border-[#50F2A7]/10 last:border-0">
-                  <div className="p-6 text-[13px] text-[#E1F2DF]/40 font-mono flex items-center border-r border-[#50F2A7]/10">
-                    {row[0]}
-                  </div>
-                  <div className="p-6 text-[14px] text-[#E1F2DF]/60 border-r border-[#50F2A7]/10 flex items-center justify-center text-center">
-                    {row[1]}
-                  </div>
-                  <div className="p-6 text-[14px] text-[#E1F2DF] flex items-center justify-center text-center font-medium">
-                    {row[2]}
-                  </div>
+                  <div className="p-6 text-[13px] text-[#E1F2DF]/40 font-mono flex items-center border-r border-[#50F2A7]/10">{row[0]}</div>
+                  <div className="p-6 text-[14px] text-[#E1F2DF]/60 border-r border-[#50F2A7]/10 flex items-center justify-center text-center">{row[1]}</div>
+                  <div className="p-6 text-[14px] text-[#E1F2DF] flex items-center justify-center text-center font-medium">{row[2]}</div>
                 </div>
               ))}
             </div>
@@ -477,22 +473,10 @@ export default function Ifoster() {
         <div className="max-w-4xl mx-auto px-5">
           <AnimatedSection>
             <h2 className="font-display font-bold text-[clamp(40px,5.5vw,64px)] text-[#E1F2DF] mb-6 leading-[1.1]">{t('ifp_cta_h2')}</h2>
-            <p className="text-xl text-[#E1F2DF]/50 mb-12 max-w-3xl mx-auto">
-              {t('ifp_cta_sub')}
-            </p>
+            <p className="text-xl text-[#E1F2DF]/50 mb-12 max-w-3xl mx-auto">{t('ifp_cta_sub')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button 
-                onClick={openContactModal}
-                className="bg-[#50F2A7] text-[#030D09] font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 cursor-pointer"
-              >
-                {t('ifp_cta_btn1')}
-              </button>
-              <button 
-                onClick={openContactModal}
-                className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-10 py-5 text-lg hover:bg-[#50F2A7]/10 transition-all duration-300 cursor-pointer"
-              >
-                {t('ifp_cta_btn2')}
-              </button>
+              <button onClick={openContactModal} className="bg-[#50F2A7] text-[#030D09] font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 cursor-pointer">{t('ifp_cta_btn1')}</button>
+              <button onClick={openContactModal} className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-10 py-5 text-lg hover:bg-[#50F2A7]/10 transition-all duration-300 cursor-pointer">{t('ifp_cta_btn2')}</button>
             </div>
             <p className="font-mono text-[12px] text-[#E1F2DF]/40 mt-12">Desenvolvido pela Foster Company · Creative AI Studio</p>
           </AnimatedSection>
