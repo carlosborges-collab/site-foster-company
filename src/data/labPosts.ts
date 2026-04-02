@@ -94,7 +94,7 @@ export const labPosts: LabPost[] = [
       <h2>A Ciência do Sotaque</h2>
       <p>O desafio não estava nas palavras, mas no ritmo. O sotaque carioca do Rony possui cadências específicas que os modelos padrão de IA costumam ignorar ou 'achatar' em busca de uma clareza artificial.</p>
       
-      <p><em>Estúdio de gravação profissional — Captação de áudio base para o treinamento do modelo neurônico.</em></p>
+      <p><em>Estúdio de gravação profissional — Captação de áudio base para the treinamento do modelo neurônico.</em></p>
       
       <h2>O Fluxo de Trabalho</h2>
       <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Treceiro, o treinamento de resposta emocional.</p>
@@ -140,7 +140,7 @@ export const labPosts: LabPost[] = [
       <p>O custo médio de uma violação de dados no Brasil já ultrapassa R$ 7 milhões, segundo pesquisas recentes. E a realidade é que somente 33% das empresas fazem auditorias regulares para checar o uso de IAs não autorizadas — o que o mercado chama de "Shadow IA".</p>
       <blockquote>O que deveria acontecer: a empresa precisa de uma auditoria de uso atual de IA, uma política interna clara sobre o que pode e o que não pode ser compartilhado com ferramentas externas, e adequação à LGPD no contexto de IA. Não amanhã — agora.</blockquote>
 
-      <h2>Sinal 3: Processos que poderiam ser automatizados (mas ninguém mapeou)</h2>
+      <h2>Sinal 3: Processes que poderiam ser automatizados (mas ninguém mapeou)</h2>
       <p>Enquanto sua equipe gasta horas fazendo relatórios manuais, classificando e-mails, organizando documentos e tabulando dados, a IA poderia fazer isso em minutos. Mas ninguém parou para olhar o processo de ponta a ponta e perguntar: "Onde a IA pode entrar aqui?"</p>
       <p>A maioria das empresas perde 30% a 40% do tempo operacional em tarefas que poderiam ser automatizadas. Não estamos falando de substituir pessoas — estamos falando de liberar o time para fazer o que realmente importa: pensar, criar, decidir.</p>
       <blockquote>O que deveria acontecer: um diagnóstico operacional que mapeie cada processo, identifique gargalos e entregue um laudo com ROI estimado por oportunidade de automação. Isso não é "futurismo" — é engenharia de processos com IA aplicada.</blockquote>
@@ -680,7 +680,7 @@ export const labPosts: LabPost[] = [
         <li><strong>Conselhos Ativos:</strong> Conselhos de administração colocaram IA entre as principais preocupações de governança — ao lado de desempenho financeiro.</li>
       </ul>
 
-      <p>O Gartner projetou nesta semana que a adoção de IA Explicável (XAI) vai impulsionar a observabilidade de modelos de linguagem para 50% das implementações de IA generativa até 2028 — hoje esse número está em apenas 15%. A mensagem é clara: empresas que usam IA sem monitorar o que ela gera estão operando no escuro.</p>
+      <p>O Gartner projetou nesta semana que a adoção de IA Explicável (XAI) vai impulsionar a observabilidade de modelos de linguagem para 50% das implementações de IA generativa até 2028 — hoje esse número está em apenas 15%.<br/> A mensagem é clara: empresas que usam IA sem monitorar o que ela gera estão operando no escuro.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: Gartner via TI Inside Online, 01/04/2026; Deloitte — Governança de IA, 2025)</p>
 
@@ -696,6 +696,58 @@ export const labPosts: LabPost[] = [
         <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação. Cada empresa recebe auditoria de riscos, laudo de conformidade, política de uso interna e treinamento de equipe — não como projeto separado, mas como camada integrada à operação de IA. Se sua empresa usa IA sem governança formal, o risco já está ativo.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico de compliance gratuito</a>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "14",
+    slug: "intuit-ia-humano-retencao-implantacao-resultado",
+    categoria: "/ notícias",
+    titulo: "Intuit Comprova: IA + Humano Ganha de IA Sozinha — 3 Milhões de Usuários e 85% de Retenção",
+    descricao: "A Intuit implantou agentes de IA para 3 milhões de clientes com 85% de retenção. O segredo não foi o modelo — foi manter humanos nas etapas críticas. Veja o que isso ensina.",
+    tempoLeitura: "5 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["IA + Humano", "Intuit", "implantação IA", "retenção de usuários", "casos de sucesso"],
+    imagemCapa: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2340&auto=format&fit=crop",
+    likes: 34,
+    conteudo: `
+      <p>A Intuit — empresa por trás do TurboTax e QuickBooks, com mais de US$ 14 bilhões de receita anual — revelou nesta semana, no podcast VB Beyond the Pilot, um dado que deveria mudar a forma como toda empresa pensa sobre implantação de IA.</p>
+      
+      <p>A companhia distribuiu agentes de inteligência artificial para 3 milhões de clientes. A taxa de uso repetido? 85%. Em qualquer métrica de produto digital, esse número é extraordinário. Para um agente de IA, é quase inédito.</p>
+
+      <p>Mas o detalhe mais revelador não é a tecnologia do agente. É o que a Intuit fez de diferente: o diferencial para a adoção massiva não foi a melhora dos modelos, mas a manutenção do envolvimento de especialistas humanos nas etapas críticas. Contadores, especialistas em impostos e profissionais de folha de pagamento continuaram participando nos momentos-chave — onde julgamento, contexto e confiança fazem a diferença.</p>
+
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: VB Beyond the Pilot Podcast, 04/2026; André Lug/Iglu Online, 02/04/2026)</p>
+
+      <h2>O MIT concorda: 2026 é "o ano dos humanos"</h2>
+      <p>Na mesma semana, o HBR Strategy Summit 2026 trouxe uma masterclass de Andy McAfee, pesquisador principal do MIT e cofundador do MIT Initiative on the Digital Economy. A mensagem central: empresas que cortam contratações de nível inicial por causa da IA estão cometendo um erro estratégico grave.</p>
+
+      <p>McAfee foi direto: "Em 2024, toda empresa de IA previa que automatizaria empregos eliminando a necessidade de humanos. Mas a tecnologia ainda não chegou lá, e em uma economia instável, essa retórica não é popular. Em 2026, vamos perceber que a IA não funcionou de forma tão autônoma quanto pensávamos."</p>
+
+      <p>A previsão dele: a conversa vai migrar de "IA substitui humanos" para "IA aumenta a produtividade humana" — e empresas vão voltar a contratar, especialmente em papéis de governança de IA, transparência, segurança e gestão de dados.</p>
+
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: HBR IdeaCast — Strategy Summit 2026, 04/2026)</p>
+
+      <h2>O padrão que se repete em toda implantação bem-sucedida</h2>
+      <p>O caso da Intuit não é isolado. Ele confirma um padrão documentado em estudos recentes: IA sozinha gera outputs. IA + humano gera resultados. A diferença está em três elementos que empresas que escalam com sucesso implementam consistentemente.</p>
+
+      <ul>
+        <li><strong>Primeiro:</strong> a IA cuida das tarefas repetitivas e de alto volume — processamento de dados, triagem, geração de rascunhos, automação de fluxos.</li>
+        <li><strong>Segundo:</strong> humanos intervêm nos momentos de decisão, julgamento contextual e relacionamento com o cliente.</li>
+        <li><strong>Terceiro:</strong> existe treinamento prático (não teórico) para que o time saiba quando confiar na IA e quando intervir.</li>
+      </ul>
+
+      <p>Quando esses três elementos estão presentes, a retenção sobe, o time ganha produtividade e a empresa não cria dependência de ferramentas que não entende.</p>
+
+      <h2>O que isso significa para a sua empresa</h2>
+      <p>Se sua empresa está pensando em "automatizar tudo com IA" ou, no extremo oposto, "evitar IA porque o time vai perder o emprego", ambas as abordagens estão erradas. O modelo que funciona — provado pela Intuit, validado pelo MIT — é o da implantação com método: IA onde ela acelera, humanos onde eles decidem, e treinamento para que o time opere com autonomia.</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com o time — não em paralelo. Cada projeto inclui treinamento prático, transferência de conhecimento e monitoramento contínuo. O resultado: IA que funciona porque o time sabe usá-la. Se sua empresa quer sair do achismo e entrar na implantação com método, o diagnóstico gratuito de 60 minutos é o primeiro passo.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
       </div>
     `
