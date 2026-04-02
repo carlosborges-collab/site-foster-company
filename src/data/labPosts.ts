@@ -159,7 +159,7 @@ export const labPosts: LabPost[] = [
         <ul class="space-y-6">
           <li><strong>Quanto tempo leva para ver resultado com IA na empresa?</strong><br/>Depende do nível de maturidade da operação, mas os primeiros resultados de automação geralmente aparecem entre 4 e 8 semanas após o diagnóstico inicial.</li>
           <li><strong>Preciso ter uma equipe de TI para implantar IA?</strong><br/>Não. A Foster IA faz a implantação completa — da seleção das ferramentas ao treinamento do time.</li>
-          <li><strong>Minha empresa é pequena. IA faz sentido para mim?</strong><br/>Sim, especialmente se você tem processos repetitivos que consomem horas.</li>
+          <li><strong>Minha empresa é pequena. IA faz sentido para mim?</strong><br/>Sim, especialmente se você tem processos repetitivos que consumes horas.</li>
         </ul>
       </div>
 
@@ -187,7 +187,7 @@ export const labPosts: LabPost[] = [
       <p>Resumo rápido: a LGPD se aplica diretamente ao uso de ferramentas de IA que processam dados pessoais. Se sua empresa usa qualquer ferramenta de IA sem política interna, auditoria de dados e adequação legal, está exposta a riscos reais — financeiros, jurídicos e reputacionais. Neste artigo, mostramos onde estão os riscos e como corrigi-los.</p>
 
       <h2>O problema silencioso: Shadow AI dentro da sua empresa</h2>
-      <p>"Shadow IA" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
+      <p>"Shadow AI" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
       <p>Quando um colaborador insere dados de clientes em uma ferramenta de IA externa, esses dados saem do perímetro de controle da empresa. Dependendo da ferramenta, podem ser armazenados em servidores internacionais, usados para treinar modelos futuros ou acessados por terceiros. Se esses dados incluem informações pessoais — nome, CPF, e-mail, histórico de compras, dados de saúde —, a empresa está processando dados pessoais fora das bases legais previstas na LGPD.</p>
       <p>O primeiro passo para resolver esse problema não é proibir o uso de IA. Proibições não funcionam. O caminho é criar diretrizes claras, oferecer alternativas aprovadas e auditar regularmente quais ferramentas o time está utilizando.</p>
 
@@ -275,10 +275,10 @@ export const labPosts: LabPost[] = [
       <h2>O framework que transforma piloto em operação</h2>
       <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
       <ul>
-        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos.</li>
-        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos e oportunidades de IA ranqueadas por impacto.</li>
-        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações e agentes junto com o time da empresa.</li>
-        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados e identificação das próximas iniciativas.</li>
+        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos. Sem jargão técnico, sem venda antecipada de solução. O objetivo é escutar e mapear.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com o time da empresa.</li>
+        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados, ajustes de rota e identificação das próximas iniciativas.</li>
       </ul>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
@@ -293,6 +293,73 @@ export const labPosts: LabPost[] = [
       <div class="mt-12 text-center">
         <p class="text-f-neon font-bold text-lg mb-4">Se sua empresa já tentou implantar IA e o projeto travou, o problema não é tecnologia — é método.</p>
         <p>A Foster IA conduz a implantação do diagnóstico à operação, com acompanhamento contínuo e foco em resultado.</p>
+      </div>
+    `
+  },
+  {
+    id: "6",
+    slug: "politica-uso-ia-empresas-guia-pratico",
+    categoria: "/ inteligência",
+    titulo: "Política de Uso de IA para Empresas: O Documento que Você Deveria Ter Criado Ontem",
+    descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza o time e evita riscos jurídicos. Guia prático.",
+    tempoLeitura: "10 min",
+    data: "15 Abr 2026",
+    autor: "Time Foster IA",
+    tags: ["política de uso de IA", "governança IA empresas", "regras uso ChatGPT empresa", "diretrizes IA corporativa"],
+    imagemCapa: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2340&auto=format&fit=crop",
+    likes: 18,
+    conteudo: `
+      <p>Seu time já usa IA. A pergunta é: ele usa do jeito certo?</p>
+      <p>Enquanto você lê este parágrafo, colaboradores da sua empresa provavelmente estão colando dados de clientes no ChatGPT, gerando relatórios com Copilot, usando IA para responder e-mails e triando informações com ferramentas que a empresa nem sabe que existem na operação. Tudo isso sem nenhuma diretriz formal sobre o que pode, o que não pode e quais dados jamais devem ser compartilhados com plataformas externas.</p>
+      <p>Apenas 22% das empresas possuem políticas formais de governança de IA em vigor. Os outros 78% operam no escuro — expostos a riscos jurídicos, vazamento de dados e decisões automatizadas sem controle.</p>
+      <p>Resumo rápido: uma política de uso de IA não é um documento burocrático de 100 páginas. É um guia prático que protege a empresa, organiza o time e cria as condições para usar inteligência artificial com segurança e resultado. Neste artigo, mostramos o que esse documento precisa conter e como criá-lo.</p>
+
+      <h2>Por que sua empresa precisa disso agora — não amanhã</h2>
+      <p>Três movimentos do mercado tornaram a política de uso de IA urgente em 2026:</p>
+      <ul>
+        <li><strong>O time já usa IA por conta própria.</strong> Proibir não funciona — as ferramentas são acessíveis, gratuitas e o time as adota por produtividade genuína. O problema não é o uso, é a falta de direção. Sem política, cada colaborador define seus próprios limites — e na prática, não há limite nenhum.</li>
+        <li><strong>Clientes e parceiros estão perguntando.</strong> Corporações de grande porte já exigem evidências de governança de IA antes de fechar contratos. Investidores fazem perguntas específicas sobre segurança algorítmica em processos de due diligence. Se você não tem uma política formal, está perdendo negócios sem saber.</li>
+        <li><strong>A regulação está chegando.</strong> O Brasil avança na criação de um marco regulatório para IA. Empresas que já possuem governança interna terão vantagem competitiva quando as regras forem definidas — enquanto as que deixaram para depois enfrentarão correria para se adequar.</li>
+      </ul>
+
+      <h2>O que uma política de uso de IA deve conter</h2>
+      <p>Uma boa política de IA é curta, clara e aplicável. Não é um manifesto filosófico sobre ética — é um documento operacional que responde às perguntas reais do time. Aqui estão os sete blocos essenciais:</p>
+      <ol>
+        <li><strong>Bloco 1 — Escopo e objetivo:</strong> Para quem vale a política (todos os colaboradores, terceiros, parceiros?), qual é o objetivo (uso seguro e produtivo de IA) e quais ferramentas estão cobertas.</li>
+        <li><strong>Bloco 2 — Ferramentas aprovadas e não aprovadas:</strong> Lista das ferramentas de IA que a empresa autorizou para uso, com indicação do nível de acesso de cada uma.</li>
+        <li><strong>Bloco 3 — Classificação de dados:</strong> Quais dados podem ser processados por ferramentas de IA externas e quais jamais devem sair do perímetro da empresa.</li>
+        <li><strong>Bloco 4 — Regras de uso por área:</strong> Cada área tem seu contexto — e a política precisa refletir isso.</li>
+        <li><strong>Bloco 5 — Revisão humana obrigatória:</strong> Definição de quais outputs de IA precisam de revisão humana antes de serem usados.</li>
+        <li><strong>Bloco 6 — Responsabilidades e canal de dúvidas:</strong> Quem é o responsável pela política e para quem recorrer em caso de dúvida.</li>
+        <li><strong>Bloco 7 — Atualização e vigência:</strong> A política deve ter data de vigência e ciclo de revisão definido (trimestral ou semestral).</li>
+      </ol>
+
+      <h2>Os erros mais comuns ao criar uma política de IA</h2>
+      <ul>
+        <li><strong>Criar um documento que ninguém lê.</strong> Se a política tem 80 páginas, está errada. O documento principal deve ter no máximo 3 a 5 páginas.</li>
+        <li><strong>Proibir em vez de direcionar.</strong> Políticas que simplesmente proíbem o uso de IA geram Shadow AI e a empresa perde competitividade.</li>
+        <li><strong>Ignorar a realidade do dia a dia.</strong> As melhores políticas são construídas em conjunto — com as áreas que realmente usam IA.</li>
+        <li><strong>Não treinar o time depois de publicar.</strong> Enviar um PDF por e-mail não é treinamento. A política precisa ser apresentada e explicada.</li>
+      </ul>
+
+      <h2>Como implementar a política na prática</h2>
+      <p>A implementação segue quatro passos: Auditoria de uso atual, Construção colaborativa, Treinamento prático e Monitoramento contínuo.</p>
+
+      <h2>O papel do comitê de IA na governança</h2>
+      <p>Empresas que escalam IA com segurança costumam criar um comitê de IA — um grupo multidisciplinar responsável por orquestrar a estratégia, priorizar iniciativas e manter a política atualizada.</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
+        <ul class="space-y-6">
+          <li><strong>Preciso contratar um advogado para criar a política de uso de IA?</strong><br/>Não necessariamente, mas é fundamental que o documento esteja alinhado à LGPD e às regulações do seu setor.</li>
+          <li><strong>Qual o tamanho ideal de uma política de uso de IA?</strong><br/>O documento principal deve ter entre 3 e 5 páginas.</li>
+          <li><strong>Com que frequência a política deve ser atualizada?</strong><br/>No mínimo a cada 6 meses. O cenário de IA evolui rapidamente.</li>
+        </ul>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-f-neon font-bold text-lg mb-4">Sua empresa precisa de uma política de uso de IA — mas não sabe por onde começar?</p>
+        <p>A Foster IA cria a política junto com sua equipe: da auditoria de uso atual ao documento final, com treinamento incluso. [Agendar diagnóstico gratuito →]</p>
       </div>
     `
   }
