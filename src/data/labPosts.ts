@@ -184,7 +184,7 @@ export const labPosts: LabPost[] = [
     conteudo: `
       <p>Na segunda-feira de manhã, um analista financeiro da sua empresa cola a planilha de faturamento trimestral no ChatGPT para gerar um resumo executivo. Na terça, a equipe de vendas insere dados de 200 leads no Copilot para criar e-mails personalizados. Na quarta, o jurídico usa uma IA para revisar um contrato com cláusulas confidenciais. Até sexta-feira, informações sensíveis de clientes, parceiros e da própria operação já passaram por modelos de IA externos — sem que ninguém na empresa soubesse, autorizasse ou controlasse.</p>
       <p>Esse cenário não é hipotético. É o dia a dia de 8 em cada 10 empresas brasileiras que ainda não possuem políticas formais de governança para inteligência artificial. E o risco que isso representa vai muito além de uma multa: envolve reputação, confiança do mercado e continuidade do negócio.</p>
-      <p>Resumo rápido: a LGPD se aplica diretamente ao uso de ferramentas de IA que processam dados pessoais. Se sua empresa usa qualquer ferramenta de IA sem política interna, auditoria de dados e adequação legal, está exposta a riscos reais — financeiros, jurídicos e reputacionais. Neste artigo, mostramos onde estão os riscos e como corrigi-los.</p>
+      <p>Resumo rápido: a LGPD se aplica diretamente ao uso de ferramentas de IA que processam dados pessoais. Se sua empresa usa qualquer ferramenta de IA sem política interna, auditoria de dados e adequação legal, está exposta a risks reais — financeiros, jurídicos e reputacionais. Neste artigo, mostramos onde estão os riscos e como corrigi-los.</p>
 
       <h2>O problema silencioso: Shadow IA dentro da sua empresa</h2>
       <p>"Shadow IA" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
@@ -205,7 +205,7 @@ export const labPosts: LabPost[] = [
       <p>Em 2025, a ANPD (Agência Nacional de Proteção de Dados) recebeu 395 comunicações de incidentes de segurança — um indicador claro de que a insegurança digital é uma realidade concreta no mercado brasileiro.</p>
 
       <h2>O que uma empresa precisa ter para usar IA com segurança</h2>
-      <p>A adequação não é complexa quando feita com método. Cinco elements formam a base de uma operação de IA segura e em conformidade com a LGPD:</p>
+      <p>A adequação não é complexa quando feita com método. Cinco elementos formam a base de uma operação de IA segura e em conformidade com a LGPD:</p>
       <ol>
         <li><strong>Auditoria de uso atual:</strong> Identificar ferramentas e mapear dados processados.</li>
         <li><strong>Política interna de uso de IA:</strong> Guia prático com diretrizes claras para o time.</li>
@@ -610,7 +610,7 @@ export const labPosts: LabPost[] = [
     data: "02 Abr 2026",
     autor: "Foster Company",
     tags: ["MCP", "Model Context Protocol", "agentes de IA", "infraestrutura IA", "automação"],
-    imagemCapa: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2400&auto=format&fit=crop",
+    imagemCapa: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2340&auto=format&fit=crop",
     likes: 41,
     conteudo: `
       <p>Quando a Anthropic lançou o Model Context Protocol (MCP) em novembro de 2024, a maioria das equipes de tecnologia tratou como mais um padrão que morreria em comitê. Dezesseis meses depois, o MCP acumulou 97 milhões de downloads mensais dos seus SDKs e se tornou a infraestrutura padrão para conectar agentes de IA a ferramentas externas — bancos de dados, CRMs, e-mails, repositórios de código, ERPs e qualquer sistema empresarial.</p>
@@ -717,7 +717,7 @@ export const labPosts: LabPost[] = [
       
       <p>A companhia distribuiu agentes de inteligência artificial para 3 milhões de clientes. A taxa de uso repetido? 85%. Em qualquer métrica de produto digital, esse número é extraordinário. Para um agente de IA, é quase inédito.</p>
 
-      <p>Mas o detalhe mais revelador não é a tecnologia do agente. É o que a Intuit fez de diferente: o diferencial para a adoção massiva não foi a melhora dos modelos, mas a manutenção do envolvimento de especialistas humanos nas etapas críticas. Contadores, especialistas em impostos e profissionais de folha de pagamento continuaram participando nos momentos-chave — onde julgamento, contexto e confiança fazem a diferença.</p>
+      <p>But o detalhe mais revelador não é a tecnologia do agente. É o que a Intuit fez de diferente: o diferencial para a adoção massiva não foi a melhora dos modelos, mas a manutenção do envolvimento de especialistas humanos nas etapas críticas. Contadores, especialistas em impostos e profissionais de folha de pagamento continuaram participando nos momentos-chave — onde julgamento, contexto e confiança fazem a diferença.</p>
 
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: VB Beyond the Pilot Podcast, 04/2026; André Lug/Iglu Online, 02/04/2026)</p>
 
@@ -736,7 +736,7 @@ export const labPosts: LabPost[] = [
       <ul>
         <li><strong>Primeiro:</strong> a IA cuida das tarefas repetitivas e de alto volume — processamento de dados, triagem, geração de rascunhos, automação de fluxos.</li>
         <li><strong>Segundo:</strong> humanos intervêm nos momentos de decisão, julgamento contextual e relacionamento com o cliente.</li>
-        <li><strong>Terceiro:</strong> existe treinamento prático (não teórico) para que o time saiba quando confiar na IA e quando intervir.</li>
+        <li><strong>Terceiro:</strong> existe treinamento prático (not teórico) para que o time saiba quando confiar na IA e quando intervir.</li>
       </ul>
 
       <p>Quando esses três elementos estão presentes, a retenção sobe, o time ganha produtividade e a empresa não cria dependência de ferramentas que não entende.</p>
@@ -799,7 +799,7 @@ export const labPosts: LabPost[] = [
         <li><strong>Capacitação prática</strong> para que todos saibam operar com IA no dia a dia.</li>
       </ul>
 
-      <p>O resultado? O time não encolhe — ele se torna mais produtivo. As entregas aumentam sem que a folha de pagamento exploda. E a empresa constrói uma cultura de IA que não depende de consultores externos para continuar evoluindo.</p>
+      <p>O resultado? O time não encolhe — ele se torna mais produtivo. As entregas aumentam sem que a folha de pagamento exploda. E a empresa constrói uma cultura de IA que não depende de consultores externos para continuar evoluindo. </p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <p class="text-f-mint/80">A Foster IA entrega capacitação prática como parte de toda implantação. Cada projeto inclui treinamento do time, política de uso de IA e roadmap de expansão — para que a empresa opere com autonomia e não crie dependência. Se seu time precisa se preparar para a era dos agentes de IA, o diagnóstico gratuito mostra por onde começar.</p>
