@@ -97,7 +97,7 @@ export const labPosts: LabPost[] = [
       <p><em>Estúdio de gravação profissional — Captação de áudio base para o treinamento do modelo neurônico.</em></p>
       
       <h2>O Fluxo de Trabalho</h2>
-      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Treceiro, o treinamento de resposta emocional.</p>
+      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Terceiro, o treinamento de resposta emocional.</p>
       
       <blockquote>"A tecnologia deve servir à essência, nunca o contrário."</blockquote>
       
@@ -128,7 +128,7 @@ export const labPosts: LabPost[] = [
       
       <h2>O paradoxo da IA corporativa: todo mundo usa, poucos veem resultado</h2>
       <p>Existe uma diferença brutal entre "usar IA" e "usar IA de forma que gere resultado". A maioria das empresas brasileiras caiu na primeira categoria. Contrataram ChatGPT corporativo, liberaram acesso ao Copilot, talvez até fizeram um workshop sobre "IA no dia a dia". Mas quando você pergunta ao CFO qual foi o impacto financeiro dessas iniciativas, a resposta geralmente é um silêncio desconfortável.</p>
-      <p>Isso acontece porque a adoção de IA no Brasil seguiu um padrão perigoso: entusiasmo primeiro, estratégia depois. Ou, em muitos casos, entusiasmo sem estratégia alguma.</p>
+      <p>Ida adoção de IA no Brasil seguiu um padrão perigoso: entusiasmo primeiro, estratégia depois. Ou, em muitos casos, entusiasmo sem estratégia alguma.</p>
 
       <h2>Sinal 1: Ferramentas sem estratégia — o "efeito cardápio"</h2>
       <p>Sua empresa assina ChatGPT Teams, Copilot, Midjourney, talvez mais duas ou três ferramentas. Cada área usa o que quer, como quer. Marketing gera textos no ChatGPT. O jurídico consulta o Copilot. O financeiro fez uma planilha com fórmulas de IA. Tudo isolado. Nenhuma integração. Nenhum processo redesenhado.</p>
@@ -159,7 +159,7 @@ export const labPosts: LabPost[] = [
         <ul class="space-y-6">
           <li><strong>Quanto tempo leva para ver resultado com IA na empresa?</strong><br/>Depende do nível de maturidade da operação, mas os primeiros resultados de automação geralmente aparecem entre 4 e 8 semanas após o diagnóstico inicial.</li>
           <li><strong>Preciso ter uma equipe de TI para implantar IA?</strong><br/>Não. A Foster IA faz a implantação completa — da seleção das ferramentas ao treinamento do time.</li>
-          <li><strong>Minha empresa é pequena. IA faz sentido para mim?</strong><br/>Sim, especialmente se você tem processos repetitivos que consumes horas.</li>
+          <li><strong>Minha empresa é pequena. IA faz sentido para mim?</strong><br/>Sim, especialmente se você tem processos repetitivos que consomem horas.</li>
         </ul>
       </div>
 
@@ -177,7 +177,7 @@ export const labPosts: LabPost[] = [
     descricao: "8 em cada 10 empresas no Brasil não têm política de governança de IA. Saiba como proteger dados, evitar multas da LGPD e usar IA com segurança.",
     tempoLeitura: "10 min",
     data: "05 Abr 2026",
-    autor: "Time Foster IA",
+    author: "Time Foster IA",
     tags: ["LGPD inteligência artificial", "compliance IA", "governança de IA", "proteção de dados"],
     imagemCapa: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2340&auto=format&fit=crop",
     likes: 31,
@@ -186,8 +186,8 @@ export const labPosts: LabPost[] = [
       <p>Esse cenário não é hipotético. É o dia a dia de 8 em cada 10 empresas brasileiras que ainda não possuem políticas formais de governança para inteligência artificial. E o risco que isso representa vai muito além de uma multa: envolve reputação, confiança do mercado e continuidade do negócio.</p>
       <p>Resumo rápido: a LGPD se aplica diretamente ao uso de ferramentas de IA que processam dados pessoais. Se sua empresa usa qualquer ferramenta de IA sem política interna, auditoria de dados e adequação legal, está exposta a riscos reais — financeiros, jurídicos e reputacionais. Neste artigo, mostramos onde estão os riscos e como corrigi-los.</p>
 
-      <h2>O problema silencioso: Shadow AI dentro da sua empresa</h2>
-      <p>"Shadow AI" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
+      <h2>O problema silencioso: Shadow IA dentro da sua empresa</h2>
+      <p>"Shadow IA" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
       <p>Quando um colaborador insere dados de clientes em uma ferramenta de IA externa, esses dados saem do perímetro de controle da empresa. Dependendo da ferramenta, podem ser armazenados em servidores internacionais, usados para treinar modelos futuros ou acessados por terceiros. Se esses dados incluem informações pessoais — nome, CPF, e-mail, histórico de compras, dados de saúde —, a empresa está processando dados pessoais fora das bases legais previstas na LGPD.</p>
       <p>O primeiro passo para resolver esse problema não é proibir o uso de IA. Proibições não funcionam. O caminho é criar diretrizes claras, oferecer alternativas aprovadas e auditar regularmente quais ferramentas o time está utilizando.</p>
 
@@ -275,10 +275,10 @@ export const labPosts: LabPost[] = [
       <h2>O framework que transforma piloto em operação</h2>
       <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
       <ul>
-        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos. Sem jargão técnico, sem venda antecipada de solução. O objetivo é escutar e mapear.</li>
-        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
-        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com o time da empresa.</li>
-        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados, ajustes de rota e identificação das próximas iniciativas.</li>
+        <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos e oportunidades de IA ranqueadas por impacto.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações e agentes junto com o time da empresa.</li>
+        <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados e identificação das próximas iniciativas.</li>
       </ul>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
@@ -360,6 +360,77 @@ export const labPosts: LabPost[] = [
       <div class="mt-12 text-center">
         <p class="text-f-neon font-bold text-lg mb-4">Sua empresa precisa de uma política de uso de IA — mas não sabe por onde começar?</p>
         <p>A Foster IA cria a política junto com sua equipe: da auditoria de uso atual ao documento final, com treinamento incluso. [Agendar diagnóstico gratuito →]</p>
+      </div>
+    `
+  },
+  {
+    id: "7",
+    slug: "ia-agencias-produtoras-escalar-entregas-qualidade",
+    categoria: "/ inteligência",
+    titulo: "IA para Agências e Produtoras: Como Escalar Entregas Sem Perder a Qualidade Criativa",
+    descricao: "Agências produzem muito e entregam sob pressão. Descubra como usar IA para automatizar fluxos repetitivos, acelerar produção e liberar o time criativo para o que importa.",
+    tempoLeitura: "9 min",
+    data: "18 Abr 2026",
+    autor: "Time Foster IA",
+    tags: ["IA para agências", "automação agência de publicidade", "IA produção de conteúdo", "inteligência artificial agência", "ferramentas IA marketing"],
+    imagemCapa: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2340&auto=format&fit=crop",
+    likes: 24,
+    conteudo: `
+      <p>A briefing chega às 14h. O cliente quer três opções de conceito até as 18h. O designer está fechando outra campanha. O redator está em duas reuniões. O gestor de tráfego precisa de 12 variações de copy para os anúncios que sobem amanhã. E o dono da agência olha para o time e pensa: "preciso contratar mais gente — ou encontrar uma forma de produzir mais com o time que tenho."</p>
+      <p>Essa é a realidade de agências de comunicação e produtoras em 2026. A demanda por conteúdo cresce exponencialmente, os prazos ficam mais curtos, os clientes esperam mais — e o time criativo continua do mesmo tamanho. A solução não é contratar indefinidamente. É identificar onde a IA elimina trabalho braçal sem tocar na qualidade criativa.</p>
+      <p>Resumo rápido: agências têm dezenas de processos repetitivos que consomem horas do time criativo todos os dias. IA aplicada com estratégia automatiza esses fluxos, libera os criativos para o que só humanos fazem (pensar, criar, surpreender) e permite escalar entregas sem inflar o time. Neste artigo, mostramos onde e como.</p>
+
+      <h2>O problema não é falta de criatividade — é falta de tempo</h2>
+      <p>Criativos de agência não perdem tempo por falta de talento. Perdem tempo em tarefas que não são criativas: adaptar formatos, redimensionar peças, organizar briefings, preencher planilhas de entrega, montar relatórios de performance, responder e-mails operacionais, criar variações de textos para testes A/B.</p>
+      <p>Essas tarefas são necessárias — mas não exigem talento criativo. Exigem execução. E é exatamente aí que a IA entra. Não para substituir o diretor de arte ou o redator, mas para eliminar as 3 a 4 horas diárias que eles gastam em trabalho mecânico, devolvendo esse tempo para ideação, conceituação e produção de alto valor.</p>
+      <p>Quando o time criativo para de ser executor operacional e volta a ser pensador estratégico, a qualidade sobe. E a capacidade de entrega dobra sem que nenhuma contratação seja feita.</p>
+
+      <h2>Onde a IA gera mais impacto em agências</h2>
+      <p>Nem toda tarefa da agência precisa de IA. O segredo é identificar as atividades de alto volume e baixa complexidade criativa — os "sugadores de tempo" que travam a produção. Aqui estão os pontos mais comuns:</p>
+      <ul>
+        <li><strong>Geração de variações de copy:</strong> Um redator cria a copy principal. A IA gera 10, 15, 20 variações para testes A/B em segundos. O redator revisa e ajusta o tom — mas não precisa escrever cada variação do zero. O tempo economizado em uma única campanha pode ser de várias horas.</li>
+        <li><strong>Adaptação de formatos e redimensionamento:</strong> A peça principal foi aprovada. Agora precisa ser adaptada para feed, stories, banner, e-mail, display. Ferramentas de IA fazem essa adaptação automaticamente, preservando a composição visual e ajustando os elementos para cada formato.</li>
+        <li><strong>Organização e resumo de briefings:</strong> Clientes enviam briefings longos e desorganizados. A IA consolida tudo em um documento estruturado, extrai os pontos-chave e apresenta um resumo acionável para o time criativo.</li>
+        <li><strong>Relatórios de performance:</strong> Em vez de montar relatórios manualmente cruzando dados, a IA automatiza a coleta, organiza os dados e gera o relatório — pronto para o gestor de conta apresentar ao cliente.</li>
+        <li><strong>Pesquisa de referências e tendências:</strong> Antes de começar uma campanha, o time precisa pesquisar referências visuais e tendências. A IA acelera essa pesquisa, entregando curadoria organizada em minutos em vez de horas.</li>
+        <li><strong>Transcrição e corte de vídeos:</strong> Produtoras que gravam entrevistas ou podcasts gastam horas em transcrição. A IA transcreve automaticamente, identifica os melhores trechos e sugere cortes — o editor faz o refinamento final.</li>
+      </ul>
+
+      <h2>O que muda no fluxo de trabalho</h2>
+      <p>A implantação de IA em agência não muda o que o time cria. Muda como ele produz. O fluxo anterior — briefing → pesquisa → criação → revisão → adaptação → entrega — continua existindo. Mas várias etapas são aceleradas ou automatizadas.</p>
+      <p>O resultado prático é que o time consegue entregar mais projetos por mês sem trabalhar mais horas. A qualidade criativa não cai — sobe, porque os criativos estão focados no que sabem fazer de melhor, em vez de afogados em tarefas operacionais.</p>
+
+      <h2>Por que a IA não substitui o criativo (e nunca vai)</h2>
+      <p>Existe um medo legítimo dentro de agências: "se a IA faz copy, faz design e faz vídeo, o que sobra para o time?" A resposta é simples: pensar.</p>
+      <p>IA gera outputs. Mas não gera conceitos. Não entende a nuance cultural de uma campanha regional. Não sabe por que aquele tom funciona para aquele público. Não tem a intuição de saber que o visual "errado" é justamente o que vai chamar atenção. Não cria tensão narrativa. Não provoca emoção genuína.</p>
+      <p>O que a IA faz — e faz muito bem — é executar o trabalho mecânico que vem depois da ideia. As variações, as adaptações, os redimensionamentos, as pesquisas. Ela é o assistente mais rápido do mundo. Mas precisa de um diretor. E esse diretor é o criativo humano.</p>
+
+      <h2>O risco de não usar IA em 2026</h2>
+      <p>A conta é simples: se sua agência produz na velocidade manual enquanto concorrentes produzem com IA, você entrega menos, cobra mais caro e perde clientes. Não por falta de qualidade — por falta de velocidade e escala.</p>
+      <p>Dados do mercado mostram que 63% dos profissionais de marketing já utilizam ferramentas de IA para editar, escalar e acelerar produção de conteúdo. E agências que não acompanham essa lógica estão sendo substituídas por times internos munidos de IA.</p>
+
+      <h2>Como implantar IA em uma agência sem travar a operação</h2>
+      <p>A implantação em agências precisa ser cirúrgica:</p>
+      <ol>
+        <li><strong>Diagnóstico:</strong> Focado nos fluxos criativos e operacionais da agência. Onde o time gasta mais tempo? Quais tarefas são repetitivas?</li>
+        <li><strong>Quick Wins:</strong> Implantação das primeiras automações nos fluxos de menor risco — relatórios, briefings, pesquisa.</li>
+        <li><strong>Produção:</strong> Expansão para variações de copy, adaptações de formato, transcrições.</li>
+        <li><strong>Monitoramento:</strong> Garante que as automações evoluam conforme a agência cresce e novos formatos surgem.</li>
+      </ol>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
+        <ul class="space-y-6">
+          <li><strong>Quais ferramentas de IA são melhores para agências?</strong><br/>Depende do fluxo. O diagnóstico identifica as necessidades e seleciona as ferramentas certas sem refém de um fornecedor.</li>
+          <li><strong>A IA vai substituir minha equipe criativa?</strong><br/>Não. A IA elimina tarefas mecânicas — não pensamento criativo, direção de arte ou storytelling.</li>
+          <li><strong>Quanto tempo leva para ver resultado?</strong><br/>Quick wins em 2 semanas. Automações de produção entre 4 e 6 semanas.</li>
+          <li><strong>Meus clientes vão perceber que estou usando IA?</strong><br/>O que o cliente percebe é a velocidade e a diversidade de variações, enquanto a qualidade criativa se mantém.</li>
+        </ul>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-f-neon font-bold text-lg mb-4">Se sua agência produz sob pressão e precisa escalar sem inflar o time, IA é o caminho mais inteligente.</p>
+        <p>A Foster IA implanta automações sob medida para o fluxo criativo da sua operação — do diagnóstico à autonomia do time. [Agendar diagnóstico gratuito →]</p>
       </div>
     `
   }
