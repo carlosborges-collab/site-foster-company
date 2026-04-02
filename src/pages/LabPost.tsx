@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { Heart, Link as LinkIcon, ArrowRight } from 'lucide-react';
+import { Heart, Link as LinkIcon, ArrowRight, Copy, Check } from 'lucide-react';
 import { labPosts, LabPost as LabPostType } from '../data/labPosts';
 import { openContactModal } from '../utils/contactEvents';
 
@@ -34,6 +34,35 @@ export default function LabPost({ slug }: { slug: string }) {
     window.addEventListener('scroll', updateProgress);
     return () => window.removeEventListener('scroll', updateProgress);
   }, []);
+
+  // Script para adicionar botão de cópia nos blocos de código
+  useEffect(() => {
+    if (!post) return;
+    
+    const preBlocks = document.querySelectorAll('.post-content pre');
+    preBlocks.forEach(pre => {
+      if (pre.querySelector('.copy-btn')) return;
+
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.innerHTML = 'Copiar';
+      
+      btn.onclick = () => {
+        const code = pre.querySelector('code')?.innerText || pre.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+          btn.innerHTML = 'Copiado!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.innerHTML = 'Copiar';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      };
+      
+      pre.style.position = 'relative';
+      pre.appendChild(btn);
+    });
+  }, [post]);
 
   if (!post) {
     return (
@@ -187,6 +216,13 @@ export default function LabPost({ slug }: { slug: string }) {
           padding-left: 1.5rem;
           margin: 4rem 0 2rem;
         }
+        .post-content h3 {
+          font-family: var(--font-display);
+          font-weight: 600;
+          font-size: 1.4rem;
+          color: var(--color-f-mint);
+          margin: 2.5rem 0 1rem;
+        }
         .post-content blockquote {
           background: rgba(80, 242, 167, 0.05);
           border-left: 4px solid var(--color-f-neon);
@@ -196,7 +232,7 @@ export default function LabPost({ slug }: { slug: string }) {
           margin: 3rem 0;
           color: var(--color-f-neon);
         }
-        .post-content ul {
+        .post-content ul, .post-content ol {
           list-style: none;
           padding: 0;
           margin: 2rem 0;
@@ -206,11 +242,71 @@ export default function LabPost({ slug }: { slug: string }) {
           padding-left: 2rem;
           margin-bottom: 1rem;
         }
-        .post-content li::before {
+        .post-content ul li::before {
           content: "→";
           position: absolute;
           left: 0;
           color: var(--color-f-neon);
+        }
+        .post-content ol {
+          counter-reset: item;
+        }
+        .post-content ol li::before {
+          content: counter(item) ".";
+          counter-increment: item;
+          position: absolute;
+          left: 0;
+          color: var(--color-f-neon);
+          font-weight: bold;
+        }
+        .post-content pre {
+          background: #030D09;
+          border: 1px solid rgba(80, 242, 167, 0.2);
+          padding: 1.5rem;
+          border-radius: 1rem;
+          margin: 1.5rem 0;
+          overflow-x: auto;
+          font-family: var(--font-mono);
+          font-size: 0.875rem;
+          color: var(--color-f-mint);
+          position: relative;
+        }
+        .post-content code {
+          background: rgba(80, 242, 167, 0.1);
+          padding: 0.2rem 0.4rem;
+          border-radius: 0.4rem;
+          font-family: var(--font-mono);
+          font-size: 0.9em;
+          color: var(--color-f-neon);
+        }
+        .post-content pre code {
+          background: transparent;
+          padding: 0;
+          color: inherit;
+        }
+        .copy-btn {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          background: rgba(80, 242, 167, 0.1);
+          border: 1px solid rgba(80, 242, 167, 0.2);
+          color: var(--color-f-neon);
+          font-family: var(--font-mono);
+          font-size: 10px;
+          text-transform: uppercase;
+          padding: 4px 8px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .copy-btn:hover {
+          background: var(--color-f-neon);
+          color: var(--color-f-black);
+        }
+        .copy-btn.copied {
+          background: #27C93F;
+          border-color: #27C93F;
+          color: white;
         }
       `}</style>
     </div>

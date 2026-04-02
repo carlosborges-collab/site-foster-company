@@ -15,6 +15,134 @@ export interface LabPost {
 
 export const labPosts: LabPost[] = [
   {
+    id: "16",
+    slug: "guia-instalacao-adobe-mcp-claude-desktop",
+    categoria: "/ método",
+    titulo: "Guia Completo: Instalar Adobe MCP no Claude Desktop (Mac)",
+    descricao: "Controle Photoshop, Premiere, After Effects e outros apps Adobe por linguagem natural no seu Mac usando Claude e MCP.",
+    tempoLeitura: "12 min",
+    data: "02 Abr 2026",
+    autor: "Foster Lab",
+    tags: ["Adobe", "MCP", "Claude Desktop", "Automação", "Premiere Pro", "IA Criativa"],
+    imagemCapa: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2340&auto=format&fit=crop",
+    likes: 58,
+    conteudo: `
+      <p>Este guia vai te levar do zero até o Claude controlando o <strong>Premiere Pro 2025</strong> (e outros apps Adobe) por linguagem natural no seu MacBook.</p>
+
+      <div class="bg-f-neon/5 border border-f-neon/20 p-6 rounded-xl my-8">
+        <p class="font-mono text-[11px] text-f-neon mb-2 uppercase tracking-widest">Arquitetura do Sistema:</p>
+        <p class="text-[13px] leading-relaxed text-f-mint/70 font-mono">Claude Desktop ↔ MCP Server (Python) ↔ Proxy Server (Node.js) ↔ Plugin UXP (dentro do Premiere) ↔ Premiere Pro</p>
+      </div>
+
+      <p><strong>Tempo estimado:</strong> 20-30 minutos</p>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>PASSO 1 — Verificar e Instalar Pré-requisitos</h2>
+
+      <h3>1.1 Verificar/Instalar Node.js</h3>
+      <p>Abra o <strong>Terminal</strong> (Cmd + Espaço → digite "Terminal") e rode:</p>
+      <pre><code>node --version</code></pre>
+
+      <ul>
+        <li>Se aparecer algo como <code>v18.x.x</code> ou <code>v20.x.x</code> → <strong>já está instalado, pule para 1.2</strong></li>
+        <li>Se aparecer "command not found" → <strong>instale assim:</strong></li>
+      </ul>
+
+      <pre><code># Opção 1 — Instalador direto (mais fácil)
+# Acesse https://nodejs.org e baixe a versão LTS
+
+# Opção 2 — Via Homebrew (se tiver Homebrew)
+brew install node</code></pre>
+
+      <p>Após instalar, feche e reabra o Terminal e confirme:</p>
+      <pre><code>node --version
+npm --version</code></pre>
+
+      <h3>1.2 Verificar/Instalar Python 3</h3>
+      <p>No Terminal, rode:</p>
+      <pre><code>python3 --version</code></pre>
+      <p>Se não aparecer a versão, instale via Homebrew:</p>
+      <pre><code>brew install python3</code></pre>
+
+      <h3>1.3 Instalar UV (gerenciador Python usado pelo MCP)</h3>
+      <pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
+      <p>Feche e reabra o Terminal, depois confirme: <code>uv --version</code></p>
+
+      <h3>1.4 Instalar Git (se não tiver)</h3>
+      <pre><code>brew install git</code></pre>
+
+      <h3>1.5 Instalar UXP Developer Tools</h3>
+      <ol>
+        <li>Abra o <strong>Creative Cloud</strong></li>
+        <li>Vá em <strong>Stock & Marketplace → Plugins → Manage Plugins</strong></li>
+        <li>Busque por <strong>"UXP Developer Tools"</strong> e Instale.</li>
+      </ol>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>PASSO 2 — Baixar o Projeto adb-mcp</h2>
+      <p>No Terminal:</p>
+      <pre><code>cd ~/Documents
+git clone https://github.com/mikechambers/adb-mcp.git
+cd adb-mcp</code></pre>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>PASSO 3 — Instalar o MCP Server</h2>
+      <p>Ainda no Terminal, dentro da pasta <code>adb-mcp</code>:</p>
+      
+      <p><strong>Para Premiere Pro:</strong></p>
+      <pre><code>cd mcp
+uv run mcp install --with fonttools --with python-socketio --with mcp --with requests --with websocket-client --with pillow pr-mcp.py</code></pre>
+
+      <p><strong>(Opcional) Para outros apps Adobe:</strong></p>
+      <pre><code># Photoshop
+uv run mcp install --with fonttools --with python-socketio --with mcp --with requests --with websocket-client --with numpy ps-mcp.py
+
+# After Effects
+uv run mcp install --with fonttools --with python-socketio --with mcp --with requests --with websocket-client --with pillow ae-mcp.py</code></pre>
+
+      <p><strong>Após rodar, feche e reabra o Claude Desktop.</strong></p>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>PASSO 4 — Iniciar o Proxy Server</h2>
+      <p>O proxy precisa estar rodando para conectar o Claude ao Premiere.</p>
+      <pre><code>cd ~/Documents/adb-mcp/adb-proxy-socket
+npm install
+node proxy.js</code></pre>
+      <p>Você deve ver a mensagem: <code>adb-mcp Command proxy server running on ws://localhost:3001</code></p>
+      <p>⚠️ <strong>IMPORTANTE:</strong> Mantenha esse terminal aberto!</p>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>PASSO 5 — Instalar o Plugin no Premiere Pro</h2>
+      <h3>5.1 Habilitar modo desenvolvedor</h3>
+      <p>No Premiere Pro 2025, vá em <strong>Settings → Plugins</strong> e marque <strong>"Enable Developer Mode"</strong>. Reinicie o app.</p>
+      
+      <h3>5.2 Carregar o plugin</h3>
+      <p>Abra o <strong>UXP Developer Tools</strong>, clique em <strong>File → Add Plugin</strong> e selecione o arquivo <code>manifest.json</code> em <code>~/Documents/adb-mcp/uxp/pr/manifest.json</code>. Clique em <strong>Load</strong>.</p>
+
+      <h3>5.3 Conectar</h3>
+      <p>No Premiere, vá em <strong>Window → UXP Plugins → Premiere MCP Agent</strong> e clique em <strong>Connect</strong>.</p>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>PASSO 6 — Usar no Claude Desktop</h2>
+      <p>Agora você pode dar comandos em linguagem natural no Claude:</p>
+      <pre><code>Crie uma nova sequência 1080p30 chamada "Edit Principal"</code></pre>
+      <pre><code>Adicione cross dissolve entre todos os clipes na timeline</code></pre>
+
+      <hr class="border-f-neon/10 my-12" />
+
+      <h2>Troubleshooting</h2>
+      <p>Se o MCP não aparecer no Claude, verifique o config:</p>
+      <pre><code>cat ~/Library/Application\ Support/Claude/claude_desktop_config.json</code></pre>
+      <p>Certifique-se de que o caminho do <code>uv</code> está correto. Se necessário, use o caminho absoluto.</p>
+    `
+  },
+  {
     id: "1",
     slug: "caso-abba-pai-church-100k-700k-youtube",
     categoria: "/ caso",
@@ -53,7 +181,7 @@ export const labPosts: LabPost[] = [
       <p><em>Thumbnail Comparison — A/B Testing — Comparação de Impacto Visual</em></p>
 
       <h2>O crescimento não explodiu. Ele foi construído.</h2>
-      <p>Isso é importante dizer com honestidade. Não teve um vídeo viral que salvou tudo. Não teve um hack secreto. O canal foi de 100k para 700k inscritos em menos de dois anos de forma gradual, mês a mês — com uma média de aproximadamente 25 mil novos inscritos por mês durante o período em que gerenciei o canal.</p>
+      <p>Isso é importante dizer com honestidade. No teve um vídeo viral que salvou tudo. No teve um hack secreto. O canal foi de 100k para 700k inscritos em menos de dois anos de forma gradual, mês a mês — com uma média de aproximadamente 25 mil novos inscritos por mês durante o período em que gerenciei o canal.</p>
 
       <p>Julho de 2022 foi um dos meses de pico: +21.500 novos inscritos, 2,7 milhões de visualizações e R$18.448 de receita — números que confirmavam que o sistema estava funcionando de forma consistente. Não foi sorte. Foi o resultado de cada variável sendo otimizada ao mesmo tempo.</p>
 
@@ -177,7 +305,7 @@ export const labPosts: LabPost[] = [
     descricao: "8 em cada 10 empresas no Brasil não têm política de governança de IA. Saiba como proteger dados, evitar multas da LGPD e usar IA com segurança.",
     tempoLeitura: "10 min",
     data: "05 Abr 2026",
-    author: "Time Foster IA",
+    autor: "Time Foster IA",
     tags: ["LGPD inteligência artificial", "compliance IA", "governança de IA", "proteção de dados"],
     imagemCapa: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2340&auto=format&fit=crop",
     likes: 31,
@@ -243,7 +371,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça o método de implantação que transforma IA em resultado operacional real.",
     tempoLeitura: "9 min",
     data: "10 Abr 2026",
-    author: "Time Foster IA",
+    autor: "Time Foster IA",
     tags: ["implantação de IA na empresa", "escalar projeto de IA", "automação de processos com IA", "IA operacional"],
     imagemCapa: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
     likes: 27,
@@ -304,7 +432,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza o time e evita riscos jurídicos. Guia prático.",
     tempoLeitura: "10 min",
     data: "15 Abr 2026",
-    author: "Time Foster IA",
+    autor: "Time Foster IA",
     tags: ["política de uso de IA", "governança IA empresas", "regras uso ChatGPT empresa", "diretrizes IA corporativa"],
     imagemCapa: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2340&auto=format&fit=crop",
     likes: 18,
