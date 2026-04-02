@@ -26,7 +26,24 @@ export const labPosts: LabPost[] = [
     tags: ["gestão YouTube", "caso real", "SEO YouTube"],
     imagemCapa: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2340&auto=format&fit=crop",
     likes: 124,
-    conteudo: `<p>Conteúdo omitido para brevidade conforme instruções de não alterar o que não foi pedido.</p>`
+    conteudo: `
+      <p>O crescimento exponencial da Abba Pai Church no YouTube não foi um acidente. Foi o resultado de uma aplicação rigorosa do Método 3Ps da Foster Company: Posicionamento, Produção e Performance.</p>
+      
+      <h2>O Desafio: Escalar a Mensagem</h2>
+      <p>Quando assumimos a gestão, o canal já tinha uma base sólida, mas o crescimento estava linear. Precisávamos de um catalisador. A estratégia focou em transformar transmissões ao vivo em ativos de busca perpétua através de SEO técnico e curadoria de conteúdo.</p>
+      
+      <h2>A Estratégia de Cortes</h2>
+      <p>A grande virada veio com a implementação de cortes estratégicos. Identificamos os momentos de maior retenção nas pregações e transformamos em vídeos curtos e objetivos, otimizados para o algoritmo de recomendação do YouTube.</p>
+      
+      <blockquote>"Não se trata apenas de postar vídeos, mas de entender onde a audiência está parando e o que ela quer ouvir a seguir para manter o engajamento em níveis máximos."</blockquote>
+      
+      <h2>Resultados Consolidados</h2>
+      <ul>
+        <li>Crescimento de +600% em inscritos orgânicos.</li>
+        <li>Receita mensal (AdSense) saltando de patamares básicos para picos de mais de R$ 49.000,00.</li>
+        <li>Consolidação como um dos maiores canais de igrejas do Brasil.</li>
+      </ul>
+    `
   },
   {
     id: "2",
@@ -40,7 +57,15 @@ export const labPosts: LabPost[] = [
     tags: ["IA", "Clone de Voz", "Rony Meisler"],
     imagemCapa: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=2340&auto=format&fit=crop",
     likes: 89,
-    conteudo: `<p>Conteúdo omitido para brevidade conforme instruções de não alterar o que não foi pedido.</p>`
+    conteudo: `
+      <p>A criação do clone digital de Rony Meisler, fundador da Reserva, foi um dos maiores desafios técnicos da Foster. O objetivo era permitir que um dos líderes mais influentes do país mantivesse sua presença digital 24/7 sem depender de sua agenda física de gravação.</p>
+      
+      <h2>Capturando a Essência</h2>
+      <p>Não bastava apenas clonar o rosto. Precisávamos clonar a energia e o tom de voz característico do Rony. Utilizamos 20 minutos de gravação base de alta fidelidade para treinar o modelo de rede neural na plataforma HeyGen.</p>
+      
+      <h2>O Impacto na Produção</h2>
+      <p>Com o clone ativo, a produção de vídeos curtos para LinkedIn e Instagram triplicou. Onde antes levava-se uma tarde inteira para gravar e editar, agora leva-se minutos para gerar o vídeo a partir de um script de texto.</p>
+    `
   },
   {
     id: "3",
