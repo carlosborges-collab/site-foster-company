@@ -124,7 +124,7 @@ export const labPosts: LabPost[] = [
     imagemCapa: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop",
     likes: 42,
     conteudo: `
-      <p>Quase 42% das empresas brasileiras com mais de 100 funcionários já utilizam inteligência artificial na operação. Parece muito — até você olhar o outro lado do dado: apenas 31% dos projetos de IA passam da fase de piloto. O restante? Vira assinatura mensal sem impacto, ferramenta esquecida ou treinamento que ninguém aplicou. Se sua empresa já investiu em IA mas os resultados não aparecem no caixa, o problema provavelmente não é a tecnologia — é como ela foi implementada. Este artigo revela os 4 sinais mais comuns de empresas que gastam com IA sem retorno, e mostra o caminho para corrigir a rota antes que o investimento vire prejuízo.</p>
+      <p>Quase 42% das empresas brasileiras com mais de 100 funcionários já utilizam inteligência artificial na operação. Parece muito — até você olhar o outro lado do dado: apenas 31% dos projetos de IA passam da fase de piloto. O restante? Vira assinatura mensal sem impacto, ferramenta esquecida ou treinamento que ninguém aplicou. Se sua empresa já investivel em IA mas os resultados não aparecem no caixa, o problema provavelmente não é a tecnologia — é como ela foi implementada. Este artigo revela os 4 sinais mais comuns de empresas que gastam com IA sem retorno, e mostra o caminho para corrigir a rota antes que o investimento vire prejuízo.</p>
       
       <h2>O paradoxo da IA corporativa: todo mundo usa, poucos veem resultado</h2>
       <p>Existe uma diferença brutal entre "usar IA" e "usar IA de forma que gere resultado". A maioria das empresas brasileiras caiu na primeira categoria. Contrataram ChatGPT corporativo, liberaram acesso ao Copilot, talvez até fizeram um workshop sobre "IA no dia a dia". Mas quando você pergunta ao CFO qual foi o impacto financeiro dessas iniciativas, a resposta geralmente é um silêncio desconfortável.</p>
@@ -142,7 +142,7 @@ export const labPosts: LabPost[] = [
 
       <h2>Sinal 3: Processos que poderiam ser automatizados (mas ninguém mapeou)</h2>
       <p>Enquanto sua equipe gasta horas fazendo relatórios manuais, classificando e-mails, organizando documentos e tabulando dados, a IA poderia fazer isso em minutos. Mas ninguém parou para olhar o processo de ponta a ponta e perguntar: "Onde a IA pode entrar aqui?"</p>
-      <p>A maioria das empresas perder 30% a 40% do tempo operacional em tarefas que poderiam ser automatizadas. Não estamos falando de substituir pessoas — estamos falando de liberar o time para fazer o que realmente importa: pensar, criar, decidir.</p>
+      <p>A maioria das empresas perde 30% a 40% do tempo operacional em tarefas que poderiam ser automatizadas. Não estamos falando de substituir pessoas — estamos falando de liberar o time para fazer o que realmente importa: pensar, criar, decidir.</p>
       <blockquote>O que deveria acontecer: um diagnóstico operacional que mapeie cada processo, identifique gargalos e entregue um laudo com ROI estimado por oportunidade de automação. Isso não é "futurismo" — é engenharia de processos com IA aplicada.</blockquote>
 
       <h2>Sinal 4: Investimento sem retorno visível</h2>
@@ -243,7 +243,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça o método de implantação que transforma IA em resultado operacional real.",
     tempoLeitura: "9 min",
     data: "10 Abr 2026",
-    autor: "Time Foster IA",
+    author: "Time Foster IA",
     tags: ["implantação de IA na empresa", "escalar projeto de IA", "automação de processos com IA", "IA operacional"],
     imagemCapa: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
     likes: 27,
@@ -304,7 +304,7 @@ export const labPosts: LabPost[] = [
     descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza o time e evita riscos jurídicos. Guia prático.",
     tempoLeitura: "10 min",
     data: "15 Abr 2026",
-    autor: "Time Foster IA",
+    author: "Time Foster IA",
     tags: ["política de uso de IA", "governança IA empresas", "regras uso ChatGPT empresa", "diretrizes IA corporativa"],
     imagemCapa: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2340&auto=format&fit=crop",
     likes: 18,
@@ -542,6 +542,58 @@ export const labPosts: LabPost[] = [
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <p class="text-f-mint/80">A Foster IA ajuda agências, produtoras e empresas de serviço a implantar IA onde ela gera mais resultado — automação de fluxos repetitivos, organização de processos e treinamento do time para operar com autonomia. Se sua operação ainda roda no manual enquanto o mercado pivota para IA, o diagnóstico gratuito de 60 minutos mostra exatamente por onde começar.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "11",
+    slug: "ia-2026-euforia-pragmatismo-implantacao-real",
+    categoria: "/ notícias",
+    titulo: "Da Euforia ao Pragmatismo: 2026 É o Ano em Que IA Para de Ser Demo e Vira Operação",
+    descricao: "TechCrunch confirma: 2026 é o ano em que IA sai do hype e vira ferramenta prática. O foco mudou de construir modelos maiores para tornar IA utilizável. Sua empresa acompanhou?",
+    tempoLeitura: "5 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["IA 2026", "TechCrunch", "implantação real", "pragmatismo", "IA empresarial"],
+    imagemCapa: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2344&auto=format&fit=crop",
+    likes: 67,
+    conteudo: `
+      <p>O TechCrunch publicou uma das análises mais lúcidas sobre o estado da inteligência artificial em 2026. A frase que abre o artigo virou referência no mercado: "Se 2025 foi o ano em que a IA passou por um reality check, 2026 é o ano em que a tecnologia se torna prática."</p>
+      
+      <p>A conclusão dos especialistas ouvidos pela publicação é clara: o foco da indústria está migrando da construção de modelos cada vez maiores para o trabalho — muito mais difícil — de tornar a IA realmente utilizável dentro de fluxos de trabalho reais.</p>
+      
+      <p>Na prática, isso significa implantar modelos menores onde eles resolvem problemas concretos, embutir inteligência em dispositivos e processos existentes, e desenhar sistemas que se integram de forma limpa ao dia a dia das equipes — não que exijam uma revolução interna para funcionar.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: TechCrunch, "In 2026, AI Will Move From Hype to Pragmatism", 02/01/2026)</p>
+
+      <h2>O que os especialistas estão dizendo</h2>
+      <p>Os experts consultados pelo TechCrunch descrevem 2026 como um ano de transição em três frentes simultâneas: da escala bruta para pesquisa de novas arquiteturas, de demos impressionantes para implantações focadas, e de agentes que prometem autonomia para agentes que realmente aumentam a produtividade das pessoas.</p>
+      
+      <p>Essa análise é corroborada por dados concretos do mercado. A OpenAI — que acaba de fechar a maior rodada de investimento da história (US$ 122 bilhões a um valuation de US$ 852 bilhões, segundo a Bloomberg) — revelou que as vendas B2B já representam 40% do seu faturamento e devem chegar a 50% até o final do ano. O modelo GPT-5.4 está sendo adotado em larga escala para workflows empresariais, e o agente de código Codex atende mais de 2 milhões de usuários por semana.</p>
+      
+      <p>A Intuit, em paralelo, reportou que seus agentes de IA atendem 3 milhões de clientes com 85% de taxa de retenção — provando que IA aplicada com método gera resultado real e recorrente.</p>
+      
+      <p>A mensagem é inequívoca: IA deixou de ser experimento. Virou infraestrutura de negócio.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: Bloomberg, 31/03/2026; TechBriefly, 01/04/2026; VB Beyond the Pilot Podcast, 04/2026)</p>
+
+      <h2>O gap brasileiro</h2>
+      <p>Enquanto o mercado global avança para a fase de implantação prática, a realidade no Brasil conta outra história. Segundo dados recentes, 89% das empresas brasileiras já iniciaram algum projeto de IA — mas apenas 31% conseguiram escalar além do piloto. O restante ficou preso no que especialistas chamam de "vale da morte da IA": aquela zona entre a experimentação e a operação real, onde a maioria dos projetos morre.</p>
+      
+      <p>O motivo não é falta de tecnologia. É falta de método. Ferramentas são contratadas sem diagnóstico prévio. Cada departamento roda seu próprio teste isolado. O time não é treinado para operar com IA. E ninguém monitora os resultados após a implantação.</p>
+      
+      <p>O TI Inside Online publicou uma análise cirúrgica sobre esse cenário: "IA não escala onde a organização não muda. Comprar licenças, rodar pilotos ou criar agentes não redesenha fluxos de decisão, não ajusta incentivos e não resolve conflitos de responsabilidade. Empresas que mantêm o mesmo organograma apenas automatizam ineficiências."</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: TI Inside Online, 17/12/2025; Morph IA, 02/2026)</p>
+
+      <h2>O que isso muda para sua empresa</h2>
+      <p>A transição de "hype" para "pragmatismo" tem uma consequência prática para empresas de todos os tamanhos: quem não sair do piloto em 2026 vai ficar para trás de quem já está operando com IA integrada à rotina. A separação não será entre empresas que "usam IA" e as que não usam. Será entre as que tratam IA como extensão de uma operação organizada e as que a veem como atalho. As primeiras avançam. As segundas acumulam frustração.</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA existe exatamente para essa transição. Do diagnóstico operacional à implantação guiada, com compliance e treinamento do time. Se sua empresa já fez o piloto mas não conseguiu escalar, o problema não é tecnologia — é método. Um diagnóstico gratuito de 60 minutos mostra por onde começar.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>

@@ -5,7 +5,7 @@ import { labPosts, LabPost } from '../data/labPosts';
 
 export default function Lab() {
   const [activeFilter, setActiveFilter] = useState('Todos');
-  const filters = ['Todos', '/ caso', '/ experimento', '/ método', '/ inteligência'];
+  const filters = ['Todos', '/ caso', '/ experimento', '/ método', '/ inteligência', '/ notícias'];
 
   const filteredPosts = useMemo(() => {
     if (activeFilter === 'Todos') return [...labPosts].sort((a, b) => Number(b.id) - Number(a.id));
