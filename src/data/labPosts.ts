@@ -124,7 +124,7 @@ export const labPosts: LabPost[] = [
     imagemCapa: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop",
     likes: 42,
     conteudo: `
-      <p>Quase 42% das empresas brasileiras com mais de 100 funcionários já utilizam inteligência artificial na operação. Parece muito — até você olhar o outro lado do dado: apenas 31% dos projetos de IA passam da fase de piloto. O restante? Vira assinatura mensal sem impacto, ferramenta esquecida ou treinamento que ninguém aplicou. Se sua empresa já investivel em IA mas os resultados não aparecem no caixa, o problema provavelmente não é a tecnologia — é como ela foi implementada. Este artigo revela os 4 sinais mais comuns de empresas que gastam com IA sem retorno, e mostra o caminho para corrigir a rota antes que o investimento vire prejuízo.</p>
+      <p>Quase 42% das empresas brasileiras com mais de 100 funcionários já utilizam inteligência artificial na operação. Parece muito — até você olhar o outro lado do dado: apenas 31% dos projetos de IA passam da fase de piloto. O restante? Vira assinatura mensal sem impacto, ferramenta esquecida ou treinamento que ninguém aplicou. Se sua empresa já investiu em IA mas os resultados não aparecem no caixa, o problema provavelmente não é a tecnologia — é como ela foi implementada. Este artigo revela os 4 sinais mais comuns de empresas que gastam com IA sem retorno, e mostra o caminho para corrigir a rota antes que o investimento vire prejuízo.</p>
       
       <h2>O paradoxo da IA corporativa: todo mundo usa, poucos veem resultado</h2>
       <p>Existe uma diferença brutal entre "usar IA" e "usar IA de forma que gere resultado". A maioria das empresas brasileiras caiu na primeira categoria. Contrataram ChatGPT corporativo, liberaram acesso ao Copilot, talvez até fizeram um workshop sobre "IA no dia a dia". Mas quando você pergunta ao CFO qual foi o impacto financeiro dessas iniciativas, a resposta geralmente é um silêncio desconfortável.</p>
@@ -140,7 +140,7 @@ export const labPosts: LabPost[] = [
       <p>O custo médio de uma violação de dados no Brasil já ultrapassa R$ 7 milhões, segundo pesquisas recentes. E a realidade é que somente 33% das empresas fazem auditorias regulares para checar o uso de IAs não autorizadas — o que o mercado chama de "Shadow IA".</p>
       <blockquote>O que deveria acontecer: a empresa precisa de uma auditoria de uso atual de IA, uma política interna clara sobre o que pode e o que não pode ser compartilhado com ferramentas externas, e adequação à LGPD no contexto de IA. Não amanhã — agora.</blockquote>
 
-      <h2>Sinal 3: Processos que poderiam ser automatizados (mas ninguém mapeou)</h2>
+      <h2>Sinal 3: Processes que poderiam ser automatizados (mas ninguém mapeou)</h2>
       <p>Enquanto sua equipe gasta horas fazendo relatórios manuais, classificando e-mails, organizando documentos e tabulando dados, a IA poderia fazer isso em minutos. Mas ninguém parou para olhar o processo de ponta a ponta e perguntar: "Onde a IA pode entrar aqui?"</p>
       <p>A maioria das empresas perde 30% a 40% do tempo operacional em tarefas que poderiam ser automatizadas. Não estamos falando de substituir pessoas — estamos falando de liberar o time para fazer o que realmente importa: pensar, criar, decidir.</p>
       <blockquote>O que deveria acontecer: um diagnóstico operacional que mapeie cada processo, identifique gargalos e entregue um laudo com ROI estimado por oportunidade de automação. Isso não é "futurismo" — é engenharia de processos com IA aplicada.</blockquote>
@@ -594,6 +594,50 @@ export const labPosts: LabPost[] = [
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <p class="text-f-mint/80">A Foster IA existe exatamente para essa transição. Do diagnóstico operacional à implantação guiada, com compliance e treinamento do time. Se sua empresa já fez o piloto mas não conseguiu escalar, o problema não é tecnologia — é método. Um diagnóstico gratuito de 60 minutos mostra por onde começar.</p>
+        <div class="mt-6">
+          <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
+        </div>
+      </div>
+    `
+  },
+  {
+    id: "12",
+    slug: "mcp-usb-c-ia-agentes-producao-empresas",
+    categoria: "/ notícias",
+    titulo: "MCP: O \"USB-C da IA\" Já Tem 97 Milhões de Instalações — E Agentes Estão Saindo do Demo Para Produção",
+    descricao: "O Model Context Protocol (MCP) da Anthropic se tornou padrão global para conectar agentes de IA a ferramentas reais. OpenAI, Google e Microsoft adotaram.",
+    tempoLeitura: "5 min",
+    data: "02 Abr 2026",
+    autor: "Foster Company",
+    tags: ["MCP", "Model Context Protocol", "agentes de IA", "infraestrutura IA", "automação"],
+    imagemCapa: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2400&auto=format&fit=crop",
+    likes: 41,
+    conteudo: `
+      <p>Quando a Anthropic lançou o Model Context Protocol (MCP) em novembro de 2024, a maioria das equipes de tecnologia tratou como mais um padrão que morreria em comitê. Dezesseis meses depois, o MCP acumulou 97 milhões de downloads mensais dos seus SDKs e se tornou a infraestrutura padrão para conectar agentes de IA a ferramentas externas — bancos de dados, CRMs, e-mails, repositórios de código, ERPs e qualquer sistema empresarial.</p>
+
+      <p>A adoção é sem precedentes. OpenAI, Google DeepMind, Microsoft, AWS e praticamente toda grande plataforma de IA embarcaram no protocolo. Mais de 5.800 servidores MCP foram construídos pela comunidade. Em março de 2026, a Anthropic doou o MCP para a Linux Foundation, criando junto a Agentic AI Foundation (AAIF) — co-fundada por Anthropic, Block e OpenAI, com apoio de Google, Microsoft, AWS, Cloudflare e Bloomberg.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fontes: Anthropic Blog, 03/2026; The New Stack, 12/2025; AI Unfiltered, 25/03/2026; Wikipedia — Model Context Protocol)</p>
+
+      <h2>Por que isso importa (e muito) para empresas</h2>
+      <p>O MCP resolve um problema que travava a adoção de IA em empresas: a fragmentação de integrações. Antes do protocolo, cada ferramenta de IA exigia conectores customizados para cada sistema. Integrar o Claude com seu CRM era um projeto. Integrar o GPT com o mesmo CRM era outro projeto completamente diferente. Multiplicando isso por dezenas de ferramentas e sistemas, o custo de integração inviabilizava a escala.</p>
+
+      <p>Com MCP, a integração é feita uma vez e funciona com qualquer provedor de IA que suporte o protocolo. É por isso que a analogia com o USB-C funciona tão bem: antes, cada dispositivo tinha seu próprio cabo. Agora, um padrão universal conecta tudo.</p>
+
+      <p>A linha do tempo de adoção conta a história: em novembro de 2024, o MCP tinha 2 milhões de downloads mensais. Quando a OpenAI adotou em abril de 2025, saltou para 22 milhões. A integração com Microsoft Copilot Studio em julho levou a 45 milhões. AWS Bedrock em novembro: 68 milhões. Em março de 2026: 97 milhões.</p>
+      
+      <p class="text-xs text-f-mint/40 mt-4">(Fonte: Bonjoy Enterprise Guide, 03/2026)</p>
+
+      <h2>O que vem pela frente</h2>
+      <p>O roadmap do MCP para 2026 inclui três marcos que vão acelerar a adoção enterprise: autenticação empresarial com OAuth 2.1 e integração com provedores de identidade como Okta e Azure AD (prevista para Q2 2026), coordenação entre agentes — permitindo que um agente chame outro como se fosse uma ferramenta (Q3 2026), e um Registry oficial com servidores verificados, auditados e com SLAs definidos (Q4 2026).</p>
+
+      <p>Para empresas que estão implantando IA agora, o MCP muda o cálculo estratégico: ao invés de se amarrar a um fornecedor, a integração feita com MCP funciona com qualquer provedor. Isso reduz risco, acelera implantação e cria uma base técnica que escala.</p>
+
+      <h2>O que sua empresa precisa saber</h2>
+      <p>Agentes de IA — sistemas que não apenas respondem perguntas, mas executam tarefas de forma autônoma dentro dos seus processos — deixaram de ser conceito e viraram realidade operacional. Com o MCP como infraestrutura, a pergunta não é mais "quando agentes de IA vão funcionar?". É "sua empresa está preparada para recebê-los com segurança, governança e integração aos sistemas que já usa?".</p>
+
+      <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
+        <p class="text-f-mint/80">A Foster IA implanta agentes e automações de IA integrados aos sistemas que sua empresa já opera — CRM, ERP, ferramentas de comunicação, bases de dados. Cada implantação vem com política de uso, compliance LGPD e treinamento do time. Se você quer sair do ChatGPT avulso e entrar na era dos agentes conectados, o diagnóstico gratuito mostra o caminho.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
