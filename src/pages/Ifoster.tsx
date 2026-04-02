@@ -339,7 +339,7 @@ export default function Ifoster() {
         </div>
       </section>
 
-      {/* PARA QUEM É O iFOSTER */}
+      {/* PARA QUEM É O iFOSTER ISO */}
       <section className="py-28 bg-[#030D09]">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="text-center mb-16">
@@ -374,8 +374,10 @@ export default function Ifoster() {
 
           <AnimatedSection delay={100}>
             <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="grid grid-cols-2 bg-[#50F2A7]/5 border-b border-[#50F2A7]/20">
-                <div className="p-6 font-mono text-[13px] text-[#E1F2DF]/50 uppercase text-center">FERRAMENTAS COMUNS</div>
+              {/* Header corrigido para grid-cols-3 */}
+              <div className="grid grid-cols-3 bg-[#50F2A7]/5 border-b border-[#50F2A7]/20">
+                <div className="p-6 border-r border-[#50F2A7]/10"></div>
+                <div className="p-6 font-mono text-[13px] text-[#E1F2DF]/50 uppercase text-center border-r border-[#50F2A7]/10">FERRAMENTAS COMUNS</div>
                 <div className="p-6 font-mono text-[13px] text-[#50F2A7] uppercase text-center font-bold">iFOSTER PROPRIETÁRIO</div>
               </div>
               
