@@ -5,10 +5,10 @@ import { labPosts, LabPost } from '../data/labPosts';
 
 export default function Lab() {
   const [activeFilter, setActiveFilter] = useState('Todos');
-  const filters = ['Todos', '/ caso', '/ experimento', '/ método', '/ sinal'];
+  const filters = ['Todos', '/ caso', '/ experimento', '/ método', '/ inteligência'];
 
   const filteredPosts = useMemo(() => {
-    if (activeFilter === 'Todos') return labPosts;
+    if (activeFilter === 'Todos') return [...labPosts].sort((a, b) => Number(b.id) - Number(a.id));
     return labPosts.filter(post => post.categoria === activeFilter);
   }, [activeFilter]);
 
@@ -20,7 +20,6 @@ export default function Lab() {
       onClick={() => window.location.hash = `#lab-${post.slug}`}
       className={`group cursor-pointer bg-f-dark/40 border border-f-neon/10 rounded-2xl overflow-hidden hover:border-f-neon/40 hover:shadow-[0_0_30px_rgba(80,242,167,0.1)] transition-all duration-300 flex ${featured ? 'flex-col lg:flex-row' : 'flex-col'}`}
     >
-      {/* Capa */}
       <div className={`relative overflow-hidden ${featured ? 'lg:w-[60%] aspect-video' : 'w-full aspect-video'}`}>
         <div className="absolute inset-0 bg-gradient-to-t from-f-black via-transparent to-transparent z-10 opacity-60"></div>
         <img 
@@ -30,12 +29,11 @@ export default function Lab() {
         />
         <div className="absolute top-4 left-4 z-20">
           <span className="bg-f-neon text-f-black font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-            {featured ? '/ em destaque' : post.categoria}
+            {post.categoria}
           </span>
         </div>
       </div>
 
-      {/* Conteúdo */}
       <div className={`p-6 md:p-8 flex flex-col justify-between ${featured ? 'lg:w-[40%]' : 'flex-grow'}`}>
         <div>
           <h3 className={`font-display font-bold text-f-mint mb-3 group-hover:text-f-neon transition-colors ${featured ? 'text-3xl' : 'text-xl'}`}>
@@ -74,7 +72,6 @@ export default function Lab() {
   return (
     <div className="w-full min-h-screen bg-f-black pt-[140px] pb-32">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
-        {/* HERO */}
         <AnimatedSection className="mb-20">
           <div className="font-mono text-f-neon/70 mb-6">/ o lab</div>
           <h1 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-f-mint leading-[1.1] mb-6">
@@ -87,7 +84,6 @@ export default function Lab() {
           </p>
         </AnimatedSection>
 
-        {/* FILTROS */}
         <AnimatedSection delay={100} className="mb-16">
           <div className="flex flex-wrap gap-3">
             {filters.map(filter => (
@@ -106,15 +102,12 @@ export default function Lab() {
           </div>
         </AnimatedSection>
 
-        {/* GRID */}
         {filteredPosts.length > 0 ? (
           <div className="space-y-8">
-            {/* Featured */}
             <AnimatedSection delay={200}>
               <PostCard post={featuredPost} featured={true} />
             </AnimatedSection>
 
-            {/* Sub-grid */}
             {otherPosts.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {otherPosts.map((post, i) => (
