@@ -243,7 +243,8 @@ export default function Home() {
                 <h2 className="font-display font-bold text-[clamp(40px,6vw,56px)] text-f-mint mb-8">
                   <span className="block" data-i18n="ifoster_hero_title_1">{t('ifoster_hero_title_1')}</span>
                   <span className="block" data-i18n="ifoster_hero_title_2">{t('ifoster_hero_title_2')}</span>
-                  <span className="block text-f-neon text-glow-sm" data-i18n="ifoster_hero_title_3">{t('ifoster_hero_title_3')}</span>
+                  <span className="block" data-i18n="ifoster_hero_title_3">{t('ifoster_hero_title_3')}</span>
+                  <span className="block text-f-neon text-glow-sm" data-i18n="ifoster_hero_title_4">{t('ifoster_hero_title_4')}</span>
                 </h2>
                 <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg" data-i18n="ifoster_desc">
                   {t('ifoster_desc')}
