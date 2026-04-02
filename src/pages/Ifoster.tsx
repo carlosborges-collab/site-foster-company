@@ -52,18 +52,18 @@ export default function Ifoster() {
           <div>
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 bg-[#50F2A7]/5 border border-[#50F2A7]/30 rounded-full px-4 py-1.5 mb-8">
-                <span className="font-mono text-[12px] text-[#50F2A7]" data-i18n="hero_badge">{t('hero_badge')}</span>
+                <span className="font-mono text-[12px] text-[#50F2A7]">{t('ifp_hero_badge')}</span>
               </div>
               
               <h1 className="font-display font-bold text-[clamp(48px,7vw,80px)] leading-[1.0] tracking-tight mb-8">
-                <span className="block text-[#E1F2DF]" data-i18n="ifoster_hero_title_1">{t('ifoster_hero_title_1')}</span>
-                <span className="block text-[#E1F2DF]" data-i18n="ifoster_hero_title_2">{t('ifoster_hero_title_2')}</span>
-                <span className="block text-[#50F2A7] text-glow" data-i18n="ifoster_hero_title_3">{t('ifoster_hero_title_3')}</span>
+                <span className="block text-[#E1F2DF]">{t('ifp_hero_h1_1')}</span>
+                <span className="block text-[#E1F2DF]">{t('ifp_hero_h1_2')}</span>
+                <span className="block text-[#50F2A7] text-glow">{t('ifp_hero_h1_3')}</span>
               </h1>
 
               <div className="border-l-[3px] border-[#50F2A7] pl-6 max-w-[500px] mb-10">
-                <p className="text-[#E1F2DF]/60 text-[18px] font-light leading-[1.55]" data-i18n="ifoster_desc">
-                  {t('ifoster_desc')}
+                <p className="text-[#E1F2DF]/60 text-[18px] font-light leading-[1.55]">
+                  {t('ifp_hero_sub')}
                 </p>
               </div>
 
@@ -71,11 +71,10 @@ export default function Ifoster() {
                 <button 
                   onClick={openContactModal}
                   className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-8 py-4 text-center hover:glow-neon transition-all duration-300 cursor-pointer"
-                  data-i18n="ifoster_cta_main"
                 >
                   {t('ifoster_cta_main')}
                 </button>
-                <a href="#ifoster-agentes" className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-8 py-4 text-center hover:bg-[#50F2A7]/10 transition-all duration-300">
+                <a href="#agentes" className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-8 py-4 text-center hover:bg-[#50F2A7]/10 transition-all duration-300">
                   Ver Agentes
                 </a>
               </div>
@@ -94,7 +93,7 @@ export default function Ifoster() {
                       <span className="text-[#50F2A7] text-sm">✦</span>
                     </div>
                     <div className="font-mono text-[13px] text-[#E1F2DF]">
-                      iFoster · Roteirista IA <span className="text-[#50F2A7] animate-pulse">●</span>
+                      iFoster · Operação Proprietária <span className="text-[#50F2A7] animate-pulse">●</span>
                     </div>
                   </div>
 
@@ -104,7 +103,7 @@ export default function Ifoster() {
                     {/* User Msg 1 */}
                     <div className={`flex justify-end transition-all duration-500 ${chatStep >= 0 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                       <div className="bg-[#50F2A7]/10 text-[#E1F2DF] rounded-2xl rounded-tr-sm px-5 py-3 max-w-[85%]">
-                        Preciso de um roteiro para um Shorts sobre posicionamento digital, 59 segundos, hook forte.
+                        Gerar relatório de tendências baseado no nosso histórico de vendas do último trimestre.
                       </div>
                     </div>
 
@@ -126,42 +125,12 @@ export default function Ifoster() {
                           <span className="text-[#50F2A7] text-xs">✦</span>
                         </div>
                         <div className="bg-[#104037]/60 text-[#E1F2DF] rounded-2xl rounded-tl-sm px-5 py-4">
-                          <p className="mb-3">Perfeito. Aqui está o seu roteiro:</p>
+                          <p className="mb-3">Acessando base de dados interna... Relatório gerado com sucesso:</p>
                           <div className="font-mono text-[12px] text-[#50F2A7]/90 bg-[#030D09] p-3 rounded-lg border border-[#50F2A7]/20">
-                            HOOK (0-3s): "A maioria das marcas está invisível — e nem sabe."<br/><br/>
-                            DESENVOLVIMENTO (4-52s): ...
+                            DATA_SOURCE: Internal_Server_01<br/>
+                            INSIGHT: Crescimento de 24% no segmento...<br/>
+                            STATUS: Concluído ✓
                           </div>
-                          <button className="mt-3 text-[#50F2A7] text-[12px] font-mono hover:underline">ver roteiro completo</button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* User Msg 2 */}
-                    <div className={`flex justify-end transition-all duration-500 ${chatStep >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'} ${chatStep >= 3 ? '!flex' : ''}`}>
-                      <div className="bg-[#50F2A7]/10 text-[#E1F2DF] rounded-2xl rounded-tr-sm px-5 py-3 max-w-[85%]">
-                        Pode adaptar para o Instagram também?
-                      </div>
-                    </div>
-
-                    {/* Agent Typing 2 */}
-                    {chatStep === 3 && (
-                      <div className="flex justify-start">
-                        <div className="bg-[#104037]/60 rounded-2xl rounded-tl-sm px-5 py-4 flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-[#50F2A7] rounded-full animate-bounce"></div>
-                          <div className="w-1.5 h-1.5 bg-[#50F2A7] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                          <div className="w-1.5 h-1.5 bg-[#50F2A7] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Agent Msg 2 */}
-                    <div className={`flex justify-start transition-all duration-500 ${chatStep >= 4 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 hidden'} ${chatStep >= 4 ? '!flex' : ''}`}>
-                      <div className="flex gap-3 max-w-[90%]">
-                        <div className="w-7 h-7 rounded-full bg-[#50F2A7]/20 flex items-center justify-center shrink-0 mt-1">
-                          <span className="text-[#50F2A7] text-xs">✦</span>
-                        </div>
-                        <div className="bg-[#104037]/60 text-[#E1F2DF] rounded-2xl rounded-tl-sm px-5 py-3">
-                          Claro. Versão para feed de 30s gerada. ✓
                         </div>
                       </div>
                     </div>
@@ -171,7 +140,7 @@ export default function Ifoster() {
                   {/* Chat Input Area */}
                   <div className="p-4 border-t border-[#50F2A7]/10 bg-[#030D09]">
                     <div className="bg-[#50F2A7]/5 border border-[#50F2A7]/20 rounded-full px-4 py-3 flex items-center justify-between">
-                      <span className="text-[#E1F2DF]/30 text-sm">Mensagem para Roteirista IA...</span>
+                      <span className="text-[#E1F2DF]/30 text-sm">Acessando servidor proprietário...</span>
                       <Send size={16} className="text-[#50F2A7]/50" />
                     </div>
                   </div>
@@ -190,9 +159,9 @@ export default function Ifoster() {
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <AnimatedSection className="mb-16">
             <div className="font-mono text-[#50F2A7]/70 mb-6">/ super agentes</div>
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-[#E1F2DF] mb-6">Especialistas em criação. Disponíveis agora.</h2>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-[#E1F2DF] mb-6">{t('ifp_agents_title')}</h2>
             <p className="text-[#E1F2DF]/60 text-[18px] max-w-3xl">
-              Cada agente foi treinado pela Foster para dominar uma área criativa específica. Não são chatbots genéricos — são especialistas.
+              {t('ifp_agents_subtitle')}
             </p>
           </AnimatedSection>
 
@@ -210,15 +179,17 @@ export default function Ifoster() {
                     <div className="font-mono text-[10px] text-[#50F2A7] mt-1">Vídeo · Podcast · Comercial · Série</div>
                   </div>
                 </div>
-                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6">
+                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-4">
                   Roteiros para YouTube, Reels, comerciais, podcasts e séries. Com estrutura narrativa, timing e hook — do briefing ao script pronto.
                 </p>
-                <div className="bg-[#030D09] border border-[#50F2A7]/10 rounded-xl p-4 font-mono text-[12px] text-[#50F2A7]/80 mb-6 mt-auto">
-                  <span className="text-[#E1F2DF]/50">HOOK:</span> "Você está perdendo dinheiro por..."<br/>
-                  <span className="text-[#E1F2DF]/50">DESENVOLVIMENTO:</span> ...<br/>
-                  <span className="text-[#E1F2DF]/50">CTA:</span> "Comenta aqui se você..."
+                <div className="text-[11px] font-mono text-[#50F2A7]/60 mb-6 italic">
+                  {t('ifp_agents_lock')}
                 </div>
-                <div className="font-mono text-[11px] text-[#50F2A7]">◉ Ativo na plataforma</div>
+                <div className="bg-[#030D09] border border-[#50F2A7]/10 rounded-xl p-4 font-mono text-[12px] text-[#50F2A7]/80 mb-6 mt-auto">
+                  <span className="text-[#E1F2DF]/50">CONTEXTO:</span> "Padrão de Linguagem Corporativa v2.1"<br/>
+                  <span className="text-[#E1F2DF]/50">FONTE:</span> "Guia de Tom de Voz da Marca.pdf"<br/>
+                </div>
+                <div className="font-mono text-[11px] text-[#50F2A7]">◉ {t('ifp_agents_badge')}</div>
               </div>
             </AnimatedSection>
 
@@ -234,13 +205,16 @@ export default function Ifoster() {
                     <div className="font-mono text-[10px] text-[#50F2A7] mt-1">Anúncios · Sites · E-mail · Redes Sociais</div>
                   </div>
                 </div>
-                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6">
+                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-4">
                   Copy de alta conversão para anúncios, landing pages, e-mails e posts. Cada palavra com intenção — cada texto testado para converter.
                 </p>
-                <div className="bg-[#030D09] border border-[#50F2A7]/10 rounded-xl p-4 font-mono text-[12px] text-[#50F2A7]/80 mb-6 mt-auto">
-                  <span className="text-[#E1F2DF]/50">HEADLINE:</span> "O método que dobrou as vendas de..."
+                <div className="text-[11px] font-mono text-[#50F2A7]/60 mb-6 italic">
+                  {t('ifp_agents_lock')}
                 </div>
-                <div className="font-mono text-[11px] text-[#50F2A7]">◉ Ativo na plataforma</div>
+                <div className="bg-[#030D09] border border-[#50F2A7]/10 rounded-xl p-4 font-mono text-[12px] text-[#50F2A7]/80 mb-6 mt-auto">
+                  <span className="text-[#E1F2DF]/50">APRENDIZADO:</span> "Histórico de CTR Campanha Julho/Agosto"
+                </div>
+                <div className="font-mono text-[11px] text-[#50F2A7]">◉ {t('ifp_agents_badge')}</div>
               </div>
             </AnimatedSection>
 
@@ -256,10 +230,13 @@ export default function Ifoster() {
                     <div className="font-mono text-[10px] text-[#50F2A7] mt-1">Calendário · Posicionamento · Funil</div>
                   </div>
                 </div>
-                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6 mt-auto">
+                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-4 mt-auto">
                   Planejamento editorial completo, calendário de conteúdo, estratégia de posicionamento e funil de audiência. Da ideia ao plano de execução.
                 </p>
-                <div className="font-mono text-[11px] text-[#50F2A7]">◉ Ativo na plataforma</div>
+                <div className="text-[11px] font-mono text-[#50F2A7]/60 mb-6 italic">
+                  {t('ifp_agents_lock')}
+                </div>
+                <div className="font-mono text-[11px] text-[#50F2A7]">◉ {t('ifp_agents_badge')}</div>
               </div>
             </AnimatedSection>
 
@@ -275,56 +252,34 @@ export default function Ifoster() {
                     <div className="font-mono text-[10px] text-[#50F2A7] mt-1">Engenharia de Prompts · IA · Automação</div>
                   </div>
                 </div>
-                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6">
+                <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-4">
                   Extrai o máximo de qualquer ferramenta de IA com prompts construídos para resultados. Para quem quer usar IA de verdade, não só experimentar.
                 </p>
-                <div className="bg-[#030D09] border border-[#50F2A7]/10 rounded-xl p-4 font-mono text-[12px] text-[#50F2A7]/80 mb-6 mt-auto">
-                  <span className="text-[#E1F2DF]/50">{'>'}</span> Prompt otimizado gerado. Taxa de precisão: 94%
+                <div className="text-[11px] font-mono text-[#50F2A7]/60 mb-6 italic">
+                  {t('ifp_agents_lock')}
                 </div>
-                <div className="font-mono text-[11px] text-[#50F2A7]">◉ Ativo na plataforma</div>
+                <div className="font-mono text-[11px] text-[#50F2A7]">◉ {t('ifp_agents_badge')}</div>
               </div>
             </AnimatedSection>
 
-            {/* EM BREVE / NEWSLETTER */}
+            {/* EXPANSÍVEL SOB DEMANDA */}
             <AnimatedSection delay={400} className="md:col-span-2">
               <div className="bg-[#50F2A7]/[0.03] border-2 border-dashed border-[#50F2A7]/30 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
-                  <div className="font-mono text-[10px] text-[#50F2A7] mb-3">🚀 Em desenvolvimento</div>
-                  <h3 className="font-display font-bold text-3xl text-[#E1F2DF] mb-3">Novos agentes chegando.</h3>
+                  <div className="font-mono text-[10px] text-[#50F2A7] mb-3">{t('ifp_dev_badge')}</div>
+                  <h3 className="font-display font-bold text-3xl text-[#E1F2DF] mb-3">{t('ifp_dev_title')}</h3>
                   <p className="text-[#E1F2DF]/60 text-[16px] max-w-xl">
-                    A Foster está treinando novos Super Agentes para ampliar o ecossistema iFoster. Deixe seu e-mail para ser notificado.
+                    {t('ifp_dev_desc')}
                   </p>
                 </div>
                 
                 <div className="w-full md:w-auto">
-                  {!isSubscribed ? (
-                    <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3">
-                      <input 
-                        required
-                        type="email" 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Seu melhor e-mail" 
-                        className="bg-[#030D09] border border-[#50F2A7]/20 rounded-full px-6 py-3 text-[#E1F2DF] placeholder-[#E1F2DF]/30 focus:outline-none focus:border-[#50F2A7]/50 w-full sm:w-64 transition-colors" 
-                      />
-                      <button 
-                        disabled={isSubmitting}
-                        type="submit"
-                        className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-6 py-3 hover:glow-neon transition-all whitespace-nowrap cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
-                      >
-                        {isSubmitting ? (
-                          <div className="w-5 h-5 border-2 border-[#030D09]/30 border-t-[#030D09] rounded-full animate-spin"></div>
-                        ) : (
-                          "Quero ser notificado"
-                        )}
-                      </button>
-                    </form>
-                  ) : (
-                    <div className="flex items-center gap-3 bg-[#50F2A7]/10 border border-[#50F2A7]/30 rounded-full px-6 py-3 text-[#50F2A7] animate-in fade-in zoom-in duration-300">
-                      <Check size={18} />
-                      <span className="font-display font-medium text-sm">Registrado em contato@fosterprodutora.com.br</span>
-                    </div>
-                  )}
+                  <button 
+                    onClick={openContactModal}
+                    className="bg-[#50F2A7] text-[#030D09] font-display font-semibold rounded-full px-8 py-4 hover:glow-neon transition-all whitespace-nowrap cursor-pointer flex items-center justify-center gap-2 w-full md:w-auto"
+                  >
+                    {t('ifp_dev_cta')}
+                  </button>
                 </div>
               </div>
             </AnimatedSection>
@@ -337,11 +292,10 @@ export default function Ifoster() {
       <section className="py-28 bg-[#104037] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <AnimatedSection className="text-center mb-20">
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-[#E1F2DF]">Simples como um chat. Poderoso como uma agência.</h2>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-[#E1F2DF]">{t('ifp_how_title')}</h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-            {/* Linha conectando as etapas (Desktop) */}
             <div className="hidden md:block absolute top-8 left-[15%] right-[15%] h-px bg-[#50F2A7]/20">
               <div className="h-full bg-[#50F2A7] w-1/3 animate-[slide-right_3s_ease-in-out_infinite]"></div>
             </div>
@@ -351,9 +305,9 @@ export default function Ifoster() {
                 <div className="w-16 h-16 rounded-full bg-[#030D09] border border-[#50F2A7]/40 flex items-center justify-center mx-auto mb-6 relative z-10 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                   <span className="font-mono text-xl text-[#50F2A7]">01</span>
                 </div>
-                <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">Acesse a plataforma</h3>
+                <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">{t('ifp_how_step1_t')}</h3>
                 <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">
-                  Entre no iFoster e escolha o agente especializado para o que você precisa agora.
+                  {t('ifp_how_step1_d')}
                 </p>
               </div>
             </AnimatedSection>
@@ -363,9 +317,9 @@ export default function Ifoster() {
                 <div className="w-16 h-16 rounded-full bg-[#030D09] border border-[#50F2A7]/40 flex items-center justify-center mx-auto mb-6 relative z-10 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                   <span className="font-mono text-xl text-[#50F2A7]">02</span>
                 </div>
-                <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">Descreva o que quer</h3>
+                <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">{t('ifp_how_step2_t')}</h3>
                 <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">
-                  Fale com o agente como falaria com um especialista humano. Quanto mais contexto, melhor o resultado.
+                  {t('ifp_how_step2_d')}
                 </p>
               </div>
             </AnimatedSection>
@@ -375,9 +329,9 @@ export default function Ifoster() {
                 <div className="w-16 h-16 rounded-full bg-[#030D09] border border-[#50F2A7]/40 flex items-center justify-center mx-auto mb-6 relative z-10 shadow-[0_0_15px_rgba(80,242,167,0.2)]">
                   <span className="font-mono text-xl text-[#50F2A7]">03</span>
                 </div>
-                <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">Receba e use</h3>
+                <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-4">{t('ifp_how_step3_t')}</h3>
                 <p className="text-[#E1F2DF]/70 text-[15px] leading-[1.6]">
-                  O agente entrega o resultado — roteiro, copy, estratégia ou prompt — pronto para usar.
+                  {t('ifp_how_step3_d')}
                 </p>
               </div>
             </AnimatedSection>
@@ -389,15 +343,15 @@ export default function Ifoster() {
       <section className="py-28 bg-[#030D09]">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-[#E1F2DF]">Para quem precisa criar mais, com menos.</h2>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-[#E1F2DF]">{t('ifp_who_title')}</h2>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Criadores de Conteúdo", desc: "Roteiros e estratégias em minutos, não em horas.", icon: "🎙" },
-              { title: "Empresas", desc: "Copy, conteúdo e planejamento editorial sem contratar uma agência.", icon: "🏢" },
-              { title: "Líderes e Especialistas", desc: "Posicionamento e conteúdo com sua voz, acelerados por IA.", icon: "👔" },
-              { title: "Agências", desc: "Ampliar a capacidade criativa sem ampliar o time.", icon: "🤝" }
+              { title: t('ifp_who_1_t'), desc: t('ifp_who_1_d'), icon: "🏢" },
+              { title: t('ifp_who_2_t'), desc: t('ifp_who_2_d'), icon: "🎬" },
+              { title: t('ifp_who_3_t'), desc: t('ifp_who_3_d'), icon: "⚙️" },
+              { title: t('ifp_who_4_t'), desc: t('ifp_who_4_d'), icon: "👔" }
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 100}>
                 <div className="bg-[#50F2A7]/[0.02] border border-[#50F2A7]/10 rounded-2xl p-8 h-full hover:border-[#50F2A7]/30 transition-colors">
@@ -415,29 +369,33 @@ export default function Ifoster() {
       <section className="py-28 bg-[#104037]">
         <div className="max-w-5xl mx-auto px-5 md:px-8">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-[#E1F2DF]">iFoster vs. contratar uma equipe criativa.</h2>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-[#E1F2DF]">{t('ifp_comp_title')}</h2>
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
             <div className="bg-[#030D09] border border-[#50F2A7]/20 rounded-2xl overflow-hidden shadow-2xl">
               <div className="grid grid-cols-2 bg-[#50F2A7]/5 border-b border-[#50F2A7]/20">
-                <div className="p-6 font-mono text-[13px] text-[#E1F2DF]/50 uppercase text-center">EQUIPE TRADICIONAL</div>
-                <div className="p-6 font-mono text-[13px] text-[#50F2A7] uppercase text-center font-bold">iFOSTER</div>
+                <div className="p-6 font-mono text-[13px] text-[#E1F2DF]/50 uppercase text-center">FERRAMENTAS COMUNS</div>
+                <div className="p-6 font-mono text-[13px] text-[#50F2A7] uppercase text-center font-bold">iFOSTER PROPRIETÁRIO</div>
               </div>
               
               {[
-                ["R$5k–20k/mês em salários", "Assinatura acessível"],
-                ["Disponível em horário comercial", "24h, 7 dias"],
-                ["Dias para entregar um roteiro", "Minutos"],
-                ["Especialista em UMA área", "Agentes em TODAS as áreas"],
-                ["Férias, doenças, turnover", "Sempre disponível"]
+                ["Onde os dados ficam", "Servidores de terceiros", "Servidor da sua empresa"],
+                ["Treinamento", "Genérico, internet", "Exclusivo com seu conteúdo"],
+                ["Controle de acesso", "Limitado", "Por área, por função, por agente"],
+                ["Aprendizado", "Não retém o histórico da sua empresa", "Evolui com o uso e com novos dados"],
+                ["Compliance & LGPD", "Risco de exposição", "Ambiente controlado e auditável"],
+                ["Personalização", "Prompts manuais", "Agentes treinados para o seu contexto"]
               ].map((row, i) => (
-                <div key={i} className="grid grid-cols-2 border-b border-[#50F2A7]/10 last:border-0">
-                  <div className="p-6 text-[15px] text-[#E1F2DF]/60 border-r border-[#50F2A7]/10 flex items-center justify-center text-center">
+                <div key={i} className="grid grid-cols-3 border-b border-[#50F2A7]/10 last:border-0">
+                  <div className="p-6 text-[13px] text-[#E1F2DF]/40 font-mono flex items-center border-r border-[#50F2A7]/10">
                     {row[0]}
                   </div>
-                  <div className="p-6 text-[15px] text-[#E1F2DF] flex items-center justify-center text-center font-medium">
+                  <div className="p-6 text-[14px] text-[#E1F2DF]/60 border-r border-[#50F2A7]/10 flex items-center justify-center text-center">
                     {row[1]}
+                  </div>
+                  <div className="p-6 text-[14px] text-[#E1F2DF] flex items-center justify-center text-center font-medium">
+                    {row[2]}
                   </div>
                 </div>
               ))}
@@ -448,17 +406,27 @@ export default function Ifoster() {
 
       {/* CTA FINAL */}
       <section className="py-32 bg-[#030D09] text-center border-t border-[#50F2A7]/10">
-        <div className="max-w-3xl mx-auto px-5">
+        <div className="max-w-4xl mx-auto px-5">
           <AnimatedSection>
-            <h2 className="font-display font-bold text-[clamp(40px,6vw,64px)] text-[#E1F2DF] mb-10 leading-[1.1]">Uma equipe criativa inteira. No seu chat.</h2>
-            <button 
-              onClick={openContactModal}
-              className="inline-block bg-[#50F2A7] text-[#030D09] font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6 cursor-pointer"
-              data-i18n="ifoster_cta_bottom"
-            >
-              {t('ifoster_cta_bottom')}
-            </button>
-            <p className="font-mono text-[12px] text-[#E1F2DF]/40">Desenvolvido pela Foster Company · Creative AI Studio</p>
+            <h2 className="font-display font-bold text-[clamp(40px,5.5vw,64px)] text-[#E1F2DF] mb-6 leading-[1.1]">{t('ifp_cta_h2')}</h2>
+            <p className="text-xl text-[#E1F2DF]/50 mb-12 max-w-3xl mx-auto">
+              {t('ifp_cta_sub')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button 
+                onClick={openContactModal}
+                className="bg-[#50F2A7] text-[#030D09] font-display font-bold rounded-full px-10 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 cursor-pointer"
+              >
+                {t('ifp_cta_btn1')}
+              </button>
+              <button 
+                onClick={openContactModal}
+                className="border border-[#50F2A7]/30 text-[#50F2A7] font-display font-medium rounded-full px-10 py-5 text-lg hover:bg-[#50F2A7]/10 transition-all duration-300 cursor-pointer"
+              >
+                {t('ifp_cta_btn2')}
+              </button>
+            </div>
+            <p className="font-mono text-[12px] text-[#E1F2DF]/40 mt-12">Desenvolvido pela Foster Company · Creative AI Studio</p>
           </AnimatedSection>
         </div>
       </section>
