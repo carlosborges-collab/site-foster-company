@@ -23,7 +23,7 @@ export const labPosts: LabPost[] = [
     tempoLeitura: "6 min",
     data: "20 Mar 2026",
     autor: "Carlos Borges",
-    tags: ["gestão YouTube", "caso real", "SEO YouTube"],
+    tags: ["gestão YouTube", "caso real", "crescimento orgânico", "igrejas", "canal gospel"],
     imagemCapa: "src/assets/abba-pai-capa.webp",
     likes: 124,
     conteudo: `
@@ -31,13 +31,17 @@ export const labPosts: LabPost[] = [
 
       <p>A monetização estava ativada — mas o dinheiro não vinha na proporção certa. A cada dois minutos um anúncio pausava o vídeo. A experiência do usuário era péssima. O algoritmo percebe isso. O público também. E quando os dois percebem ao mesmo tempo, o crescimento trava. O canal não estava morto. Estava sufocando.</p>
 
+      <p><em>Dashboard YouTube Analytics — Crescimento Plano</em></p>
+
       <h2>O diagnóstico antes do remédio</h2>
       <p>A primeira coisa que fiz não foi mudar nada. Foi olhar. Auditei o canal inteiro: títulos, thumbnails, configurações técnicas, frequência de publicação, tags, telas finais, cards de interatividade, playlists — e principalmente os dados de retenção de cada vídeo.</p>
 
       <p>O que encontrei foi um padrão claro. Os vídeos eram bons. A embalagem era invisível. Títulos que não geravam curiosidade. Thumbnails que se perdiam no feed. Configurações técnicas que o YouTube penalizava silenciosamente. Um canal com conteúdo de qualidade que o algoritmo simplesmente não conseguia reconhecer — porque ninguém tinha ensinado o canal a se comunicar com a plataforma.</p>
 
+      <p><em>YouTube Studio Interface — Análise de Grid de Thumbnails — Foster Method</em></p>
+
       <h2>O que mudei — e por que funcionou</h2>
-      <p>Implementei tudo ao mesmo tempo. SEO, títulos, thumbnails e configurações técnicas. Não existe bala de prata no YouTube — existe sistema.</p>
+      <p>Implementei tudo ao mesmo tempo. SEO, títulos, thumbnails e configurações técnicas. No existe bala de prata no YouTube — existe sistema.</p>
 
       <ul>
         <li><strong>Títulos:</strong> passaram a trabalhar curiosidade e busca simultaneamente. Uma coisa é rankear. Outra é fazer a pessoa clicar. Os melhores títulos fazem as duas.</li>
@@ -46,22 +50,30 @@ export const labPosts: LabPost[] = [
         <li><strong>Anúncios:</strong> reduzimos drasticamente a frequência. Preferimos ganhar menos por vídeo e ganhar mais no longo prazo — com um canal que as pessoas voltam a assistir.</li>
       </ul>
 
+      <p><em>Thumbnail Comparison — A/B Testing — Comparação de Impacto Visual</em></p>
+
       <h2>O crescimento não explodiu. Ele foi construído.</h2>
       <p>Isso é importante dizer com honestidade. Não teve um vídeo viral que salvou tudo. Não teve um hack secreto. O canal foi de 100k para 700k inscritos em menos de dois anos de forma gradual, mês a mês — com uma média de aproximadamente 25 mil novos inscritos por mês durante o período em que gerenciei o canal.</p>
 
       <p>Julho de 2022 foi um dos meses de pico: +21.500 novos inscritos, 2,7 milhões de visualizações e R$18.448 de receita — números que confirmavam que o sistema estava funcionando de forma consistente. Não foi sorte. Foi o resultado de cada variável sendo otimizada ao mesmo tempo.</p>
+
+      <p><em>Analytics July 2022 — Dados de Julho 2022 — Pico de Performance</em></p>
 
       <h2>O dado que mais me orgulha — e que poucas pessoas sabem</h2>
       <p>Quando encerrei a gestão do canal, outra equipe assumiu. Nos mais de dois anos seguintes — com a igreja ainda maior, mais presente e com mais recursos — o canal cresceu cerca de 200 mil inscritos.</p>
 
       <p>No mesmo período em que geríamos, a média era de 25 mil por mês. Isso não é crítica a ninguém. É uma prova objetiva de que o crescimento não veio porque a Abba Pai Church estava em expansão natural. Veio porque havia uma estratégia específica, executada com consistência, orientada por dados — e quando essa estratégia parou, o crescimento desacelerou proporcionalmente. O YouTube não perdoa ausência de método.</p>
 
+      <p><em>Growth Comparison Chart — Visualização de Dados — Aceleração vs Desaceleração</em></p>
+
       <h2>O que você pode aplicar hoje</h2>
+      <p>Se você tem um canal — de igreja, empresa ou criador — aqui estão as três primeiras perguntas que eu faria antes de qualquer coisa:</p>
       <ol>
         <li>Seus títulos geram curiosidade ou apenas descrevem o vídeo? Existe diferença enorme entre "Culto domingo 15/03" e "O que acontece quando você para de orar?"</li>
         <li>Sua thumbnail funciona em 80px de altura no celular? Esse é o tamanho real no feed mobile. Se o rosto some, o texto fica ilegível ou o contraste é baixo — você está invisível.</li>
         <li>Você configurou telas finais e cards? Cada vídeo sem tela final é um usuário que o YouTube manda embora do seu canal. É inscrito e receita que você deixa na mesa toda semana.</li>
       </ol>
+      <p><em>Editorial Tech Setup — Estratégia, Dados e Execução — Foster Company</em></p>
     `
   },
   {
@@ -77,13 +89,26 @@ export const labPosts: LabPost[] = [
     imagemCapa: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=2340&auto=format&fit=crop",
     likes: 89,
     conteudo: `
-      <p>A criação do clone digital de Rony Meisler, fundador da Reserva, foi um dos maiores desafios técnicos da Foster. O objetivo era permitir que um dos líderes mais influentes do país mantivesse sua presença digital 24/7 sem depender de sua agenda física de gravação.</p>
+      <p>Treinar uma Inteligência Artificial para replicar uma voz humana não é mais sobre tecnologia, é sobre nuances. Quando começamos o projeto com o Rony Meisler, o objetivo era claro: o avatar não poderia soar robótico.</p>
       
-      <h2>Capturando a Essência</h2>
-      <p>Não bastava apenas clonar o rosto. Precisávamos clonar a energia e o tom de voz característico do Rony. Utilizamos 20 minutos de gravação base de alta fidelidade para treinar o modelo de rede neural na plataforma HeyGen.</p>
+      <h2>A Ciência do Sotaque</h2>
+      <p>O desafio não estava nas palavras, mas no ritmo. O sotaque carioca do Rony possui cadências específicas que os modelos padrão de IA costumam ignorar ou 'achatar' em busca de uma clareza artificial.</p>
       
-      <h2>O Impacto na Produção</h2>
-      <p>Com o clone ativo, a produção de vídeos curtos para LinkedIn e Instagram triplicou. Onde antes levava-se uma tarde inteira para gravar e editar, agora leva-se minutos para gerar o vídeo a partir de um script de texto.</p>
+      <p><em>Estúdio de gravação profissional — Captação de áudio base para o treinamento do modelo neurônico.</em></p>
+      
+      <h2>O Fluxo de Trabalho</h2>
+      <p>Utilizamos uma técnica de 'finetuning' em três camadas. Primeiro, a limpeza do áudio base. Segundo, a extração de prosódia. Terceiro, o treinamento de resposta emocional.</p>
+      
+      <blockquote>"A tecnologia deve servir à essência, nunca o contrário."</blockquote>
+      
+      <ul>
+        <li>Captura de 20 minutos de áudio em ambiente controlado.</li>
+        <li>Mapeamento de expressões faciais síncronas com o áudio.</li>
+        <li>Ajuste fino de 'pacing' para garantir pausas naturais entre parágrafos.</li>
+      </ul>
+      
+      <h2>Conclusão</h2>
+      <p>O resultado é o que você vê hoje nos canais do Rony. Uma ferramenta de escala que mantém a verdade do criador intacta.</p>
     `
   },
   {
@@ -132,10 +157,9 @@ export const labPosts: LabPost[] = [
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
         <ul class="space-y-6">
-          <li><strong>Quanto tempo leva para ver resultado com IA na empresa?</strong><br/>Depende do nível de maturidade da operação, mas os primeiros resultados de automação geralmente aparecem entre 4 e 8 semanas após o diagnóstico inicial. O segredo é começar pelo processo que gera mais impacto com menor complexidade.</li>
-          <li><strong>Preciso ter uma equipe de TI para implantar IA?</strong><br/>Não. A Foster IA faz a implantação completa — da seleção das ferramentas ao treinamento do time. O objetivo é que sua empresa funcione com IA sem depender de consultoria para sempre.</li>
+          <li><strong>Quanto tempo leva para ver resultado com IA na empresa?</strong><br/>Depende do nível de maturidade da operação, mas os primeiros resultados de automação geralmente aparecem entre 4 e 8 semanas após o diagnóstico inicial.</li>
+          <li><strong>Preciso ter uma equipe de TI para implantar IA?</strong><br/>Não. A Foster IA faz a implantação completa — da seleção das ferramentas ao treinamento do time.</li>
           <li><strong>Minha empresa é pequena. IA faz sentido para mim?</strong><br/>Sim, especialmente se você tem processos repetitivos que consomem horas.</li>
-          <li><strong>Como sei se meus dados estão expostos em ferramentas de IA?</strong><br/>A Foster IA faz uma auditoria completa de uso atual, identifica riscos de exposição e entrega um laudo com recomendações de adequação à LGPD.</li>
         </ul>
       </div>
 
