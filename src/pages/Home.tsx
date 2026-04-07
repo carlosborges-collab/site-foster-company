@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { ChevronDown, CheckCircle2, Instagram, Youtube, ExternalLink, Zap } from 'lucide-react';
+import { ChevronDown, CheckCircle2, Instagram, Youtube, ExternalLink, Zap, Maximize2, X as XIcon } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { openContactModal } from '../utils/contactEvents';
 
@@ -8,6 +9,7 @@ export default function Home() {
   const [typewriterIndex, setTypewriterIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [playRony, setPlayRony] = useState(false);
+  const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const { t } = useLanguage();
   
   const lines = [
@@ -323,30 +325,50 @@ export default function Home() {
       <section id="instate" className="py-28 bg-f-black overflow-hidden relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            {/* Visual do Instate */}
-            <div className="relative">
-              <AnimatedSection delay={200}>
-                <div className="relative w-full aspect-video">
-                  {/* Imagem Principal: Home */}
-                  <div className="absolute top-0 left-0 w-[80%] z-20 rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <img src="/instate-home.png" alt="Instate Home Dashboard" className="w-full h-auto" />
+            {/* Visual do Instate - Ajustado para preencher o espaço vertical */}
+            <div className="relative h-[480px] lg:h-[600px] flex items-center justify-center">
+              <AnimatedSection delay={200} className="w-full h-full relative">
+                <div className="absolute inset-0">
+                  {/* Imagem Principal: Home - Centro-Esquerda */}
+                  <div 
+                    onClick={() => setSelectedImg('/instate-home.png')}
+                    className="absolute top-[5%] left-0 w-[75%] lg:w-[80%] z-20 rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl transform -rotate-3 hover:rotate-0 hover:scale-[1.02] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                  >
+                    <img src="/instate-home.png" alt="Instate Home Dashboard" className="w-full h-auto opacity-90 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <Maximize2 className="text-f-neon drop-shadow-lg" size={24} />
+                    </div>
                   </div>
-                  {/* Imagem Secundária: Playbook */}
-                  <div className="absolute top-[20%] right-0 w-[65%] z-30 rounded-xl overflow-hidden border border-f-neon/30 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                    <img src="/instate-playbook.png" alt="Instate Playbook Structure" className="w-full h-auto" />
+
+                  {/* Imagem Secundária: Playbook - Direita-Cima */}
+                  <div 
+                    onClick={() => setSelectedImg('/instate-playbook.png')}
+                    className="absolute top-[15%] right-0 w-[60%] lg:w-[65%] z-30 rounded-xl overflow-hidden border border-f-neon/30 shadow-2xl transform rotate-6 hover:rotate-0 hover:scale-[1.02] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                  >
+                    <img src="/instate-playbook.png" alt="Instate Playbook Structure" className="w-full h-auto opacity-90 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <Maximize2 className="text-f-neon drop-shadow-lg" size={24} />
+                    </div>
                   </div>
-                  {/* Imagem Terciária: RUN */}
-                  <div className="absolute -bottom-10 left-[15%] w-[70%] z-40 rounded-xl overflow-hidden border border-f-neon/40 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <img src="/instate-run.png" alt="Instate Interactive RUN" className="w-full h-auto" />
+
+                  {/* Imagem Terciária: RUN - Baixo-Centro */}
+                  <div 
+                    onClick={() => setSelectedImg('/instate-run.png')}
+                    className="absolute bottom-[5%] left-[10%] w-[70%] lg:w-[75%] z-40 rounded-xl overflow-hidden border border-f-neon/40 shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-[1.02] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                  >
+                    <img src="/instate-run.png" alt="Instate Interactive RUN" className="w-full h-auto opacity-90 group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <Maximize2 className="text-f-neon drop-shadow-lg" size={24} />
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
             </div>
 
             {/* Texto do Instate */}
-            <div className="flex flex-col items-start lg:pl-10">
+            <div className="flex flex-col items-start">
               <AnimatedSection>
                 <div className="font-mono text-f-neon/70 mb-6">{t('instate_eyebrow')}</div>
                 <h2 className="font-display font-bold text-[clamp(40px,6vw,56px)] text-f-mint mb-8">
@@ -385,6 +407,35 @@ export default function Home() {
 
           </div>
         </div>
+
+        {/* Modal de Zoom */}
+        <AnimatePresence>
+          {selectedImg && (
+            <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedImg(null)}
+                className="absolute inset-0 bg-f-black/95 backdrop-blur-xl"
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                className="relative max-w-7xl w-full h-fit bg-f-black border border-f-neon/20 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(80,242,167,0.15)]"
+              >
+                <button 
+                  onClick={() => setSelectedImg(null)}
+                  className="absolute top-6 right-6 z-20 bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all"
+                >
+                  <XIcon size={20} />
+                </button>
+                <img src={selectedImg} className="w-full h-auto" alt="Instate Preview Zoom" />
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* VERTICAIS (SOLUÇÕES) */}
