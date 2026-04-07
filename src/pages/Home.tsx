@@ -233,10 +233,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* iFOSTER EM DESTAQUE */}
+      {/* iFOSTER EM DESTAQUE - REDESENHADO COM FOCO PROFISSIONAL */}
       <section id="ifoster" className="py-28 bg-gradient-to-br from-f-black to-f-dark overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
             <div className="order-2 lg:order-1">
               <AnimatedSection>
@@ -277,29 +277,41 @@ export default function Home() {
               </AnimatedSection>
             </div>
 
-            {/* Visual Profissional iFoster - Stack de Imagens Reais */}
-            <div className="order-1 lg:order-2 relative h-[450px] lg:h-[550px] w-full flex items-center justify-center">
-              <AnimatedSection delay={200} className="w-full h-full relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                   {/* Login Screen - Atrás */}
+            {/* Visual iFoster - Alinhado e Reto */}
+            <div className="order-1 lg:order-2 flex items-center justify-center">
+              <AnimatedSection delay={200} className="w-full max-w-[580px]">
+                <div className="relative aspect-[16/11]">
+                   {/* Main Dashboard - Background Layer */}
                    <div 
-                     onClick={(e) => { e.stopPropagation(); setSelectedImg('/ifoster-login.png'); }}
-                     className="absolute top-0 left-4 w-[65%] z-10 rounded-2xl overflow-hidden border border-f-neon/20 shadow-[0_0_50px_rgba(0,0,0,0.4)] transform -rotate-3 hover:rotate-0 hover:scale-[1.02] hover:z-30 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                     onClick={() => setSelectedImg('/ifoster-dashboard.png')}
+                     className="absolute top-0 right-0 w-[92%] h-auto rounded-xl overflow-hidden border border-f-neon/30 bg-f-black shadow-2xl transition-all duration-500 hover:border-f-neon group cursor-zoom-in"
                    >
-                     <img src="/ifoster-login.png" alt="iFoster Login" className="w-full h-auto opacity-90 group-hover:opacity-100" />
+                     <div className="bg-f-dark/80 border-b border-f-neon/15 px-4 py-2 flex items-center gap-1.5">
+                       <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+                       <div className="ml-2 font-mono text-[9px] text-f-mint/40 uppercase tracking-widest">iFoster · Dashboard</div>
+                     </div>
+                     <img src="/ifoster-dashboard.png" alt="iFoster Dashboard" className="w-full h-auto" />
                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Maximize2 className="text-f-neon" size={24} />
+                       <Maximize2 className="text-f-neon" size={24} />
                      </div>
                    </div>
 
-                   {/* Dashboard Screen - Frente */}
+                   {/* Login Card - Foreground Layer */}
                    <div 
-                     onClick={(e) => { e.stopPropagation(); setSelectedImg('/ifoster-dashboard.png'); }}
-                     className="absolute bottom-4 right-4 w-[85%] z-20 rounded-2xl overflow-hidden border border-f-neon/30 shadow-[0_0_80px_rgba(80,242,167,0.1)] transform rotate-2 hover:rotate-0 hover:scale-[1.02] hover:z-30 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                     onClick={() => setSelectedImg('/ifoster-login.png')}
+                     className="absolute -bottom-8 -left-4 w-[55%] rounded-xl overflow-hidden border border-f-neon/40 bg-f-black shadow-[0_32px_64px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-f-neon group cursor-zoom-in z-10"
                    >
-                     <img src="/ifoster-dashboard.png" alt="iFoster Dashboard" className="w-full h-auto opacity-95 group-hover:opacity-100" />
+                     <div className="bg-f-dark/90 border-b border-f-neon/15 px-3 py-1.5 flex items-center gap-1">
+                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
+                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
+                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
+                       <div className="ml-2 font-mono text-[8px] text-f-mint/30 uppercase tracking-widest">Secure Login</div>
+                     </div>
+                     <img src="/ifoster-login.png" alt="iFoster Login" className="w-full h-auto" />
                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <Maximize2 className="text-f-neon" size={28} />
+                       <Maximize2 className="text-f-neon" size={20} />
                      </div>
                    </div>
                 </div>
@@ -310,48 +322,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* INSTATE EM DESTAQUE */}
+      {/* INSTATE EM DESTAQUE - REDESENHADO COM ALINHAMENTO GEOMÉTRICO */}
       <section id="instate" className="py-28 bg-f-black overflow-hidden relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            {/* Visual do Instate - Alinhamento Profissional Stacked */}
-            <div className="relative h-[500px] lg:h-[650px] w-full flex items-center justify-center">
-              <AnimatedSection delay={200} className="w-full h-full relative">
-                <div className="absolute inset-0">
-                  {/* Home - Fundo */}
+            {/* Visual do Instate - Composição Profissional em Bloco */}
+            <div className="flex items-center justify-center">
+              <AnimatedSection delay={200} className="w-full max-w-[620px]">
+                <div className="relative aspect-square md:aspect-video lg:aspect-square flex flex-col gap-4">
+                  
+                  {/* Top Image: Playbook (Full Width) */}
                   <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-home.png'); }}
-                    className="absolute top-0 left-0 w-[70%] z-10 rounded-xl overflow-hidden border border-f-neon/20 shadow-[0_0_50px_rgba(0,0,0,0.5)] transform -rotate-3 hover:rotate-0 hover:scale-[1.03] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                    onClick={() => setSelectedImg('/instate-playbook.png')}
+                    className="relative w-full rounded-xl overflow-hidden border border-f-neon/30 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
                   >
-                    <img src="/instate-home.png" alt="Instate Home" className="w-full h-auto opacity-90 group-hover:opacity-100" />
+                    <div className="bg-f-dark/60 border-b border-f-neon/15 px-4 py-2 flex items-center gap-1.5">
+                       <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+                       <div className="ml-2 font-mono text-[9px] text-f-mint/40 uppercase tracking-widest">Instate · Process Playbook</div>
+                    </div>
+                    <img src="/instate-playbook.png" alt="Instate Playbook" className="w-full h-auto" />
                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                        <Maximize2 className="text-f-neon" size={24} />
                     </div>
                   </div>
 
-                  {/* Playbook - Meio */}
-                  <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-playbook.png'); }}
-                    className="absolute top-1/2 -translate-y-1/2 right-4 w-[75%] z-20 rounded-xl overflow-hidden border border-f-neon/30 shadow-[0_0_60px_rgba(0,0,0,0.6)] transform rotate-2 hover:rotate-0 hover:scale-[1.03] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
-                  >
-                    <img src="/instate-playbook.png" alt="Instate Playbook" className="w-full h-auto opacity-90 group-hover:opacity-100" />
-                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                       <Maximize2 className="text-f-neon" size={24} />
+                  {/* Bottom Row: Home and RUN (50/50 Split) */}
+                  <div className="flex gap-4">
+                    <div 
+                      onClick={() => setSelectedImg('/instate-home.png')}
+                      className="flex-1 rounded-xl overflow-hidden border border-f-neon/20 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
+                    >
+                      <img src="/instate-home.png" alt="Instate Home" className="w-full h-auto" />
+                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                         <Maximize2 className="text-f-neon" size={18} />
+                      </div>
+                    </div>
+                    <div 
+                      onClick={() => setSelectedImg('/instate-run.png')}
+                      className="flex-1 rounded-xl overflow-hidden border border-f-neon/20 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
+                    >
+                      <img src="/instate-run.png" alt="Instate RUN" className="w-full h-auto" />
+                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                         <Maximize2 className="text-f-neon" size={18} />
+                      </div>
                     </div>
                   </div>
 
-                  {/* RUN - Frente */}
-                  <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-run.png'); }}
-                    className="absolute bottom-4 left-[10%] w-[70%] z-30 rounded-xl overflow-hidden border border-f-neon/40 shadow-[0_0_80px_rgba(80,242,167,0.15)] transform -rotate-1 hover:rotate-0 hover:scale-[1.03] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
-                  >
-                    <img src="/instate-run.png" alt="Instate RUN" className="w-full h-auto opacity-95 group-hover:opacity-100" />
-                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                       <Maximize2 className="text-f-neon" size={26} />
-                    </div>
-                  </div>
                 </div>
               </AnimatedSection>
             </div>
@@ -395,35 +415,6 @@ export default function Home() {
 
           </div>
         </div>
-
-        {/* Modal de Zoom Corrigido */}
-        <AnimatePresence>
-          {selectedImg && (
-            <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setSelectedImg(null)}
-                className="absolute inset-0 bg-f-black/95 backdrop-blur-xl"
-              />
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="relative max-w-7xl w-full h-fit bg-f-black border border-f-neon/20 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(80,242,167,0.15)] z-50"
-              >
-                <button 
-                  onClick={() => setSelectedImg(null)}
-                  className="absolute top-6 right-6 z-20 bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all"
-                >
-                  <XIcon size={20} />
-                </button>
-                <img src={selectedImg} className="w-full h-auto" alt="Zoom Preview" />
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
       </section>
 
       {/* VERTICAIS (SOLUÇÕES) */}
@@ -1144,7 +1135,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Lightbox / Modal de Zoom Corrigido e Otimizado */}
+      {/* Lightbox / Modal de Zoom Final e Corrigido */}
       <AnimatePresence>
         {selectedImg && (
           <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
