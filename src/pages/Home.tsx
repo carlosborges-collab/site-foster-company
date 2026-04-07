@@ -236,7 +236,7 @@ export default function Home() {
       {/* iFOSTER EM DESTAQUE */}
       <section id="ifoster" className="py-28 bg-gradient-to-br from-f-black to-f-dark overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             <div className="order-2 lg:order-1">
               <AnimatedSection>
@@ -1144,7 +1144,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Lightbox / Modal de Zoom Final Corrigido */}
+      {/* Lightbox / Modal de Zoom Corrigido e Otimizado */}
       <AnimatePresence>
         {selectedImg && (
           <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
@@ -1163,11 +1163,11 @@ export default function Home() {
             >
               <button 
                 onClick={() => setSelectedImg(null)}
-                className="absolute top-6 right-6 z-20 bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all"
+                className="absolute top-6 right-6 z-[10002] bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all cursor-pointer"
               >
                 <XIcon size={20} />
               </button>
-              <img src={selectedImg} className="w-full h-auto" alt="Zoom Preview" />
+              <img src={selectedImg} className="w-full h-auto block" alt="Preview Zoom" />
             </motion.div>
           </div>
         )}
