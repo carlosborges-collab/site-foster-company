@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
-import { ChevronDown, CheckCircle2, Instagram, Youtube } from 'lucide-react';
+import { ChevronDown, CheckCircle2, Instagram, Youtube, ExternalLink, Zap } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { openContactModal } from '../utils/contactEvents';
 
@@ -8,7 +8,6 @@ export default function Home() {
   const [typewriterIndex, setTypewriterIndex] = useState(0);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [playRony, setPlayRony] = useState(false);
-  const [playFatos, setPlayFatos] = useState(false);
   const { t } = useLanguage();
   
   const lines = [
@@ -320,6 +319,74 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INSTATE EM DESTAQUE */}
+      <section id="instate" className="py-28 bg-f-black overflow-hidden relative">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Visual do Instate */}
+            <div className="relative">
+              <AnimatedSection delay={200}>
+                <div className="relative w-full aspect-video">
+                  {/* Imagem Principal: Home */}
+                  <div className="absolute top-0 left-0 w-[80%] z-20 rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <img src="/instate-home.png" alt="Instate Home Dashboard" className="w-full h-auto" />
+                  </div>
+                  {/* Imagem Secundária: Playbook */}
+                  <div className="absolute top-[20%] right-0 w-[65%] z-30 rounded-xl overflow-hidden border border-f-neon/30 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                    <img src="/instate-playbook.png" alt="Instate Playbook Structure" className="w-full h-auto" />
+                  </div>
+                  {/* Imagem Terciária: RUN */}
+                  <div className="absolute -bottom-10 left-[15%] w-[70%] z-40 rounded-xl overflow-hidden border border-f-neon/40 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                    <img src="/instate-run.png" alt="Instate Interactive RUN" className="w-full h-auto" />
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Texto do Instate */}
+            <div className="flex flex-col items-start lg:pl-10">
+              <AnimatedSection>
+                <div className="font-mono text-f-neon/70 mb-6">{t('instate_eyebrow')}</div>
+                <h2 className="font-display font-bold text-[clamp(40px,6vw,56px)] text-f-mint mb-8">
+                  <span className="block">{t('instate_hero_title_1')}</span>
+                  <span className="block text-f-neon text-glow-sm">{t('instate_hero_title_2')} {t('instate_hero_title_3')}</span>
+                </h2>
+                <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg">
+                  {t('instate_desc')}
+                </p>
+                
+                <ul className="space-y-3 mb-10">
+                  {[
+                    "instate_feature_1",
+                    "instate_feature_2",
+                    "instate_feature_3",
+                    "instate_feature_4",
+                    "instate_feature_5"
+                  ].map((key, i) => (
+                    <li key={i} className="flex items-start gap-3 text-[15px] text-f-mint/80">
+                      <Zap size={18} className="text-f-neon shrink-0 mt-0.5" />
+                      <span>{t(key)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-col sm:flex-row gap-4 w-full">
+                  <a href="https://instate.fostercompany.com.br/empresa" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-8 py-4 text-center hover:glow-neon transition-all duration-300 flex items-center justify-center gap-2">
+                    {t('instate_cta')} <ExternalLink size={16} />
+                  </a>
+                  <a href="https://instate.fostercompany.com.br/creator" target="_blank" rel="noopener noreferrer" className="border border-f-neon/30 text-f-neon font-display font-medium rounded-full px-8 py-4 text-center hover:bg-f-neon/10 transition-all duration-300 flex items-center justify-center gap-2">
+                    Área do Criador <ExternalLink size={16} />
+                  </a>
+                </div>
+              </AnimatedSection>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* VERTICAIS (SOLUÇÕES) */}
       <section id="solucoes" className="py-28 bg-f-black bg-grid-pattern">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
@@ -456,7 +523,7 @@ export default function Home() {
                     {t('ifoster_card_desc')}
                   </p>
                   
-                  <a href="https://ifoster.com.br" target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
+                  <a href="#ifoster" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
                     {t('ifoster_card_cta')}
                   </a>
                 </div>
@@ -475,6 +542,47 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Instate Card */}
+            <AnimatedSection>
+              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
+                    <Zap size={24} className="text-f-neon" />
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-f-neon mb-1">⭐ Plataforma Própria</div>
+                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
+                      Knowledge Management · Playbooks · RUNs
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Instate</h3>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
+                  A plataforma onde a operação vira memória. Organize sua empresa com playbooks interativos, automatize processos e acesse os estudos estratégicos da Foster em um só lugar.
+                </p>
+
+                <div className="flex flex-col gap-3 mb-8">
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>Playbooks Automáticos</strong> — Transforme processos em guias passo a passo executáveis.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>Interface de RUNs</strong> — Execute tarefas complexas seguindo fluxos inteligentes.</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
+                    <span className="text-f-neon mt-1 shrink-0">▸</span>
+                    <span><strong>Base de Conhecimento</strong> — O onboarding do seu time 10x mais rápido.</span>
+                  </div>
+                </div>
+
+                <a href="#instate" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
+                  Conhecer o Instate →
+                </a>
+              </div>
+            </AnimatedSection>
+
             {/* Nomes & Marcas */}
             <AnimatedSection>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
@@ -503,10 +611,6 @@ export default function Home() {
                   <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
                     <span className="text-f-neon mt-1 shrink-0">▸</span>
                     <span><strong>Base INPI Atualizada Semanalmente</strong> — Pesquise contra dados reais, direto da Revista da Propriedade Industrial.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>Gestão Completa do Processo</strong> — Acompanhe seu registro do pedido à concessão em um dashboard próprio.</span>
                   </div>
                 </div>
 
@@ -545,55 +649,10 @@ export default function Home() {
                     <span className="text-f-neon mt-1 shrink-0">▸</span>
                     <span><strong>⚡ Otimizador de Vídeo</strong> — Gera títulos de alto CTR, descrição com SEO e tags estratégicas a partir da URL de qualquer vídeo.</span>
                   </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>📡 Mineração de Canais</strong> — Identifica canais em crescimento acelerado prontos para serem remodelados com vantagem competitiva.</span>
-                  </div>
                 </div>
 
                 <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
                   Conhecer o Stratube 2.0 →
-                </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Echowise AI */}
-            <AnimatedSection delay={200}>
-              <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
-                    <span className="font-display font-bold text-xl text-f-neon">E</span>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
-                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      SaaS · IA · Marketplace de Experts Digitais
-                    </div>
-                  </div>
-                </div>
-                
-                <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Echowise AI</h3>
-                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  Echowise AI é a plataforma onde experts criam seu clone digital com IA e passam a atender, educar e engajar seu público 24 horas por dia — sem precisar estar disponível.
-                </p>
-
-                <div className="flex flex-col gap-3 mb-8">
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>🤖 Clone Digital com IA</strong> — Sua personalidade, tom de voz e conhecimento em um clone que conversa por você.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>🔗 Bio Link Inteligente</strong> — Seu perfil público com link único para compartilhar em qualquer rede social.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>📊 Painel de Gestão Completo</strong> — Acompanhe conversas, gerencie sua base de conhecimento e monitore seus resultados.</span>
-                  </div>
-                </div>
-
-                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
-                  Conhecer o Echowise AI →
                 </div>
               </div>
             </AnimatedSection>
