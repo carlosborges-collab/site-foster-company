@@ -327,14 +327,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            {/* Visual do Instate - Ajustado para preencher o espaço vertical */}
-            <div className="relative h-[480px] lg:h-[600px] flex items-center justify-center">
+            {/* Visual do Instate - Refinado para preencher o espaço vertical e horizontal */}
+            <div className="relative h-[500px] lg:h-[650px] w-full flex items-center justify-center">
               <AnimatedSection delay={200} className="w-full h-full relative">
                 <div className="absolute inset-0">
-                  {/* Imagem Principal: Home - Centro-Esquerda */}
+                  {/* Imagem 1: Home - Topo Esquerda */}
                   <div 
                     onClick={() => setSelectedImg('/instate-home.png')}
-                    className="absolute top-[5%] left-0 w-[75%] lg:w-[80%] z-20 rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl transform -rotate-3 hover:rotate-0 hover:scale-[1.02] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                    className="absolute top-0 left-0 w-[72%] z-10 rounded-xl overflow-hidden border border-f-neon/20 shadow-[0_0_50px_rgba(0,0,0,0.5)] transform -rotate-6 hover:rotate-0 hover:scale-[1.03] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
                   >
                     <img src="/instate-home.png" alt="Instate Home Dashboard" className="w-full h-auto opacity-90 group-hover:opacity-100" />
                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -342,10 +342,10 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Imagem Secundária: Playbook - Direita-Cima */}
+                  {/* Imagem 2: Playbook - Centro Direita */}
                   <div 
                     onClick={() => setSelectedImg('/instate-playbook.png')}
-                    className="absolute top-[15%] right-0 w-[60%] lg:w-[65%] z-30 rounded-xl overflow-hidden border border-f-neon/30 shadow-2xl transform rotate-6 hover:rotate-0 hover:scale-[1.02] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                    className="absolute top-1/2 -translate-y-1/2 -right-4 lg:right-0 w-[78%] z-20 rounded-xl overflow-hidden border border-f-neon/30 shadow-[0_0_60px_rgba(0,0,0,0.6)] transform rotate-2 hover:rotate-0 hover:scale-[1.03] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
                   >
                     <img src="/instate-playbook.png" alt="Instate Playbook Structure" className="w-full h-auto opacity-90 group-hover:opacity-100" />
                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -353,10 +353,10 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Imagem Terciária: RUN - Baixo-Centro */}
+                  {/* Imagem 3: RUN - Baixo Esquerda/Centro */}
                   <div 
                     onClick={() => setSelectedImg('/instate-run.png')}
-                    className="absolute bottom-[5%] left-[10%] w-[70%] lg:w-[75%] z-40 rounded-xl overflow-hidden border border-f-neon/40 shadow-2xl transform rotate-2 hover:rotate-0 hover:scale-[1.02] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
+                    className="absolute bottom-0 left-[8%] w-[68%] z-30 rounded-xl overflow-hidden border border-f-neon/40 shadow-[0_0_70px_rgba(0,0,0,0.7)] transform -rotate-2 hover:rotate-0 hover:scale-[1.03] hover:z-50 transition-all duration-500 cursor-zoom-in bg-f-black group"
                   >
                     <img src="/instate-run.png" alt="Instate Interactive RUN" className="w-full h-auto opacity-90 group-hover:opacity-100" />
                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
