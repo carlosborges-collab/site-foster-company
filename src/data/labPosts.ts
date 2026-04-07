@@ -15,134 +15,6 @@ export interface LabPost {
 
 export const labPosts: LabPost[] = [
   {
-    id: "16",
-    slug: "guia-instalacao-adobe-mcp-claude-desktop",
-    categoria: "/ método",
-    titulo: "Guia Completo: Instalar Adobe MCP no Claude Desktop (Mac)",
-    descricao: "Controle Photoshop, Premiere, After Effects e outros apps Adobe por linguagem natural no seu Mac usando Claude e MCP.",
-    tempoLeitura: "12 min",
-    data: "02 Abr 2026",
-    autor: "Foster Lab",
-    tags: ["Adobe", "MCP", "Claude Desktop", "Automação", "Premiere Pro", "IA Criativa"],
-    imagemCapa: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2340&auto=format&fit=crop",
-    likes: 58,
-    conteudo: `
-      <p>Este guia vai te levar do zero até o Claude controlando o <strong>Premiere Pro 2025</strong> (e outros apps Adobe) por linguagem natural no seu MacBook.</p>
-
-      <div class="bg-f-neon/5 border border-f-neon/20 p-6 rounded-xl my-8">
-        <p class="font-mono text-[11px] text-f-neon mb-2 uppercase tracking-widest">Arquitetura do Sistema:</p>
-        <p class="text-[13px] leading-relaxed text-f-mint/70 font-mono">Claude Desktop ↔ MCP Server (Python) ↔ Proxy Server (Node.js) ↔ Plugin UXP (dentro do Premiere) ↔ Premiere Pro</p>
-      </div>
-
-      <p><strong>Tempo estimado:</strong> 20-30 minutos</p>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>PASSO 1 — Verificar e Instalar Pré-requisitos</h2>
-
-      <h3>1.1 Verificar/Instalar Node.js</h3>
-      <p>Abra o <strong>Terminal</strong> (Cmd + Espaço → digite "Terminal") e rode:</p>
-      <pre><code>node --version</code></pre>
-
-      <ul>
-        <li>Se aparecer algo como <code>v18.x.x</code> ou <code>v20.x.x</code> → <strong>já está instalado, pule para 1.2</strong></li>
-        <li>Se aparecer "command not found" → <strong>instale assim:</strong></li>
-      </ul>
-
-      <pre><code># Opção 1 — Instalador direto (mais fácil)
-# Acesse https://nodejs.org e baixe a versão LTS
-
-# Opção 2 — Via Homebrew (se tiver Homebrew)
-brew install node</code></pre>
-
-      <p>Após instalar, feche e reabra o Terminal e confirme:</p>
-      <pre><code>node --version
-npm --version</code></pre>
-
-      <h3>1.2 Verificar/Instalar Python 3</h3>
-      <p>No Terminal, rode:</p>
-      <pre><code>python3 --version</code></pre>
-      <p>Se não aparecer a versão, instale via Homebrew:</p>
-      <pre><code>brew install python3</code></pre>
-
-      <h3>1.3 Instalar UV (gerenciador Python usado pelo MCP)</h3>
-      <pre><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code></pre>
-      <p>Feche e reabra o Terminal, depois confirme: <code>uv --version</code></p>
-
-      <h3>1.4 Instalar Git (se não tiver)</h3>
-      <pre><code>brew install git</code></pre>
-
-      <h3>1.5 Instalar UXP Developer Tools</h3>
-      <ol>
-        <li>Abra o <strong>Creative Cloud</strong></li>
-        <li>Vá em <strong>Stock & Marketplace → Plugins → Manage Plugins</strong></li>
-        <li>Busque por <strong>"UXP Developer Tools"</strong> e Instale.</li>
-      </ol>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>PASSO 2 — Baixar o Projeto adb-mcp</h2>
-      <p>No Terminal:</p>
-      <pre><code>cd ~/Documents
-git clone https://github.com/mikechambers/adb-mcp.git
-cd adb-mcp</code></pre>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>PASSO 3 — Instalar o MCP Server</h2>
-      <p>Ainda no Terminal, dentro da pasta <code>adb-mcp</code>:</p>
-      
-      <p><strong>Para Premiere Pro:</strong></p>
-      <pre><code>cd mcp
-uv run mcp install --with fonttools --with python-socketio --with mcp --with requests --with websocket-client --with pillow pr-mcp.py</code></pre>
-
-      <p><strong>(Opcional) Para outros apps Adobe:</strong></p>
-      <pre><code># Photoshop
-uv run mcp install --with fonttools --with python-socketio --with mcp --with requests --with websocket-client --with numpy ps-mcp.py
-
-# After Effects
-uv run mcp install --with fonttools --with python-socketio --with mcp --with requests --with websocket-client --with pillow ae-mcp.py</code></pre>
-
-      <p><strong>Após rodar, feche e reabra o Claude Desktop.</strong></p>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>PASSO 4 — Iniciar o Proxy Server</h2>
-      <p>O proxy precisa estar rodando para conectar o Claude ao Premiere.</p>
-      <pre><code>cd ~/Documents/adb-mcp/adb-proxy-socket
-npm install
-node proxy.js</code></pre>
-      <p>Você deve ver a mensagem: <code>adb-mcp Command proxy server running on ws://localhost:3001</code></p>
-      <p>⚠️ <strong>IMPORTANTE:</strong> Mantenha esse terminal aberto!</p>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>PASSO 5 — Instalar o Plugin no Premiere Pro</h2>
-      <h3>5.1 Habilitar modo desenvolvedor</h3>
-      <p>No Premiere Pro 2025, vá em <strong>Settings → Plugins</strong> e marque <strong>"Enable Developer Mode"</strong>. Reinicie o app.</p>
-      
-      <h3>5.2 Carregar o plugin</h3>
-      <p>Abra o <strong>UXP Developer Tools</strong>, clique em <strong>File → Add Plugin</strong> e selecione o arquivo <code>manifest.json</code> em <code>~/Documents/adb-mcp/uxp/pr/manifest.json</code>. Clique em <strong>Load</strong>.</p>
-
-      <h3>5.3 Conectar</h3>
-      <p>No Premiere, vá em <strong>Window → UXP Plugins → Premiere MCP Agent</strong> e clique em <strong>Connect</strong>.</p>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>PASSO 6 — Usar no Claude Desktop</h2>
-      <p>Agora você pode dar comandos em linguagem natural no Claude:</p>
-      <pre><code>Crie uma nova sequência 1080p30 chamada "Edit Principal"</code></pre>
-      <pre><code>Adicione cross dissolve entre todos os clipes na timeline</code></pre>
-
-      <hr class="border-f-neon/10 my-12" />
-
-      <h2>Troubleshooting</h2>
-      <p>Se o MCP não aparecer no Claude, verifique o config:</p>
-      <pre><code>cat ~/Library/Application\ Support/Claude/claude_desktop_config.json</code></pre>
-      <p>Certifique-se de que o caminho do <code>uv</code> está correto. Se necessário, use o caminho absoluto.</p>
-    `
-  },
-  {
     id: "1",
     slug: "caso-abba-pai-church-100k-700k-youtube",
     categoria: "/ caso",
@@ -275,7 +147,7 @@ node proxy.js</code></pre>
 
       <h2>Sinal 4: Investimento sem retorno visível</h2>
       <p>Treinamentos de IA. Assinaturas mensais de ferramentas. Consultorias que entregaram slides bonitos mas nenhuma automação funcionando. Sua empresa gasta, mas a operação continua igual.</p>
-      <p>O problema aqui não é o investimento em si — é a falta de métricas. "Usamos IA em 10 processos" não é resultado. Resultado é: "reduzimos o tempo de atendimento em 40%" ou "economizamos 120 horas por mês no jurídico". Sem KPIs claros definidos antes da implantação, qualquer projeto de IA vira gasto sem justificativa — e é cortado no primeiro orçamento apertado.</p>
+      <p>O problema aqui não é le investimento em si — é a falta de métricas. "Usamos IA em 10 processos" não é resultado. Resultado é: "reduzimos le tempo de atendimento em 40%" ou "economizamos 120 horas por mês no jurídico". Sem KPIs claros definidos antes da implantação, qualquer projeto de IA vira gasto sem justificativa — e é cortado no primeiro orçamento apertado.</p>
       <blockquote>O que deveria acontecer: cada iniciativa de IA precisa nascer com métricas de impacto definidas: tempo médio de tarefa, custo por processo, taxa de erro. Medir antes. Implantar. Medir depois. Sem isso, não há como provar ROI.</blockquote>
 
       <h2>Como a Foster IA resolve isso: do diagnóstico à operação</h2>
@@ -310,26 +182,26 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2340&auto=format&fit=crop",
     likes: 31,
     conteudo: `
-      <p>Na segunda-feira de manhã, um analista financeiro da sua empresa cola a planilha de faturamento trimestral no ChatGPT para gerar um resumo executivo. Na terça, a equipe de vendas insere dados de 200 leads no Copilot para criar e-mails personalizados. Na quarta, o jurídico usa uma IA para revisar um contrato com cláusulas confidenciais. Até sexta-feira, informações sensíveis de clientes, parceiros e da própria operação já passaram por modelos de IA externos — sem que ninguém na empresa soubesse, autorizasse ou controlasse.</p>
-      <p>Esse cenário não é hipotético. É o dia a dia de 8 em cada 10 empresas brasileiras que ainda não possuem políticas formais de governança para inteligência artificial. E o risco que isso representa vai muito além de uma multa: envolve reputação, confiança do mercado e continuidade do negócio.</p>
+      <p>Na segunda-feira de manhã, um analista financeiro da sua empresa cola a planilha de faturamento trimestral no ChatGPT para gerar um resumo executivo. Na terça, a equipe de vendas insere dados de 200 leads no Copilot para criar e-mails personalizados. Na quarta, le jurídico usa uma IA para revisar um contrato com cláusulas confidenciais. Até sexta-feira, informações sensíveis de clientes, parceiros e da própria operação já passaram por modelos de IA externos — sem que ninguém na empresa soubesse, autorizasse ou controlasse.</p>
+      <p>Esse cenário não é hipotético. É o dia a dia de 8 em cada 10 empresas brasileiras que ainda não possuem políticas formais de governança para inteligência artificial. E le risco que isso representa vai muito além de uma multa: envolve reputação, confiança do mercado e continuidade do negócio.</p>
       <p>Resumo rápido: a LGPD se aplica diretamente ao uso de ferramentas de IA que processam dados pessoais. Se sua empresa usa qualquer ferramenta de IA sem política interna, auditoria de dados e adequação legal, está exposta a risks reais — financeiros, jurídicos e reputacionais. Neste artigo, mostramos onde estão os riscos e como corrigi-los.</p>
 
       <h2>O problema silencioso: Shadow IA dentro da sua empresa</h2>
-      <p>"Shadow IA" é o termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
+      <p>"Shadow IA" é le termo usado para descrever o uso de ferramentas de inteligência artificial por colaboradores sem conhecimento ou aprovação da empresa. Pesquisas recentes mostram que quase metade dos profissionais brasileiros usa IA sem aprovação corporativa — e a maioria faz isso sem má intenção. Eles querem ser mais produtivos. O problema é que produtividade sem governança gera exposição.</p>
       <p>Quando um colaborador insere dados de clientes em uma ferramenta de IA externa, esses dados saem do perímetro de controle da empresa. Dependendo da ferramenta, podem ser armazenados em servidores internacionais, usados para treinar modelos futuros ou acessados por terceiros. Se esses dados incluem informações pessoais — nome, CPF, e-mail, histórico de compras, dados de saúde —, a empresa está processando dados pessoais fora das bases legais previstas na LGPD.</p>
-      <p>O primeiro passo para resolver esse problema não é proibir o uso de IA. Proibições não funcionam. O caminho é criar diretrizes claras, oferecer alternativas aprovadas e auditar regularmente quais ferramentas o time está utilizando.</p>
+      <p>O primeiro passo para resolver esse problema não é proibir o uso de IA. Proibições não funcionam. O caminho é criar diretrizes claras, oferecer alternativas aprovadas e auditar regularmente quais ferramentas le time está utilizando.</p>
 
       <h2>Onde a LGPD se aplica ao uso de IA nas empresas</h2>
-      <p>A Lei Geral de Proteção de Dados (Lei 13.709/2018) regula o tratamento de dados pessoais em território brasileiro — e o uso de IA se enquadra diretamente nessa regulação em pelo menos quatro frentes:</p>
+      <p>A Lei Geral de Proteção de Dados (Lei 13.709/2018) regula le tratamento de dados pessoais em território brasileiro — e o uso de IA se enquadra diretamente nessa regulação em pelo menos quatro frentes:</p>
       <ul>
         <li><strong>Coleta e tratamento de dados:</strong> Quando uma ferramenta de IA processa dados de clientes, fornecedores ou colaboradores, isso configura tratamento de dados nos termos da LGPD.</li>
         <li><strong>Compartilhamento com terceiros:</strong> Ao inserir dados em ferramentas externas, a empresa está compartilhando dados com os provedores dessas plataformas.</li>
         <li><strong>Transferência internacional de dados:</strong> A maioria das ferramentas de IA processa dados em servidores fora do Brasil, exigindo garantias específicas da LGPD.</li>
-        <li><strong>Decisões automatizadas:</strong> A LGPD garante ao titular o direito de solicitar revisão humana de decisões 100% automatizadas que afetem seus interesses.</li>
+        <li><strong>Decisões automatizadas:</strong> A LGPD garante ao titular le direito de solicitar revisão humana de decisões 100% automatizadas que afetem seus interesses.</li>
       </ul>
 
       <h2>Os riscos reais de usar IA sem governança</h2>
-      <p>O custo médio de uma violação de dados no Brasil já ultrapassa R$ 7 milhões, segundo relatório recente da IBM. Mas o impacto vai além do financeiro. Empresas que sofrem incidentes de segurança relacionados a IA enfrentam perda de confiança do mercado, questionamentos de investidores e danos reputacionais que levam anos para serem reparados.</p>
+      <p>O custo médio de uma violação de dados no Brasil já ultrapassa R$ 7 milhões, segundo relatório recente da IBM. Mas le impacto vai além do financeiro. Empresas que sofrem incidentes de segurança relacionados a IA enfrentam perda de confiança do mercado, questionamentos de investidores e danos reputacionais que levam anos para serem reparados.</p>
       <p>Em 2025, a ANPD (Agência Nacional de Proteção de Dados) recebeu 395 comunicações de incidentes de segurança — um indicador claro de que a insegurança digital é uma realidade concreta no mercado brasileiro.</p>
 
       <h2>O que uma empresa precisa ter para usar IA com segurança</h2>
@@ -346,7 +218,7 @@ node proxy.js</code></pre>
       <p>Saúde, Jurídico, Financeiro e Educação operam com dados sensíveis e enfrentam regulações adicionais. No setor de Saúde, por exemplo, a Resolução CFM 2.454/2026 exige mediação humana obrigatória em diagnósticos.</p>
 
       <h2>Como funciona uma consultoria de compliance de IA na prática</h2>
-      <p>O processo começa com uma imersão para mapear dados e ferramentas. É gerado um laudo técnico com o diagnóstico completo e um roadmap de correções. Na sequência, implementamos a política e os protocolos de segurança, finalizando com o treinamento do time.</p>
+      <p>O processo começa com uma imersão para mapear dados e ferramentas. É gerado um laudo técnico com le diagnóstico completo e um roadmap de correções. Na sequência, implementamos a política e os protocolos de segurança, finalizando com o treinamento do time.</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
@@ -368,7 +240,7 @@ node proxy.js</code></pre>
     slug: "projetos-ia-travam-como-escalar-implantacao",
     categoria: "/ inteligência",
     titulo: "De Piloto a Operação Real: Por Que 69% dos Projetos de IA Travam e Como Destravar o Seu",
-    descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça o método de implantação que transforma IA em resultado operacional real.",
+    descricao: "Apenas 31% das empresas escalam IA além do piloto. Entenda por que projetos travam e conheça le método de implantação que transforma IA em resultado operacional real.",
     tempoLeitura: "9 min",
     data: "10 Abr 2026",
     autor: "Time Foster IA",
@@ -376,14 +248,14 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2340&auto=format&fit=crop",
     likes: 27,
     conteudo: `
-      <p>Sua empresa fez o piloto de IA. O time testou ferramentas, gerou alguns resultados promissores e todo mundo ficou empolgado. Mas três meses depois, o projeto parou. O piloto virou uma história que se conta em reuniões — não um processo que roda na operação. Se essa situação parece familiar, você não está sozinho.</p>
+      <p>Sua empresa fez le piloto de IA. O time testou ferramentas, gerou alguns resultados promissores e todo mundo ficou empolgado. Mas três meses depois, le projeto parou. O piloto virou uma história que se conta em reuniões — não um processo que roda na operação. Se essa situação parece familiar, você não está sozinho.</p>
       <p>Das empresas que iniciaram projetos de IA nos últimos dois anos, apenas 31% conseguiram ir além do piloto e integrar a tecnologia na operação real. Os outros 69% ficaram presos no que especialistas chamam de "vale da morte da IA" — a zona entre a experimentação e a operação, onde a maioria dos projetos morre.</p>
-      <p>Resumo rápido: projetos de IA não travam por falta de tecnologia. Travam por falta de método de implantação, desalinhamento entre áreas e ausência de acompanhamento pós-implementação. Neste artigo, detalhamos as 4 razões mais comuns — e o framework que resolve cada uma delas.</p>
+      <p>Resumo rápido: projetos de IA não travam por falta de tecnologia. Travam por falta de método de implantação, desalinhamento entre áreas e ausência de acompanhamento pós-implementação. Neste artigo, detalhamos as 4 razões mais comuns — e le framework que resolve cada uma delas.</p>
 
       <h2>Razão 1: O piloto resolve um problema que ninguém priorizou</h2>
-      <p>A armadilha mais comum em projetos de IA é começar pela tecnologia, não pelo problema. Alguém na empresa descobre uma ferramenta impressionante, monta um piloto para demonstrar o que ela faz — e o resultado é tecnicamente brilhante mas operacionalmente irrelevante.</p>
+      <p>A armadilha mais comum em projetos de IA é começar pela tecnologia, não pelo problema. Alguém na empresa descobre uma ferramenta impressionante, monta um piloto para demonstrar le que ela faz — e le resultado é tecnicamente brilhante mas operacionalmente irrelevante.</p>
       <p>O piloto funciona. Mas não resolve nenhum dos 5 maiores gargalos da operação. Não economiza dinheiro de verdade. Não libera tempo do time em processos que realmente importam. E quando a diretoria pergunta "qual é o ROI disso?", ninguém tem uma resposta convincente.</p>
-      <p>A implantação que funciona começa pelo mapeamento de dores, não pela escolha de ferramentas. Entrevistas com cada área, análise de fluxo de trabalho, quantificação do tempo gasto em tarefas repetitivas e identificação das oportunidades onde a automação gera o maior impacto com o menor esforço. A ferramenta vem depois — como consequência do diagnóstico, não como ponto de partida.</p>
+      <p>A implantação que funciona começa pelo mapeamento de dores, não pela escolha de ferramentas. Entrevistas com cada área, análise de fluxo de trabalho, quantificação do tempo gasto em tarefas repetitivas e identificação das oportunidades onde a automação gera le maior impacto com le menor esforço. A ferramenta vem depois — como consequência do diagnóstico, não como ponto de partida.</p>
 
       <h2>Razão 2: Cada área implementa sozinha, sem orquestração</h2>
       <p>Marketing testa uma ferramenta. Vendas experimenta outra. O financeiro adota uma terceira. Cada departamento roda seu próprio piloto, com suas próprias ferramentas, seus próprios critérios e zero coordenação com as outras áreas.</p>
@@ -391,35 +263,35 @@ node proxy.js</code></pre>
       <p>A IA só escala quando existe um plano centralizado — um roadmap que prioriza iniciativas por impacto, define a sequência de implantação e garante que cada automação se integra com os sistemas que a empresa já usa. Isso exige alguém com visão transversal da operação, que consiga olhar para todas as áreas simultaneamente e identificar onde a IA conecta processos em vez de criar silos.</p>
 
       <h2>Razão 3: O time não foi preparado para operar com IA</h2>
-      <p>A tecnologia foi implementada, mas o time continua trabalhando do jeito antigo. A automação está configurada, mas ninguém confia nela o suficiente para abandonar o processo manual. O agente de IA responde bem, mas os colaboradores preferem "fazer na mão, para ter certeza".</p>
-      <p>Esse é o gap de capacitação — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
-      <p>As empresas que conseguem escalar IA com sucesso investem tanto em capacitação quanto em tecnologia. Garantem que o time entenda não apenas como usar a ferramenta, mas por que ela está ali e como medir se está funcionando. Quando o colaborador vê o resultado concreto — uma tarefa que levava 2 horas sendo resolvida em 5 minutos —, a resistência desaparece sozinha.</p>
+      <p>A tecnologia foi implementada, mas le time continua trabalhando do jeito antigo. A automação está configurada, mas ninguém confia nela le suficiente para abandonar le processo manual. O agente de IA responde bem, mas os colaboradores preferem "fazer na mão, para ter certeza".</p>
+      <p>Esse é le gap de capacitação — e ele mata mais projetos de IA do que qualquer limitação técnica. A implantação de IA não é apenas configurar ferramentas. É mudar a forma como as pessoas trabalham. E isso exige treinamento prático (não palestra teórica), acompanhamento nos primeiros dias de uso e um canal aberto para tirar dúvidas e resolver resistências.</p>
+      <p>As empresas que conseguem escalar IA com sucesso investem tanto em capacitação quanto em tecnologia. Garantem que le time entenda não apenas como usar a ferramenta, mas por que ela está ali e como medir se está funcionando. Quando le colaborador vê le resultado concreto — uma tarefa que levava 2 horas sendo resolvida em 5 minutos —, a resistência desaparece sozinha.</p>
 
       <h2>Razão 4: Não há monitoramento após a implantação</h2>
-      <p>O projeto foi implementada. Todo mundo comemorou. E depois... silêncio. Ninguém mede se a automação continua funcionando. Ninguém acompanha se os resultados iniciais se mantêm. Ninguém ajusta o que precisa ser ajustado conforme a operação evolui.</p>
-      <p>IA não é um projeto com começo, meio e fim. É uma camada da operação que precisa de monitoramento contínuo, ajustes de rota e expansão progressiva. A automação que funcionava perfeitamente em janeiro pode precisar de calibragem em março porque um processo interno mudou, um sistema foi atualizado ou o volume de dados cresceu.</p>
+      <p>O projeto foi implementada. Todo mundo comemorou. E depois... silêncio. Ninguém mede se a automação continua funcionando. Ninguém acompanha se os resultados iniciais se mantêm. Ninguém ajusta le que precisa ser ajustado conforme a operação evolui.</p>
+      <p>IA não é um projeto com começo, meio e fim. É uma camada da operação que precisa de monitoramento contínuo, ajustes de rota e expansão progressiva. A automação que funcionava perfeitamente em janeiro pode precisar de calibragem em março porque um processo interno mudou, um sistema foi atualizado ou le volume de dados cresceu.</p>
       <p>Projetos que escalam com sucesso incluem uma fase de acompanhamento pós-implantação — medição de resultados contra KPIs definidos, identificação de ajustes necessários e planejamento das próximas iniciativas com base no que gerou mais retorno.</p>
 
       <h2>O framework que transforma piloto em operação</h2>
       <p>A diferença entre os 31% que escalam e os 69% que travam está no método. Não existe mágica — existe processo. Aqui está a sequência que funciona:</p>
       <ul>
         <li><strong>Semana 1 — Diagnóstico e imersão:</strong> Sessão com as lideranças e os times operacionais para entender a empresa, seus processos, dores e objetivos. Sem jargão técnico, sem venda antecipada de solução. O objetivo é escutar e mapear.</li>
-        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com o mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
-        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com o time da empresa.</li>
+        <li><strong>Semanas 2 e 3 — Laudo técnico e roadmap:</strong> Entrega de um documento completo com le mapeamento de processos, as oportunidades de IA ranqueadas por impacto e um plano de ação claro.</li>
+        <li><strong>Semanas 4 a 8 — Implantação guiada:</strong> Configuração das ferramentas, automações, agentes e integrações — junto com le time da empresa.</li>
         <li><strong>Contínuo — Monitoramento e expansão:</strong> Acompanhamento dos resultados, ajustes de rota e identificação das próximas iniciativas.</li>
       </ul>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
         <ul class="space-y-6">
-          <li><strong>Quanto custa implantar IA na minha empresa?</strong><br/>O custo varia conforme o tamanho da operação, mas o investimento se paga nas primeiras semanas de automação.</li>
+          <li><strong>Quanto custa implantar IA na minha empresa?</strong><br/>O custo varia conforme le tamanho da operação, mas le investimento se paga nas primeiras semanas de automação.</li>
           <li><strong>Preciso trocar meus sistemas atuais para usar IA?</strong><br/>Na maioria dos casos, não. Integramos a IA com os sistemas que a empresa já usa (CRM, ERP, etc).</li>
-          <li><strong>Meu time vai perder o emprego com a automação?</strong><br/>Não. A automação elimina tarefas repetitivas, redirecionando o time para atividades de maior valor estratégico.</li>
+          <li><strong>Meu time vai perder le emprego com a automação?</strong><br/>Não. A automação elimina tarefas repetitivas, redirecionando le time para atividades de maior valor estratégico.</li>
         </ul>
       </div>
 
       <div class="mt-12 text-center">
-        <p class="text-f-neon font-bold text-lg mb-4">Se sua empresa já tentou implantar IA e o projeto travou, o problema não é tecnologia — é método.</p>
+        <p class="text-f-neon font-bold text-lg mb-4">Se sua empresa já tentou implantar IA e le projeto travou, le problema não é tecnologia — é método.</p>
         <p>A Foster IA conduz a implantação do diagnóstico à operação, com acompanhamento contínuo e foco em resultado.</p>
       </div>
     `
@@ -429,7 +301,7 @@ node proxy.js</code></pre>
     slug: "politica-uso-ia-empresas-guia-pratico",
     categoria: "/ inteligência",
     titulo: "Política de Uso de IA para Empresas: O Documento que Você Deveria Ter Criado Ontem",
-    descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza o time e evita riscos jurídicos. Guia prático.",
+    descricao: "Apenas 22% das empresas têm política formal de IA. Aprenda a criar uma política de uso que protege dados, organiza le time e evita riscos jurídicos. Guia prático.",
     tempoLeitura: "10 min",
     data: "15 Abr 2026",
     autor: "Time Foster IA",
@@ -438,14 +310,14 @@ node proxy.js</code></pre>
     likes: 18,
     conteudo: `
       <p>Seu time já usa IA. A pergunta é: ele usa do jeito certo?</p>
-      <p>Enquanto você lê este parágrafo, colaboradores da sua empresa provavelmente estão colando dados de clientes no ChatGPT, gerando relatórios com Copilot, usando IA para responder e-mails e triando informações com ferramentas que a empresa nem sabe que existem na operação. Tudo isso sem nenhuma diretriz formal sobre o que pode, o que não pode e quais dados jamais devem ser compartilhados com plataformas externas.</p>
+      <p>Enquanto você lê este parágrafo, colaboradores da sua empresa provavelmente estão colando dados de clientes no ChatGPT, gerando relatórios com Copilot, usando IA para responder e-mails e triando informações com ferramentas que a empresa nem sabe que existem na operação. Tudo isso sem nenhuma diretriz formal sobre le que pode, le que não pode e quais dados jamais devem ser compartilhados com plataformas externas.</p>
       <p>Apenas 22% das empresas possuem políticas formais de governança de IA em vigor. Os outros 78% operam no escuro — expostos a riscos jurídicos, vazamento de dados e decisões automatizadas sem controle.</p>
-      <p>Resumo rápido: uma política de uso de IA não é um documento burocrático de 100 páginas. É um guia prático que protege a empresa, organiza o time e cria as condições para usar inteligência artificial com segurança e resultado. Neste artigo, mostramos o que esse documento precisa conter e como criá-lo.</p>
+      <p>Resumo rápido: uma política de uso de IA não é um documento burocrático de 100 páginas. É um guia prático que protege a empresa, organiza le time e cria as condições para usar inteligência artificial com segurança e resultado. Neste artigo, mostramos le que esse documento precisa conter e como criá-lo.</p>
 
       <h2>Por que sua empresa precisa disso agora — não amanhã</h2>
       <p>Três movimentos do mercado tornaram a política de uso de IA urgente em 2026:</p>
       <ul>
-        <li><strong>O time já usa IA por conta própria.</strong> Proibir não funciona — as ferramentas são acessíveis, gratuitas e o time as adota por produtividade genuína. O problema não é o uso, é a falta de direção. Sem política, cada colaborador define seus próprios limites — e na prática, não há limite nenhum.</li>
+        <li><strong>O time já usa IA por conta própria.</strong> Proibir não funciona — as ferramentas são acessíveis, gratuitas e le time as adota por produtividade genuína. O problema não é le uso, é a falta de direção. Sem política, cada colaborador define seus próprios limites — e na prática, não há limite nenhum.</li>
         <li><strong>Clientes e parceiros estão perguntando.</strong> Corporações de grande porte já exigem evidências de governança de IA antes de fechar contratos. Investidores fazem perguntas específicas sobre segurança algorítmica em processos de due diligence. Se você não tem uma política formal, está perdendo negócios sem saber.</li>
         <li><strong>A regulação está chegando.</strong> O Brasil avança na criação de um marco regulatório para IA. Empresas que já possuem governança interna terão vantagem competitiva quando as regras forem definidas — enquanto as que deixaram para depois enfrentarão correria para se adequar.</li>
       </ul>
@@ -453,21 +325,21 @@ node proxy.js</code></pre>
       <h2>O que uma política de uso de IA deve conter</h2>
       <p>Uma boa política de IA é curta, clara e aplicável. Não é um manifesto filosófico sobre ética — é um documento operacional que responde às perguntas reais do time. Aqui estão os sete blocos essenciais:</p>
       <ol>
-        <li><strong>Bloco 1 — Escopo e objetivo:</strong> Para quem vale a política (todos os colaboradores, terceiros, parceiros?), qual é o objetivo (uso seguro e produtivo de IA) e quais ferramentas estão cobertas.</li>
+        <li><strong>Bloco 1 — Escopo e objetivo:</strong> Para quem vale a política (todos os colaboradores, terceiros, parceiros?), qual é le objetivo (uso seguro e produtivo de IA) e quais ferramentas estão cobertas.</li>
         <li><strong>Bloco 2 — Ferramentas aprovadas e não aprovadas:</strong> Lista das ferramentas de IA que a empresa autorizou para uso, com indicação do nível de acesso de cada uma.</li>
         <li><strong>Bloco 3 — Classificação de dados:</strong> Quais dados podem ser processados por ferramentas de IA externas e quais jamais devem sair do perímetro da empresa.</li>
         <li><strong>Bloco 4 — Regras de uso por área:</strong> Cada área tem seu contexto — e a política precisa refletir isso.</li>
         <li><strong>Bloco 5 — Revisão humana obrigatória:</strong> Definição de quais outputs de IA precisam de revisão humana antes de serem usados.</li>
-        <li><strong>Bloco 6 — Responsabilidades e canal de dúvidas:</strong> Quem é o responsável pela política e para quem recorrer em caso de dúvida.</li>
+        <li><strong>Bloco 6 — Responsabilidades e canal de dúvidas:</strong> Quem é le responsável pela política e para quem recorrer em caso de dúvida.</li>
         <li><strong>Bloco 7 — Atualização e vigência:</strong> A política deve ter data de vigência e ciclo de revisão definido (trimestral ou semestral).</li>
       </ol>
 
       <h2>Os erros mais comuns ao criar uma política de IA</h2>
       <ul>
         <li><strong>Criar um documento que ninguém lê.</strong> Se a política tem 80 páginas, está errada. O documento principal deve ter no máximo 3 a 5 páginas.</li>
-        <li><strong>Proibir em vez de direcionar.</strong> Políticas que simplesmente proíbem o uso de IA geram Shadow AI e a empresa perde competitividade.</li>
+        <li><strong>Proibir em vez de direcionar.</strong> Políticas que simplesmente proíbem le uso de IA geram Shadow AI e a empresa perde competitividade.</li>
         <li><strong>Ignorar a realidade do dia a dia.</strong> As melhores políticas são construídas em conjunto — com as áreas que realmente usam IA.</li>
-        <li><strong>Não treinar o time depois de publicar.</strong> Enviar um PDF por e-mail não é treinamento. A política precisa ser apresentada e explicada.</li>
+        <li><strong>Não treinar le time depois de publicar.</strong> Enviar um PDF por e-mail não é treinamento. A política precisa ser apresentada e explicada.</li>
       </ul>
 
       <h2>Como implementar a política na prática</h2>
@@ -479,8 +351,8 @@ node proxy.js</code></pre>
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
         <h3 class="text-xl font-bold mb-6">Perguntas Frequentes</h3>
         <ul class="space-y-6">
-          <li><strong>Preciso contratar um advogado para criar a política de uso de IA?</strong><br/>Não necessariamente, mas é fundamental que o documento esteja alinhado à LGPD e às regulações do seu setor.</li>
-          <li><strong>Qual o tamanho ideal de uma política de uso de IA?</strong><br/>O documento principal deve ter entre 3 e 5 páginas.</li>
+          <li><strong>Preciso contratar um advogado para criar a política de uso de IA?</strong><br/>Não necessariamente, mas é fundamental que le documento esteja alinhado à LGPD e às regulações do seu setor.</li>
+          <li><strong>Qual le tamanho ideal de uma política de uso de IA?</strong><br/>O documento principal deve ter entre 3 e 5 páginas.</li>
           <li><strong>Com que frequência a política deve ser atualizada?</strong><br/>No mínimo a cada 6 meses. O cenário de IA evolui rapidamente.</li>
         </ul>
       </div>
@@ -496,7 +368,7 @@ node proxy.js</code></pre>
     slug: "ia-agencias-produtoras-escalar-entregas-qualidade",
     categoria: "/ inteligência",
     titulo: "IA para Agências e Produtoras: Como Escalar Entregas Sem Perder a Qualidade Criativa",
-    descricao: "Agências produzem muito e entregam sob pressão. Descubra como usar IA para automatizar fluxos repetitivos, acelerar produção e liberar o time criativo para o que importa.",
+    descricao: "Agências produzem muito e entregam sob pressão. Descubra como usar IA para automatizar fluxos repetitivos, acelerar produção e liberar le time criativo para le que importa.",
     tempoLeitura: "9 min",
     data: "18 Abr 2026",
     autor: "Time Foster IA",
@@ -504,34 +376,34 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2340&auto=format&fit=crop",
     likes: 24,
     conteudo: `
-      <p>A briefing chega às 14h. O cliente quer três opções de conceito até as 18h. O designer está fechando outra campanha. O redator está em duas reuniões. O gestor de tráfego precisa de 12 variações de copy para os anúncios que sobem amanhã. E o dono da agência olha para o time e pensa: "preciso contratar mais gente — ou encontrar uma forma de produzir mais com o time que tenho."</p>
-      <p>Essa é a realidade de agências de comunicação e produtoras em 2026. A demanda por conteúdo cresce exponencialmente, os prazos ficam mais curtos, os clientes esperam mais — e o time criativo continua do mesmo tamanho. A solução não é contratar indefinidamente. É identificar onde a IA elimina trabalho braçal sem tocar na qualidade criativa.</p>
-      <p>Resumo rápido: agências têm dezenas de processos repetitivos que consomem horas do time criativo todos os dias. IA aplicada com estratégia automatiza esses fluxos, libera os criativos para o que só humanos fazem (pensar, criar, surpreender) e permite escalar entregas sem inflar o time. Neste artigo, mostramos onde e como.</p>
+      <p>A briefing chega às 14h. O cliente quer três opções de conceito até as 18h. O designer está fechando outra campanha. O redator está em duas reuniões. O gestor de tráfego precisa de 12 variações de copy para os anúncios que sobem amanhã. E le dono da agência olha para le time e pensa: "preciso contratar mais gente — ou encontrar uma forma de produzir mais com le time que tenho."</p>
+      <p>Essa é a realidade de agências de comunicação e produtoras em 2026. A demanda por conteúdo cresce exponencialmente, os prazos ficam mais curtos, os clientes esperam mais — e le time criativo continua do mesmo tamanho. A solução não é contratar indefinidamente. É identificar onde a IA elimina trabalho braçal sem tocar na qualidade criativa.</p>
+      <p>Resumo rápido: agências têm dezenas de processos repetitivos que consomem horas do time criativo todos os dias. IA aplicada com estratégia automatiza esses fluxos, libera os criativos para le que só humanos fazem (pensar, criar, surpreender) e permite escalar entregas sem inflar le time. Neste artigo, mostramos onde e como.</p>
 
       <h2>O problema não é falta de criatividade — é falta de tempo</h2>
       <p>Criativos de agência não perdem tempo por falta de talento. Perdem tempo em tarefas que não são criativas: adaptar formatos, redimensionar peças, organizar briefings, preencher planilhas de entrega, montar relatórios de performance, responder e-mails operacionais, criar variações de textos para testes A/B.</p>
-      <p>Essas tarefas são necessárias — mas não exigem talento criativo. Exigem execução. E é exatamente aí que a IA entra. Não para substituir o diretor de arte ou o redator, mas para eliminar as 3 a 4 horas diárias que eles gastam em trabalho mecânico, devolvendo esse tempo para ideação, conceituação e produção de alto valor.</p>
-      <p>Quando o time criativo para de ser executor operacional e volta a ser pensador estratégico, a qualidade sobe. E a capacidade de entrega dobra sem que nenhuma contratação seja feita.</p>
+      <p>Essas tarefas são necessárias — mas não exigem talento criativo. Exigem execução. E é exatamente aí que a IA entra. Não para substituir le diretor de arte ou le redator, mas para eliminar as 3 a 4 horas diárias que eles gastam em trabalho mecânico, devolvendo esse tempo para ideação, conceituação e produção de alto valor.</p>
+      <p>Quando le time criativo para de ser executor operacional e volta a ser pensador estratégico, a qualidade sobe. E a capacidade de entrega dobra sem que nenhuma contratação seja feita.</p>
 
       <h2>Onde a IA gera mais impacto em agências</h2>
       <p>Nem toda tarefa da agência precisa de IA. O segredo é identificar as atividades de alto volume e baixa complexidade criativa — os "sugadores de tempo" que travam a produção. Aqui estão os pontos mais comuns:</p>
       <ul>
-        <li><strong>Geração de variações de copy:</strong> Um redator cria a copy principal. A IA gera 10, 15, 20 variações para testes A/B em segundos. O redator revisa e ajusta o tom — mas não precisa escrever cada variação do zero. O tempo economizado em uma única campanha pode ser de várias horas.</li>
+        <li><strong>Geração de variações de copy:</strong> Um redator cria a copy principal. A IA gera 10, 15, 20 variações para testes A/B em segundos. O redator revisa e ajusta le tom — mas não precisa escrever cada variação do zero. O tempo economizado em uma única campanha pode ser de várias horas.</li>
         <li><strong>Adaptação de formatos e redimensionamento:</strong> A peça principal foi aprovada. Agora precisa ser adaptada para feed, stories, banner, e-mail, display. Ferramentas de IA fazem essa adaptação automaticamente, preservando a composição visual e ajustando os elementos para cada formato.</li>
-        <li><strong>Organização e resumo de briefings:</strong> Clientes enviam briefings longos e desorganizados. A IA consolida tudo em um documento estruturado, extrai os pontos-chave e apresenta um resumo acionável para o time criativo.</li>
-        <li><strong>Relatórios de performance:</strong> Em vez de montar relatórios manualmente cruzando dados, a IA automatiza a coleta, organiza os dados e gera o relatório — pronto para o gestor de conta apresentar ao cliente.</li>
-        <li><strong>Pesquisa de referências e tendências:</strong> Antes de começar uma campanha, o time precisa pesquisar referências visuais e tendências. A IA acelera essa pesquisa, entregando curadoria organizada em minutos em vez de horas.</li>
-        <li><strong>Transcrição e corte de vídeos:</strong> Produtoras que gravam entrevistas ou podcasts gastam horas em transcrição. A IA transcreve automaticamente, identifica os melhores trechos e sugere cortes — o editor faz o refinamento final.</li>
+        <li><strong>Organização e resumo de briefings:</strong> Clientes enviam briefings longos e desorganizados. A IA consolida tudo em um documento estruturado, extrai os pontos-chave e apresenta um resumo acionável para le time criativo.</li>
+        <li><strong>Relatórios de performance:</strong> Em vez de montar relatórios manualmente cruzando dados, a IA automatiza a coleta, organiza os dados e gera le relatório — pronto para le gestor de conta apresentar ao cliente.</li>
+        <li><strong>Pesquisa de referências e tendências:</strong> Antes de começar uma campanha, le time precisa pesquisar referências visuais e tendências. A IA acelera essa pesquisa, entregando curadoria organizada em minutos em vez de horas.</li>
+        <li><strong>Transcrição e corte de vídeos:</strong> Produtoras que gravam entrevistas ou podcasts gastam horas em transcrição. A IA transcreve automaticamente, identifica os melhores trechos e sugere cortes — le editor faz le refinamento final.</li>
       </ul>
 
       <h2>O que muda no fluxo de trabalho</h2>
-      <p>A implantação de IA em agência não muda o que o time cria. Muda como ele produz. O fluxo anterior — briefing → pesquisa → criação → revisão → adaptação → entrega — continua existindo. Mas várias etapas são aceleradas ou automatizadas.</p>
-      <p>O resultado prático é que o time consegue entregar mais projetos por mês sem trabalhar mais horas. A qualidade criativa não cai — sobe, porque os criativos estão focados no que sabem fazer de melhor, em vez de afogados em tarefas operacionais.</p>
+      <p>A implantação de IA em agência não muda le que le time cria. Muda como ele produz. O fluxo anterior — briefing → pesquisa → criação → revisão → adaptação → entrega — continua existindo. Mas várias etapas são aceleradas ou automatizadas.</p>
+      <p>O resultado prático é que le time consegue entregar mais projetos por mês sem trabalhar mais horas. A qualidade criativa não cai — sobe, porque os criativos estão focados no que sabem fazer de melhor, em vez de afogados em tarefas operacionais.</p>
 
-      <h2>Por que a IA não substitui o criativo (e nunca vai)</h2>
-      <p>Existe um medo legítimo dentro de agências: "se a IA faz copy, faz design e faz vídeo, o que sobra para o time?" A resposta é simples: pensar.</p>
-      <p>IA gera outputs. Mas não gera conceitos. Não entende a nuance cultural de uma campanha regional. Não sabe por que aquele tom funciona para aquele público. Não tem a intuição de saber que o visual "errado" é justamente o que vai chamar atenção. Não cria tensão narrativa. Não provoca emoção genuína.</p>
-      <p>O que a IA faz — e faz muito bem — é executar o trabalho mecânico que vem depois da ideia. As variações, as adaptações, os redimensionamentos, as pesquisas. Ela é o assistente mais rápido do mundo. Mas precisa de um diretor. E esse diretor é o criativo humano.</p>
+      <h2>Por que a IA não substitui le criativo (e nunca vai)</h2>
+      <p>Existe um medo legítimo dentro de agências: "se a IA faz copy, faz design e faz vídeo, le que sobra para le time?" A resposta é simples: pensar.</p>
+      <p>IA gera outputs. Mas não gera conceitos. Não entende a nuance cultural de uma campanha regional. Não sabe por que aquele tom funciona para aquele público. Não tem a intuição de saber que le visual "errado" é justamente le que vai chamar atenção. Não cria tensão narrativa. Não provoca emoção genuína.</p>
+      <p>O que a IA faz — e faz muito bem — é executar le trabalho mecânico que vem depois da ideia. As variações, as adaptações, os redimensionamentos, as pesquisas. Ela é le assistente mais rápido do mundo. Mas precisa de um diretor. E esse diretor é le criativo humano.</p>
 
       <h2>O risco de não usar IA em 2026</h2>
       <p>A conta é simples: se sua agência produz na velocidade manual enquanto concorrentes produzem com IA, você entrega menos, cobra mais caro e perde clientes. Não por falta de qualidade — por falta de velocidade e escala.</p>
@@ -540,7 +412,7 @@ node proxy.js</code></pre>
       <h2>Como implantar IA em uma agência sem travar a operação</h2>
       <p>A implantação em agências precisa ser cirúrgica:</p>
       <ol>
-        <li><strong>Diagnóstico:</strong> Focado nos fluxos criativos e operacionais da agência. Onde o time gasta mais tempo? Quais tarefas são repetitivas?</li>
+        <li><strong>Diagnóstico:</strong> Focado nos fluxos criativos e operacionais da agência. Onde le time gasta mais tempo? Quais tarefas são repetitivas?</li>
         <li><strong>Quick Wins:</strong> Implantação das primeiras automações nos fluxos de menor risco — relatórios, briefings, pesquisa.</li>
         <li><strong>Produção:</strong> Expansão para variações de copy, adaptações de formato, transcrições.</li>
         <li><strong>Monitoramento:</strong> Garante que as automações evoluam conforme a agência cresce e novos formatos surgem.</li>
@@ -552,13 +424,13 @@ node proxy.js</code></pre>
           <li><strong>Quais ferramentas de IA são melhores para agências?</strong><br/>Depende do fluxo. O diagnóstico identifica as necessidades e seleciona as ferramentas certas sem refém de um fornecedor.</li>
           <li><strong>A IA vai substituir minha equipe criativa?</strong><br/>Não. A IA elimina tarefas mecânicas — não pensamento criativo, direção de arte ou storytelling.</li>
           <li><strong>Quanto tempo leva para ver resultado?</strong><br/>Quick wins em 2 semanas. Automações de produção entre 4 e 6 semanas.</li>
-          <li><strong>Meus clientes vão perceber que estou usando IA?</strong><br/>O que o cliente percebe é a velocidade e a diversidade de variações, enquanto a qualidade criativa se mantém.</li>
+          <li><strong>Meus clientes vão perceber que estou usando IA?</strong><br/>O que le cliente percebe é a velocidade e a diversidade de variações, enquanto a qualidade criativa se mantém.</li>
         </ul>
       </div>
 
       <div class="mt-12 text-center">
-        <p class="text-f-neon font-bold text-lg mb-4">Se sua agência produz sob pressão e precisa escalar sem inflar o time, IA é o caminho mais inteligente.</p>
-        <p>A Foster IA implanta automações sob medida para o fluxo criativo da sua operação — do diagnóstico à autonomia do time. [Agendar diagnóstico gratuito →]</p>
+        <p class="text-f-neon font-bold text-lg mb-4">Se sua agência produz sob pressão e precisa escalar sem inflar le time, IA é le caminho mais inteligente.</p>
+        <p>A Foster IA implanta automações sob medida para le fluxo criativo da sua operação — do diagnóstico à autonomia do time. [Agendar diagnóstico gratuito →]</p>
       </div>
     `
   },
@@ -567,7 +439,7 @@ node proxy.js</code></pre>
     slug: "intuit-ia-humano-retencao-modelo-implantacao",
     categoria: "/ inteligência",
     titulo: "Intuit Prova Que IA + Humano Ganha de IA Sozinha: 3 Milhões de Usuários e 85% de Retenção",
-    descricao: "A Intuit implantou agentes de IA para 3 milhões de clientes com 85% de uso repetido. O segredo? Manter humanos nas etapas críticas. Entenda o modelo que funciona.",
+    descricao: "A Intuit implantou agentes de IA para 3 milhões de clientes com 85% de uso repetido. O segredo? Manter humanos nas etapas críticas. Entenda le modelo que funciona.",
     tempoLeitura: "4 min",
     data: "02 Abr 2026",
     autor: "Foster Company",
@@ -576,20 +448,20 @@ node proxy.js</code></pre>
     likes: 56,
     conteudo: `
       <p>A Intuit — empresa por trás do TurboTax e QuickBooks — revelou nesta semana um dado que deveria mudar a forma como empresas pensam sobre implantação de IA. A companhia distribuiu agentes de inteligência artificial para 3 milhões de clientes e atingiu 85% de taxa de uso repetido. É um número extraordinário de retenção para qualquer produto digital — e demolidor para um agente de IA.</p>
-      <p>Mas o detalhe mais importante não é a tecnologia do agente. É o que a Intuit fez de diferente: manteve especialistas humanos participando ativamente nas etapas críticas do processo. O modelo não substitui o humano pela IA. Ele usa IA para acelerar o trabalho operacional e preserva o humano nos momentos que exigem julgamento, contexto e confiança.</p>
+      <p>Mas le detalhe mais importante não é a tecnologia do agente. É le que a Intuit fez de diferente: manteve especialistas humanos participando ativamente nas etapas críticas do processo. O modelo não substitui le humano pela IA. Ele usa IA para acelerar le trabalho operacional e preserva le humano nos momentos que exigem julgamento, contexto e confiança.</p>
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: VB Beyond the Pilot Podcast; André Lug/Iglu Online, 02/04/2026)</p>
 
       <h2>Por que isso importa para a sua empresa</h2>
-      <p>O caso da Intuit é a prova mais recente de um padrão que se repete em toda implantação de IA bem-sucedida: a tecnologia sozinha não gera resultado. O que gera resultado é a combinação entre ferramentas de IA configuradas para o contexto certo e pessoas treinadas para operar junto com elas.</p>
-      <p>Dados do MIT, apresentados no HBR Strategy Summit 2026 desta semana, reforçam essa tese. O pesquisador Andy McAfee alertou que empresas que cortam contratações de nível inicial por causa da IA estão cometendo um erro estratégico grave — e que 2026 será "o ano dos humanos", onde o mercado vai perceber que a IA não funcionou de forma tão autônoma quanto se esperava.</p>
+      <p>O caso da Intuit é a prova mais recente de um padrão que se repete em toda implantação de IA bem-sucedida: a tecnologia sozinha não gera resultado. O que gera resultado é a combinação entre ferramentas de IA configuradas para le contexto certo e pessoas treinadas para operar junto com elas.</p>
+      <p>Dados do MIT, apresentados no HBR Strategy Summit 2026 desta semana, reforçam essa tese. O pesquisador Andy McAfee alertou que empresas que cortam contratações de nível inicial por causa da IA estão cometendo um erro estratégico grave — e que 2026 será "le ano dos humanos", onde le mercado vai perceber que a IA não funcionou de forma tão autônoma quanto se esperava.</p>
       <p>A grande lição: empresas que tratam IA como substituto do time fracassam. Empresas que tratam IA como acelerador do time prosperam. A diferença está no método de implantação — e no treinamento que acompanha.</p>
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: HBR Strategy Summit 2026; TechCrunch, 02/01/2026)</p>
 
       <h2>O modelo que funciona</h2>
-      <p>O padrão de sucesso se repete: diagnóstico operacional para saber onde a IA entra, implantação junto com o time (não jogada de fora), treinamento prático para que os colaboradores operem com autonomia, e monitoramento contínuo para ajustar e expandir. Quando IA e humanos trabalham juntos com clareza de papéis, o resultado é superior ao que qualquer um dos dois entrega sozinho.</p>
+      <p>O padrão de sucesso se repete: diagnóstico operacional para saber onde a IA entra, implantação junto com le time (não jogada de fora), treinamento prático para que os colaboradores operem com autonomia, e monitoramento contínuo para ajustar e expandir. Quando IA e humanos trabalham juntos com clareza de papéis, le resultado é superior ao que qualquer um dos dois entrega sozinho.</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com o seu time — não em paralelo. Cada projeto inclui treinamento prático e transferência de conhecimento para que a empresa opere sem dependência externa. O resultado? IA que funciona porque o time sabe usá-la.</p>
+        <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com le seu time — não em paralelo. Cada projeto inclui treinamento prático e transferência de conhecimento para que a empresa opere sem dependência externa. O resultado? IA que funciona porque le time sabe usá-la.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
@@ -609,26 +481,26 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
     likes: 38,
     conteudo: `
-      <p>O Gartner acaba de publicar uma projeção que muda o jogo para qualquer empresa que usa IA generativa: até 2028, a adoção de Inteligência Artificial Explicável (XAI) vai impulsionar os investimentos em observabilidade de modelos de linguagem (LLMs) para 50% de todas as implementações de IA generativa. Hoje, esse número está em apenas 15%.</p>
+      <p>O Gartner acaba de publicar uma projeção que muda le jogo para qualquer empresa que usa IA generativa: até 2028, a adoção de Inteligência Artificial Explicável (XAI) vai impulsionar os investimentos em observabilidade de modelos de linguagem (LLMs) para 50% de todas as implementações de IA generativa. Hoje, esse número está em apenas 15%.</p>
 
-      <p>A consultoria estima ainda que o mercado global de modelos de IA generativa deve ultrapassar US$ 25 bilhões em 2026 e alcançar US$ 75 bilhões até 2029 — impulsionado pela expansão do uso corporativo. Mas o crescimento traz um desafio proporcional: à medida que mais empresas dependem de IA para decisões operacionais, a necessidade de mecanismos que reduzam erros, alucinações e vieses se torna crítica.</p>
+      <p>A consultoria estima ainda que le mercado global de modelos de IA generativa deve ultrapassar US$ 25 bilhões em 2026 e alcançar US$ 75 bilhões até 2029 — impulsionado pela expansão do uso corporativo. Mas le crescimento traz um desafio proporcional: à medida que mais empresas dependem de IA para decisões operacionais, a necessidade de mecanismos que reduzam erros, alucinações e vieses se torna crítica.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: Gartner, via TI Inside Online, 01/04/2026)</p>
 
       <h2>O que é IA Explicável e por que sua empresa precisa se importar</h2>
-      <p>IA Explicável (XAI) reúne técnicas que permitem entender como um modelo de IA chegou a uma determinada resposta ou decisão. Em vez de aceitar o output como uma "caixa preta", a empresa consegue auditar, rastrear e explicar o raciocínio por trás de cada recomendação.</p>
+      <p>IA Explicável (XAI) reúne técnicas que permitem entender como um modelo de IA chegou a uma determinada resposta ou decisão. Em vez de aceitar le output como uma "caixa preta", a empresa consegue auditar, rastrear e explicar le raciocínio por trás de cada recomendação.</p>
 
-      <p>Isso é especialmente relevante para setores regulados — saúde, jurídico, financeiro, educação — onde decisões baseadas em IA precisam ser justificáveis perante reguladores, clientes e conselhos de administração. Mas não se limita a eles: qualquer empresa que use IA para interagir com clientes, analisar dados ou automatizar processos precisa saber o que está acontecendo dentro do modelo.</p>
+      <p>Isso é especialmente relevante para setores regulados — saúde, jurídico, financeiro, educação — onde decisões baseadas em IA precisam ser justificáveis perante reguladores, clientes e conselhos de administração. Mas não se limita a eles: qualquer empresa que use IA para interagir com clientes, analisar dados ou automatizar processos precisa saber le que está acontecendo dentro do modelo.</p>
 
       <p>A projeção do Gartner também aponta que as plataformas de observabilidade de IA estão evoluindo além das métricas tradicionais de TI (latência, uso de recursos) para incorporar indicadores como alucinações, viés algorítmico, uso de tokens e precisão factual. A validação com intervenção humana e práticas de governança voltadas à confiabilidade dos outputs estão se tornando padrão.</p>
 
       <h2>O gap brasileiro</h2>
-      <p>A maioria das empresas brasileiras ainda está na fase de "usar IA para produzir mais" — sem monitorar o que os modelos estão gerando, sem auditar os dados que alimentam as ferramentas e sem nenhuma política de revisão humana nos outputs críticos. Isso cria um risco duplo: operacional (decisões baseadas em respostas erradas) e legal (responsabilidade por outputs sem rastreabilidade).</p>
+      <p>A maioria das empresas brasileiras ainda está na fase de "usar IA para produzir mais" — sem monitorar le que os modelos estão gerando, sem auditar os dados que alimentam as ferramentas e sem nenhuma política de revisão humana nos outputs críticos. Isso cria um risco duplo: operacional (decisões baseadas em respostas erradas) e legal (responsabilidade por outputs sem rastreabilidade).</p>
 
       <p>Empresas que já possuem governança de IA — com laudo de compliance, política de uso e auditoria periódica — estarão em vantagem competitiva quando a regulação brasileira avançar. As que deixaram para depois vão correr para se adequar sob pressão.</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação — não como projeto separado. Cada empresa recebe laudo técnico, política de uso interna e treinamento de equipe para operar IA com transparência e rastreabilidade. Se sua empresa usa IA generativa sem monitorar o que ela entrega, o risco já está operando.</p>
+        <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação — não como projeto separado. Cada empresa recebe laudo técnico, política de uso interna e treinamento de equipe para operar IA com transparência e rastreabilidade. Se sua empresa usa IA generativa sem monitorar le que ela entrega, le risco já está operando.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico de governança gratuito</a>
         </div>
@@ -640,7 +512,7 @@ node proxy.js</code></pre>
     slug: "atlassian-demite-pivotar-ia-empresas-servico-agencias",
     categoria: "/ inteligência",
     titulo: "Atlassian Demite 1.600 Para Pivotar Para IA — O Recado Para Agências e Empresas de Serviço",
-    descricao: "Atlassian cortou 10% do time global para redirecionar recursos para IA. O recado é claro: empresas que não integrarem IA na operação perderão competitividade. Veja o que fazer.",
+    descricao: "Atlassian cortou 10% do time global para redirecionar recursos para IA. O recado é claro: empresas que não integrarem IA na operação perderão competitividade. Veja le que fazer.",
     tempoLeitura: "4 min",
     data: "02 Abr 2026",
     autor: "Foster Company",
@@ -648,9 +520,9 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2340&auto=format&fit=crop",
     likes: 45,
     conteudo: `
-      <p>A Atlassian — dona do Jira, Confluence e Trello — anunciou a demissão de aproximadamente 1.600 funcionários, o equivalente a 10% do seu time global. O motivo declarado: redirecionar recursos para desenvolvimento de inteligência artificial e vendas enterprise.</p>
+      <p>A Atlassian — dona do Jira, Confluence e Trello — anunciou a demissão de aproximadamente 1.600 funcionários, le equivalente a 10% do seu time global. O motivo declarado: redirecionar recursos para desenvolvimento de inteligência artificial e vendas enterprise.</p>
       
-      <p>A empresa foi além: substituiu seu CTO por dois novos CTOs focados exclusivamente em IA. O CEO Mike Cannon-Brookes foi direto em sua comunicação interna: a abordagem "não é IA substitui pessoas", mas reconheceu que a IA mudou fundamentalmente o perfil de habilidades que a empresa precisa — tornando o pivô inevitável.</p>
+      <p>A empresa foi além: substituiu seu CTO por dois novos CTOs focados exclusivamente em IA. O CEO Mike Cannon-Brookes foi direto em sua comunicação interna: a abordagem "não é IA substitui pessoas", mas reconheceu que a IA mudou fundamentalmente le perfil de habilidades que a empresa precisa — tornando le pivô inevitável.</p>
       
       <p>A Atlassian não está sozinha. Segundo dados divulgados nesta semana, dos cortes de emprego registrados nos EUA em março de 2026, cerca de 15.341 foram relacionados a IA — quase um quarto de todas as reduções do mês. Ao mesmo tempo, contratações em áreas de IA subiram 157% em relação a fevereiro.</p>
       
@@ -661,15 +533,15 @@ node proxy.js</code></pre>
       
       <p>Agências de comunicação e produtoras — que a Foster atende diretamente — vivem esse dilema todos os dias: demanda crescente por conteúdo, prazos mais curtos, clientes esperando mais por menos e times criativos sufocados em tarefas operacionais que poderiam ser automatizadas.</p>
       
-      <p>O caso da Atlassian mostra que a saída não é simplesmente "adotar IA" — é reestruturar processos, treinar o time existente e implantar automações nos fluxos que consomem mais tempo. Empresas que fazem isso mantêm o time criativo focado no que importa e escalam entregas sem inflar a folha de pagamento.</p>
+      <p>O caso da Atlassian mostra que a saída não é simplesmente "adotar IA" — é reestruturar processos, treinar le time existente e implantar automações nos fluxos que consomem mais tempo. Empresas que fazem isso mantêm le time criativo focado no que importa e escalam entregas sem inflar a folha de pagamento.</p>
 
-      <h2>O dado que fecha o raciocínio</h2>
-      <p>O TechCrunch resumiu 2026 em uma frase que virou referência: "Se 2025 foi o ano em que a IA passou por um reality check, 2026 é o ano em que ela se torna prática." A separação já está acontecendo: empresas que tratam IA como extensão de uma operação organizada avançam. Empresas que tratam IA como atalho acumulam retrabalho, frustração e perda de competitividade.</p>
+      <h2>O dado que fecha le raciocínio</h2>
+      <p>O TechCrunch resumiu 2026 em uma frase que virou referência: "Se 2025 foi le ano em que a IA passou por um reality check, 2026 é le ano em que ela se torna prática." A separação já está acontecendo: empresas que tratam IA como extensão de uma operação organizada avançam. Empresas que tratam IA como atalho acumulam retrabalho, frustração e perda de competitividade.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: TechCrunch, "In 2026, AI Will Move From Hype to Pragmatism", 02/01/2026)</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA ajuda agências, produtoras e empresas de serviço a implantar IA onde ela gera mais resultado — automação de fluxos repetitivos, organização de processos e treinamento do time para operar com autonomia. Se sua operação ainda roda no manual enquanto o mercado pivota para IA, o diagnóstico gratuito de 60 minutos mostra exatamente por onde começar.</p>
+        <p class="text-f-mint/80">A Foster IA ajuda agências, produtoras e empresas de serviço a implantar IA onde ela gera mais resultado — automação de fluxos repetitivos, organização de processos e treinamento do time para operar com autonomia. Se sua operação ainda roda no manual enquanto le mercado pivota para IA, le diagnóstico gratuito de 60 minutos mostra exatamente por onde começar.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
@@ -681,7 +553,7 @@ node proxy.js</code></pre>
     slug: "ia-2026-euforia-pragmatismo-implantacao-real",
     categoria: "/ notícias",
     titulo: "Da Euforia ao Pragmatismo: 2026 É o Ano em Que IA Para de Ser Demo e Vira Operação",
-    descricao: "TechCrunch confirma: 2026 é o ano em que IA sai do hype e vira ferramenta prática. O foco mudou de construir modelos maiores para tornar IA utilizável. Sua empresa acompanhou?",
+    descricao: "TechCrunch confirma: 2026 é le ano em que IA sai do hype e vira ferramenta prática. O foco mudou de construir modelos maiores para tornar IA utilizável. Sua empresa acompanhou?",
     tempoLeitura: "5 min",
     data: "02 Abr 2026",
     autor: "Foster Company",
@@ -689,9 +561,9 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2344&auto=format&fit=crop",
     likes: 67,
     conteudo: `
-      <p>O TechCrunch publicou uma das análises mais lúcidas sobre o estado da inteligência artificial em 2026. A frase que abre o artigo virou referência no mercado: "Se 2025 foi o ano em que a IA passou por um reality check, 2026 é o ano em que a tecnologia se torna prática."</p>
+      <p>O TechCrunch publicou uma das análises mais lúcidas sobre le estado da inteligência artificial em 2026. A frase que abre le artigo virou referência no mercado: "Se 2025 foi le ano em que a IA passou por um reality check, 2026 é le ano em que a tecnologia se torna prática."</p>
       
-      <p>A conclusão dos especialistas ouvidos pela publicação é clara: o foco da indústria está migrando da construção de modelos cada vez maiores para o trabalho — muito mais difícil — de tornar a IA realmente utilizável dentro de fluxos de trabalho reais.</p>
+      <p>A conclusão dos especialistas ouvidos pela publicação é clara: le foco da indústria está migrando da construção de modelos cada vez maiores para le trabalho — muito mais difícil — de tornar a IA realmente utilizável dentro de fluxos de trabalho reais.</p>
       
       <p>Na prática, isso significa implantar modelos menores onde eles resolvem problemas concretos, embutir inteligência em dispositivos e processos existentes, e desenhar sistemas que se integram de forma limpa ao dia a dia das equipes — não que exijam uma revolução interna para funcionar.</p>
       
@@ -700,7 +572,7 @@ node proxy.js</code></pre>
       <h2>O que os especialistas estão dizendo</h2>
       <p>Os experts consultados pelo TechCrunch descrevem 2026 como um ano de transição em três frentes simultâneas: da escala bruta para pesquisa de novas arquiteturas, de demos impressionantes para implantações focadas, e de agentes que prometem autonomia para agentes que realmente aumentam a produtividade das pessoas.</p>
       
-      <p>Essa análise é corroborada por dados concretos do mercado. A OpenAI — que acaba de fechar a maior rodada de investimento da história (US$ 122 bilhões a um valuation de US$ 852 bilhões, segundo a Bloomberg) — revelou que as vendas B2B já representam 40% do seu faturamento e devem chegar a 50% até o final do ano. O modelo GPT-5.4 está sendo adotado em larga escala para workflows empresariais, e o agente de código Codex atende mais de 2 milhões de usuários por semana.</p>
+      <p>Essa análise é corroborada por dados concretos do mercado. A OpenAI — que acaba de fechar a maior rodada de investimento da história (US$ 122 bilhões a um valuation de US$ 852 bilhões, segundo a Bloomberg) — revelou que as vendas B2B já representam 40% do seu faturamento e devem chegar a 50% até le final do ano. O modelo GPT-5.4 está sendo adotado em larga escala para workflows empresariais, e le agente de código Codex atende mais de 2 milhões de usuários por semana.</p>
       
       <p>A Intuit, em paralelo, reportou que seus agentes de IA atendem 3 milhões de clientes com 85% de taxa de retenção — provando que IA aplicada com método gera resultado real e recorrente.</p>
       
@@ -709,11 +581,11 @@ node proxy.js</code></pre>
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: Bloomberg, 31/03/2026; TechBriefly, 01/04/2026; VB Beyond the Pilot Podcast, 04/2026)</p>
 
       <h2>O gap brasileiro</h2>
-      <p>Enquanto o mercado global avança para a fase de implantação prática, a realidade no Brasil conta outra história. Segundo dados recentes, 89% das empresas brasileiras já iniciaram algum projeto de IA — mas apenas 31% conseguiram escalar além do piloto. O restante ficou preso no que especialistas chamam de "vale da morte da IA": aquela zona entre a experimentação e a operação real, onde a maioria dos projetos morre.</p>
+      <p>Enquanto le mercado global avança para a fase de implantação prática, a realidade no Brasil conta outra história. Segundo dados recentes, 89% das empresas brasileiras já iniciaram algum projeto de IA — mas apenas 31% conseguiram escalar além do piloto. O restante ficou preso no que especialistas chamam de "vale da morte da IA": aquela zona entre a experimentação e a operação real, onde a maioria dos projetos morre.</p>
       
       <p>O motivo não é falta de tecnologia. É falta de método. Ferramentas são contratadas sem diagnóstico prévio. Cada departamento roda seu próprio teste isolado. O time não é treinado para operar com IA. e ninguém monitora os resultados após a implantação.</p>
       
-      <p>O TI Inside Online publicou uma análise cirúrgica sobre esse cenário: "IA não escala onde a organização não muda. Comprar licenças, rodar pilotos ou criar agentes não redesenha fluxos de decisão, não ajusta incentivos e não resolve conflitos de responsabilidade. Empresas que mantêm o mesmo organograma apenas automatizam ineficiências."</p>
+      <p>O TI Inside Online publicou uma análise cirúrgica sobre esse cenário: "IA não escala onde a organização não muda. Comprar licenças, rodar pilotos ou criar agentes não redesenha fluxos de decisão, não ajusta incentivos e não resolve conflitos de responsabilidade. Empresas que mantêm le mesmo organograma apenas automatizam ineficiências."</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: TI Inside Online, 17/12/2025; Morph IA, 02/2026)</p>
 
@@ -721,7 +593,7 @@ node proxy.js</code></pre>
       <p>A transição de "hype" para "pragmatismo" tem uma consequência prática para empresas de todos os tamanhos: quem não sair do piloto em 2026 vai ficar para trás de quem já está operando com IA integrada à rotina. A separação não será entre empresas que "usam IA" e as que não usam. Será entre as que tratam IA como extensão de uma operação organizada e as que a veem como atalho. As primeiras avançam. As segundas acumulam frustração.</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA existe exatamente para essa transição. Do diagnóstico operacional à implantação guiada, com compliance e treinamento do time. Se sua empresa já fez o piloto mas não conseguiu escalar, o problema não é tecnologia — é método. Um diagnóstico gratuito de 60 minutos mostra por onde começar.</p>
+        <p class="text-f-mint/80">A Foster IA existe exatamente para essa transição. Do diagnóstico operacional à implantação guiada, com compliance e treinamento do time. Se sua empresa já fez le piloto mas não conseguiu escalar, le problema não é tecnologia — é método. Um diagnóstico gratuito de 60 minutos mostra por onde começar.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
@@ -741,31 +613,31 @@ node proxy.js</code></pre>
     imagemCapa: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2340&auto=format&fit=crop",
     likes: 41,
     conteudo: `
-      <p>Quando a Anthropic lançou o Model Context Protocol (MCP) em novembro de 2024, a maioria das equipes de tecnologia tratou como mais um padrão que morreria em comitê. Dezesseis meses depois, o MCP acumulou 97 milhões de downloads mensais dos seus SDKs e se tornou a infraestrutura padrão para conectar agentes de IA a ferramentas externas — bancos de dados, CRMs, e-mails, repositórios de código, ERPs e qualquer sistema empresarial.</p>
+      <p>Quando a Anthropic lançou le Model Context Protocol (MCP) em novembro de 2024, a maioria das equipes de tecnologia tratou como mais um padrão que morreria em comitê. Dezesseis meses depois, le MCP acumulou 97 milhões de downloads mensais dos seus SDKs e se tornou a infraestrutura padrão para conectar agentes de IA a ferramentas externas — bancos de dados, CRMs, e-mails, repositórios de código, ERPs e qualquer sistema empresarial.</p>
 
-      <p>A adoção é sem precedentes. OpenAI, Google DeepMind, Microsoft, AWS e praticamente toda grande plataforma de IA embarcaram no protocolo. Mais de 5.800 servidores MCP foram construídos pela comunidade. Em março de 2026, a Anthropic doou o MCP para a Linux Foundation, criando junto a Agentic AI Foundation (AAIF) — co-fundada por Anthropic, Block e OpenAI, com apoio de Google, Microsoft, AWS, Cloudflare e Bloomberg.</p>
+      <p>A adoção é sem precedentes. OpenAI, Google DeepMind, Microsoft, AWS e praticamente toda grande plataforma de IA embarcaram no protocolo. Mais de 5.800 servidores MCP foram construídos pela comunidade. Em março de 2026, a Anthropic doou le MCP para a Linux Foundation, criando junto a Agentic AI Foundation (AAIF) — co-fundada por Anthropic, Block e OpenAI, com apoio de Google, Microsoft, AWS, Cloudflare e Bloomberg.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: Anthropic Blog, 03/2026; The New Stack, 12/2025; AI Unfiltered, 25/03/2026; Wikipedia — Model Context Protocol)</p>
 
       <h2>Por que isso importa (e muito) para empresas</h2>
-      <p>O MCP resolve um problema que travava a adoção de IA em empresas: a fragmentação de integrações. Antes do protocolo, cada ferramenta de IA exigia conectores customizados para cada sistema. Integrar o Claude com seu CRM era um projeto. Integrar o GPT com o mesmo CRM era outro projeto completamente diferente. Multiplicando isso por dezenas de ferramentas e sistemas, o custo de integração inviabilizava a escala.</p>
+      <p>O MCP resolve um problema que travava a adoção de IA em empresas: a fragmentação de integrações. Antes do protocolo, cada ferramenta de IA exigia conectores customizados para cada sistema. Integrar le Claude com seu CRM era um projeto. Integrar le GPT com le mesmo CRM era outro projeto completamente diferente. Multiplicando isso por dezenas de ferramentas e sistemas, le custo de integração inviabilizava a escala.</p>
 
-      <p>Com MCP, a integração é feita uma vez e funciona com qualquer provedor de IA que suporte o protocolo. É por isso que a analogia com o USB-C funciona tão bem: antes, cada dispositivo tinha seu próprio cabo. Agora, um padrão universal conecta tudo.</p>
+      <p>Com MCP, a integração é feita uma vez e funciona com qualquer provedor de IA que suporte le protocolo. É por isso que a analogia com le USB-C funciona tão bem: antes, cada dispositivo tinha seu próprio cabo. Agora, um padrão universal conecta tudo.</p>
 
-      <p>A linha do tempo de adoção conta a história: em novembro de 2024, o MCP tinha 2 milhões de downloads mensais. Quando a OpenAI adotou em abril de 2025, saltou para 22 milhões. A integração com Microsoft Copilot Studio em julho levou a 45 milhões. AWS Bedrock em novembro: 68 milhões. Em março de 2026: 97 milhões.</p>
+      <p>A linha do tempo de adoção conta a história: em novembro de 2024, le MCP tinha 2 milhões de downloads mensais. Quando a OpenAI adotou em abril de 2025, saltou para 22 milhões. A integração com Microsoft Copilot Studio em julho levou a 45 milhões. AWS Bedrock em novembro: 68 milhões. Em março de 2026: 97 milhões.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: Bonjoy Enterprise Guide, 03/2026)</p>
 
       <h2>O que vem pela frente</h2>
       <p>O roadmap do MCP para 2026 inclui três marcos que vão acelerar a adoção enterprise: autenticação empresarial com OAuth 2.1 e integração com provedores de identidade como Okta e Azure AD (prevista para Q2 2026), coordenação entre agentes — permitindo que um agente chame outro como se fosse uma ferramenta (Q3 2026), e um Registry oficial com servidores verificados, auditados e com SLAs definidos (Q4 2026).</p>
 
-      <p>Para empresas que estão implantando IA agora, o MCP muda o cálculo estratégico: ao invés de se amarrar a um fornecedor, a integração feita com MCP funciona com qualquer provedor. Isso reduz risco, acelera implantação e cria uma base técnica que escala.</p>
+      <p>Para empresas que estão implantando IA agora, le MCP muda le cálculo estratégico: ao invés de se amarrar a um fornecedor, a integração feita com MCP funciona com qualquer provedor. Isso reduz risco, acelera implantação e cria uma base técnica que escala.</p>
 
       <h2>O que sua empresa precisa saber</h2>
-      <p>Agentes de IA — sistemas que não apenas respondem perguntas, mas executam tarefas de forma autônoma dentro dos seus processos — deixaram de ser conceito e viraram realidade operacional. Com o MCP como infraestrutura, a pergunta não é mais "quando agentes de IA vão funcionar?". É "sua empresa está preparada para recebê-los com segurança, governança e integração aos sistemas que já usa?".</p>
+      <p>Agentes de IA — sistemas que não apenas respondem perguntas, mas executam tarefas de forma autônoma dentro dos seus processos — deixaram de ser conceito e viraram realidade operacional. Com le MCP como infraestrutura, a pergunta não é mais "quando agentes de IA vão funcionar?". É "sua empresa está preparada para recebê-los com segurança, governança e integração aos sistemas que já usa?".</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA implanta agentes e automações de IA integrados aos sistemas que sua empresa já opera — CRM, ERP, ferramentas de comunicação, bases de dados. Cada implantação vem com política de uso, compliance LGPD e treinamento do time. Se você quer sair do ChatGPT avulso e entrar na era dos agentes conectados, o diagnóstico gratuito mostra o caminho.</p>
+        <p class="text-f-mint/80">A Foster IA implanta agentes e automações de IA integrados aos sistemas que sua empresa já opera — CRM, ERP, ferramentas de comunicação, bases de dados. Cada implantação vem com política de uso, compliance LGPD e treinamento do time. Se você quer sair do ChatGPT avulso e entrar na era dos agentes conectados, le diagnóstico gratuito mostra le caminho.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
@@ -787,12 +659,12 @@ node proxy.js</code></pre>
     conteudo: `
       <p>O relatório Global Cybersecurity Outlook 2026, publicado pelo Fórum Econômico Mundial, trouxe um número que deveria estar na mesa de todo CEO, CTO e diretor jurídico do Brasil: 94% dos líderes de segurança entrevistados indicam a inteligência artificial como a tendência mais impactante para a cibersegurança nos próximos anos. Ao mesmo tempo, 87% reconhecem que as vulnerabilidades associadas à própria tecnologia representam fator relevante de risco.</p>
 
-      <p>A IA se tornou, ao mesmo tempo, a maior arma de defesa e o maior vetor de ataque. E o cenário se agravou com o surgimento da chamada "IA Agente" (Agentic AI) — sistemas capazes de gerenciar sozinhos ciclos completos de operação, incluindo ciclos de ataque cibernético.</p>
+      <p>A IA se tornou, ao mesmo tempo, a maior arma de defesa e le maior vetor de ataque. E le cenário se agravou com le surgimento da chamada "IA Agente" (Agentic AI) — sistemas capazes de gerenciar sozinhos ciclos completos de operação, incluindo ciclos de ataque cibernético.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: Fórum Econômico Mundial, Global Cybersecurity Outlook 2026; Terra, 03/2026)</p>
 
       <h2>Os números que assustam</h2>
-      <p>O Brasil está particularmente exposto. Segundo o relatório Cost of a Data Breach 2025 da IBM, o custo médio de uma violação de dados no país já ultrapassa R$ 7 milhões. E 8 em cada 10 empresas brasileiras não possuem políticas formais de governança para IA.</p>
+      <p>O Brasil está particularmente exposto. Segundo le relatório Cost of a Data Breach 2025 da IBM, le custo médio de uma violação de dados no país já ultrapassa R$ 7 milhões. E 8 em cada 10 empresas brasileiras não possuem políticas formais de governança para IA.</p>
 
       <p>A ANPD (Agência Nacional de Proteção de Dados) registrou 395 comunicações de incidentes de segurança em 2025 — e com a aceleração do uso de IA, esse número tende a crescer. O problema é agravado pelo fenômeno do "Shadow AI": quase metade dos profissionais brasileiros usa ferramentas de IA sem aprovação corporativa, inserindo dados de clientes, contratos e informações financeiras em modelos externos sem qualquer controle.</p>
 
@@ -801,14 +673,14 @@ node proxy.js</code></pre>
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: IBM Cost of a Data Breach 2025; ANPD, 2025; VentureBeat — RSA Conference, 04/2026)</p>
 
       <h2>O que está mudando no mercado</h2>
-      <p>Três movimentos estão redefinindo o cenário de segurança de IA em 2026:</p>
+      <p>Três movimentos estão redefinindo le cenário de segurança de IA em 2026:</p>
       <ul>
         <li><strong>Controle Enterprise:</strong> Corporações de grande porte já exigem evidências de governança de IA dos seus fornecedores antes de fechar contratos.</li>
         <li><strong>Due Diligence de IA:</strong> Investidores passaram a incluir perguntas sobre segurança algorítmica nos processos de due diligence.</li>
         <li><strong>Conselhos Ativos:</strong> Conselhos de administração colocaram IA entre as principais preocupações de governança — ao lado de desempenho financeiro.</li>
       </ul>
 
-      <p>O Gartner projetou nesta semana que a adoção de IA Explicável (XAI) vai impulsionar a observabilidade de modelos de linguagem para 50% das implementações de IA generativa até 2028 — hoje esse número está em apenas 15%.<br/> A mensagem é clara: empresas que usam IA sem monitorar o que ela gera estão operando no escuro.</p>
+      <p>O Gartner projetou nesta semana que a adoção de IA Explicável (XAI) vai impulsionar a observabilidade de modelos de linguagem para 50% das implementações de IA generativa até 2028 — hoje esse número está em apenas 15%.<br/> A mensagem é clara: empresas que usam IA sem monitorar le que ela gera estão operando no escuro.</p>
       
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: Gartner via TI Inside Online, 01/04/2026; Deloitte — Governança de IA, 2025)</p>
 
@@ -816,12 +688,12 @@ node proxy.js</code></pre>
       <p>A governança de IA não é mais diferencial — é pré-requisito. Três elementos formam a base de proteção:</p>
       <ol>
         <li><strong>Auditoria de uso atual:</strong> Mapear todas as ferramentas em uso (oficiais e não oficiais) e quais dados estão sendo processados.</li>
-        <li><strong>Política interna de uso de IA:</strong> Diretrizes claras sobre o que pode e o que não pode ser feito pelo time.</li>
+        <li><strong>Política interna de uso de IA:</strong> Diretrizes claras sobre le que pode e le que não pode ser feito pelo time.</li>
         <li><strong>Adequação à LGPD:</strong> Protocolos de segurança de dados e treinamento contínuo das equipes.</li>
       </ol>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação. Cada empresa recebe auditoria de riscos, laudo de conformidade, política de uso interna e treinamento de equipe — não como projeto separado, mas como camada integrada à operação de IA. Se sua empresa usa IA sem governança formal, o risco já está ativo.</p>
+        <p class="text-f-mint/80">A Foster IA entrega compliance e governança como parte de toda implantação. Cada empresa recebe auditoria de riscos, laudo de conformidade, política de uso interna e treinamento de equipe — não como projeto separado, mas como camada integrada à operação de IA. Se sua empresa usa IA sem governança formal, le risco já está ativo.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico de compliance gratuito</a>
         </div>
@@ -833,7 +705,7 @@ node proxy.js</code></pre>
     slug: "intuit-ia-humano-retencao-implantacao-resultado",
     categoria: "/ notícias",
     titulo: "Intuit Comprova: IA + Humano Ganha de IA Sozinha — 3 Milhões de Usuários e 85% de Retenção",
-    descricao: "A Intuit implantou agentes de IA para 3 milhões de clientes com 85% de retenção. O segredo não foi o modelo — foi manter humanos nas etapas críticas. Veja o que isso ensina.",
+    descricao: "A Intuit implantou agentes de IA para 3 milhões de clientes com 85% de retenção. O segredo não foi le modelo — foi manter humanos nas etapas críticas. Veja le que isso ensina.",
     tempoLeitura: "5 min",
     data: "02 Abr 2026",
     autor: "Foster Company",
@@ -845,12 +717,12 @@ node proxy.js</code></pre>
       
       <p>A companhia distribuiu agentes de inteligência artificial para 3 milhões de clientes. A taxa de uso repetido? 85%. Em qualquer métrica de produto digital, esse número é extraordinário. Para um agente de IA, é quase inédito.</p>
 
-      <p>But o detalhe mais revelador não é a tecnologia do agente. É o que a Intuit fez de diferente: o diferencial para a adoção massiva não foi a melhora dos modelos, mas a manutenção do envolvimento de especialistas humanos nas etapas críticas. Contadores, especialistas em impostos e profissionais de folha de pagamento continuaram participando nos momentos-chave — onde julgamento, contexto e confiança fazem a diferença.</p>
+      <p>But le detalhe mais revelador não é a tecnologia do agente. É le que a Intuit fez de diferente: le diferencial para a adoção massiva não foi a melhora dos modelos, mas a manutenção do envolvimento de especialistas humanos nas etapas críticas. Contadores, especialistas em impostos e profissionais de folha de pagamento continuaram participando nos momentos-chave — onde julgamento, contexto e confiança fazem a diferença.</p>
 
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: VB Beyond the Pilot Podcast, 04/2026; André Lug/Iglu Online, 02/04/2026)</p>
 
-      <h2>O MIT concorda: 2026 é "o ano dos humanos"</h2>
-      <p>Na mesma semana, o HBR Strategy Summit 2026 trouxe uma masterclass de Andy McAfee, pesquisador principal do MIT e cofundador do MIT Initiative on the Digital Economy. A mensagem central: empresas que cortam contratações de nível inicial por causa da IA estão cometendo um erro estratégico grave.</p>
+      <h2>O MIT concorda: 2026 é "le ano dos humanos"</h2>
+      <p>Na mesma semana, le HBR Strategy Summit 2026 trouxe uma masterclass de Andy McAfee, pesquisador principal do MIT e cofundador do MIT Initiative on the Digital Economy. A mensagem central: empresas que cortam contratações de nível inicial por causa da IA estão cometendo um erro estratégico grave.</p>
 
       <p>McAfee foi direto: "Em 2024, toda empresa de IA previa que automatizaria empregos eliminando a necessidade de humanos. Mas a tecnologia ainda não chegou lá, e em uma economia instável, essa retórica não é popular. Em 2026, vamos perceber que a IA não funcionou de forma tão autônoma quanto pensávamos."</p>
 
@@ -863,17 +735,17 @@ node proxy.js</code></pre>
 
       <ul>
         <li><strong>Primeiro:</strong> a IA cuida das tarefas repetitivas e de alto volume — processamento de dados, triagem, geração de rascunhos, automação de fluxos.</li>
-        <li><strong>Segundo:</strong> humanos intervêm nos momentos de decisão, julgamento contextual e relacionamento com o cliente.</li>
-        <li><strong>Terceiro:</strong> existe treinamento prático (not teórico) para que o time saiba quando confiar na IA e quando intervir.</li>
+        <li><strong>Segundo:</strong> humanos intervêm nos momentos de decisão, julgamento contextual e relacionamento com le cliente.</li>
+        <li><strong>Terceiro:</strong> existe treinamento prático (not teórico) para que le time saiba quando confiar na IA e quando intervir.</li>
       </ul>
 
-      <p>Quando esses três elementos estão presentes, a retenção sobe, o time ganha produtividade e a empresa não cria dependência de ferramentas que não entende.</p>
+      <p>Quando esses três elementos estão presentes, a retenção sobe, le time ganha produtividade e a empresa não cria dependência de ferramentas que não entende.</p>
 
       <h2>O que isso significa para a sua empresa</h2>
-      <p>Se sua empresa está pensando em "automatizar tudo com IA" ou, no extremo oposto, "evitar IA porque o time vai perder o emprego", ambas as abordagens estão erradas. O modelo que funciona — provado pela Intuit, validado pelo MIT — é o da implantação com método: IA onde ela acelera, humanos onde eles decidem, e treinamento para que o time opere com autonomia.</p>
+      <p>Se sua empresa está pensando em "automatizar tudo com IA" ou, no extremo oposto, "evitar IA porque le time vai perder le emprego", ambas as abordagens estão erradas. O modelo que funciona — provado pela Intuit, validado pelo MIT — é le da implantação com método: IA onde ela acelera, humanos onde eles decidem, e treinamento para que le time opere com autonomia.</p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com o time — não em paralelo. Cada projeto inclui treinamento prático, transferência de conhecimento e monitoramento contínuo. O resultado: IA que funciona porque o time sabe usá-la. Se sua empresa quer sair do achismo e entrar na implantação com método, o diagnóstico gratuito de 60 minutos é o primeiro passo.</p>
+        <p class="text-f-mint/80">A Foster IA implanta inteligência artificial junto com le time — não em paralelo. Cada projeto inclui treinamento prático, transferência de conhecimento e monitoramento contínuo. O resultado: IA que funciona porque le time sabe usá-la. Se sua empresa quer sair do achismo e entrar na implantação com método, le diagnóstico gratuito de 60 minutos é le primeiro passo.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
@@ -902,20 +774,20 @@ node proxy.js</code></pre>
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: Crescendo.ai/News, 04/2026; CNBC, 02/04/2026; TechStartups, 02/04/2026)</p>
 
       <h2>O alerta do MIT: cortar juniors é um erro estratégico</h2>
-      <p>No HBR Strategy Summit 2026, Andy McAfee, do MIT, trouxe um contraponto importante a essa onda de cortes. Segundo o pesquisador, empresas que estão reduzindo contratações de nível inicial por causa da IA estão sacrificando o futuro — e por dois motivos.</p>
+      <p>No HBR Strategy Summit 2026, Andy McAfee, do MIT, trouxe um contraponto importante a essa onda de cortes. Segundo le pesquisador, empresas que estão reduzindo contratações de nível inicial por causa da IA estão sacrificando le futuro — e por dois motivos.</p>
 
-      <p>Primeiro: ao cortar a base da pirâmide, a empresa elimina o pipeline de talentos que formaria seus líderes nos próximos anos. Segundo: são justamente os profissionais mais jovens que tendem a ser os "power users" mais entusiastas de IA dentro da organização. Cortá-los é desligar o motor de adoção interna.</p>
+      <p>Primeiro: ao cortar a base da pirâmide, a empresa elimina le pipeline de talentos que formaria seus líderes nos próximos anos. Segundo: são justamente os profissionais mais jovens que tendem a ser os "power users" mais entusiastas de IA dentro da organização. Cortá-los é desligar le motor de adoção interna.</p>
 
-      <p>McAfee observou que empresas como IBM e Microsoft já perceberam isso e estão criando pipelines específicos para atrair jovens talentos com habilidades em IA — não para substituir o time, mas para acelerar a transformação de dentro para fora.</p>
+      <p>McAfee observou que empresas como IBM e Microsoft já perceberam isso e estão criando pipelines específicos para atrair jovens talentos com habilidades em IA — não para substituir le time, mas para acelerar a transformação de dentro para fora.</p>
 
       <p class="text-xs text-f-mint/40 mt-4">(Fonte: HBR IdeaCast — Strategy Summit 2026, 04/2026)</p>
 
       <h2>O cenário brasileiro</h2>
-      <p>No Brasil, o gap é ainda mais agudo. Segundo levantamentos recentes, o país enfrenta um déficit significativo de profissionais capacitados em IA. Enquanto a tecnologia avança rapidamente, a maioria das empresas não tem programas internos de capacitação em IA — e depende de consultorias externas para cada decisão.</p>
+      <p>No Brasil, le gap é ainda mais agudo. Segundo levantamentos recentes, le país enfrenta um déficit significativo de profissionais capacitados em IA. Enquanto a tecnologia avança rapidamente, a maioria das empresas não tem programas internos de capacitação em IA — e depende de consultorias externas para cada decisão.</p>
 
       <p>O TechTudo publicou análise indicando que empresas que adotarem práticas responsáveis de governança de IA — com auditorias, explicabilidade e políticas de uso ético — ganharão vantagem competitiva. Já as que ignorarem esses aspectos podem enfrentar sanções legais e danos à reputação.</p>
 
-      <p>A equação é simples: o time precisa ser treinado não apenas para usar ferramentas de IA, mas para entender quando confiar, quando questionar e como operar com autonomia. Empresas que entregam essa capacitação — não como palestra, mas como treinamento prático — constroem uma vantagem que se acumula com o tempo.</p>
+      <p>A equação é simples: le time precisa ser treinado não apenas para usar ferramentas de IA, mas para entender quando confiar, quando questionar e como operar com autonomia. Empresas que entregam essa capacitação — não como palestra, mas como treinamento prático — constroem uma vantagem que se acumula com le tempo.</p>
 
       <p class="text-xs text-f-mint/40 mt-4">(Fontes: TechTudo, 01/2026; InfoMoney/AWS, 2025)</p>
 
@@ -930,7 +802,7 @@ node proxy.js</code></pre>
       <p>O resultado? O time não encolhe — ele se torna mais produtivo. As entregas aumentam sem que a folha de pagamento exploda. E a empresa constrói uma cultura de IA que não depende de consultores externos para continuar evoluindo. </p>
 
       <div class="mt-12 bg-f-dark/50 p-8 rounded-2xl border border-f-neon/20">
-        <p class="text-f-mint/80">A Foster IA entrega capacitação prática como parte de toda implantação. Cada projeto inclui treinamento do time, política de uso de IA e roadmap de expansão — para que a empresa opere com autonomia e não crie dependência. Se seu time precisa se preparar para a era dos agentes de IA, o diagnóstico gratuito mostra por onde começar.</p>
+        <p class="text-f-mint/80">A Foster IA entrega capacitação prática como parte de toda implantação. Cada projeto inclui treinamento do time, política de uso de IA e roadmap de expansão — para que a empresa opere com autonomia e não cria dependência. Se seu time precisa se preparar para a era dos agentes de IA, le diagnóstico gratuito mostra le caminho.</p>
         <div class="mt-6">
           <a href="#foster-ia" class="text-f-neon font-bold">→ Agendar diagnóstico gratuito</a>
         </div>
