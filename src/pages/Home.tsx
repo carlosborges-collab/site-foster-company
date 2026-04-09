@@ -133,7 +133,6 @@ export default function Home() {
           <div className="lg:col-span-5 relative h-[500px] hidden md:block">
             <AnimatedSection delay={400} className="h-full w-full relative">
               <div className="absolute inset-0 flex items-center justify-center">
-                {/* Main Floating Card */}
                 <div className="w-full max-w-[420px] bg-f-dark/60 backdrop-blur-xl border border-f-neon/20 rounded-2xl p-7 animate-float relative z-20 shadow-2xl">
                   <div className="flex items-center gap-2 mb-4">
                     <div className="flex gap-1.5">
@@ -152,7 +151,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Mini Cards */}
                 <div className="absolute top-10 -right-4 bg-f-dark border border-f-neon/20 rounded-xl p-4 shadow-xl z-30 animate-float" style={{ animationDelay: '1s' }}>
                   <div className="font-display font-bold text-3xl text-f-neon">{t('hero_metric_3_val')}</div>
                   <div className="font-mono text-[10px] text-f-mint/50 uppercase">{t('hero_metric_3_lbl')}</div>
@@ -172,7 +170,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
           <span className="font-mono text-[10px] text-f-mint/30 uppercase tracking-widest">scroll</span>
           <ChevronDown size={16} className="text-f-mint/30 animate-bounce" />
@@ -201,15 +198,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* O QUE É A FOSTER */}
+      {/* ABOUT SECTION */}
       <section className="py-28 bg-f-black">
         <div className="max-w-5xl mx-auto px-5 md:px-8 text-center">
           <AnimatedSection>
-            <div className="font-mono text-f-neon/70 mb-6" data-i18n="about_eyebrow">{t('about_eyebrow')}</div>
+            <div className="font-mono text-f-neon/70 mb-6">{t('about_eyebrow')}</div>
             <h2 className="font-display font-bold text-[clamp(32px,5vw,52px)] text-f-mint mb-8">
-              <span className="block" data-i18n="about_title" dangerouslySetInnerHTML={{ __html: t('about_title') }}></span>
+              <span className="block" dangerouslySetInnerHTML={{ __html: t('about_title') }}></span>
             </h2>
-            <p className="font-body font-light text-[20px] text-f-mint/55 max-w-2xl mx-auto mb-20" data-i18n="about_desc_1">
+            <p className="font-body font-light text-[20px] text-f-mint/55 max-w-2xl mx-auto mb-20">
               {t('about_desc_1')}
             </p>
           </AnimatedSection>
@@ -217,147 +214,112 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
             <AnimatedSection delay={100}>
               <div className="text-f-neon text-2xl mb-4">◈</div>
-              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_1_title">{t('about_pillar_1_title')}</h3>
-              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_1_desc">{t('about_pillar_1_desc')}</p>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3">{t('about_pillar_1_title')}</h3>
+              <p className="text-f-mint/60 text-[15px]">{t('about_pillar_1_desc')}</p>
             </AnimatedSection>
             <AnimatedSection delay={200}>
               <div className="text-f-neon text-2xl mb-4">⬡</div>
-              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_2_title">{t('about_pillar_2_title')}</h3>
-              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_2_desc">{t('about_pillar_2_desc')}</p>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3">{t('about_pillar_2_title')}</h3>
+              <p className="text-f-mint/60 text-[15px]">{t('about_pillar_2_desc')}</p>
             </AnimatedSection>
             <AnimatedSection delay={300}>
               <div className="text-f-neon text-2xl mb-4">▲</div>
-              <h3 className="font-display font-medium text-xl text-f-mint mb-3" data-i18n="about_pillar_3_title">{t('about_pillar_3_title')}</h3>
-              <p className="text-f-mint/60 text-[15px]" data-i18n="about_pillar_3_desc">{t('about_pillar_3_desc')}</p>
+              <h3 className="font-display font-medium text-xl text-f-mint mb-3">{t('about_pillar_3_title')}</h3>
+              <p className="text-f-mint/60 text-[15px]">{t('about_pillar_3_desc')}</p>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* iFOSTER EM DESTAQUE */}
+      {/* iFOSTER FEATURE */}
       <section id="ifoster" className="py-28 bg-gradient-to-br from-f-black to-f-dark overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
             <div className="order-2 lg:order-1">
               <AnimatedSection>
-                <div className="font-mono text-f-neon/70 mb-6" data-i18n="ifoster_eyebrow">{t('ifoster_eyebrow')}</div>
+                <div className="font-mono text-f-neon/70 mb-6">{t('ifoster_eyebrow')}</div>
                 <h2 className="font-display font-bold text-[clamp(40px,6vw,56px)] text-f-mint mb-8">
-                  <span className="block" data-i18n="ifoster_hero_title_1">{t('ifoster_hero_title_1')}</span>
-                  <span className="block" data-i18n="ifoster_hero_title_2">{t('ifoster_hero_title_2')}</span>
-                  <span className="block" data-i18n="ifoster_hero_title_3">{t('ifoster_hero_title_3')}</span>
-                  <span className="block text-f-neon text-glow-sm" data-i18n="ifoster_hero_title_4">{t('ifoster_hero_title_4')}</span>
+                  <span className="block">{t('ifoster_hero_title_1')}</span>
+                  <span className="block">{t('ifoster_hero_title_2')}</span>
+                  <span className="block">{t('ifoster_hero_title_3')}</span>
+                  <span className="block text-f-neon text-glow-sm">{t('ifoster_hero_title_4')}</span>
                 </h2>
-                <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg" data-i18n="ifoster_desc">
+                <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg">
                   {t('ifoster_desc')}
                 </p>
-                
                 <ul className="space-y-3 mb-10">
-                  {[
-                    "ifoster_feature_1",
-                    "ifoster_feature_2",
-                    "ifoster_feature_3",
-                    "ifoster_feature_4",
-                    "ifoster_feature_5"
-                  ].map((key, i) => (
+                  {["ifoster_feature_1", "ifoster_feature_2", "ifoster_feature_3", "ifoster_feature_4", "ifoster_feature_5"].map((key, i) => (
                     <li key={i} className="flex items-start gap-3 text-[15px] text-f-mint/80">
                       <CheckCircle2 size={18} className="text-f-neon shrink-0 mt-0.5" />
-                      <span data-i18n={key}>{t(key)}</span>
+                      <span>{t(key)}</span>
                     </li>
                   ))}
                 </ul>
-
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon transition-all duration-300" data-i18n="ifoster_cta">
+                  <a href="#ifoster" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-7 py-3.5 text-center hover:glow-neon transition-all duration-300">
                     {t('ifoster_cta')}
                   </a>
-                  <button onClick={openContactModal} className="border border-f-neon text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300 cursor-pointer" data-i18n="nav_cta">
+                  <button onClick={openContactModal} className="border border-f-neon text-f-neon font-display font-medium rounded-full px-7 py-3.5 text-center hover:bg-f-neon/10 transition-all duration-300 cursor-pointer">
                     {t('nav_cta')} →
                   </button>
                 </div>
               </AnimatedSection>
             </div>
-
-            {/* Visual iFoster - Alinhado e Reto */}
-            <div className="order-1 lg:order-2 flex items-center justify-center">
-              <AnimatedSection delay={200} className="w-full max-w-[580px]">
-                <div className="relative aspect-[16/11]">
-                   <div 
-                     onClick={() => setSelectedImg('/ifoster-dashboard.png')}
-                     className="absolute top-0 right-0 w-[92%] h-auto rounded-xl overflow-hidden border border-f-neon/30 bg-f-black shadow-2xl transition-all duration-500 hover:border-f-neon group cursor-zoom-in"
-                   >
-                     <div className="bg-f-dark/80 border-b border-f-neon/15 px-4 py-2 flex items-center gap-1.5">
-                       <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
-                       <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
-                       <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
-                       <div className="ml-2 font-mono text-[9px] text-f-mint/40 uppercase tracking-widest">iFoster · Dashboard</div>
-                     </div>
-                     <img src="/ifoster-dashboard.png" alt="iFoster Dashboard" className="w-full h-auto" />
-                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                       <Maximize2 className="text-f-neon" size={24} />
-                     </div>
-                   </div>
-
-                   <div 
-                     onClick={() => setSelectedImg('/ifoster-login.png')}
-                     className="absolute -bottom-8 -left-4 w-[55%] rounded-xl overflow-hidden border border-f-neon/40 bg-f-black shadow-[0_32px_64px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-f-neon group cursor-zoom-in z-10"
-                   >
-                     <div className="bg-f-dark/90 border-b border-f-neon/15 px-3 py-1.5 flex items-center gap-1">
-                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
-                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
-                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
-                     </div>
-                     <img src="/ifoster-login.png" alt="iFoster Login" className="w-full h-auto" />
-                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                       <Maximize2 className="text-f-neon" size={20} />
-                     </div>
-                   </div>
+            <div className="order-1 lg:order-2 flex items-center justify-center h-[450px] lg:h-[500px]">
+              <AnimatedSection delay={200} className="w-full h-full relative">
+                <div className="relative w-full h-full">
+                  <div onClick={(e) => { e.stopPropagation(); setSelectedImg('/ifoster-login.png'); }} className="absolute top-0 left-0 w-[60%] rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl bg-f-black group cursor-pointer">
+                    <div className="bg-f-dark/80 px-3 py-1.5 flex items-center gap-1 border-b border-f-neon/10">
+                      <div className="w-1.5 h-1.5 rounded-full bg-f-mint/30"></div>
+                      <div className="w-1.5 h-1.5 rounded-full bg-f-mint/30"></div>
+                    </div>
+                    <img src="/ifoster-login.png" alt="iFoster Login" className="w-full h-auto" />
+                  </div>
+                  <div onClick={(e) => { e.stopPropagation(); setSelectedImg('/ifoster-dashboard.png'); }} className="absolute bottom-0 right-0 w-[85%] rounded-xl overflow-hidden border border-f-neon/30 shadow-[0_0_80px_rgba(80,242,167,0.1)] bg-f-black group cursor-pointer z-10">
+                    <div className="bg-f-dark/90 px-4 py-2 flex items-center justify-between border-b border-f-neon/15">
+                      <div className="flex gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
+                        <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
+                        <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+                      </div>
+                      <Maximize2 size={12} className="text-f-neon" />
+                    </div>
+                    <img src="/ifoster-dashboard.png" alt="iFoster Dashboard" className="w-full h-auto" />
+                  </div>
                 </div>
               </AnimatedSection>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* INSTATE EM DESTAQUE */}
+      {/* INSTATE FEATURE */}
       <section id="instate" className="py-28 bg-f-black overflow-hidden relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            
-            <div className="flex items-center justify-center">
-              <AnimatedSection delay={200} className="w-full max-w-[620px]">
-                <div className="relative aspect-square md:aspect-video lg:aspect-square flex flex-col gap-4">
-                  <div 
-                    onClick={() => setSelectedImg('/instate-playbook.png')}
-                    className="relative w-full rounded-xl overflow-hidden border border-f-neon/30 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
-                  >
-                    <div className="bg-f-dark/60 border-b border-f-neon/15 px-4 py-2 flex items-center gap-1.5">
-                       <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
-                       <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
-                       <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+            <div className="flex items-center justify-center h-[450px] lg:h-[500px]">
+              <AnimatedSection delay={200} className="w-full h-full relative">
+                <div className="relative w-full h-full">
+                  <div onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-run.png'); }} className="absolute top-0 left-0 w-[65%] rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl bg-f-black group cursor-pointer">
+                    <div className="bg-f-dark/80 px-3 py-1.5 border-b border-f-neon/10">
+                      <div className="w-1.5 h-1.5 rounded-full bg-f-mint/30"></div>
+                    </div>
+                    <img src="/instate-run.png" alt="Instate Run" className="w-full h-auto" />
+                  </div>
+                  <div onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-playbook.png'); }} className="absolute bottom-0 right-0 w-[80%] rounded-xl overflow-hidden border border-f-neon/30 shadow-[0_30px_60px_rgba(0,0,0,0.6)] bg-f-black group cursor-pointer z-10">
+                    <div className="bg-f-dark/90 px-4 py-2 flex items-center justify-between border-b border-f-neon/15">
+                      <div className="flex gap-1.5">
+                        <div className="w-2 h-2 rounded-full bg-f-neon/40"></div>
+                        <div className="w-2 h-2 rounded-full bg-f-neon/40"></div>
+                      </div>
+                      <Maximize2 size={12} className="text-f-neon" />
                     </div>
                     <img src="/instate-playbook.png" alt="Instate Playbook" className="w-full h-auto" />
-                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                       <Maximize2 className="text-f-neon" size={24} />
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div 
-                      onClick={() => setSelectedImg('/instate-run.png')}
-                      className="flex-1 rounded-xl overflow-hidden border border-f-neon/20 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
-                    >
-                      <img src="/instate-run.png" alt="Instate RUN" className="w-full h-auto" />
-                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                         <Maximize2 className="text-f-neon" size={18} />
-                      </div>
-                    </div>
                   </div>
                 </div>
               </AnimatedSection>
             </div>
-
             <div className="flex flex-col items-start">
               <AnimatedSection>
                 <div className="font-mono text-f-neon/70 mb-6">{t('instate_eyebrow')}</div>
@@ -365,25 +327,15 @@ export default function Home() {
                   <span className="block">{t('instate_hero_title_1')}</span>
                   <span className="block text-f-neon text-glow-sm">{t('instate_hero_title_2')} {t('instate_hero_title_3')}</span>
                 </h2>
-                <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg">
-                  {t('instate_desc')}
-                </p>
-                
+                <p className="text-[17px] text-f-mint/65 mb-8 max-w-lg">{t('instate_desc')}</p>
                 <ul className="space-y-3 mb-10">
-                  {[
-                    "instate_feature_1",
-                    "instate_feature_2",
-                    "instate_feature_3",
-                    "instate_feature_4",
-                    "instate_feature_5"
-                  ].map((key, i) => (
+                  {["instate_feature_1", "instate_feature_2", "instate_feature_3", "instate_feature_4", "instate_feature_5"].map((key, i) => (
                     <li key={i} className="flex items-start gap-3 text-[15px] text-f-mint/80">
                       <Zap size={18} className="text-f-neon shrink-0 mt-0.5" />
                       <span>{t(key)}</span>
                     </li>
                   ))}
                 </ul>
-
                 <div className="flex flex-col sm:flex-row gap-4 w-full">
                   <a href="https://instate.fostercompany.com.br/empresa" target="_blank" rel="noopener noreferrer" className="bg-f-neon text-f-black font-display font-semibold rounded-full px-8 py-4 text-center hover:glow-neon transition-all duration-300 flex items-center justify-center gap-2">
                     {t('instate_cta')} <ExternalLink size={16} />
@@ -394,20 +346,18 @@ export default function Home() {
                 </div>
               </AnimatedSection>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* VERTICAIS (SOLUÇÕES) */}
+      {/* VERTICAIS SECTION */}
       <section id="solucoes" className="py-28 bg-f-black bg-grid-pattern">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="mb-20">
-            <div className="font-mono text-f-neon/70 mb-6" data-i18n="verticals_eyebrow">{t('verticals_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-f-mint mb-4" data-i18n="verticals_title">{t('verticals_title')}</h2>
-            <p className="text-[18px] text-f-mint/55 max-w-2xl" data-i18n="verticals_subtitle">Escolha onde você precisa crescer — ou deixe a Foster cuidar de tudo.</p>
+            <div className="font-mono text-f-neon/70 mb-6">{t('verticals_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-f-mint mb-4">{t('verticals_title')}</h2>
+            <p className="text-[18px] text-f-mint/55 max-w-2xl">{t('verticals_subtitle')}</p>
           </AnimatedSection>
-
           <div className="space-y-8">
             {/* Create */}
             <AnimatedSection>
@@ -424,8 +374,8 @@ export default function Home() {
                   </div>
                   <div className="p-10 lg:p-16 order-1 lg:order-2">
                     <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">01 / Foster Create</div>
-                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="create_title">{t('create_title')}</h3>
-                    <p className="text-f-mint/65 mb-8" data-i18n="create_desc">{t('create_desc')}</p>
+                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('create_title')}</h3>
+                    <p className="text-f-mint/65 mb-8">{t('create_desc')}</p>
                     <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-f-neon/80">
                       <span>Produção de Vídeos</span>
                       <span className="text-f-mint/30">·</span>
@@ -437,15 +387,14 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
-
             {/* Build */}
             <AnimatedSection>
               <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   <div className="p-10 lg:p-16 order-1 lg:order-2">
                     <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">02 / Foster Build</div>
-                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="build_title">{t('build_title')}</h3>
-                    <p className="text-f-mint/65 mb-8" data-i18n="build_desc">{t('build_desc')}</p>
+                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('build_title')}</h3>
+                    <p className="text-f-mint/65 mb-8">{t('build_desc')}</p>
                     <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-f-neon/80">
                       <span>Sites com IA</span>
                       <span className="text-f-mint/30">·</span>
@@ -466,7 +415,6 @@ export default function Home() {
                 </div>
               </div>
             </AnimatedSection>
-
             {/* Grow */}
             <AnimatedSection>
               <div className="bg-f-dark border border-f-neon/12 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300 group">
@@ -483,8 +431,8 @@ export default function Home() {
                   </div>
                   <div className="p-10 lg:p-16 order-1 lg:order-2">
                     <div className="inline-block bg-f-black border border-f-neon/20 rounded-full px-4 py-1.5 font-mono text-xs text-f-mint mb-8">03 / Foster Grow</div>
-                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4" data-i18n="grow_title">{t('grow_title')}</h3>
-                    <p className="text-f-mint/65 mb-8" data-i18n="grow_desc">{t('grow_desc')}</p>
+                    <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('grow_title')}</h3>
+                    <p className="text-f-mint/65 mb-8">{t('grow_desc')}</p>
                     <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm text-f-neon/80">
                       <span>Gestão YouTube</span>
                       <span className="text-f-mint/30">·</span>
@@ -502,186 +450,89 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PLATAFORMAS */}
+      {/* PLATFORMS SECTION */}
       <section id="plataformas" className="py-24 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
           <AnimatedSection className="mb-16">
-            <div className="font-mono text-f-neon/70 mb-6" data-i18n="platforms_eyebrow">{t('platforms_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4" data-i18n="platforms_title">{t('platforms_title')}</h2>
-            <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="platforms_desc">{t('platforms_desc')}</p>
+            <div className="font-mono text-f-neon/70 mb-6">{t('platforms_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">{t('platforms_title')}</h2>
+            <p className="text-[17px] text-f-mint/55 max-w-2xl">{t('platforms_desc')}</p>
           </AnimatedSection>
-
-          {/* iFoster Card - Destaque */}
           <AnimatedSection className="mb-6">
             <div className="bg-[#50F2A7]/[0.06] border border-[#50F2A7]/[0.35] rounded-2xl p-8 lg:p-10 hover:border-[#50F2A7]/50 hover:glow-neon transition-all duration-300">
               <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-12 h-12 rounded-full bg-[#50F2A7]/10 flex items-center justify-center shrink-0">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#50F2A7]">
-                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 6.5 12 6.5 15.5 8.07 15.5 10 13.93 13.5 12 13.5zM12 8l-.5 1.5L10 10l1.5.5L12 12l.5-1.5L14 10l-1.5-.5L12 8z"/>
-                      </svg>
+                      <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#50F2A7]"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 11.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 6.5 12 6.5 15.5 8.07 15.5 10 13.93 13.5 12 13.5zM12 8l-.5 1.5L10 10l1.5.5L12 12l.5-1.5L14 10l-1.5-.5L12 8z"/></svg>
                     </div>
                     <div>
-                      <div className="font-mono text-[10px] text-[#50F2A7] mb-1" data-i18n="ifoster_card_badge">{t('ifoster_card_badge')}</div>
-                      <div className="inline-block bg-f-dark/50 border border-[#50F2A7]/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70" data-i18n="ifoster_card_tags">
-                        {t('ifoster_card_tags')}
-                      </div>
+                      <div className="font-mono text-[10px] text-[#50F2A7] mb-1">{t('ifoster_card_badge')}</div>
+                      <div className="inline-block bg-f-dark/50 border border-[#50F2A7]/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">{t('ifoster_card_tags')}</div>
                     </div>
                   </div>
-                  
-                  <h3 className="font-display font-bold text-[26px] text-[#E1F2DF] mb-3" data-i18n="ifoster_card_title">{t('ifoster_card_title')}</h3>
-                  <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6 max-w-2xl" data-i18n="ifoster_card_desc">
-                    {t('ifoster_card_desc')}
-                  </p>
-                  
-                  <a href="#ifoster" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4" data-i18n="ifoster_card_cta">
-                    {t('ifoster_card_cta')}
-                  </a>
+                  <h3 className="font-display font-bold text-[26px] text-[#E1F2DF] mb-3">{t('ifoster_card_title')}</h3>
+                  <p className="text-[#E1F2DF]/65 text-[15px] leading-[1.55] mb-6 max-w-2xl">{t('ifoster_card_desc')}</p>
+                  <a href="#ifoster" className="font-display font-semibold text-[14px] text-[#50F2A7] hover:underline underline-offset-4">{t('ifoster_card_cta')}</a>
                 </div>
-                
                 <div className="w-full lg:w-auto shrink-0">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {["ifoster_card_agent_1", "ifoster_card_agent_2", "ifoster_card_agent_3", "ifoster_card_agent_4"].map((agent, i) => (
-                      <div key={i} className="bg-[#50F2A7]/[0.08] border border-[#50F2A7]/20 rounded-full px-4 py-2 font-mono text-[11px] text-[#E1F2DF]/70 whitespace-nowrap" data-i18n={agent}>
-                        {t(agent)}
-                      </div>
+                      <div key={i} className="bg-[#50F2A7]/[0.08] border border-[#50F2A7]/20 rounded-full px-4 py-2 font-mono text-[11px] text-[#E1F2DF]/70 whitespace-nowrap">{t(agent)}</div>
                     ))}
                   </div>
                 </div>
               </div>
             </div>
           </AnimatedSection>
-
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Instate Card */}
             <AnimatedSection>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
-                    <Zap size={24} className="text-f-neon" />
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">⭐ Plataforma Própria</div>
-                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      Knowledge Management · Playbooks · RUNs
-                    </div>
-                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center"><Zap size={24} className="text-f-neon" /></div>
+                  <div><div className="font-mono text-[10px] text-f-neon mb-1">⭐ Plataforma Própria</div><div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">Knowledge Management · Playbooks</div></div>
                 </div>
-                
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Instate</h3>
-                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  A plataforma onde a operação vira memória. Organize sua empresa com playbooks interativos, automatize processos e acesse os estudos estratégicos da Foster em um só lugar.
-                </p>
-
-                <div className="flex flex-col gap-3 mb-8">
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>Playbooks Automáticos</strong> — Transforme processos em guias passo a passo executáveis.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>Interface de RUNs</strong> — Execute tarefas complexas seguindo fluxos inteligentes.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>Base de Conhecimento</strong> — O onboarding do seu time 10x mais rápido.</span>
-                  </div>
-                </div>
-
-                <a href="#instate" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">
-                  Conhecer o Instate →
-                </a>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">A plataforma onde a operação vira memória. Organize sua empresa com playbooks interativos e automatize processos.</p>
+                <a href="#instate" className="font-display font-medium text-[14px] text-f-neon hover:underline underline-offset-4 mt-auto">Conhecer o Instate →</a>
               </div>
             </AnimatedSection>
-
             {/* Nomes & Marcas */}
             <AnimatedSection>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
-                    <span className="font-display font-bold text-xl text-f-neon">N</span>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
-                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      LegalTech · Propriedade Intelectual · SaaS B2B
-                    </div>
-                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center"><span className="font-display font-bold text-xl text-f-neon">N</span></div>
+                  <div><div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div><div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">LegalTech · Registro de Marcas</div></div>
                 </div>
-                
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Nomes & Marcas</h3>
-                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  A plataforma inteligente de registro de marcas do Brasil. Pesquise o nome da sua marca, receba uma análise baseada em toda a base histórica do INPI e descubra suas chances reais de aprovação — em segundos.
-                </p>
-
-                <div className="flex flex-col gap-3 mb-8">
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>Score de Viabilidade 0–100</strong> — Saiba suas chances reais de aprovação antes de investir no registro.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>Base INPI Atualizada Semanalmente</strong> — Pesquise contra dados reais, direto da Revista da Propriedade Industrial.</span>
-                  </div>
-                </div>
-
-                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
-                  Conhecer Nomes & Marcas →
-                </div>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">A plataforma inteligente de registro de marcas do Brasil com análise baseada na base histórica do INPI.</p>
+                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">Conhecer Nomes & Marcas →</div>
               </div>
             </AnimatedSection>
-
             {/* Stratube 2.0 */}
             <AnimatedSection delay={100}>
               <div className="bg-f-black/60 backdrop-blur-md border border-f-neon/15 rounded-2xl p-8 hover:border-f-neon/50 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center">
-                    <span className="font-display font-bold text-xl text-f-neon">S</span>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div>
-                    <div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">
-                      Ferramentas de IA para Criadores / YouTube Analytics & SEO
-                    </div>
-                  </div>
+                  <div className="w-12 h-12 rounded-full bg-f-neon/10 flex items-center justify-center"><span className="font-display font-bold text-xl text-f-neon">S</span></div>
+                  <div><div className="font-mono text-[10px] text-f-neon mb-1">● Em breve</div><div className="inline-block bg-f-dark/50 border border-f-neon/20 rounded-full px-2 py-0.5 font-mono text-[10px] text-f-mint/70">YouTube Analytics & SEO</div></div>
                 </div>
-                
                 <h3 className="font-display font-bold text-2xl text-f-mint mb-3">Stratube 2.0</h3>
-                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">
-                  Stratube 2.0 é uma plataforma de inteligência estratégica para YouTube que pesquisa dados reais do mercado em tempo real e transforma em decisões acionáveis para criadores e agências crescerem mais rápido.
-                </p>
-
-                <div className="flex flex-col gap-3 mb-8">
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>🔍 Inteligência de Nicho</strong> — Descobre vídeos em alta, keywords com volume real e lacunas de conteúdo inexploradas no seu nicho.</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-[13px] text-f-mint/80">
-                    <span className="text-f-neon mt-1 shrink-0">▸</span>
-                    <span><strong>⚡ Otimizador de Vídeo</strong> — Gera títulos de alto CTR, descrição com SEO e tags estratégicas a partir da URL de qualquer vídeo.</span>
-                  </div>
-                </div>
-
-                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">
-                  Conhecer o Stratube 2.0 →
-                </div>
+                <p className="text-f-mint/60 text-[15px] leading-[1.55] mb-6 flex-grow">Inteligência estratégica para YouTube que pesquisa dados reais do mercado e transforma em decisões acionáveis.</p>
+                <div className="font-display font-medium text-[14px] text-f-neon/40 mt-auto cursor-default">Conhecer o Stratube 2.0 →</div>
               </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* CASES / WORK */}
+      {/* WORK / CASES SECTION */}
       <section id="work" className="py-28 bg-f-dark">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div>
-              <div className="font-mono text-f-neon/70 mb-6" data-i18n="work_eyebrow">{t('work_eyebrow')}</div>
-              <h2 className="font-display font-bold text-[clamp(32px,4vw,40px)] text-f-mint" data-i18n="work_title">{t('work_title')}</h2>
-            </div>
+          <AnimatedSection className="mb-16">
+            <div className="font-mono text-f-neon/70 mb-6">{t('work_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,40px)] text-f-mint">{t('work_title')}</h2>
           </AnimatedSection>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <AnimatedSection className="md:col-span-2">
               <div className="bg-gradient-to-br from-f-black to-f-dark border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-colors duration-300 group">
@@ -690,50 +541,26 @@ export default function Home() {
                     <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">🏆 Case Nacional — Crescimento Orgânico</div>
                     <h3 className="font-display font-bold text-4xl text-f-mint mb-4">De 100k para 700k inscritos.</h3>
                     <p className="text-f-mint/65 mb-6">Viviane Martinello & Abba Pai Church — 2 anos. +600% de crescimento. Um dos maiores canais de igrejas do Brasil.</p>
-                    <div className="font-mono text-xs text-f-mint/50 mb-8 leading-relaxed">
-                      700k+ inscritos · +600% crescimento · 2 anos · Top Igrejas BR
-                    </div>
+                    <div className="font-mono text-xs text-f-mint/50 mb-8 leading-relaxed">700k+ inscritos · +600% crescimento · 2 anos · Top Igrejas BR</div>
                   </div>
-                  <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-4 lg:p-6 flex flex-col gap-4">
+                  <div className="bg-f-black p-4 lg:p-6 flex flex-col gap-4">
                     <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
-                      <img 
-                        src="/cases/viviane-analytics.png" 
-                        alt="Analytics Viviane Martinello — +49k inscritos em um mês" 
-                        className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-                      />
+                      <img src="/cases/viviane-analytics.png" alt="Analytics Viviane Martinello" className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
                     </div>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
-
             <AnimatedSection delay={100} className="md:col-span-2">
               <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 lg:p-10 hover:border-f-neon/45 transition-colors duration-300">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
                   <div className="lg:col-span-8 flex flex-col">
-                    <h3 className="font-display font-bold text-[clamp(28px,4.5vw,40px)] text-f-mint mb-5 leading-[1.1]">
-                      Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.
-                    </h3>
+                    <h3 className="font-display font-bold text-[clamp(28px,4.5vw,40px)] text-f-mint mb-5 leading-[1.1]">Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.</h3>
                     <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => setPlayRony(true)}>
                       {playRony ? (
-                        <iframe
-                          src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1"
-                          title="Rony Meisler Case"
-                          className="absolute inset-0 w-full h-full border-none"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
+                        <iframe src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1" title="Rony Meisler Case" className="absolute inset-0 w-full h-full border-none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                       ) : (
-                        <>
-                          <div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                            <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div>
-                          </div>
-                          <img 
-                            src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" 
-                            className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" 
-                            alt="Rony Meisler Case" 
-                          />
-                        </>
+                        <><div className="w-12 h-12 rounded-full bg-f-neon/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10"><div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-f-neon border-b-[6px] border-b-transparent ml-1"></div></div><img src="https://img.youtube.com/vi/n1nP4gf4DJc/maxresdefault.jpg" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" alt="Rony Meisler Case" /></>
                       )}
                     </div>
                   </div>
@@ -741,65 +568,157 @@ export default function Home() {
               </div>
             </AnimatedSection>
           </div>
+
+          {/* VÍDEOS IA SECTION */}
+          <div className="mb-8">
+            <AnimatedSection className="mb-8">
+              <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/30 rounded-full px-4 py-1.5 mb-4"><span className="font-mono text-[12px] text-f-neon">🤖 100% Criados por Inteligência Artificial</span></div>
+              <h3 className="font-display font-bold text-2xl text-f-mint">Explorações Criativas com IA</h3>
+            </AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[ "DVOgU-TgD2o", "DVTRhVSAEnf", "DWG4OIgAKOQ" ].map((id, i) => (
+                <AnimatedSection key={id} delay={i * 100}>
+                  <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
+                    <div className="aspect-[9/16] w-full bg-f-dark/30">
+                      <iframe src={`https://www.instagram.com/reel/${id}/embed`} className="w-full h-full border-none" scrolling="no" allowTransparency={true}></iframe>
+                    </div>
+                    <div className="p-4 bg-f-dark/40 border-t border-f-neon/10"><p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p></div>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CANAIS PRÓPRIOS SECTION */}
+      <section id="canais-proprios" className="py-24 bg-f-black bg-grid-pattern relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.15)_0%,transparent_100%)]"></div>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+          <AnimatedSection className="mb-16">
+            <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/25 rounded-full px-4 py-1.5 mb-8"><span className="font-mono text-[12px] text-f-neon">🎬 Portfólio de criação original · Foster Company</span></div>
+            <div className="font-mono text-f-neon/70 mb-6">{t('channels_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4"><span dangerouslySetInnerHTML={{ __html: t('channels_title') }}></span></h2>
+            <p className="text-[17px] text-f-mint/55 max-w-2xl">{t('channels_desc')}</p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {channels.map((channel, i) => (
+              <AnimatedSection key={channel.id} delay={i * 100}>
+                <div className="bg-[#104037]/40 border border-[#50F2A7]/15 rounded-2xl p-6 hover:border-[#50F2A7]/40 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                  <div className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex items-center justify-center overflow-hidden mb-6 group cursor-pointer" onClick={() => setActiveVideo(channel.id)}>
+                    {activeVideo === channel.id ? (
+                      <iframe src={`${channel.videoEmbed}?autoplay=1`} title={channel.title} className="absolute inset-0 w-full h-full border-none" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    ) : (
+                      <><div className="w-12 h-12 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10"><div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#50F2A7] border-b-[6px] border-b-transparent ml-1"></div></div><img src={channel.thumbnail} className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" alt={channel.title} /></>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {channel.tags.map(tag => (
+                      <span key={tag} className="font-mono text-[10px] bg-[#50F2A7]/5 border border-[#50F2A7]/20 text-[#50F2A7]/70 rounded-full px-2 py-0.5">/ {tag}</span>
+                    ))}
+                  </div>
+                  <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-3">{channel.title}</h3>
+                  <p className="font-body font-light text-[14px] text-[#E1F2DF]/60 leading-[1.6] mb-8 flex-grow">{channel.desc}</p>
+                  <div className="mt-auto border-t border-[#50F2A7]/10 pt-4 flex items-center justify-between">
+                    <a href={channel.channelUrl} target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[13px] text-[#50F2A7] hover:underline underline-offset-4">Acessar Canal →</a>
+                    <Youtube size={16} className="text-[#E1F2DF]/20" />
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NÚMEROS SECTION */}
+      <section className="py-24 bg-f-black border-t border-f-neon/10">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-0 md:divide-x divide-f-neon/15 items-start">
+            <AnimatedSection className="text-center px-4"><div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon mb-2">15+</div><div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[160px] mx-auto">anos de produção</div></AnimatedSection>
+            <AnimatedSection delay={100} className="text-center px-4"><div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon mb-2">+500</div><div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[200px] mx-auto">projetos de comunicação</div></AnimatedSection>
+            <AnimatedSection delay={200} className="text-center px-4"><div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon text-glow-sm mb-2">+1 Bi</div><div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[220px] mx-auto">visualizações geradas</div></AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* CARLOS BORGES SECTION */}
+      <section id="carlos-borges" className="py-20 bg-f-dark">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-4 lg:col-start-2">
+              <AnimatedSection>
+                <div className="relative group">
+                  <div className="absolute -inset-4 bg-f-neon/5 rounded-3xl blur-2xl group-hover:bg-f-neon/10 transition-all duration-500"></div>
+                  <div className="relative aspect-[4/5] bg-f-black border border-f-neon/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(80,242,167,0.05)] transition-all duration-500 hover:border-f-neon/40 hover:shadow-[0_0_60px_rgba(80,242,167,0.12)]">
+                    <img src="/carlos-borges.jpg" alt="Carlos Borges" className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-f-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
+                      <div className="bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full"><span className="font-mono text-[10px] text-f-neon uppercase tracking-widest">Criados para Criar</span></div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+            <div className="lg:col-span-6">
+              <AnimatedSection delay={200}>
+                <div className="font-mono text-f-neon/70 mb-5">{t('founder_eyebrow')}</div>
+                <div className="mb-6"><h2 className="font-display font-bold text-[clamp(28px,4vw,44px)] text-f-mint leading-[1.1] mb-2" dangerouslySetInnerHTML={{ __html: t('founder_title') }}></h2><div className="font-display font-medium text-lg text-f-neon/80 italic">Carlos Borges — Founder</div></div>
+                <div className="space-y-5 text-[16px] text-f-mint/65 font-light leading-[1.6] max-w-xl"><p>{t('founder_p1')}</p><p>{t('founder_p2')}</p><p>{t('founder_p3')}</p></div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-10">
+                  {["founder_li1", "founder_li2", "founder_li3", "founder_li4"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 p-3.5 bg-f-black/30 border border-f-neon/10 rounded-xl hover:border-f-neon/30 transition-colors"><div className="w-1.5 h-1.5 rounded-full bg-f-neon shrink-0"></div><span className="text-[13px] text-f-mint/80 font-medium">{t(item)}</span></div>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SELO MUSICAL SECTION */}
+      <section id="selo-musical" className="pt-12 pb-24 bg-[#104037] relative overflow-hidden">
+        <div className="absolute inset-0 flex items-end justify-center opacity-10 gap-2 pb-10 pointer-events-none">
+          {[...Array(30)].map((_, i) => (
+            <div key={i} className="w-3 bg-f-neon rounded-t-full origin-bottom animate-waveform" style={{ height: `${Math.random() * 50 + 10}%`, animationDelay: `${Math.random() * 1.5}s`, animationDuration: `${Math.random() * 1 + 0.8}s` }}></div>
+          ))}
+        </div>
+        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
+          <AnimatedSection className="mb-16 text-center">
+            <div className="font-mono text-[12px] text-f-neon/70 mb-6">{t('music_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">{t('music_title')}</h2>
+            <p className="text-[17px] text-f-mint/55 max-w-2xl mx-auto">{t('music_desc')}</p>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <AnimatedSection><div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group"><div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">{t('music_card1_badge')}</div><h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('music_card1_title')}</h3><p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">{t('music_card1_desc')}</p><div className="flex items-center gap-4 mb-8">{musicArtists.map((artist, i) => (<a key={i} href={artist.url} target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full border-2 border-f-neon/30 overflow-hidden shadow-lg hover:scale-110 hover:border-f-neon transition-all duration-300" title={artist.name}><img src={artist.image} alt={artist.name} className="w-full h-full object-cover" /></a>))}</div><div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">Spotify · Apple Music · Deezer</div><button onClick={openContactModal} className="font-display font-bold text-[16px] text-f-neon hover:underline underline-offset-8 mt-auto w-fit cursor-pointer">{t('music_card1_cta')}</button></div></AnimatedSection>
+            <AnimatedSection delay={100}><div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group"><div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">{t('music_card2_badge')}</div><h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('music_card2_title')}</h3><p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">{t('music_card2_desc')}</p><div className="flex items-center gap-[-10px] mb-8"><div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-30 relative shadow-lg"><span className="font-display font-bold text-f-neon/50 text-sm">A1</span></div><div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-20 relative -ml-4 shadow-lg"><span className="font-display font-bold text-f-neon/50 text-sm">A2</span></div><div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-10 relative -ml-4 shadow-lg"><span className="font-display font-bold text-f-neon/50 text-sm">A3</span></div></div><a href="#musica" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">{t('music_card2_cta')}</a></div></AnimatedSection>
+          </div>
         </div>
       </section>
 
       <FAQ />
 
-      {/* NÚMEROS */}
-      <section className="py-24 bg-f-black border-t border-f-neon/10">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-0 md:divide-x divide-f-neon/15 items-start">
-            <AnimatedSection className="text-center px-4">
-              <div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon mb-2">15+</div>
-              <div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[160px] mx-auto">anos de produção</div>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={100} className="text-center px-4">
-              <div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon mb-2">+500</div>
-              <div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[200px] mx-auto">projetos de comunicação</div>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={200} className="text-center px-4">
-              <div className="font-display font-bold text-[clamp(48px,6vw,64px)] leading-tight text-f-neon text-glow-sm mb-2">+1 Bi</div>
-              <div className="font-body text-[13px] text-f-mint/50 uppercase tracking-[0.15em] max-w-[220px] mx-auto">visualizações geradas</div>
-            </AnimatedSection>
-          </div>
+      {/* CTA FINAL SECTION */}
+      <section className="py-36 bg-f-black relative overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(80,242,167,0.07) 0%, transparent 70%)' }}></div>
+        <div className="max-w-3xl mx-auto px-5 md:px-8 text-center relative z-10">
+          <AnimatedSection>
+            <div className="font-mono text-f-neon/70 mb-6">{t('cta_eyebrow')}</div>
+            <h2 className="font-display font-bold text-[clamp(48px,8vw,72px)] text-f-mint mb-6"><span className="block">{t('cta_title_1')}</span><span className="block">{t('cta_title_2')}</span></h2>
+            <p className="font-body font-light text-[20px] text-f-mint/50 mb-12">{t('cta_desc')}</p>
+            <button onClick={openContactModal} className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6 cursor-pointer">{t('cta_btn')}</button>
+            <p className="font-mono text-[11px] text-f-mint/25">{t('cta_footer')}</p>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Lightbox / Modal de Zoom Final e Corrigido */}
+      {/* Lightbox / Modal de Zoom */}
       <AnimatePresence>
         {selectedImg && (
           <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedImg(null)}
-              className="absolute inset-0 bg-f-black/95 backdrop-blur-xl cursor-pointer"
-            />
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative max-w-7xl w-full h-fit bg-f-black border border-f-neon/20 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(80,242,167,0.15)] z-50 pointer-events-auto"
-            >
-              <button 
-                onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
-                className="absolute top-6 right-6 z-[10002] bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all cursor-pointer shadow-2xl"
-              >
-                <XIcon size={24} />
-              </button>
-              
-              <div className="w-full h-full overflow-auto">
-                <img 
-                  src={selectedImg} 
-                  className="w-full h-auto block pointer-events-none" 
-                  alt="Zoom Preview" 
-                />
-              </div>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedImg(null)} className="absolute inset-0 bg-f-black/95 backdrop-blur-xl cursor-pointer" />
+            <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.9, y: 20 }} className="relative max-w-7xl w-full h-fit bg-f-black border border-f-neon/20 rounded-3xl overflow-hidden shadow-[0_0_100px_rgba(80,242,167,0.15)] z-50 pointer-events-auto">
+              <button onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }} className="absolute top-6 right-6 z-[10002] bg-f-black/80 border border-f-neon/30 text-f-neon p-2 rounded-full hover:bg-f-neon hover:text-f-black transition-all cursor-pointer shadow-2xl"><XIcon size={24} /></button>
+              <div className="w-full h-full overflow-auto"><img src={selectedImg} className="w-full h-auto block pointer-events-none" alt="Zoom Preview" /></div>
             </motion.div>
           </div>
         )}
