@@ -1,13 +1,20 @@
-import {StrictMode} from 'react';
-import {createRoot} from 'react-dom/client';
+import { StrictMode } from 'react';
+import { hydrateRoot, createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { LanguageProvider } from './i18n/LanguageContext';
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <LanguageProvider>
       <App />
     </LanguageProvider>
-  </StrictMode>,
+  </StrictMode>
 );
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}
