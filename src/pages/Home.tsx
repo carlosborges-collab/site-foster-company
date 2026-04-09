@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
+import FAQ from '../components/FAQ';
 import { ChevronDown, CheckCircle2, Instagram, Youtube, ExternalLink, Zap, Maximize2, X as XIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -277,37 +278,40 @@ export default function Home() {
               </AnimatedSection>
             </div>
 
-            {/* Visual iFoster - Layout Reto e Profissional */}
-            <div className="order-1 lg:order-2 flex items-center justify-center h-[450px] lg:h-[500px]">
-              <AnimatedSection delay={200} className="w-full h-full relative">
-                <div className="relative w-full h-full">
-                  {/* Background Layer - Login */}
-                  <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/ifoster-login.png'); }}
-                    className="absolute top-0 left-0 w-[60%] rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl bg-f-black group cursor-pointer"
-                  >
-                    <div className="bg-f-dark/80 px-3 py-1.5 flex items-center gap-1 border-b border-f-neon/10">
-                      <div className="w-1.5 h-1.5 rounded-full bg-f-mint/30"></div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-f-mint/30"></div>
-                    </div>
-                    <img src="/ifoster-login.png" alt="iFoster Login" className="w-full h-auto" />
-                  </div>
+            {/* Visual iFoster - Alinhado e Reto */}
+            <div className="order-1 lg:order-2 flex items-center justify-center">
+              <AnimatedSection delay={200} className="w-full max-w-[580px]">
+                <div className="relative aspect-[16/11]">
+                   <div 
+                     onClick={() => setSelectedImg('/ifoster-dashboard.png')}
+                     className="absolute top-0 right-0 w-[92%] h-auto rounded-xl overflow-hidden border border-f-neon/30 bg-f-black shadow-2xl transition-all duration-500 hover:border-f-neon group cursor-zoom-in"
+                   >
+                     <div className="bg-f-dark/80 border-b border-f-neon/15 px-4 py-2 flex items-center gap-1.5">
+                       <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
+                       <div className="ml-2 font-mono text-[9px] text-f-mint/40 uppercase tracking-widest">iFoster · Dashboard</div>
+                     </div>
+                     <img src="/ifoster-dashboard.png" alt="iFoster Dashboard" className="w-full h-auto" />
+                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <Maximize2 className="text-f-neon" size={24} />
+                     </div>
+                   </div>
 
-                  {/* Foreground Layer - Dashboard */}
-                  <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/ifoster-dashboard.png'); }}
-                    className="absolute bottom-0 right-0 w-[85%] rounded-xl overflow-hidden border border-f-neon/30 shadow-[0_0_80px_rgba(80,242,167,0.1)] bg-f-black group cursor-pointer z-10"
-                  >
-                    <div className="bg-f-dark/90 px-4 py-2 flex items-center justify-between border-b border-f-neon/15">
-                      <div className="flex gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
-                        <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
-                        <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
-                      </div>
-                      <Maximize2 size={12} className="text-f-neon" />
-                    </div>
-                    <img src="/ifoster-dashboard.png" alt="iFoster Dashboard" className="w-full h-auto" />
-                  </div>
+                   <div 
+                     onClick={() => setSelectedImg('/ifoster-login.png')}
+                     className="absolute -bottom-8 -left-4 w-[55%] rounded-xl overflow-hidden border border-f-neon/40 bg-f-black shadow-[0_32px_64px_rgba(0,0,0,0.8)] transition-all duration-500 hover:border-f-neon group cursor-zoom-in z-10"
+                   >
+                     <div className="bg-f-dark/90 border-b border-f-neon/15 px-3 py-1.5 flex items-center gap-1">
+                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
+                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
+                       <div className="w-1.5 h-1.5 rounded-full bg-f-mint/20"></div>
+                     </div>
+                     <img src="/ifoster-login.png" alt="iFoster Login" className="w-full h-auto" />
+                     <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <Maximize2 className="text-f-neon" size={20} />
+                     </div>
+                   </div>
                 </div>
               </AnimatedSection>
             </div>
@@ -322,34 +326,33 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
-            {/* Visual do Instate - Layout Profissional em Stack */}
-            <div className="flex items-center justify-center h-[450px] lg:h-[500px]">
-              <AnimatedSection delay={200} className="w-full h-full relative">
-                <div className="relative w-full h-full">
-                  {/* Fundo - Run */}
+            <div className="flex items-center justify-center">
+              <AnimatedSection delay={200} className="w-full max-w-[620px]">
+                <div className="relative aspect-square md:aspect-video lg:aspect-square flex flex-col gap-4">
                   <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-run.png'); }}
-                    className="absolute top-0 left-0 w-[65%] rounded-xl overflow-hidden border border-f-neon/20 shadow-2xl bg-f-black group cursor-pointer"
+                    onClick={() => setSelectedImg('/instate-playbook.png')}
+                    className="relative w-full rounded-xl overflow-hidden border border-f-neon/30 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
                   >
-                    <div className="bg-f-dark/80 px-3 py-1.5 border-b border-f-neon/10">
-                      <div className="w-1.5 h-1.5 rounded-full bg-f-mint/30"></div>
-                    </div>
-                    <img src="/instate-run.png" alt="Instate Run" className="w-full h-auto" />
-                  </div>
-
-                  {/* Frente - Playbook */}
-                  <div 
-                    onClick={(e) => { e.stopPropagation(); setSelectedImg('/instate-playbook.png'); }}
-                    className="absolute bottom-0 right-0 w-[80%] rounded-xl overflow-hidden border border-f-neon/30 shadow-[0_30px_60px_rgba(0,0,0,0.6)] bg-f-black group cursor-pointer z-10"
-                  >
-                    <div className="bg-f-dark/90 px-4 py-2 flex items-center justify-between border-b border-f-neon/15">
-                      <div className="flex gap-1.5">
-                        <div className="w-2 h-2 rounded-full bg-f-neon/40"></div>
-                        <div className="w-2 h-2 rounded-full bg-f-neon/40"></div>
-                      </div>
-                      <Maximize2 size={12} className="text-f-neon" />
+                    <div className="bg-f-dark/60 border-b border-f-neon/15 px-4 py-2 flex items-center gap-1.5">
+                       <div className="w-2 h-2 rounded-full bg-[#FF5F56]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#FFBD2E]"></div>
+                       <div className="w-2 h-2 rounded-full bg-[#27C93F]"></div>
                     </div>
                     <img src="/instate-playbook.png" alt="Instate Playbook" className="w-full h-auto" />
+                    <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                       <Maximize2 className="text-f-neon" size={24} />
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div 
+                      onClick={() => setSelectedImg('/instate-run.png')}
+                      className="flex-1 rounded-xl overflow-hidden border border-f-neon/20 bg-f-black shadow-xl group cursor-zoom-in transition-all duration-500 hover:border-f-neon"
+                    >
+                      <img src="/instate-run.png" alt="Instate RUN" className="w-full h-auto" />
+                      <div className="absolute inset-0 bg-f-neon/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                         <Maximize2 className="text-f-neon" size={18} />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
@@ -680,7 +683,6 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {/* Case 01 - Destaque */}
             <AnimatedSection className="md:col-span-2">
               <div className="bg-gradient-to-br from-f-black to-f-dark border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-colors duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -691,7 +693,6 @@ export default function Home() {
                     <div className="font-mono text-xs text-f-mint/50 mb-8 leading-relaxed">
                       700k+ inscritos · +600% crescimento · 2 anos · Top Igrejas BR
                     </div>
-                    <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest">Foster Grow · YouTube</div>
                   </div>
                   <div className="bg-f-black border-t lg:border-t-0 lg:border-l border-f-neon/10 p-4 lg:p-6 flex flex-col gap-4">
                     <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
@@ -701,42 +702,19 @@ export default function Home() {
                         className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                       />
                     </div>
-                    <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border border-f-neon/20">
-                      <img 
-                        src="/cases/abba-analytics.png" 
-                        alt="Analytics Abba Pai Church — Resultados consolidados" 
-                        className="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
             </AnimatedSection>
 
-            {/* Case 02 - RONY MEISLER ATUALIZADO - LARGURA TOTAL */}
             <AnimatedSection delay={100} className="md:col-span-2">
               <div className="bg-f-black border border-f-neon/15 rounded-2xl p-8 lg:p-10 hover:border-f-neon/45 transition-colors duration-300">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-                  {/* Lado Esquerdo: Texto + YouTube */}
                   <div className="lg:col-span-8 flex flex-col">
-                    <div className="inline-flex bg-f-dark border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-mint/70 mb-6 w-fit">
-                      Creative AI Studio
-                    </div>
-                    
-                    <div className="mb-10">
-                      <div className="flex items-center gap-3 mb-5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-f-neon shadow-[0_0_80px_rgba(80,242,167,0.8)]"></div>
-                        <span className="font-mono text-[10px] text-f-neon/80 uppercase tracking-[0.2em]">Case Nacional · Clone Digital</span>
-                      </div>
-                      <h3 className="font-display font-bold text-[clamp(28px,4.5vw,40px)] text-f-mint mb-5 leading-[1.1]">
-                        Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.
-                      </h3>
-                      <p className="text-f-mint/60 text-[17px] font-light leading-relaxed max-w-2xl">
-                        Desenvolvemos o avatar ultra-realista para um dos maiores empresários do Brasil. Presença digital 24/7 sem depender de agenda, unindo essência humana com a velocidade da inteligência artificial.
-                      </p>
-                    </div>
-
-                    <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => !playRony && setPlayRony(true)}>
+                    <h3 className="font-display font-bold text-[clamp(28px,4.5vw,40px)] text-f-mint mb-5 leading-[1.1]">
+                      Rony Meisler: <span className="text-f-neon text-glow-sm">A escala infinita</span> do criador.
+                    </h3>
+                    <div className="aspect-video w-full border border-f-neon/30 rounded-xl flex items-center justify-center relative overflow-hidden bg-f-dark/30 group cursor-pointer shadow-2xl" onClick={() => setPlayRony(true)}>
                       {playRony ? (
                         <iframe
                           src="https://www.youtube.com/embed/n1nP4gf4DJc?autoplay=1"
@@ -759,168 +737,14 @@ export default function Home() {
                       )}
                     </div>
                   </div>
-                  
-                  {/* Lado Direito: Instagram Vertical */}
-                  <div className="lg:col-span-4">
-                    <div className="aspect-[9/16] w-full border border-f-neon/30 rounded-xl overflow-hidden bg-f-dark/30 shadow-2xl">
-                      <iframe 
-                        src="https://www.instagram.com/reel/DVLX0vpAASA/embed" 
-                        className="w-full h-full border-none"
-                        scrolling="no"
-                        allowTransparency={true}
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="font-mono text-[10px] text-f-neon/60 uppercase tracking-widest mt-12 border-t border-f-neon/10 pt-4">
-                  Foster Create · iFoster Avatar · Case Nacional
                 </div>
               </div>
             </AnimatedSection>
           </div>
-
-          {/* NOVAS CAIXAS VÍDEOS IA */}
-          <div className="mb-8">
-            <AnimatedSection className="mb-8">
-              <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/30 rounded-full px-4 py-1.5 mb-4">
-                <span className="font-mono text-[12px] text-f-neon">🤖 100% Criados por Inteligência Artificial</span>
-              </div>
-              <h3 className="font-display font-bold text-2xl text-f-mint">Explorações Criativas com IA</h3>
-            </AnimatedSection>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Vídeo IA 1 */}
-              <AnimatedSection delay={100}>
-                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
-                  <div className="aspect-[9/16] w-full bg-f-dark/30">
-                    <iframe 
-                      src="https://www.instagram.com/reel/DVOgU-TgD2o/embed" 
-                      className="w-full h-full border-none"
-                      scrolling="no"
-                      allowTransparency={true}
-                    ></iframe>
-                  </div>
-                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10">
-                    <p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Vídeo IA 2 */}
-              <AnimatedSection delay={200}>
-                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
-                  <div className="aspect-[9/16] w-full bg-f-dark/30">
-                    <iframe 
-                      src="https://www.instagram.com/reel/DVTRhVSAEnf/embed" 
-                      className="w-full h-full border-none"
-                      scrolling="no"
-                      allowTransparency={true}
-                    ></iframe>
-                  </div>
-                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10">
-                    <p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-
-              {/* Vídeo IA 3 */}
-              <AnimatedSection delay={300}>
-                <div className="bg-f-black border border-f-neon/15 rounded-2xl overflow-hidden hover:border-f-neon/45 transition-all duration-300">
-                  <div className="aspect-[9/16] w-full bg-f-dark/30">
-                    <iframe 
-                      src="https://www.instagram.com/reel/DWG4OIgAKOQ/embed" 
-                      className="w-full h-full border-none"
-                      scrolling="no"
-                      allowTransparency={true}
-                    ></iframe>
-                  </div>
-                  <div className="p-4 bg-f-dark/40 border-t border-f-neon/10">
-                    <p className="font-mono text-[10px] text-f-neon uppercase">Vídeo 100% IA ✓</p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* CANAIS PRÓPRIOS */}
-      <section id="canais-proprios" className="py-24 bg-f-black bg-grid-pattern relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(80,242,167,0.15)_0%,transparent_100%)]"></div>
-        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
-          <AnimatedSection className="mb-16">
-            <div className="inline-flex items-center gap-2 bg-f-neon/5 border border-f-neon/25 rounded-full px-4 py-1.5 mb-8">
-              <span className="font-mono text-[12px] text-f-neon">🎬 Portfólio de criação original · Foster Company</span>
-            </div>
-            <div className="font-mono text-f-neon/70 mb-6" data-i18n="channels_eyebrow">{t('channels_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">
-               <span dangerouslySetInnerHTML={{ __html: t('channels_title') }}></span>
-            </h2>
-            <p className="text-[17px] text-f-mint/55 max-w-2xl" data-i18n="channels_desc">{t('channels_desc')}</p>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {channels.map((channel, i) => (
-              <AnimatedSection key={channel.id} delay={i * 100}>
-                <div className="bg-[#104037]/40 border border-[#50F2A7]/15 rounded-2xl p-6 hover:border-[#50F2A7]/40 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
-                  {/* Vídeo / Thumbnail Container */}
-                  <div 
-                    className="w-full aspect-video bg-[#030D09] border border-[#50F2A7]/10 rounded-xl relative flex items-center justify-center overflow-hidden mb-6 group cursor-pointer"
-                    onClick={() => setActiveVideo(channel.id)}
-                  >
-                    {activeVideo === channel.id ? (
-                      <iframe
-                        src={`${channel.videoEmbed}?autoplay=1`}
-                        title={channel.title}
-                        className="absolute inset-0 w-full h-full border-none"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    ) : (
-                      <>
-                        <div className="w-12 h-12 rounded-full bg-[#50F2A7]/20 flex items-center justify-center group-hover:scale-110 transition-transform z-10">
-                          <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#50F2A7] border-b-[6px] border-b-transparent ml-1"></div>
-                        </div>
-                        <img 
-                          src={channel.thumbnail} 
-                          className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" 
-                          alt={channel.title} 
-                        />
-                      </>
-                    )}
-                  </div>
-
-                  {/* Header / Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {channel.tags.map(tag => (
-                      <span key={tag} className="font-mono text-[10px] bg-[#50F2A7]/5 border border-[#50F2A7]/20 text-[#50F2A7]/70 rounded-full px-2 py-0.5">
-                        / {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="font-display font-bold text-2xl text-[#E1F2DF] mb-3">
-                    {channel.title}
-                  </h3>
-                  <p className="font-body font-light text-[14px] text-[#E1F2DF]/60 leading-[1.6] mb-8 flex-grow">
-                    {channel.desc}
-                  </p>
-
-                  {/* Footer Action */}
-                  <div className="mt-auto border-t border-[#50F2A7]/10 pt-4 flex items-center justify-between">
-                    <a href={channel.channelUrl} target="_blank" rel="noopener noreferrer" className="font-display font-semibold text-[13px] text-[#50F2A7] hover:underline underline-offset-4">
-                      Acessar Canal →
-                    </a>
-                    <Youtube size={16} className="text-[#E1F2DF]/20" />
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQ />
 
       {/* NÚMEROS */}
       <section className="py-24 bg-f-black border-t border-f-neon/10">
@@ -944,181 +768,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CARLOS BORGES */}
-      <section id="carlos-borges" className="py-20 bg-f-dark">
-        <div className="max-w-7xl mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            <div className="lg:col-span-4 lg:col-start-2">
-              <AnimatedSection>
-                <div className="relative group">
-                  <div className="absolute -inset-4 bg-f-neon/5 rounded-3xl blur-2xl group-hover:bg-f-neon/10 transition-all duration-500"></div>
-                  <div className="relative aspect-[4/5] bg-f-black border border-f-neon/20 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(80,242,167,0.05)] transition-all duration-500 hover:border-f-neon/40 hover:shadow-[0_0_60px_rgba(80,242,167,0.12)]">
-                    <img 
-                      src="/carlos-borges.jpg" 
-                      alt="Carlos Borges - Fundador Foster Company" 
-                      className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-f-black/60 via-transparent to-transparent"></div>
-                    <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
-                      <div className="bg-f-black/80 backdrop-blur-md border border-f-neon/30 px-4 py-2 rounded-full">
-                        <span className="font-mono text-[10px] text-f-neon uppercase tracking-widest">Criados para Criar</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            <div className="lg:col-span-6">
-              <AnimatedSection delay={200}>
-                <div className="font-mono text-f-neon/70 mb-5" data-i18n="founder_eyebrow">{t('founder_eyebrow')}</div>
-                <div className="mb-6">
-                  <h2 className="font-display font-bold text-[clamp(28px,4vw,44px)] text-f-mint leading-[1.1] mb-2" data-i18n="founder_title" dangerouslySetInnerHTML={{ __html: t('founder_title') }}>
-                  </h2>
-                  <div className="font-display font-medium text-lg text-f-neon/80 italic">Carlos Borges — Founder</div>
-                </div>
-                <div className="space-y-5 text-[16px] text-f-mint/65 font-light leading-[1.6] max-w-xl">
-                  <p data-i18n="founder_p1">{t('founder_p1')}</p>
-                  <p data-i18n="founder_p2">{t('founder_p2')}</p>
-                  <p data-i18n="founder_p3">{t('founder_p3')}</p>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-10">
-                  {[
-                    "founder_li1",
-                    "founder_li2",
-                    "founder_li3",
-                    "founder_li4"
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 bg-f-black/30 border border-f-neon/10 rounded-xl hover:border-f-neon/30 transition-colors">
-                      <div className="w-1.5 h-1.5 rounded-full bg-f-neon shrink-0"></div>
-                      <span className="text-[13px] text-f-mint/80 font-medium" data-i18n={item}>{t(item)}</span>
-                    </div>
-                  ))}
-                </div>
-              </AnimatedSection>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SELO MUSICAL */}
-      <section id="selo-musical" className="pt-12 pb-24 bg-[#104037] relative overflow-hidden">
-        <div className="absolute inset-0 flex items-end justify-center opacity-10 gap-2 pb-10 pointer-events-none">
-          {[...Array(30)].map((_, i) => (
-            <div 
-              key={i}
-              className="w-3 bg-f-neon rounded-t-full origin-bottom animate-waveform"
-              style={{
-                height: `${Math.random() * 50 + 10}%`,
-                animationDelay: `${Math.random() * 1.5}s`,
-                animationDuration: `${Math.random() * 1 + 0.8}s`
-              }}
-            ></div>
-          ))}
-        </div>
-        <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
-          <AnimatedSection className="mb-16 text-center">
-            <div className="font-mono text-[12px] text-f-neon/70 mb-6">{t('music_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(32px,4vw,44px)] text-f-mint mb-4">{t('music_title')}</h2>
-            <p className="text-[17px] text-f-mint/55 max-w-2xl mx-auto">
-              {t('music_desc')}
-            </p>
-          </AnimatedSection>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <AnimatedSection>
-              <div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group">
-                <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">
-                  {t('music_card1_badge')}
-                </div>
-                <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('music_card1_title')}</h3>
-                <p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">
-                  {t('music_card1_desc')}
-                </p>
-                
-                <div className="flex items-center gap-4 mb-8">
-                  {musicArtists.map((artist, i) => (
-                    <a 
-                      key={i} 
-                      href={artist.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="w-14 h-14 rounded-full border-2 border-f-neon/30 overflow-hidden shadow-lg hover:scale-110 hover:border-f-neon transition-all duration-300"
-                      title={artist.name}
-                    >
-                      <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" />
-                    </a>
-                  ))}
-                </div>
-
-                <div className="inline-block bg-f-dark border border-f-neon/10 rounded-full px-4 py-2 font-mono text-[11px] text-f-mint/50 mb-8 w-fit">
-                  Spotify · Apple Music · Deezer · YouTube Music
-                </div>
-                <button onClick={openContactModal} className="font-display font-bold text-[16px] text-f-neon hover:underline underline-offset-8 mt-auto w-fit cursor-pointer">
-                  {t('music_card1_cta')}
-                </button>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={100}>
-              <div className="bg-f-black/40 backdrop-blur-sm border border-f-neon/15 rounded-2xl p-8 lg:p-10 h-full flex flex-col hover:border-f-neon/40 transition-colors group">
-                <div className="inline-flex bg-f-neon/10 border border-f-neon/20 rounded-full px-3 py-1 font-mono text-[11px] text-f-neon mb-6 w-fit">
-                  {t('music_card2_badge')}
-                </div>
-                <h3 className="font-display font-bold text-3xl text-f-mint mb-4">{t('music_card2_title')}</h3>
-                <p className="text-[16px] text-f-mint/65 mb-8 flex-grow leading-[1.6]">
-                  {t('music_card2_desc')}
-                </p>
-                <div className="flex items-center gap-[-10px] mb-8">
-                  <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-30 relative shadow-lg">
-                    <span className="font-display font-bold text-f-neon/50 text-sm">A1</span>
-                  </div>
-                  <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-20 relative -ml-4 shadow-lg">
-                    <span className="font-display font-bold text-f-neon/50 text-sm">A2</span>
-                  </div>
-                  <div className="w-14 h-14 rounded-full bg-f-dark border-2 border-f-neon/30 flex items-center justify-center overflow-hidden z-10 relative -ml-4 shadow-lg">
-                    <span className="font-display font-bold text-f-neon/50 text-sm">A3</span>
-                  </div>
-                </div>
-                <a href="#musica" className="font-display font-medium text-[15px] text-f-neon hover:underline underline-offset-4 mt-auto w-fit">
-                  {t('music_card2_cta')}
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="py-36 bg-f-black relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(80,242,167,0.07) 0%, transparent 70%)' }}></div>
-        <div className="max-w-3xl mx-auto px-5 md:px-8 text-center relative z-10">
-          <AnimatedSection>
-            <div className="font-mono text-f-neon/70 mb-6">{t('cta_eyebrow')}</div>
-            <h2 className="font-display font-bold text-[clamp(48px,8vw,72px)] text-f-mint mb-6">
-              <span className="block">{t('cta_title_1')}</span>
-              <span className="block">{t('cta_title_2')}</span>
-            </h2>
-            <p className="font-body font-light text-[20px] text-f-mint/50 mb-12">
-              {t('cta_desc')}
-            </p>
-            <button 
-              onClick={openContactModal} 
-              className="inline-block bg-f-neon text-f-black font-display font-bold rounded-full px-12 py-5 text-lg hover:glow-neon hover:scale-[1.03] transition-all duration-300 mb-6 cursor-pointer"
-            >
-              {t('cta_btn')}
-            </button>
-            <p className="font-mono text-[11px] text-f-mint/25">
-              {t('cta_footer')}
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
       {/* Lightbox / Modal de Zoom Final e Corrigido */}
       <AnimatePresence>
         {selectedImg && (
           <div className="fixed inset-0 z-[10001] flex items-center justify-center p-4 md:p-12">
-            {/* Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -1127,7 +780,6 @@ export default function Home() {
               className="absolute inset-0 bg-f-black/95 backdrop-blur-xl cursor-pointer"
             />
             
-            {/* Modal Content */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -1152,7 +804,6 @@ export default function Home() {
           </div>
         )}
       </AnimatePresence>
-
     </div>
   );
 }
